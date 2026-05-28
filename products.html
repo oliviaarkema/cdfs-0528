@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm Fresh Products — Country Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<style>
+
+  /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative;
+    height: 52vh;
+    min-height: 380px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; background: #0a1f0d;
+  }
+  .page-hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    transform: scale(1.04);
+    animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay { position: absolute; inset: 0; background: rgba(5,18,7,.58); }
+  .page-hero-content { position: relative; z-index: 2; text-align: center; padding: 0 24px; }
+  .page-hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-sans); font-size: .7rem; font-weight: 700;
+    letter-spacing: .25em; text-transform: uppercase; color: var(--green-bright);
+    margin-bottom: 20px; opacity: 0; animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-bright); }
+  .page-hero-title {
+    font-family: var(--font-serif); font-size: clamp(2.8rem, 6.5vw, 5rem);
+    font-weight: 700; color: #fff; line-height: 1.05;
+    opacity: 0; animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+  .page-hero-sub {
+    font-size: 1rem; font-weight: 300; color: rgba(255,255,255,.75);
+    margin-top: 14px; opacity: 0; animation: fadeUp .9s .6s forwards;
+  }
+
+  /* ── Products Grid ─────────────────────────────── */
+  .products-section {
+    background: var(--warm-white);
+    padding: 88px 0 96px;
+  }
+  .products-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .products-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700; color: var(--dark-brown); line-height: 1.12;
+    margin-bottom: 14px;
+  }
+  .products-headline em { font-style: italic; color: var(--green-dark); }
+  .products-sub {
+    font-size: 1rem; color: var(--text-muted); font-weight: 300;
+    max-width: 520px; margin: 0 auto; line-height: 1.75;
+  }
+
+  /* 5-card grid: 3 across top, 2 centered bottom */
+  .prod-5-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .prod-5-grid .p-card:nth-child(4) { grid-column: 1; }
+  .prod-5-grid .p-card:nth-child(5) { grid-column: 2; }
+
+  .p-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--cream-dark);
+    transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s;
+  }
+  .p-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.13); }
+  .p-card-img-wrap { overflow: hidden; }
+  .p-card-img {
+    width: 100%; height: 220px;
+    object-fit: cover; display: block;
+    transition: transform .5s ease;
+  }
+  .p-card:hover .p-card-img { transform: scale(1.04); }
+  .p-card-body { padding: 22px 24px 26px; }
+  .p-card-tag {
+    display: inline-block;
+    font-family: var(--font-sans); font-size: .6rem; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--green-dark); margin-bottom: 8px;
+  }
+  .p-card-name {
+    font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700;
+    color: var(--dark-brown); line-height: 1.2; margin-bottom: 8px;
+  }
+  .p-card-desc {
+    font-size: .86rem; color: var(--text-muted);
+    line-height: 1.65; font-weight: 300;
+  }
+  .p-card-availability {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--cream-dark);
+    display: flex; align-items: center; gap: 7px;
+    font-family: var(--font-sans); font-size: .64rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+  }
+  .avail-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .avail-retail { color: var(--green-dark); }
+  .avail-retail .avail-dot { background: var(--green-bright); }
+  .avail-store { color: var(--text-muted); }
+  .avail-store .avail-dot { background: var(--terracotta); }
+
+  /* ── Order Online ──────────────────────────────── */
+  .order-section {
+    background: var(--cream);
+    padding: 88px 0;
+    text-align: center;
+  }
+  .order-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700; color: var(--dark-brown); line-height: 1.12;
+    margin-bottom: 14px;
+  }
+  .order-headline em { font-style: italic; color: var(--green-dark); }
+  .order-body {
+    font-size: 1rem; color: var(--text-muted); font-weight: 300;
+    max-width: 500px; margin: 0 auto 40px; line-height: 1.75;
+  }
+  .order-options {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;
+    margin-bottom: 40px;
+  }
+  .order-option {
+    background: #fff;
+    border: 1.5px solid var(--cream-dark);
+    border-radius: var(--radius-lg);
+    padding: 22px 28px;
+    min-width: 220px;
+    text-align: center;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .order-option:hover {
+    border-color: var(--green-bright);
+    box-shadow: 0 4px 20px rgba(61,174,43,.1);
+  }
+  .order-option-icon {
+    width: 36px; height: 36px;
+    background: var(--green-dark);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+  }
+  .order-option-icon svg { display: block; }
+  .order-option-title {
+    font-family: var(--font-sans); font-size: .78rem; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase;
+    color: var(--dark-brown); margin-bottom: 5px;
+  }
+  .order-option-desc {
+    font-size: .78rem; color: var(--text-muted); font-weight: 300; line-height: 1.5;
+  }
+  @media (max-width: 700px) {
+    .order-options { flex-direction: column; align-items: center; }
+    .order-option { width: 100%; max-width: 320px; }
+  }
+
+  /* ── Where to Buy ──────────────────────────────── */
+  .where-section {
+    background: var(--green-deep);
+    padding: 88px 0;
+    position: relative; overflow: hidden;
+  }
+  .where-texture {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-size: 300px; opacity: .6;
+  }
+  .where-inner {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+  }
+  .where-copy { }
+  .where-headline {
+    font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700; color: #fff; line-height: 1.12; margin-bottom: 16px;
+  }
+  .where-headline em { font-style: italic; color: var(--green-bright); }
+  .where-body {
+    font-size: .98rem; color: rgba(255,255,255,.62);
+    line-height: 1.78; font-weight: 300; margin-bottom: 36px;
+  }
+
+  /* availability tables */
+  .where-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+  .where-table {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .where-table-head {
+    padding: 12px 18px;
+    font-family: var(--font-sans); font-size: .62rem; font-weight: 700;
+    letter-spacing: .16em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .where-table-head-retail {
+    background: rgba(61,174,43,.15);
+    color: var(--green-bright);
+    border-bottom: 1px solid rgba(61,174,43,.2);
+  }
+  .where-table-head-store {
+    background: rgba(255,255,255,.05);
+    color: rgba(255,255,255,.55);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .where-table-head-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .where-table-item {
+    padding: 11px 18px;
+    font-size: .82rem; color: rgba(255,255,255,.75); font-weight: 300;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  .where-table-item:last-child { border-bottom: none; }
+  .where-table-note {
+    padding: 10px 18px;
+    font-size: .72rem; color: rgba(255,255,255,.35); font-weight: 300;
+    font-style: italic; border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  .where-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .where-img {
+    width: 100%; height: 440px; object-fit: cover;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .where-inner { grid-template-columns: 1fr; gap: 52px; }
+    .where-img { height: 320px; }
+  }
+  @media (max-width: 900px) {
+    .prod-5-grid { grid-template-columns: repeat(2, 1fr); }
+    .prod-5-grid .p-card:nth-child(4),
+    .prod-5-grid .p-card:nth-child(5) { grid-column: auto; }
+  }
+  @media (max-width: 600px) {
+    .prod-5-grid { grid-template-columns: 1fr; }
+    .where-tables { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="products.html" style="color:var(--green-bright);">Products</a></li>
+      <li><a href="farm-tours.html">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="#" role="menuitem">Meat Shop</a>
+          <a href="index.html#social" role="menuitem">Ice Cream Social</a>
+          <a href="#" role="menuitem">Bakery</a>
+          <a href="#" role="menuitem">Catering</a>
+          <a href="#" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="#" role="menuitem">Wholesale</a>
+          <a href="#where-to-buy" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="products.html">Products</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <a href="index.html#social">Ice Cream Social</a>
+  <a href="#where-to-buy">Where to Buy</a>
+  <a href="farm-store-kitchen.html" class="btn btn-primary" style="font-size:1rem;">Visit the Farm Store</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" aria-label="Farm Fresh Products">
+  <div class="page-hero-bg" style="background-image:url('assets/images/SWDMilk.jpg'); background-position: center 50%;"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <div class="page-hero-eyebrow-dot"></div>
+      Country Dairy &nbsp;&middot;&nbsp; New Era, Michigan
+    </div>
+    <h1 class="page-hero-title">Farm <em>Fresh</em> Products</h1>
+    <p class="page-hero-sub">Made on our farm. Sold at our store and retailers across Michigan.</p>
+  </div>
+</section>
+
+<!-- wave hero → products -->
+<div class="wavy-divider" style="background:#0a1f0d;">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C180,56 360,0 540,24 C720,48 900,6 1080,30 C1260,52 1380,16 1440,28 L1440,56 L0,56 Z" fill="var(--warm-white)"/>
+  </svg>
+</div>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section class="products-section section" aria-label="Our Products">
+  <div class="container">
+
+    <div class="products-header">
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex;">Made on the Farm</div>
+      <h2 class="products-headline reveal reveal-delay-1">What We <em>Make</em></h2>
+      <p class="products-sub reveal reveal-delay-2">Everything sold under the Country Dairy name starts with milk from our own Holstein herd in New Era, Michigan.</p>
+    </div>
+
+    <div class="prod-5-grid">
+
+      <!-- Milk & Cream -->
+      <div class="p-card reveal">
+        <div class="p-card-img-wrap">
+          <img src="assets/images/SWDMilk.jpg" alt="Country Dairy fresh milk and cream" class="p-card-img" loading="lazy">
+        </div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Farm Fresh</div>
+          <div class="p-card-name">Milk &amp; Cream</div>
+          <p class="p-card-desc">Whole, 2%, skim, chocolate, strawberry, and cream — all from our own herd, processed fresh on site.</p>
+          <div class="p-card-availability avail-retail">
+            <div class="avail-dot"></div>
+            Available at retailers
+          </div>
+        </div>
+      </div>
+
+      <!-- Ice Cream -->
+      <div class="p-card reveal reveal-delay-1">
+        <div class="p-card-img-wrap">
+          <img src="assets/images/CDIceCream.jpg" alt="Country Dairy homemade ice cream" class="p-card-img" loading="lazy">
+        </div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Handcrafted Daily</div>
+          <div class="p-card-name">Ice Cream</div>
+          <p class="p-card-desc">Over 40 flavors made in small batches with our own milk. Served fresh at the Farm Store and in half-gallon tubs at retailers.</p>
+          <div class="p-card-availability avail-retail">
+            <div class="avail-dot"></div>
+            Half gallons at retailers
+          </div>
+        </div>
+      </div>
+
+      <!-- Sour Cream & Chip Dip -->
+      <div class="p-card reveal reveal-delay-2">
+        <div class="p-card-img-wrap">
+          <img src="assets/images/Cultured Creations 3.jpg" alt="Country Dairy sour cream and chip dip" class="p-card-img" loading="lazy">
+        </div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Cultured</div>
+          <div class="p-card-name">Sour Cream &amp; Chip Dip</div>
+          <p class="p-card-desc">Made from fresh dairy, our sour cream and signature chip dip are consistently two of our best-sellers. Once you try them, you'll understand why.</p>
+          <div class="p-card-availability avail-retail">
+            <div class="avail-dot"></div>
+            Available at retailers
+          </div>
+        </div>
+      </div>
+
+      <!-- Butter -->
+      <div class="p-card reveal reveal-delay-1">
+        <div class="p-card-img-wrap">
+          <img src="assets/images/Cammie's Cart.jpg" alt="Country Dairy farmhouse butter" class="p-card-img" loading="lazy">
+        </div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Artisan</div>
+          <div class="p-card-name">Butter</div>
+          <p class="p-card-desc">Real butter churned from our own cream. Rich, fresh flavor you can taste the difference in.</p>
+          <div class="p-card-availability avail-store">
+            <div class="avail-dot"></div>
+            Farm Store only
+          </div>
+        </div>
+      </div>
+
+      <!-- Meat -->
+      <div class="p-card reveal reveal-delay-2">
+        <div class="p-card-img-wrap">
+          <img src="assets/images/Sirloin Steak.jpg" alt="Country Dairy farm-raised beef" class="p-card-img" loading="lazy">
+        </div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Farm Raised</div>
+          <div class="p-card-name">Meat</div>
+          <p class="p-card-desc">Fresh and frozen beef cuts raised right here on the farm. Ground beef, steaks, roasts, and summer sausage available in the Farm Store.</p>
+          <div class="p-card-availability avail-store">
+            <div class="avail-dot"></div>
+            Farm Store only
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave products → order online -->
+<div class="wavy-divider" style="background:var(--warm-white);">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="var(--cream)"/>
+  </svg>
+</div>
+
+<!-- ===================== ORDER ONLINE ===================== -->
+<section class="order-section section" id="order-online" aria-label="Order Online">
+  <div class="container">
+    <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex;">Skip the Trip</div>
+    <h2 class="order-headline reveal reveal-delay-1">Order <em>Online</em></h2>
+    <p class="order-body reveal reveal-delay-2">
+      Shop Country Dairy products online and choose the fulfillment option that works best for you. Available for farm pickup or home delivery across West Michigan.
+    </p>
+
+    <div class="order-options reveal reveal-delay-2">
+
+      <div class="order-option">
+        <div class="order-option-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="order-option-title">Farm Pickup</div>
+        <div class="order-option-desc">Pick up your order at<br>3476 S 80th Ave, New Era</div>
+      </div>
+
+      <div class="order-option">
+        <div class="order-option-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="order-option-title">Norton Shores to Shelby</div>
+        <div class="order-option-desc">Home delivery along the<br>Norton Shores to Shelby corridor</div>
+      </div>
+
+      <div class="order-option">
+        <div class="order-option-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="order-option-title">Ludington to Shelby</div>
+        <div class="order-option-desc">Home delivery along the<br>Ludington to Shelby corridor</div>
+      </div>
+
+    </div>
+
+    <div class="reveal reveal-delay-3">
+      <a href="https://countrydairy.eatfromfarms.com/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:.95rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.97-1.67L23 6H6"/></svg>
+        Shop Online at EatFromFarms
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- wave order online → where to buy -->
+<div class="wavy-divider" style="background:var(--cream);">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 C360,55 720,0 1080,35 C1260,52 1380,18 1440,28 L1440,60 L0,60 Z" fill="var(--green-deep)"/>
+  </svg>
+</div>
+
+<!-- ===================== WHERE TO BUY ===================== -->
+<section class="where-section section" id="where-to-buy" aria-label="Where to Buy">
+  <div class="where-texture"></div>
+  <div class="container">
+    <div class="where-inner">
+
+      <div class="where-copy">
+        <div class="section-label section-label-cream reveal">Find Our Products</div>
+        <h2 class="where-headline reveal reveal-delay-1">Where to <em>Buy</em></h2>
+        <p class="where-body reveal reveal-delay-2">
+          Several of our products are available at grocery stores and markets across Michigan. Butter and meat are sold exclusively at our Farm Store in New Era.
+        </p>
+
+        <div class="where-tables reveal reveal-delay-2">
+          <div class="where-table">
+            <div class="where-table-head where-table-head-retail">
+              <div class="where-table-head-dot" style="background:var(--green-bright);"></div>
+              At Retailers
+            </div>
+            <div class="where-table-item">Whole, 2% &amp; Skim Milk</div>
+            <div class="where-table-item">Chocolate &amp; Strawberry Milk</div>
+            <div class="where-table-item">Cream &amp; Half &amp; Half</div>
+            <div class="where-table-item">Ice Cream Half Gallons</div>
+            <div class="where-table-item">Sour Cream &amp; Chip Dip</div>
+            <div class="where-table-note">Available at select grocers &amp; markets across Michigan</div>
+          </div>
+          <div class="where-table">
+            <div class="where-table-head where-table-head-store">
+              <div class="where-table-head-dot" style="background:var(--terracotta);"></div>
+              Farm Store Only
+            </div>
+            <div class="where-table-item">Butter</div>
+            <div class="where-table-item">Fresh &amp; Frozen Meat</div>
+            <div class="where-table-item">Full ice cream menu</div>
+            <div class="where-table-item">Baked goods &amp; local products</div>
+            <div class="where-table-note">3476 S 80th Ave, New Era, MI &nbsp;&middot;&nbsp; Mon&ndash;Sat 9am&ndash;8pm</div>
+          </div>
+        </div>
+
+        <div class="where-actions reveal reveal-delay-3">
+          <a href="farm-store-kitchen.html" class="btn btn-primary">Visit the Farm Store</a>
+          <a href="tel:2312590515" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            (231) 259-0515
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <img src="assets/images/Archer Van IC.jpg" alt="Country Dairy delivery van" class="where-img" loading="lazy">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Products</div>
+        <ul class="footer-col-links">
+          <li><a href="products.html">Milk &amp; Cream</a></li>
+          <li><a href="products.html">Ice Cream</a></li>
+          <li><a href="products.html">Butter</a></li>
+          <li><a href="products.html">Meat</a></li>
+          <li><a href="products.html">Sour Cream &amp; Chip Dip</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="farm-store-kitchen.html#hours">Store Hours</a></li>
+          <li><a href="farm-store-kitchen.html#find-us">Get Directions</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+          <li><a href="index.html#social">Ice Cream Social</a></li>
+          <li><a href="#where-to-buy">Where to Buy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2312590515">(231) 259-0515</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="#">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:24px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:8px;">Store Hours</div>
+          <div style="font-size:.85rem; color:rgba(255,255,255,.55); line-height:1.65;">Mon&ndash;Sat: 9am&ndash;8pm<br>Kitchen: 10am&ndash;7pm<br>Sunday: Closed</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>

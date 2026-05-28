@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Country Dairy — New Era, Michigan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-logo-wrap">
+    <a href="#" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="farm-tours.html">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="#" role="menuitem">Meat Shop</a>
+          <a href="#social" role="menuitem">Ice Cream Social</a>
+          <a href="#" role="menuitem">Bakery</a>
+          <a href="#" role="menuitem">Catering</a>
+          <a href="#" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="#" role="menuitem">Wholesale</a>
+          <a href="#" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="#story">Our Story</a>
+  <a href="#kitchen">Farm Store Kitchen</a>
+  <a href="#products">Products</a>
+  <a href="#tours">Farm Tours</a>
+  <a href="#social">Ice Cream Social</a>
+  <a href="#ice-cream">Ice Cream</a>
+  <a href="#">Where to Buy</a>
+  <a href="#visit" class="btn btn-primary" style="font-size:1rem;">Plan Your Visit</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero section" aria-label="Hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-banner">
+      <h1 class="hero-headline">
+        Farm Fresh &amp;<br><em>Michigan Made</em>
+      </h1>
+    </div>
+    <p class="hero-sub">
+      Gather at the farm for homemade ice cream, comforting food, and fun experiences the whole family will love.
+    </p>
+    <div class="hero-actions">
+      <a href="assets/files/SpringSummerMenu2026.pdf" target="_blank" rel="noopener" class="btn btn-primary">Farm Store Kitchen Menu</a>
+      <a href="#tours" class="btn btn-outline">Plan Your Visit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee-strip" aria-hidden="true">
+  <div style="display:flex;overflow:hidden;">
+    <div class="marquee-track">
+      <span class="marquee-item">Homemade Ice Cream <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Farm Fresh Dairy <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Michigan Centennial Farm <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Farm Store Kitchen Burgers <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Moo U Classes <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Annual Ice Cream Social <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Farm Tours for Families <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Over 40 Ice Cream Flavors <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Homemade Ice Cream <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Farm Fresh Dairy <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Michigan Centennial Farm <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Farm Store Burgers <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Moo U Classes <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Annual Ice Cream Social <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Farm Tours for Families <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Over 40 Ice Cream Flavors <span class="marquee-dot"></span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== POLAROID WALL (shortened) ===================== -->
+<section class="polaroid-wall section" aria-label="Family Snapshots">
+  <div class="container">
+    <div class="pw-header">
+      <div class="section-label section-label-green reveal" style="justify-content:center;">Traditions in the Making</div>
+      <h2 class="pw-headline reveal reveal-delay-1">
+        Family Memories Start Here
+      </h2>
+      <p class="pw-sub reveal reveal-delay-2">Snapshots from a West Michigan experience you won't forget!</p>
+    </div>
+    <div class="pw-scrapbook">
+      <div class="pw-p1 reveal">
+        <div class="polaroid polaroid-tilt-ll pw-polaroid">
+          <img src="assets/images/ShowBarn School Tour.jpg" alt="Kids on farm tour" loading="lazy">
+          <div class="polaroid-caption">School Field Trips</div>
+        </div>
+      </div>
+      <div class="pw-p2 reveal reveal-delay-1">
+        <div class="polaroid polaroid-tilt-r pw-polaroid-lg">
+          <img src="assets/images/Peppermint Stick IC.jpg" alt="Ice cream" loading="lazy">
+          <div class="polaroid-caption">Just one more scoop!</div>
+        </div>
+      </div>
+      <div class="pw-p3 reveal reveal-delay-2">
+        <div class="polaroid polaroid-tilt-s pw-polaroid">
+          <img src="assets/images/ACS - calf encounter.jpg" alt="Baby calf" loading="lazy">
+          <div class="polaroid-caption">Calf Encounters</div>
+        </div>
+      </div>
+      <div class="pw-p4 reveal reveal-delay-3">
+        <div class="polaroid polaroid-tilt-l pw-polaroid-lg">
+          <img src="assets/images/Nate & Adam - Dancing.jpg" alt="Ice cream social" loading="lazy">
+          <div class="polaroid-caption">Ice Cream Social '25</div>
+        </div>
+      </div>
+      <div class="pw-p5 reveal reveal-delay-4">
+        <div class="polaroid polaroid-tilt-rr pw-polaroid">
+          <img src="assets/images/Hay Field.jpg" alt="Golden hour on the farm" loading="lazy">
+          <div class="polaroid-caption">Tractors at Work</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wavy divider -->
+<div class="wavy-divider" style="background:#f0ebe0;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="var(--cream)"/>
+  </svg>
+</div>
+
+<!-- ===================== EXPERIENCES / FARM TOURS ===================== -->
+<section class="farm-tours section" id="tours" aria-label="Farm Experiences">
+  <div class="container ft-inner">
+    <div class="ft-header">
+      <div>
+        <div class="section-label section-label-green reveal">Get Up Close</div>
+        <h2 class="ft-headline reveal reveal-delay-1">
+            Explore a Real Working Dairy Farm
+        </h2>
+      </div>
+      <div>
+        <p class="ft-desc reveal reveal-delay-2">
+          Come see a real, working Michigan dairy farm in action. Watch the milking process, meet the horses by name, pet the calves, and learn where your food truly comes from. Our farm tours are designed for everyone: curious kids and adults alike.
+        </p>
+        <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="btn btn-dark reveal reveal-delay-3">Book a Tour</a>
+      </div>
+    </div>
+
+    <div class="ft-cards">
+      <div class="ft-card reveal">
+        <div class="ft-card-img-wrap">
+          <img src="assets/images/Daze & Dan.jpg" alt="Calf meet and greet" class="ft-card-img" loading="lazy">
+        </div>
+        <div class="ft-card-body">
+          <div class="ft-card-tag">Wagon Ride Tour</div>
+          <div class="ft-card-title">Behind the Barn</div>
+          <p class="ft-card-text">Climb aboard our horse-drawn wagon for a guided tour through the farm, where you’ll learn about silage production, ride through a free-stall dairy barn, meet calves and young stock, and see our robotic milking system in action.</p>
+          <div class="ft-card-link">Learn More &#8594;</div>
+        </div>
+      </div>
+      <div class="ft-card reveal reveal-delay-1">
+        <div class="ft-card-img-wrap">
+          <img src="assets/images/Milking with the Family.jpg" alt="Moo U educational class" class="ft-card-img" loading="lazy">
+        </div>
+        <div class="ft-card-body">
+          <div class="ft-card-tag">Walking Tour</div>
+          <div class="ft-card-title">Hoofin' It</div>
+          <p class="ft-card-text">Step inside one of our milking barns for an up-close look at modern dairy farming. You’ll see our state-of-the-art robotic milking system in action, meet our hardworking Holstein cows, and spend time with some of the farm’s playful calves.</p>
+          <div class="ft-card-link">Learn More &#8594;</div>
+        </div>
+      </div>
+      <div class="ft-card reveal reveal-delay-2">
+        <div class="ft-card-img-wrap">
+          <img src="assets/images/ACS - calf encounter.jpg" alt="Group farm tour" class="ft-card-img" loading="lazy">
+        </div>
+        <div class="ft-card-body">
+          <div class="ft-card-tag">Horses & Calves</div>
+          <div class="ft-card-title">Birthing Barn and Calves Tour</div>
+          <p class="ft-card-text">Journey to our Maternity Barn by horse-drawn wagon for an up-close look at where new life begins on the farm. Meet newborn calves, learn about their care, and experience one of the most memorable parts of dairy farming.</p>
+          <div class="ft-card-link">Learn More &#8594;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FARM STORE KITCHEN ===================== -->
+<div class="wavy-divider" style="background:var(--cream);">
+  <svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,25 C200,50 400,5 720,28 C1000,48 1200,10 1440,22 L1440,50 L0,50 Z" fill="#0a1a0c"/>
+  </svg>
+</div>
+<section class="kitchen-feature section" id="kitchen" aria-label="Farm Kitchen">
+  <div class="kitchen-feature-bg"></div>
+  <div class="kitchen-feature-overlay"></div>
+  <div class="kitchen-feature-content">
+    <div class="section-label section-label-cream reveal">Farm Store Kitchen</div>
+    <h2 class="kf-headline reveal reveal-delay-1">
+      Homemade Meals Worth <em>Gathering Around</em>
+    </h2>
+    <p class="kf-body reveal reveal-delay-2">
+        Grab a juicy farm-fresh burger, crisp salad, hearty wrap, hoagie, or hand-scooped ice cream made with ingredients sourced close to home.
+    </p>
+    <div class="kf-items reveal reveal-delay-3">
+      <div class="kf-item"><div class="kf-item-dot"></div>Signature Beef Burgers</div>
+      <div class="kf-item"><div class="kf-item-dot"></div>Ice Cream Milkshakes</div>
+      <div class="kf-item"><div class="kf-item-dot"></div>Grilled Cheese Melts</div>
+      <div class="kf-item"><div class="kf-item-dot"></div>Seasonal Specials</div>
+    </div>
+    <a href="assets/files/SpringSummerMenu2026.pdf" target="_blank" rel="noopener" class="btn btn-primary reveal reveal-delay-4">See the Full Menu</a>
+  </div>
+</section>
+
+<!-- ===================== FARM FRESH DAIRY PRODUCTS ===================== -->
+<div class="wavy-divider" style="background:#0a1a0c;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 C360,55 720,0 1080,35 C1260,52 1380,18 1440,28 L1440,60 L0,60 Z" fill="#1c1c1c"/>
+  </svg>
+</div>
+<section class="products section" id="products" aria-label="Farm Fresh Products">
+  <div class="container prod-inner">
+    <div class="prod-header">
+      <div class="section-label section-label-green reveal" style="justify-content:center;">Farm Fresh Dairy Products</div>
+      <h2 class="prod-headline reveal reveal-delay-1">
+        Straight from our Farm<br><em>to Your Table</em>
+      </h2>
+      <p class="prod-sub reveal reveal-delay-2">
+        Good food starts with quality ingredients, caring farmers, and a commitment to bringing families together around the table.
+      </p>
+    </div>
+    <div class="prod-grid reveal reveal-delay-1">
+      <div class="prod-card prod-card-1">
+        <img src="assets/images/Aldea - LatteDay1.JPG" alt="Fresh dairy products" loading="lazy">
+        <div class="prod-card-overlay">
+          <div class="prod-card-label">Pure Michigan</div>
+          <div class="prod-card-title">Fresh Milk &amp; Cream</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="assets/images/Cammie's Cart.jpg" alt="Farm butter and cheese" loading="lazy">
+        <div class="prod-card-overlay">
+          <div class="prod-card-label">Artisan</div>
+          <div class="prod-card-title">Farmhouse Butter</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="assets/images/Sirloin Steak.jpg" alt="Grill ready burgers" loading="lazy">
+        <div class="prod-card-overlay">
+          <div class="prod-card-label">Farm Raised</div>
+          <div class="prod-card-title">Meat</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="assets/images/11-19 Landscape.jpg" alt="Fresh products" loading="lazy">
+        <div class="prod-card-overlay">
+          <div class="prod-card-label">Crowd Favorites</div>
+          <div class="prod-card-title">Egg Nog, Sour Cream & Chip Dip</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="assets/images/Ice Cream Cone.jpeg" alt="Signature ice cream flavors homemade" loading="lazy">
+        <div class="prod-card-overlay">
+          <div class="prod-card-label">Creamery Classic</div>
+          <div class="prod-card-title">Signature Ice Cream Flavors</div>
+        </div>
+      </div>
+    </div>
+    <!-- Where to Buy -->
+    <div class="reveal reveal-delay-2" style="text-align:center; margin-top:52px;">
+      <p style="font-size:.95rem; color:rgba(255,255,255,.55); margin-bottom:18px; font-weight:300;">Find Country Dairy products at grocery stores and markets across West Michigan.</p>
+      <a href="#" class="btn btn-outline">Where to Buy</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EVENTS SECTION ===================== -->
+<section class="events section" id="social" aria-label="Annual Ice Cream Social">
+  <div class="container ev-inner">
+    <div class="ev-header">
+      <div class="section-label section-label-green reveal" style="justify-content:center;">Every Summer</div>
+      <h2 class="ev-headline reveal reveal-delay-1">
+        Something Happening <em>Every Season</em>
+      </h2>
+      <p class="ev-sub reveal reveal-delay-2">
+        From hands-on classes and family activities to live music and homemade ice cream traditions, there’s always something to experience at the farm.
+      </p>
+    </div>
+    <div class="ev-cards">
+      <div class="ev-card reveal">
+        <div class="ev-card-bg" style="background-image:url('assets/images/Nate%20%26%20Adam%20-%20Dancing.jpg');"></div>
+        <div class="ev-card-overlay"></div>
+        <div class="ev-card-content">
+          <div class="ev-card-date">Annual Summer Tradition</div>
+          <h3 class="ev-card-title">2026 Ice Cream Social</h3>
+          <p class="ev-card-desc">Live music, unlimited scoops, lawn games, and the warmth of community on a perfect West Michigan evening. The event that brings families back year after year.</p>
+          <div class="ev-card-link">Event Details &#8594;</div>
+        </div>
+      </div>
+      <div class="ev-card reveal reveal-delay-2">
+        <div class="ev-card-bg" style="background-image:url('assets/images/Robots%20at%20ICS.jpg');"></div>
+        <div class="ev-card-overlay"></div>
+        <div class="ev-card-content">
+          <div class="ev-card-date">Year-Round Programs</div>
+          <h3 class="ev-card-title">Moo U Classes</h3>
+          <p class="ev-card-desc">Hands-on farm education for kids and families. Learn how milk becomes butter, meet a real dairy cow, and take home a new appreciation for where food comes from.</p>
+          <div class="ev-card-link">View Schedule &#8594;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-polaroid-row">
+        <div class="reveal">
+          <div class="polaroid polaroid-tilt-ll ft-pol">
+            <img src="assets/images/ACS - calf licks.jpg" alt="Kids at the farm" loading="lazy">
+            <div class="polaroid-caption">Meeting the calves!</div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div class="polaroid polaroid-tilt-r ft-pol-lg">
+            <img src="assets/images/Picture on Tour.jpg" alt="Family at Country Dairy" loading="lazy">
+            <div class="polaroid-caption">Memories in the Making</div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="polaroid polaroid-tilt-s ft-pol">
+            <img src="assets/images/ACS - calf feeding.jpg" alt="Feeding a calf" loading="lazy">
+            <div class="polaroid-caption">Feeding time!</div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <div class="polaroid polaroid-tilt-l ft-pol">
+            <img src="assets/images/Archer Van IC.jpg" alt="Golden hour on the farm" loading="lazy">
+            <div class="polaroid-caption">Ice Cream Traditions</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- ===================== OUR STORY ===================== -->
+<section class="history section" id="story" aria-label="Our Story">
+  <div class="container">
+    <div class="hist-inner">
+      <div class="hist-visual">
+        <img
+          src="assets/images/Original Farm STore.jpg"
+          alt="Country Dairy original farm store"
+          class="hist-img-main reveal"
+          loading="lazy"
+        >
+        <div class="polaroid polaroid-tilt-r reveal reveal-delay-2" style="position:absolute; bottom:-20px; right:-28px; width:180px; height:180px; z-index:4;">
+          <img src="assets/images/Fleet of Trucks.jpg" alt="Country Dairy fleet" style="height:100%;" loading="lazy">
+          <div class="polaroid-caption">four generations</div>
+        </div>
+      </div>
+      <div class="hist-copy">
+        <div class="section-label section-label-green reveal">Michigan Centennial Farm</div>
+        <div class="rope-line reveal"></div>
+        <h2 class="hist-headline reveal reveal-delay-1">
+          Our Story
+        </h2>
+        <p class="hist-body reveal reveal-delay-2">
+          Since 1907, the Van Gunst family has farmed this same land in New Era, Michigan. Four generations of hard work, a deep love for their animals, and a commitment to sharing that life with you. Today, Country Dairy is home to over 1,200 dairy cows and a farm store where the whole family is welcome.
+        </p>
+        <div class="intro-stats reveal reveal-delay-3" style="margin-top:36px; padding-top:32px; border-top:1px solid var(--cream-dark);">
+          <div class="stat">
+            <div class="stat-number">1907</div>
+            <div class="stat-label">Founded</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Generations of Family Farming</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">1200+</div>
+            <div class="stat-label">Dairy Cows</div>
+          </div>
+        </div>
+        <a href="our-story.html" class="btn btn-primary reveal reveal-delay-4" style="margin-top:36px;">Read Our Full Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ICE CREAM FLAVORS ===================== -->
+<div class="wavy-divider" style="background:var(--cream);">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 C360,55 720,0 1080,35 C1260,52 1380,18 1440,28 L1440,60 L0,60 Z" fill="var(--green-deep)"/>
+  </svg>
+</div>
+<section class="flavors-section section" id="ice-cream" aria-label="Ice Cream">
+  <div class="flavors-texture"></div>
+  <div class="container flavors-inner">
+    <div class="section-label section-label-cream reveal" style="justify-content:center;">Handcrafted Michigan Classics</div>
+    <h2 class="flavors-headline reveal reveal-delay-1">
+        40+ Flavors of <em> Farm Fresh Ice Cream</em>
+      </h2>
+      <p class="flavors-sub reveal reveal-delay-2">
+        From timeless classics to seasonal favorites, our homemade ice cream is crafted in small batches with rich flavor and simple ingredients.
+      </p>
+
+    <div class="flavors-img-wrap reveal reveal-delay-1">
+      <img src="assets/images/CDIceCream.jpg" alt="Homemade ice cream" class="flavors-hero-img" loading="lazy">
+    </div>
+
+    <div class="flavors-marquee-wrap reveal reveal-delay-2">
+      <!-- Row 1: scrolls left — 11 flavors, duplicated -->
+      <div class="flavors-marquee-row flavors-marquee-row--left">
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#7ec8a4;"></div>A Moo's Mint</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#c8953a;"></div>Butter Churn Pecan</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#6b3a2a;"></div>Calfe-Nated Cow</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#f5e6c8;"></div>Cowconut Cream</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#3d1c0e;"></div>Dutch Chocolate</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#f3d27a;"></div>Grandpa's Vanilla</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#d4a843;"></div>HayDay</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#7a4a2d;"></div>Hoofprints</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#8b1a3a;"></div>Michigan Black Cherry</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#5db88e;"></div>Mint Mookies</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#d4b896;"></div>Mom's Cookie Dough</div>
+        <!-- duplicate -->
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#7ec8a4;"></div>A Moo's Mint</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#c8953a;"></div>Butter Churn Pecan</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#6b3a2a;"></div>Calfe-Nated Cow</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#f5e6c8;"></div>Cowconut Cream</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#3d1c0e;"></div>Dutch Chocolate</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#f3d27a;"></div>Grandpa's Vanilla</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#d4a843;"></div>HayDay</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#7a4a2d;"></div>Hoofprints</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#8b1a3a;"></div>Michigan Black Cherry</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#5db88e;"></div>Mint Mookies</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#d4b896;"></div>Mom's Cookie Dough</div>
+      </div>
+      <!-- Row 2: scrolls right — 10 flavors, duplicated -->
+      <div class="flavors-marquee-row flavors-marquee-row--right">
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#4b2e23;"></div>Mooey Gooey Fudge</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#2d2d2d;"></div>Mookies N Cream</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#5c3317;"></div>Nutty Java Moo</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#c49a3c;"></div>Peanut "Udder" Bliss</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#c4445a;"></div>Raspberry Roundup</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#8b2020;"></div>Simply Chile Chocolate</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#6b82c4;"></div>Simply Lemon Blueberry</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#4ade80;"></div>Simply Supercow</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#f472b6;"></div>Strawberry Cheesecake</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#1c0a05;"></div>Triple Cho-Cow-Late</div>
+        <!-- duplicate -->
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#4b2e23;"></div>Mooey Gooey Fudge</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#2d2d2d;"></div>Mookies N Cream</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#5c3317;"></div>Nutty Java Moo</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#c49a3c;"></div>Peanut "Udder" Bliss</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#c4445a;"></div>Raspberry Roundup</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#8b2020;"></div>Simply Chile Chocolate</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#6b82c4;"></div>Simply Lemon Blueberry</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#4ade80;"></div>Simply Supercow</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#f472b6;"></div>Strawberry Cheesecake</div>
+        <div class="flavor-chip"><div class="flavor-chip-dot" style="background:#1c0a05;"></div>Triple Cho-Cow-Late</div>
+      </div>
+    </div>
+
+    <div class="flavors-actions reveal reveal-delay-3">
+      <a href="#" class="btn btn-primary">See All Flavors</a>
+      <a href="#" class="btn btn-outline">View Ingredients</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" id="visit" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1927</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-col-links">
+          <li><a href="#ice-cream">Homemade Ice Cream</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+          <li><a href="#products">Farm Fresh Products</a></li>
+          <li><a href="#kitchen">Farm Kitchen</a></li>
+          <li><a href="#social">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="#visit">Plan Your Visit</a></li>
+          <li><a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener">Book a Tour</a></li>
+          <li><a href="#social">Moo U Schedule</a></li>
+          <li><a href="#social">Ice Cream Social</a></li>
+          <li><a href="#">Where to Buy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2318614636">(231) 861-4636</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="#">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:24px;">
+          <div class="vc-info-label" style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:8px;">Hours</div>
+          <div style="font-size:.85rem; color:rgba(255,255,255,.55); line-height:1.65;">Mon&ndash;Sat: 9am&ndash;6pm<br>Sunday: 11am&ndash;5pm</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>

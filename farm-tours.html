@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm Tours — Country Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<style>
+
+  /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a1f0d;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.04);
+    animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 18, 7, 0.58);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--green-bright);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-bright); }
+  .page-hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: .01em;
+    opacity: 0;
+    animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+  .page-hero-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,.75);
+    margin-top: 18px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeUp .9s .6s forwards;
+  }
+
+  /* ── Intro ─────────────────────────────────────── */
+  .tours-intro {
+    background: var(--warm-white);
+    padding: 88px 0 72px;
+  }
+  .tours-intro-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .tours-intro-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .tours-intro-headline em { font-style: italic; color: var(--green-dark); }
+  .tours-intro-body {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  .tours-nav-pills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tours-nav-pill {
+    display: inline-block;
+    padding: 9px 22px;
+    border-radius: 50px;
+    border: 1.5px solid var(--cream-dark);
+    font-family: var(--font-sans);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: all .2s;
+  }
+  .tours-nav-pill:hover {
+    border-color: var(--green-dark);
+    color: var(--green-dark);
+    background: rgba(11,103,34,.05);
+  }
+
+  /* ── Tour Feature Sections ─────────────────────── */
+  .tour-feature {
+    padding: 96px 0;
+    position: relative;
+  }
+  .tour-feature-cream { background: var(--cream); }
+  .tour-feature-white { background: var(--warm-white); }
+  .tour-feature-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .tour-feature-inner.flip .tour-img-wrap { order: 2; }
+  .tour-feature-inner.flip .tour-copy    { order: 1; }
+  .tour-img-wrap { position: relative; }
+  .tour-img-main {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+    box-shadow: var(--shadow-soft);
+  }
+  .tour-feature-cream .tour-img-main {
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+  }
+  .tour-feature-white .tour-img-main {
+    border-radius: var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-xl);
+  }
+  .tour-img-accent {
+    position: absolute;
+    bottom: -28px;
+    right: -28px;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+  }
+  .tour-feature-cream .tour-img-accent { border: 6px solid var(--cream); }
+  .tour-feature-white .tour-img-accent { border: 6px solid var(--warm-white); }
+  .tour-feature-inner.flip .tour-img-accent {
+    left: -28px;
+    right: auto;
+  }
+  .tour-copy { }
+  .tour-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+  }
+  .tour-tag::before {
+    content: '';
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--green-bright);
+    border-radius: 2px;
+  }
+  .tour-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .tour-headline em { font-style: italic; color: var(--green-dark); }
+  .tour-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .tour-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .tour-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: .9rem;
+    color: var(--text-body);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+  .tour-highlights li::before {
+    content: '';
+    display: block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green-bright);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .tour-note {
+    background: var(--cream-dark);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    color: var(--dark-brown);
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .tour-feature-white .tour-note { background: var(--cream); }
+
+  /* ── Moo U Section ─────────────────────────────── */
+  .moou {
+    background: var(--green-deep);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .moou-texture {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-size: 300px; opacity: .6;
+  }
+  .moou-inner {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .moou-copy { }
+  .moou-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.12;
+    margin-bottom: 20px;
+  }
+  .moou-headline em { font-style: italic; color: var(--green-bright); }
+  .moou-body {
+    font-size: 1rem;
+    color: rgba(255,255,255,.65);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+  .moou-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .moou-feature {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+  }
+  .moou-feature-title {
+    font-family: var(--font-sans);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 5px;
+  }
+  .moou-feature-text {
+    font-size: .78rem;
+    color: rgba(255,255,255,.45);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .moou-visual { position: relative; }
+  .moou-img-main {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-xl);
+    box-shadow: 0 24px 80px rgba(0,0,0,.5);
+  }
+  .moou-img-float {
+    position: absolute;
+    bottom: -24px; left: -24px;
+    width: 170px; height: 170px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 6px solid var(--green-deep);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* ── Photo Strip ───────────────────────────────── */
+  .tour-photos {
+    background: #e8e0d0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    background-size: 380px;
+    padding: 72px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tour-photos-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .tour-photos-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .tour-photos-headline em { font-style: italic; color: var(--green-dark); }
+  .tour-photos-sub {
+    font-family: var(--font-hand);
+    font-size: 1.1rem;
+    color: var(--text-muted);
+  }
+  .tour-photo-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 24px;
+  }
+  .tp1 { margin-bottom: 32px; }
+  .tp2 { margin-bottom: 0; }
+  .tp3 { margin-bottom: 20px; }
+  .tp4 { margin-bottom: 40px; }
+  .tp5 { margin-bottom: 12px; }
+  .tp-sm { width: 165px; height: 165px; }
+  .tp-md { width: 195px; height: 195px; }
+  .tp-lg { width: 225px; height: 225px; }
+
+  /* ── Booking CTA ───────────────────────────────── */
+  .tours-book {
+    background: var(--warm-white);
+    padding: 100px 0;
+  }
+  .tours-book-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .tours-book-copy { }
+  .tours-book-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .tours-book-headline em { font-style: italic; color: var(--green-dark); }
+  .tours-book-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+    margin-bottom: 36px;
+  }
+  .tours-book-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+  .tours-book-info-item { }
+  .tours-book-info-label {
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tours-book-info-label::before {
+    content: '';
+    width: 16px; height: 2px;
+    background: var(--green-bright);
+    border-radius: 2px;
+  }
+  .tours-book-info-text {
+    font-size: .9rem;
+    color: var(--text-body);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .tours-book-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .tours-book-visual { position: relative; }
+  .tours-book-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .tour-feature-inner,
+    .moou-inner,
+    .tours-book-inner { grid-template-columns: 1fr; gap: 52px; }
+    .tour-feature-inner.flip .tour-img-wrap,
+    .tour-feature-inner.flip .tour-copy { order: unset; }
+    .tour-img-accent { display: none; }
+    .moou-img-float { display: none; }
+    .tour-img-main { height: 380px; }
+    .moou-img-main { height: 360px; }
+    .tours-book-img { height: 340px; }
+  }
+  @media (max-width: 768px) {
+    .tour-feature { padding: 64px 0; }
+    .moou { padding: 64px 0; }
+    .moou-features { grid-template-columns: 1fr; }
+    .tours-book { padding: 64px 0; }
+    .tours-book-info { grid-template-columns: 1fr; }
+    .tp-sm { width: 140px; height: 140px; }
+    .tp-md { width: 160px; height: 160px; }
+    .tp-lg { width: 180px; height: 180px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="farm-tours.html" style="color:var(--green-bright);">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="index.html#" role="menuitem">Meat Shop</a>
+          <a href="index.html#social" role="menuitem">Ice Cream Social</a>
+          <a href="index.html#" role="menuitem">Bakery</a>
+          <a href="index.html#" role="menuitem">Catering</a>
+          <a href="index.html#" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="index.html#" role="menuitem">Wholesale</a>
+          <a href="index.html#" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="index.html#products">Products</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <a href="index.html#social">Ice Cream Social</a>
+  <a href="index.html#ice-cream">Ice Cream</a>
+  <a href="index.html#">Where to Buy</a>
+  <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1rem;">Book a Tour</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" aria-label="Farm Tours">
+  <div class="page-hero-bg" style="background-image:url('assets/images/Milking with the Family.jpg'); background-position: center 40%;"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <div class="page-hero-eyebrow-dot"></div>
+      New Era, Michigan &nbsp;&middot;&nbsp; Real Working Dairy Farm
+    </div>
+    <h1 class="page-hero-title"> Farm Tours</h1>
+    <p class="page-hero-sub">Get up close with a real working dairy. Meet the animals, see the barns, and learn where your food comes from.</p>
+  </div>
+</section>
+
+<!-- wave: hero (dark) → intro (warm-white) -->
+<div class="wavy-divider" style="background:#0a1f0d;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,32 C180,64 360,0 540,28 C720,56 900,8 1080,36 C1260,60 1380,20 1440,32 L1440,64 L0,64 Z" fill="var(--warm-white)"/>
+  </svg>
+</div>
+
+<!-- ===================== INTRO ===================== -->
+<section class="tours-intro section" aria-label="Overview" style="padding-top:48px;">
+  <div class="container">
+    <div class="tours-intro-inner">
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex;">Pure Michigan Experiences</div>
+      <h2 class="tours-intro-headline reveal reveal-delay-1">
+        Experience a Real Dairy Farm
+      </h2>
+      <p class="tours-intro-body reveal reveal-delay-2">
+        Get an up-close look at dairy cows, calves, and life on a fourth-generation family farm.
+      </p>
+      <div class="tours-nav-pills reveal reveal-delay-3">
+        <a href="#behind-the-barn" class="tours-nav-pill">Behind the Barn</a>
+        <a href="#hoofin-it" class="tours-nav-pill">Hoofin' It</a>
+        <a href="#birthing-barn" class="tours-nav-pill">Birthing Barn &amp; Calves</a>
+        <a href="#moou" class="tours-nav-pill">Moo U Classes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave: intro (warm-white) → tour 1 (cream) -->
+<div class="wavy-divider" style="background:var(--warm-white);">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="var(--cream)"/>
+  </svg>
+</div>
+
+<!-- ===================== TOUR 1: BEHIND THE BARN ===================== -->
+<section class="tour-feature tour-feature-cream section" id="behind-the-barn" aria-label="Behind the Barn">
+  <div class="container">
+    <div class="tour-feature-inner">
+
+      <div class="tour-img-wrap reveal">
+        <img
+          src="assets/images/Daze & Dan.jpg"
+          alt="Horses Daze and Dan ready for the wagon ride"
+          class="tour-img-main"
+          loading="lazy"
+        >
+        <img
+          src="assets/images/Dan Sunset.jpg"
+          alt="Dan at sunset on the farm"
+          class="tour-img-accent"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="tour-copy">
+        <div class="tour-tag reveal">Wagon Ride Tour</div>
+        <h2 class="tour-headline reveal reveal-delay-1">
+          Behind <em>the Barn</em>
+        </h2>
+        <p class="tour-body reveal reveal-delay-2">
+          Climb aboard our horse-drawn wagon for a guided tour through the heart of Country Dairy. You'll travel through the farm with our team as your guide, getting a ground-level look at how a modern Michigan dairy actually runs.
+        </p>
+        <ul class="tour-highlights reveal reveal-delay-2">
+          <li>Horse-drawn wagon ride through the farm with a guided narration</li>
+          <li>Tour through our free-stall dairy barn and see where cows live day-to-day</li>
+          <li>Watch our robotic milking system in action</li>
+          <li>Learn about silage production and how we feed the herd</li>
+          <li>Meet calves and young stock up close</li>
+        </ul>
+        <div class="tour-note reveal reveal-delay-3">
+          Perfect for families, school groups, and first-time visitors. All ages welcome.
+        </div>
+        <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="btn btn-primary reveal reveal-delay-3">Book This Tour</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOUR 2: HOOFIN' IT ===================== -->
+<section class="tour-feature tour-feature-white section" id="hoofin-it" aria-label="Hoofin It">
+  <div class="container">
+    <div class="tour-feature-inner flip">
+
+      <div class="tour-img-wrap reveal reveal-delay-1">
+        <img
+          src="assets/images/Milking with the Family.jpg"
+          alt="Family experiencing the milking barn up close"
+          class="tour-img-main"
+          loading="lazy"
+        >
+        <img
+          src="assets/images/heifer barn.jpg"
+          alt="Holstein cows in the barn"
+          class="tour-img-accent"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="tour-copy">
+        <div class="tour-tag reveal">Walking Tour</div>
+        <h2 class="tour-headline reveal reveal-delay-1">
+          Hoofin' <em>It</em>
+        </h2>
+        <p class="tour-body reveal reveal-delay-2">
+          Lace up your boots and step inside one of our milking barns for an up-close look at modern dairy farming. This walking tour puts you right in the middle of the action, where you can see the technology and the tradition that keep this farm running every single day.
+        </p>
+        <ul class="tour-highlights reveal reveal-delay-2">
+          <li>Walk through an active milking barn with a knowledgeable guide</li>
+          <li>See our state-of-the-art robotic milking system up close</li>
+          <li>Meet our hardworking Holstein cows and learn about their care</li>
+          <li>Spend time with some of the farm's playful calves</li>
+          <li>Great for curious adults and kids who want a hands-on experience</li>
+        </ul>
+        <div class="tour-note reveal reveal-delay-3">
+          Wear closed-toe shoes. This tour involves walking on active farm surfaces.
+        </div>
+        <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="btn btn-primary reveal reveal-delay-3">Book This Tour</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOUR 3: BIRTHING BARN ===================== -->
+<section class="tour-feature tour-feature-cream section" id="birthing-barn" aria-label="Birthing Barn and Calves">
+  <div class="container">
+    <div class="tour-feature-inner">
+
+      <div class="tour-img-wrap reveal">
+        <img
+          src="assets/images/Meet a Calf.jpg"
+          alt="Visitor meeting a newborn calf in the maternity barn"
+          class="tour-img-main"
+          loading="lazy"
+        >
+        <img
+          src="assets/images/ACS - calf encounter.jpg"
+          alt="Up-close calf encounter"
+          class="tour-img-accent"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="tour-copy">
+        <div class="tour-tag reveal">Horses &amp; Calves</div>
+        <h2 class="tour-headline reveal reveal-delay-1">
+          Birthing Barn <em>&amp; Calves</em>
+        </h2>
+        <p class="tour-body reveal reveal-delay-2">
+          This is one of the most memorable tours we offer. Travel by horse-drawn wagon to our Maternity Barn, where new life begins on the farm every single day. You'll get up close with newborn calves, learn how we care for them from their very first hours, and see the warmth and work that goes into raising the next generation of our herd.
+        </p>
+        <ul class="tour-highlights reveal reveal-delay-2">
+          <li>Wagon ride to the Maternity Barn with our team</li>
+          <li>Meet newborn calves and learn about their first days of life</li>
+          <li>Learn how calves are fed, named, and cared for</li>
+          <li>Understand the full lifecycle of a dairy cow</li>
+          <li>An experience kids and adults remember for years</li>
+        </ul>
+        <div class="tour-note reveal reveal-delay-3">
+          Availability varies based on farm activity. Calves are always present, though newborns depend on timing.
+        </div>
+        <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="btn btn-primary reveal reveal-delay-3">Book This Tour</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MOO U CLASSES ===================== -->
+<section class="moou section" id="moou" aria-label="Moo U Classes">
+  <div class="moou-texture"></div>
+  <div class="container">
+    <div class="moou-inner">
+
+      <div class="moou-copy">
+        <div class="section-label section-label-cream reveal">School Groups &amp; Families</div>
+        <h2 class="moou-headline reveal reveal-delay-1">
+          Moo U <em>Classes</em>
+        </h2>
+        <p class="moou-body reveal reveal-delay-2">
+          Moo U is our hands-on farm education program designed for school groups, youth organizations, and curious families. Our team brings the farm to life through interactive lessons, live demonstrations, and up-close animal encounters that connect people to where their food really comes from.
+        </p>
+        <div class="moou-features reveal reveal-delay-2">
+          <div class="moou-feature">
+            <div class="moou-feature-title">Farm to Table</div>
+            <div class="moou-feature-text">Follow milk from cow to carton with hands-on demos</div>
+          </div>
+          <div class="moou-feature">
+            <div class="moou-feature-title">Butter Making</div>
+            <div class="moou-feature-text">Students churn real butter and take it home</div>
+          </div>
+          <div class="moou-feature">
+            <div class="moou-feature-title">Calf Encounters</div>
+            <div class="moou-feature-text">Meet and feed calves in our barn</div>
+          </div>
+          <div class="moou-feature">
+            <div class="moou-feature-title">Milking Demos</div>
+            <div class="moou-feature-text">See modern robotic milking up close</div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-3" style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="btn btn-primary">Book a Moo U Class</a>
+          <a href="tel:2312590515" class="btn btn-outline">Call for Group Rates</a>
+        </div>
+      </div>
+
+      <div class="moou-visual reveal reveal-delay-2">
+        <img
+          src="assets/images/MU - BBITH.jpg"
+          alt="Students learning at Moo U"
+          class="moou-img-main"
+          loading="lazy"
+        >
+        <img
+          src="assets/images/ShowBarn School Tour.jpg"
+          alt="School group on a farm tour"
+          class="moou-img-float"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHOTO STRIP ===================== -->
+<section class="tour-photos section" aria-label="Tour Memories">
+  <div class="container">
+    <div class="tour-photos-header reveal">
+      <h2 class="tour-photos-headline">You'll Leave <em>Smiling</em></h2>
+      <p class="tour-photos-sub">real moments from real families on the farm</p>
+    </div>
+    <div class="tour-photo-row">
+      <div class="tp1 reveal">
+        <div class="polaroid polaroid-tilt-ll tp-sm">
+          <img src="assets/images/ACS - calf licks.jpg" alt="Calf licking a visitor" loading="lazy">
+          <div class="polaroid-caption">she wanted more pets</div>
+        </div>
+      </div>
+      <div class="tp2 reveal reveal-delay-1">
+        <div class="polaroid polaroid-tilt-r tp-lg">
+          <img src="assets/images/Petting the newest calves.jpg" alt="Petting a newborn calf" loading="lazy">
+          <div class="polaroid-caption">brand new to the world</div>
+        </div>
+      </div>
+      <div class="tp3 reveal reveal-delay-2">
+        <div class="polaroid polaroid-tilt-s tp-md">
+          <img src="assets/images/ACS - calf feeding.jpg" alt="Feeding a calf" loading="lazy">
+          <div class="polaroid-caption">feeding time!</div>
+        </div>
+      </div>
+      <div class="tp4 reveal reveal-delay-3">
+        <div class="polaroid polaroid-tilt-ll tp-sm">
+          <img src="assets/images/Selfie with Moo.jpg" alt="Selfie with a cow" loading="lazy">
+          <div class="polaroid-caption">best selfie ever</div>
+        </div>
+      </div>
+      <div class="tp5 reveal reveal-delay-4">
+        <div class="polaroid polaroid-tilt-rr tp-md">
+          <img src="assets/images/Calf Barn Sisters.jpg" alt="Two girls in the calf barn" loading="lazy">
+          <div class="polaroid-caption">the calf barn sisters</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BOOKING CTA ===================== -->
+<section class="tours-book section" id="book" aria-label="Book a Tour">
+  <div class="container">
+    <div class="tours-book-inner">
+
+      <div class="tours-book-copy">
+        <div class="section-label section-label-green reveal">Ready to Visit?</div>
+        <h2 class="tours-book-headline reveal reveal-delay-1">
+          Come See the <em>Farm for Yourself</em>
+        </h2>
+        <p class="tours-book-body reveal reveal-delay-2">
+          Tours run seasonally and spots fill up fast, especially in the summer. Give us a call to check availability, ask about group rates, or schedule your visit. We're always glad you came.
+        </p>
+        <div class="tours-book-info reveal reveal-delay-3">
+          <div class="tours-book-info-item">
+            <div class="tours-book-info-label">Phone</div>
+            <div class="tours-book-info-text"><a href="tel:2312590515" style="color:inherit;">(231) 259-0515</a></div>
+          </div>
+          <div class="tours-book-info-item">
+            <div class="tours-book-info-label">Location</div>
+            <div class="tours-book-info-text">3476 S 80th Ave<br>New Era, MI 49446</div>
+          </div>
+          <div class="tours-book-info-item">
+            <div class="tours-book-info-label">Season</div>
+            <div class="tours-book-info-text">Tours run spring through fall. Call ahead to confirm availability.</div>
+          </div>
+          <div class="tours-book-info-item">
+            <div class="tours-book-info-label">Groups</div>
+            <div class="tours-book-info-text">Group and school rates available. Call to book.</div>
+          </div>
+        </div>
+        <div class="tours-book-actions reveal reveal-delay-4">
+          <a href="tel:2312590515" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            Call to Book
+          </a>
+          <a href="https://maps.google.com/?q=Country+Dairy+3476+S+80th+Ave+New+Era+MI" target="_blank" rel="noopener" class="btn btn-dark">Get Directions</a>
+        </div>
+      </div>
+
+      <div class="tours-book-visual reveal reveal-delay-2">
+        <img
+          src="assets/images/Barefoot Jouney (Nettle Family).jpg"
+          alt="Family enjoying a farm tour at Country Dairy"
+          class="tours-book-img"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-col-links">
+          <li><a href="index.html#ice-cream">Homemade Ice Cream</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+          <li><a href="index.html#products">Farm Fresh Products</a></li>
+          <li><a href="farm-store-kitchen.html">Farm Kitchen</a></li>
+          <li><a href="index.html#social">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="farm-store-kitchen.html#hours">Store Hours</a></li>
+          <li><a href="farm-tours.html#book">Book a Farm Tour</a></li>
+          <li><a href="farm-tours.html#moou">Moo U Schedule</a></li>
+          <li><a href="index.html#social">Ice Cream Social</a></li>
+          <li><a href="index.html#">Where to Buy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2312590515">(231) 259-0515</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="#">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:24px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:8px;">Store Hours</div>
+          <div style="font-size:.85rem; color:rgba(255,255,255,.55); line-height:1.65;">Mon&ndash;Sat: 9am&ndash;8pm<br>Kitchen: 10am&ndash;7pm<br>Sunday: Closed</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>

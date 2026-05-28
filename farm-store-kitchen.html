@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm Store Kitchen — Country Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<style>
+
+  /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative;
+    height: 56vh;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a1f0d;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.04);
+    animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 18, 7, 0.6);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--green-bright);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-bright); }
+  .page-hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: .01em;
+    opacity: 0;
+    animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+  .page-hero-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,.75);
+    margin-top: 16px;
+    opacity: 0;
+    animation: fadeUp .9s .6s forwards;
+  }
+
+  /* ── Quick Info Bar ────────────────────────────── */
+  .info-bar {
+    background: var(--green-dark);
+    padding: 20px 0;
+  }
+  .info-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .info-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: .78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,.88);
+    letter-spacing: .04em;
+  }
+  .info-bar-item svg { flex-shrink: 0; opacity: .7; }
+  .info-bar-item a { color: inherit; transition: color .2s; }
+  .info-bar-item a:hover { color: var(--green-bright); }
+  .info-bar-divider {
+    width: 1px; height: 20px;
+    background: rgba(255,255,255,.2);
+  }
+  .info-bar-pill {
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50px;
+    padding: 5px 14px;
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+  }
+
+  /* ── Store Overview ────────────────────────────── */
+  .fsk-overview {
+    background: var(--warm-white);
+    padding: 96px 0;
+  }
+  .fsk-overview-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .fsk-overview-copy { }
+  .fsk-overview-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 22px;
+  }
+  .fsk-overview-headline em { font-style: italic; color: var(--green-dark); }
+  .fsk-overview-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .fsk-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .fsk-product-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-family: var(--font-sans);
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--text-body);
+    letter-spacing: .02em;
+  }
+  .fsk-product-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green-bright);
+    flex-shrink: 0;
+  }
+  .fsk-overview-visual { position: relative; }
+  .fsk-overview-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+  }
+  .fsk-overview-img-float {
+    position: absolute;
+    bottom: -28px;
+    left: -28px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 6px solid var(--warm-white);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* ── Menu Section ──────────────────────────────── */
+  .fsk-menu {
+    background: var(--charcoal);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .fsk-menu::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 300px;
+    pointer-events: none;
+  }
+  .fsk-menu-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .fsk-menu-img-wrap { position: relative; }
+  .fsk-menu-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+    box-shadow: 0 24px 80px rgba(0,0,0,.45);
+  }
+  .fsk-menu-copy { }
+  .fsk-menu-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .fsk-menu-headline em { font-style: italic; color: var(--green-bright); }
+  .fsk-menu-body {
+    font-size: 1rem;
+    color: rgba(255,255,255,.65);
+    line-height: 1.8;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .fsk-service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .fsk-service-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius-md);
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .fsk-service-card-title {
+    font-family: var(--font-sans);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.9);
+    margin-bottom: 6px;
+  }
+  .fsk-service-card-text {
+    font-size: .78rem;
+    color: rgba(255,255,255,.45);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .fsk-drive-thru-note {
+    background: rgba(61,174,43,.1);
+    border: 1px solid rgba(61,174,43,.25);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    margin-bottom: 32px;
+    font-size: .84rem;
+    color: rgba(255,255,255,.72);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .fsk-drive-thru-note strong {
+    color: var(--green-bright);
+    font-weight: 600;
+  }
+  .fsk-menu-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ── Hours ─────────────────────────────────────── */
+  .fsk-hours {
+    background: var(--cream);
+    padding: 100px 0;
+    position: relative;
+  }
+  .fsk-hours::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    background-size: 350px;
+    pointer-events: none;
+  }
+  .fsk-hours-inner { position: relative; z-index: 1; }
+  .fsk-hours-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .fsk-hours-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .fsk-hours-headline em { font-style: italic; color: var(--green-dark); }
+  .fsk-hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .fsk-hours-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 44px 48px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--cream-dark);
+  }
+  .fsk-hours-card-title {
+    font-family: var(--font-sans);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .fsk-hours-card-title::before {
+    content: '';
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--green-bright);
+    border-radius: 2px;
+  }
+  .fsk-hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    gap: 16px;
+  }
+  .fsk-hours-row:last-child { border-bottom: none; }
+  .fsk-hours-day {
+    font-family: var(--font-sans);
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--text-body);
+    letter-spacing: .02em;
+  }
+  .fsk-hours-time {
+    font-family: var(--font-sans);
+    font-size: .82rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .fsk-hours-time em {
+    display: block;
+    font-style: normal;
+    font-size: .72rem;
+    color: var(--text-muted);
+    opacity: .7;
+    margin-top: 2px;
+  }
+  .fsk-hours-closed {
+    color: var(--terracotta);
+    font-weight: 600;
+  }
+  .fsk-hours-note {
+    margin-top: 32px;
+    padding: 16px 20px;
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--cream-dark);
+    font-size: .82rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .fsk-hours-note strong { color: var(--text-body); font-weight: 600; }
+
+  /* ── Find Us CTA ───────────────────────────────── */
+  .fsk-find {
+    background: var(--green-deep);
+    padding: 96px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .fsk-find-texture {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-size: 300px;
+    opacity: .6;
+  }
+  .fsk-find-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .fsk-find-copy { }
+  .fsk-find-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 22px;
+  }
+  .fsk-find-headline em { font-style: italic; color: var(--green-bright); }
+  .fsk-find-address {
+    font-size: 1rem;
+    color: rgba(255,255,255,.65);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .fsk-find-address strong {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 6px;
+  }
+  .fsk-find-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .fsk-find-visual { position: relative; }
+  .fsk-find-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 24px 60px rgba(0,0,0,.4);
+  }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .fsk-overview-inner,
+    .fsk-menu-inner,
+    .fsk-find-inner { grid-template-columns: 1fr; gap: 52px; }
+    .fsk-overview-img-float { display: none; }
+    .fsk-hours-grid { grid-template-columns: 1fr; }
+    .fsk-service-cards { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .fsk-overview { padding: 64px 0; }
+    .fsk-menu { padding: 64px 0; }
+    .fsk-hours { padding: 64px 0; }
+    .fsk-find { padding: 64px 0; }
+    .fsk-service-cards { grid-template-columns: 1fr; }
+    .fsk-hours-card { padding: 32px 28px; }
+    .fsk-product-grid { grid-template-columns: 1fr; }
+    .info-bar-divider { display: none; }
+    .fsk-menu-img { height: 300px; }
+    .fsk-find-img { height: 280px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html" style="color:var(--green-bright);">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="index.html#tours">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="index.html#" role="menuitem">Meat Shop</a>
+          <a href="index.html#social" role="menuitem">Ice Cream Social</a>
+          <a href="index.html#" role="menuitem">Bakery</a>
+          <a href="index.html#" role="menuitem">Catering</a>
+          <a href="index.html#" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="index.html#" role="menuitem">Wholesale</a>
+          <a href="index.html#" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="index.html#products">Products</a>
+  <a href="index.html#tours">Farm Tours</a>
+  <a href="index.html#social">Ice Cream Social</a>
+  <a href="index.html#ice-cream">Ice Cream</a>
+  <a href="index.html#">Where to Buy</a>
+  <a href="index.html#visit" class="btn btn-primary" style="font-size:1rem;">Plan Your Visit</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" aria-label="Farm Store Kitchen">
+  <div class="page-hero-bg" style="background-image:url('assets/images/CD Farm Store.jpg'); background-position: center 55%;"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <div class="page-hero-eyebrow-dot"></div>
+      Country Dairy &nbsp;&middot;&nbsp; New Era, Michigan
+    </div>
+    <h1 class="page-hero-title">Farm Store <em>Kitchen</em></h1>
+  </div>
+</section>
+
+<!-- ===================== QUICK INFO BAR ===================== -->
+<div class="info-bar">
+  <div class="container info-bar-inner">
+    <div class="info-bar-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+      3476 S 80th Ave, New Era, MI 49446
+    </div>
+    <div class="info-bar-divider"></div>
+    <div class="info-bar-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+      <a href="tel:2312590515">(231) 259-0515</a>
+    </div>
+    <div class="info-bar-divider"></div>
+    <div class="info-bar-item">
+      Mon &ndash; Sat &nbsp; 9am &ndash; 8pm
+    </div>
+    <div class="info-bar-divider"></div>
+    <div class="info-bar-pill">Closed Sundays</div>
+  </div>
+</div>
+
+<!-- ===================== STORE OVERVIEW ===================== -->
+<section class="fsk-overview section" aria-label="About the Farm Store">
+  <div class="container">
+    <div class="fsk-overview-inner">
+
+      <div class="fsk-overview-copy">
+        <h2 class="fsk-overview-headline reveal reveal-delay-1">
+          Everything Fresh.<br><em>All in One Place.</em>
+        </h2>
+        <p class="fsk-overview-body reveal reveal-delay-2">
+          Step inside the Country Dairy Farm Store for a taste of everything we make right here on the farm. From fresh milk and homemade ice cream to farm-raised meats, artisan cheeses, and our own baked goods, this is your one-stop shop for the best West Michigan has to offer.
+        </p>
+        <p class="fsk-overview-body reveal reveal-delay-2" style="margin-bottom:28px;">
+          We also carry locally sourced goods from neighbors we trust, including honey, maple syrup, and jam. Come browse, grab lunch, or load up the cooler.
+        </p>
+        <div class="fsk-product-grid reveal reveal-delay-3">
+          <div class="fsk-product-item"><div class="fsk-product-dot"></div>Fresh Milk &amp; Cream</div>
+          <div class="fsk-product-item"><div class="fsk-product-dot"></div>Farm Raised Burgers</div>
+          <div class="fsk-product-item"><div class="fsk-product-dot"></div>Homemade Ice Cream</div>
+          <div class="fsk-product-item"><div class="fsk-product-dot"></div>Fresh &amp; Frozen Meat</div>
+          <div class="fsk-product-item"><div class="fsk-product-dot"></div>Baked Goods</div>
+          <div class="fsk-product-item"><div class="fsk-product-dot"></div>Local Honey</div>
+          <div class="fsk-product-item"><div class="fsk-product-dot"></div>Michigan Maple Syrup</div>
+          <div class="fsk-product-item"><div class="fsk-product-dot"></div>Jams &amp; Preserves</div>
+        </div>
+        <div class="reveal reveal-delay-4" style="margin-top:32px;">
+          <a href="assets/files/SpringSummerMenu2026.pdf" target="_blank" rel="noopener" class="btn btn-primary">View the Full Menu</a>
+        </div>
+      </div>
+
+      <div class="fsk-overview-visual reveal reveal-delay-1">
+        <img
+          src="assets/images/CBR Wrap.jpg"
+          alt="Country Dairy farm store products"
+          class="fsk-overview-img"
+          loading="lazy"
+        >
+        <img
+          src="assets/images/cinnaMOO roll.jpg"
+          alt="Freshly baked goods"
+          class="fsk-overview-img-float"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- wavy divider -->
+<div class="wavy-divider" style="background:var(--warm-white);">
+  <svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,25 C200,50 400,5 720,28 C1000,48 1200,10 1440,22 L1440,50 L0,50 Z" fill="var(--charcoal)"/>
+  </svg>
+</div>
+
+<!-- ===================== MENU ===================== -->
+<section class="fsk-menu section" id="menu" aria-label="Our Menu">
+  <div class="container">
+    <div class="fsk-menu-inner">
+
+      <div class="fsk-menu-img-wrap reveal">
+        <img
+          src="assets/images/burger-and-chips.png"
+          alt="Farm-fresh burgers and fries"
+          class="fsk-menu-img"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="fsk-menu-copy">
+        <div class="section-label section-label-cream reveal">Dine In &middot; Take Out &middot; Drive Thru</div>
+        <h2 class="fsk-menu-headline reveal reveal-delay-1">
+          Homemade Meals Worth <em>Gathering Around</em>
+        </h2>
+        <p class="fsk-menu-body reveal reveal-delay-2">
+          Our kitchen serves up honest, satisfying food made with the same care as everything else we do. Real beef burgers, fresh salads, hearty wraps and hoagies, and hand-scooped ice cream milkshakes, all made with ingredients sourced close to home.
+        </p>
+
+        <div class="fsk-service-cards reveal reveal-delay-2">
+          <div class="fsk-service-card">
+            <div class="fsk-service-card-title">Dine In</div>
+            <div class="fsk-service-card-text">Relax and enjoy your meal at the farm</div>
+          </div>
+          <div class="fsk-service-card">
+            <div class="fsk-service-card-title">Take Out</div>
+            <div class="fsk-service-card-text">Order ahead and grab it on your way</div>
+          </div>
+          <div class="fsk-service-card">
+            <div class="fsk-service-card-title">Drive Thru</div>
+            <div class="fsk-service-card-text">Call ahead required</div>
+          </div>
+        </div>
+
+        <div class="fsk-drive-thru-note reveal reveal-delay-3">
+          <strong>Drive thru requires a call-ahead order.</strong> Please call us at <a href="tel:2312590515" style="color:var(--green-bright); font-weight:600;">(231) 259-0515</a> before you arrive. Kitchen hours are 10am &ndash; 7pm, Monday through Saturday.
+        </div>
+
+        <div class="fsk-menu-actions reveal reveal-delay-3">
+          <a href="assets/files/SpringSummerMenu2026.pdf" target="_blank" rel="noopener" class="btn btn-primary">View the Full Menu</a>
+          <a href="tel:2312590515" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            Call Ahead
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOURS ===================== -->
+<section class="fsk-hours section" id="hours" aria-label="Store Hours">
+  <div class="container fsk-hours-inner">
+
+    <div class="fsk-hours-header reveal">
+      <div class="section-label section-label-green" style="justify-content:center; display:inline-flex;">When to Visit</div>
+      <h2 class="fsk-hours-headline">Store <em>Hours</em></h2>
+    </div>
+
+    <div class="fsk-hours-grid">
+
+      <!-- Regular Hours -->
+      <div class="fsk-hours-card reveal">
+        <div class="fsk-hours-card-title">Regular Hours</div>
+
+        <div class="fsk-hours-row">
+          <div class="fsk-hours-day">Monday &ndash; Saturday</div>
+          <div class="fsk-hours-time">
+            9:00am &ndash; 8:00pm
+            <em>Kitchen: 10:00am &ndash; 7:00pm</em>
+          </div>
+        </div>
+        <div class="fsk-hours-row">
+          <div class="fsk-hours-day">Sunday</div>
+          <div class="fsk-hours-time fsk-hours-closed">Closed</div>
+        </div>
+
+        <div class="fsk-hours-note">
+          <strong>Farm Store, Drive Thru &amp; Ice Cream:</strong> Monday &ndash; Saturday, 9am &ndash; 8pm.<br>
+          <strong>Kitchen:</strong> Monday &ndash; Saturday, 10am &ndash; 7pm.<br>
+          Hours and menu are subject to change.
+        </div>
+      </div>
+
+      <!-- Holiday Hours -->
+      <div class="fsk-hours-card reveal reveal-delay-1">
+        <div class="fsk-hours-card-title">Holiday Hours</div>
+
+        <div class="fsk-hours-row">
+          <div class="fsk-hours-day">Thanksgiving<br><span style="font-size:.72rem; color:var(--text-muted); font-weight:400;">November 28</span></div>
+          <div class="fsk-hours-time fsk-hours-closed">Closed</div>
+        </div>
+        <div class="fsk-hours-row">
+          <div class="fsk-hours-day">Day After Thanksgiving<br><span style="font-size:.72rem; color:var(--text-muted); font-weight:400;">November 29</span></div>
+          <div class="fsk-hours-time">9:00am &ndash; 6:00pm</div>
+        </div>
+        <div class="fsk-hours-row">
+          <div class="fsk-hours-day">Christmas Eve<br><span style="font-size:.72rem; color:var(--text-muted); font-weight:400;">December 24</span></div>
+          <div class="fsk-hours-time">9:00am &ndash; 6:00pm</div>
+        </div>
+        <div class="fsk-hours-row">
+          <div class="fsk-hours-day">Christmas Day<br><span style="font-size:.72rem; color:var(--text-muted); font-weight:400;">December 25</span></div>
+          <div class="fsk-hours-time fsk-hours-closed">Closed</div>
+        </div>
+        <div class="fsk-hours-row">
+          <div class="fsk-hours-day">New Year's Eve<br><span style="font-size:.72rem; color:var(--text-muted); font-weight:400;">December 31</span></div>
+          <div class="fsk-hours-time">9:00am &ndash; 12:00pm</div>
+        </div>
+        <div class="fsk-hours-row">
+          <div class="fsk-hours-day">New Year's Day<br><span style="font-size:.72rem; color:var(--text-muted); font-weight:400;">January 1</span></div>
+          <div class="fsk-hours-time fsk-hours-closed">Closed</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FIND US ===================== -->
+<section class="fsk-find section" id="find-us" aria-label="Find Us">
+  <div class="fsk-find-texture"></div>
+  <div class="container">
+    <div class="fsk-find-inner">
+
+      <div class="fsk-find-copy">
+        <div class="section-label section-label-cream reveal">We're Easy to Find</div>
+        <h2 class="fsk-find-headline reveal reveal-delay-1">
+          Come Find Us in <em>New Era</em>
+        </h2>
+        <div class="fsk-find-address reveal reveal-delay-2">
+          <strong>Address</strong>
+          3476 S 80th Ave<br>New Era, MI 49446
+        </div>
+        <div class="fsk-find-address reveal reveal-delay-2">
+          <strong>Phone</strong>
+          <a href="tel:2312590515" style="color:rgba(255,255,255,.65);">(231) 259-0515</a>
+        </div>
+        <div class="fsk-find-actions reveal reveal-delay-3">
+          <a href="https://maps.google.com/?q=Country+Dairy+3476+S+80th+Ave+New+Era+MI" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+          <a href="tel:2312590515" class="btn btn-outline">Call the Farm</a>
+        </div>
+      </div>
+
+      <div class="fsk-find-visual reveal reveal-delay-2">
+        <img
+          src="assets/images/Hay Field.jpg"
+          alt="Country Dairy farm in New Era, Michigan"
+          class="fsk-find-img"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-col-links">
+          <li><a href="index.html#ice-cream">Homemade Ice Cream</a></li>
+          <li><a href="index.html#tours">Farm Tours</a></li>
+          <li><a href="index.html#products">Farm Fresh Products</a></li>
+          <li><a href="farm-store-kitchen.html#menu">Kitchen Menu</a></li>
+          <li><a href="index.html#social">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="farm-store-kitchen.html#hours">Store Hours</a></li>
+          <li><a href="farm-store-kitchen.html#find-us">Get Directions</a></li>
+          <li><a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener">Book a Farm Tour</a></li>
+          <li><a href="index.html#social">Ice Cream Social</a></li>
+          <li><a href="index.html#">Where to Buy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2312590515">(231) 259-0515</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="#">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:24px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:8px;">Hours</div>
+          <div style="font-size:.85rem; color:rgba(255,255,255,.55); line-height:1.65;">Mon&ndash;Sat: 9am&ndash;8pm<br>Kitchen: 10am&ndash;7pm<br>Sunday: Closed</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>

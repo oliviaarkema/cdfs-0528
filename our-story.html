@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Country Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<style>
+
+  /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative;
+    height: 56vh;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a1f0d;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/images/Hay Field.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    transform: scale(1.04);
+    animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 18, 7, 0.58);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--green-bright);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--green-bright);
+  }
+  .page-hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: .01em;
+    opacity: 0;
+    animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+  .page-hero-sub {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,.75);
+    margin-top: 18px;
+    opacity: 0;
+    animation: fadeUp .9s .6s forwards;
+  }
+
+  /* ── Intro / Roots ─────────────────────────────── */
+  .os-intro {
+    background: var(--warm-white);
+    padding: 100px 0 90px;
+  }
+  .os-intro-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .os-intro-visual { position: relative; }
+  .os-intro-img {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+    border-radius: var(--radius-xl) var(--radius-xl) var(--radius-xl) var(--radius-sm);
+    box-shadow: var(--shadow-soft);
+  }
+  .os-intro-polaroid {
+    position: absolute;
+    bottom: -28px;
+    right: -28px;
+    width: 175px;
+    height: 175px;
+    z-index: 4;
+  }
+  .os-centennial-badge {
+    position: absolute;
+    top: 28px;
+    left: -20px;
+    background: var(--green-dark);
+    color: #fff;
+    padding: 18px 22px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 28px rgba(7,77,26,.4);
+    text-align: center;
+  }
+  .os-centennial-badge strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--terracotta-light);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .os-centennial-badge span {
+    font-family: var(--font-sans);
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+  }
+  .os-intro-copy { }
+  .os-intro-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .os-intro-headline em { font-style: italic; color: var(--green-dark); }
+  .os-intro-body {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .os-quote {
+    margin-top: 32px;
+    padding: 20px 24px;
+    border-left: 3px solid var(--green-bright);
+    background: var(--cream);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+  .os-quote p {
+    font-family: var(--font-hand);
+    font-size: 1.1rem;
+    color: var(--dark-brown);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .os-quote cite {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 10px;
+    font-style: normal;
+  }
+
+  /* ── Timeline ──────────────────────────────────── */
+  .os-timeline {
+    background: var(--cream);
+    padding: 100px 0 110px;
+    position: relative;
+  }
+  .os-timeline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    background-size: 350px;
+    pointer-events: none;
+  }
+  .os-timeline-header {
+    text-align: center;
+    margin-bottom: 72px;
+    position: relative;
+    z-index: 1;
+  }
+  .os-timeline-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .os-timeline-headline em { font-style: italic; color: var(--green-dark); }
+  .os-timeline-sub {
+    font-family: var(--font-hand);
+    font-size: 1.1rem;
+    color: var(--text-muted);
+  }
+  .os-timeline-track {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 48px;
+    z-index: 1;
+  }
+  /* vertical line */
+  .os-timeline-track::before {
+    content: '';
+    position: absolute;
+    left: 48px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--green-bright), var(--green-dark));
+    opacity: .35;
+  }
+  .tl-entry {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 28px;
+    margin-bottom: 0;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    position: relative;
+  }
+  .tl-entry:last-child { border-bottom: none; }
+  /* dot on the line */
+  .tl-entry::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 40px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--green-bright);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 3px rgba(61,174,43,.2);
+  }
+  .tl-year {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.3;
+    padding-top: 2px;
+  }
+  .tl-body { }
+  .tl-title {
+    font-family: var(--font-sans);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .tl-text {
+    font-size: .96rem;
+    color: var(--text-body);
+    line-height: 1.78;
+    font-weight: 300;
+  }
+
+  /* ── Farm Today ────────────────────────────────── */
+  .os-today {
+    background: var(--green-deep);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .os-today-texture {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-size: 300px;
+    opacity: .6;
+  }
+  .os-today-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .os-today-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .os-today-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .os-today-headline em { font-style: italic; color: var(--green-bright); }
+  .os-today-sub {
+    font-size: .98rem;
+    color: rgba(255,255,255,.58);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.72;
+    font-weight: 300;
+  }
+  .os-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-bottom: 56px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .os-stat {
+    padding: 40px 24px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,.08);
+  }
+  .os-stat:last-child { border-right: none; }
+  .os-stat-number {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--green-bright);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .os-stat-label {
+    font-family: var(--font-sans);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+  .os-today-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .os-today-photo {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 360px;
+  }
+  .os-today-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .6s cubic-bezier(.22,1,.36,1);
+  }
+  .os-today-photo:hover img { transform: scale(1.04); }
+  .os-today-photo-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 20px 24px;
+    background: linear-gradient(to top, rgba(5,18,7,.8), transparent);
+    font-family: var(--font-sans);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.85);
+  }
+
+  /* ── Values ────────────────────────────────────── */
+  .os-values {
+    background: var(--warm-white);
+    padding: 100px 0;
+  }
+  .os-values-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .os-values-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .os-values-headline em { font-style: italic; color: var(--green-dark); }
+  .os-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .os-value-card {
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    padding: 48px 36px;
+    text-align: center;
+    border: 1px solid var(--cream-dark);
+    transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s;
+  }
+  .os-value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card);
+  }
+  .os-value-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .os-value-text {
+    font-size: .92rem;
+    color: var(--text-muted);
+    line-height: 1.72;
+    font-weight: 300;
+  }
+
+  /* ── CTA ───────────────────────────────────────── */
+  .os-cta {
+    background: var(--cream);
+    padding: 100px 0;
+  }
+  .os-cta-header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+  .os-cta-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .os-cta-headline em { font-style: italic; color: var(--green-dark); }
+  .os-cta-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .os-intro-inner { grid-template-columns: 1fr; gap: 60px; }
+    .os-intro-visual .os-intro-polaroid { display: none; }
+    .os-stats-row { grid-template-columns: repeat(2, 1fr); }
+    .os-today-photos { grid-template-columns: 1fr; }
+    .os-values-grid { grid-template-columns: 1fr 1fr; }
+    .os-cta-cards { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .os-intro { padding: 64px 0; }
+    .os-timeline { padding: 64px 0; }
+    .os-today { padding: 64px 0; }
+    .os-values-grid { grid-template-columns: 1fr; }
+    .os-stats-row { grid-template-columns: 1fr 1fr; }
+    .os-timeline-track { padding: 0 24px 0 48px; }
+    .os-today-photo { height: 260px; }
+    .os-cta { padding: 64px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html" style="color:var(--green-bright);">Our Story</a></li>
+      <li><a href="index.html#kitchen">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="index.html#tours">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="index.html#" role="menuitem">Meat Shop</a>
+          <a href="index.html#social" role="menuitem">Ice Cream Social</a>
+          <a href="index.html#" role="menuitem">Bakery</a>
+          <a href="index.html#" role="menuitem">Catering</a>
+          <a href="index.html#" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="index.html#" role="menuitem">Wholesale</a>
+          <a href="index.html#" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="index.html#kitchen">Farm Store Kitchen</a>
+  <a href="index.html#products">Products</a>
+  <a href="index.html#tours">Farm Tours</a>
+  <a href="index.html#social">Ice Cream Social</a>
+  <a href="index.html#ice-cream">Ice Cream</a>
+  <a href="index.html#">Where to Buy</a>
+  <a href="index.html#visit" class="btn btn-primary" style="font-size:1rem;">Plan Your Visit</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" aria-label="Our Story">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <div class="page-hero-eyebrow-dot"></div>
+      New Era, Michigan &nbsp;&middot;&nbsp; Est. 1907
+    </div>
+    <h1 class="page-hero-title">Our <em>Story</em></h1>
+    <p class="page-hero-sub">Four generations of family farming in the heart of West Michigan</p>
+  </div>
+</section>
+
+<!-- ===================== THE ROOTS ===================== -->
+<section class="os-intro section" aria-label="Our Roots">
+  <div class="container">
+    <div class="os-intro-inner">
+
+      <div class="os-intro-visual reveal">
+        <img
+          src="assets/images/Original Farm STore.jpg"
+          alt="The original Country Dairy farm store"
+          class="os-intro-img"
+          loading="lazy"
+        >
+        <div class="polaroid polaroid-tilt-r os-intro-polaroid">
+          <img src="assets/images/Fleet of Trucks.jpg" alt="Country Dairy delivery fleet" style="height:100%;" loading="lazy">
+          <div class="polaroid-caption">delivering since 1983</div>
+        </div>
+        <div class="os-centennial-badge reveal">
+          <strong>Michigan</strong>
+          <span>Centennial<br>Farm</span>
+        </div>
+      </div>
+
+      <div class="os-intro-copy">
+        <div class="section-label section-label-green reveal">Four Generations of Michigan Farming</div>
+        <div class="rope-line reveal"></div>
+        <h2 class="os-intro-headline reveal reveal-delay-1">
+          Rooted in West Michigan <em>Since 1907</em>
+        </h2>
+        <p class="os-intro-body reveal reveal-delay-2">
+          Country Dairy's story began in the 1880s when Andrew Van Gunst immigrated from the Netherlands to West Michigan as a young boy. Through hard work, perseverance, and a deep faith in this land, Andrew and his wife Jane purchased 80 acres in New Era, Michigan in 1907, starting the farm that would become Country Dairy.
+        </p>
+        <p class="os-intro-body reveal reveal-delay-2">
+          Through generations of early mornings, hard seasons, and a stubborn love for the life of farming, that original 80 acres has grown into something much bigger: a Michigan Centennial Farm, a working dairy of over 1,200 Holstein cows, and one of West Michigan's most beloved family destinations.
+        </p>
+        <p class="os-intro-body reveal reveal-delay-3" style="margin-bottom:0;">
+          Today, the fourth generation of the Van Gunst family carries that same spirit forward, not just as farmers but as hosts. Every farm tour, every scoop of ice cream, and every meal served at our Farm Kitchen is an invitation to share in something that has taken more than a century to build.
+        </p>
+        <div class="os-quote reveal reveal-delay-4">
+          <p>"We're not just running a business. We're honoring a promise made to this land and this family a long time ago."</p>
+          <cite>The Van Gunst Family</cite>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TIMELINE ===================== -->
+<section class="os-timeline section" aria-label="Our Journey">
+  <div class="container">
+    <div class="os-timeline-header reveal">
+      <div class="section-label section-label-green" style="justify-content:center; display:inline-flex;">A Century in the Making</div>
+      <h2 class="os-timeline-headline">
+        Country Dairy <em>History</em>
+      </h2>
+      <p class="os-timeline-sub">From one immigrant family's dream to a Michigan legacy.</p>
+    </div>
+
+    <div class="os-timeline-track">
+
+      <div class="tl-entry reveal">
+        <div class="tl-year">1880s</div>
+        <div class="tl-body">
+          <div class="tl-title">The Beginning</div>
+          <p class="tl-text">Andrew Van Gunst immigrates from the Netherlands to West Michigan as a young boy, beginning the family story that would eventually become Country Dairy.</p>
+        </div>
+      </div>
+
+      <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-year">1907</div>
+        <div class="tl-body">
+          <div class="tl-title">The Land</div>
+          <p class="tl-text">Andrew and Jane Van Gunst purchase the original 80-acre farm in New Era, Michigan, where they raise dairy cows, cherries, asparagus, and potatoes while building a life for their growing family.</p>
+        </div>
+      </div>
+
+      <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-year">1936–1956</div>
+        <div class="tl-body">
+          <div class="tl-title">Second Generation</div>
+          <p class="tl-text">Son Henry and his wife Ellen carry on the tradition, raising seven children on the farm before Henry officially takes over ownership. The roots run deeper.</p>
+        </div>
+      </div>
+
+      <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-year">1964–1968</div>
+        <div class="tl-body">
+          <div class="tl-title">Third Generation</div>
+          <p class="tl-text">Wendell Van Gunst returns home after studying dairy science at Michigan State University and serving in the Army. He focuses the farm entirely on Holstein dairy cattle and grows the herd.</p>
+        </div>
+      </div>
+
+      <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-year">1983</div>
+        <div class="tl-body">
+          <div class="tl-title">Processing Plant Opens</div>
+          <p class="tl-text">Country Dairy opens its on-farm dairy processing plant, allowing milk from their own herd to be pasteurized, bottled, and distributed fresh throughout West Michigan.</p>
+        </div>
+      </div>
+
+      <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-year">2004</div>
+        <div class="tl-body">
+          <div class="tl-title">The Farm Store Opens</div>
+          <p class="tl-text">The Country Dairy Farm Store welcomes its first guests, bringing homemade ice cream, farm-fresh food, and family experiences to the public for the first time.</p>
+        </div>
+      </div>
+
+      <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-year">Today</div>
+        <div class="tl-body">
+          <div class="tl-title">Fourth Generation &amp; Growing</div>
+          <p class="tl-text">Now in its fourth generation of family ownership, Country Dairy milks approximately 1,200 cows and welcomes tens of thousands of visitors each year. Same land, same family.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE FARM TODAY ===================== -->
+<section class="os-today section" aria-label="The Farm Today">
+  <div class="os-today-texture"></div>
+  <div class="container os-today-inner">
+
+    <div class="os-today-header reveal">
+      <div class="section-label section-label-cream" style="justify-content:center; display:inline-flex;">New Era, Michigan</div>
+      <h2 class="os-today-headline">The Farm <em>Today</em></h2>
+      <p class="os-today-sub">A working dairy farm that's also one of West Michigan's most-loved destinations.</p>
+    </div>
+
+    <div class="os-stats-row reveal reveal-delay-1">
+      <div class="os-stat">
+        <div class="os-stat-number">1,200+</div>
+        <div class="os-stat-label">Holstein Cows</div>
+      </div>
+      <div class="os-stat">
+        <div class="os-stat-number">4th</div>
+        <div class="os-stat-label">Generation Family</div>
+      </div>
+      <div class="os-stat">
+        <div class="os-stat-number">100+</div>
+        <div class="os-stat-label">Years on This Land</div>
+      </div>
+      <div class="os-stat">
+        <div class="os-stat-number">40+</div>
+        <div class="os-stat-label">Ice Cream Flavors</div>
+      </div>
+    </div>
+
+    <div class="os-today-photos reveal reveal-delay-2">
+      <div class="os-today-photo">
+        <img src="assets/images/heifer barn.jpg" alt="Holstein dairy cows in the barn" loading="lazy">
+        <div class="os-today-photo-label">The Herd</div>
+      </div>
+      <div class="os-today-photo">
+        <img src="assets/images/11-19 Landscape.jpg" alt="Country Dairy products" loading="lazy">
+        <div class="os-today-photo-label">Farm Fresh Products</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== WHAT WE STAND FOR ===================== -->
+<section class="os-values section" aria-label="Our Values">
+  <div class="container">
+    <div class="os-values-header reveal">
+      <div class="section-label section-label-green" style="justify-content:center; display:inline-flex;">What Drives Us</div>
+      <h2 class="os-values-headline">What We <em>Stand For</em></h2>
+    </div>
+    <div class="os-values-grid">
+
+      <div class="os-value-card reveal">
+        <div class="os-value-title">Honest Food</div>
+        <p class="os-value-text">Everything we make starts with real ingredients from our own land. No shortcuts, no artificial anything. Just food you can feel good about eating and sharing with your family.</p>
+      </div>
+
+      <div class="os-value-card reveal reveal-delay-1">
+        <div class="os-value-title">Care for Our Animals</div>
+        <p class="os-value-text">Our cows are the heart of everything we do. We invest in their wellbeing, from pasture access to robotic milking systems that let them set their own schedule.</p>
+      </div>
+
+      <div class="os-value-card reveal reveal-delay-2">
+        <div class="os-value-title">Family &amp; Community</div>
+        <p class="os-value-text">We built this place for families, ours and yours. Every farm tour, every scoop, every Moo U class is an invitation to connect with where your food comes from and the people who grow it.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="os-cta section" aria-label="Come See Us">
+  <div class="container">
+    <div class="os-cta-header reveal">
+      <div class="section-label section-label-green" style="justify-content:center; display:inline-flex;">You're Welcome Here</div>
+      <h2 class="os-cta-headline">Come <em>See It for Yourself</em></h2>
+    </div>
+    <div class="os-cta-cards">
+
+      <div class="ev-card reveal">
+        <div class="ev-card-bg" style="background-image:url('assets/images/Picture on Tour.jpg');"></div>
+        <div class="ev-card-overlay"></div>
+        <div class="ev-card-content">
+          <div class="ev-card-date">Behind the Scenes</div>
+          <h3 class="ev-card-title">Farm Tours</h3>
+          <p class="ev-card-desc">Walk the barns, meet the herd, and see a real working dairy up close. Tours run daily and are built for curious minds of every age.</p>
+          <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="ev-card-link">Book a Tour &#8594;</a>
+        </div>
+      </div>
+
+      <div class="ev-card reveal reveal-delay-2">
+        <div class="ev-card-bg" style="background-image:url('assets/images/Peppermint Stick IC.jpg');"></div>
+        <div class="ev-card-overlay"></div>
+        <div class="ev-card-content">
+          <div class="ev-card-date">New Era, Michigan</div>
+          <h3 class="ev-card-title">Plan Your Visit</h3>
+          <p class="ev-card-desc">Ice cream, farm-fresh food, and a real working farm. All in one place. We're open year-round and always glad you made the trip.</p>
+          <a href="index.html#visit" class="ev-card-link">Get Directions &#8594;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" id="visit" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-col-links">
+          <li><a href="index.html#ice-cream">Homemade Ice Cream</a></li>
+          <li><a href="index.html#tours">Farm Tours</a></li>
+          <li><a href="index.html#products">Farm Fresh Products</a></li>
+          <li><a href="index.html#kitchen">Farm Kitchen</a></li>
+          <li><a href="index.html#social">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="index.html#visit">Plan Your Visit</a></li>
+          <li><a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener">Book a Tour</a></li>
+          <li><a href="index.html#social">Moo U Schedule</a></li>
+          <li><a href="index.html#social">Ice Cream Social</a></li>
+          <li><a href="index.html#">Where to Buy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2318614636">(231) 861-4636</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="#">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:24px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:8px;">Hours</div>
+          <div style="font-size:.85rem; color:rgba(255,255,255,.55); line-height:1.65;">Mon&ndash;Sat: 9am&ndash;6pm<br>Sunday: 11am&ndash;5pm</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>
