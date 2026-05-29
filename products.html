@@ -244,6 +244,12 @@
     box-shadow: 0 20px 60px rgba(0,0,0,.4);
   }
 
+  .p-card-link-wrap {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
   /* ── Responsive ────────────────────────────────── */
   @media (max-width: 1024px) {
     .where-inner { grid-template-columns: 1fr; gap: 52px; }
@@ -363,20 +369,24 @@
       </div>
 
       <!-- Ice Cream -->
-      <div class="p-card reveal reveal-delay-1">
-        <div class="p-card-img-wrap">
-          <img src="assets/images/CDIceCream.jpg" alt="Country Dairy homemade ice cream" class="p-card-img" loading="lazy">
-        </div>
-        <div class="p-card-body">
-          <div class="p-card-tag">Handcrafted Daily</div>
-          <div class="p-card-name">Ice Cream</div>
-          <p class="p-card-desc">Over 40 flavors made in small batches with our own milk. Served fresh at the Farm Store and in half-gallon tubs at retailers.</p>
-          <div class="p-card-availability avail-retail">
-            <div class="avail-dot"></div>
-            Half gallons at retailers
+      <a href="icecream.html" class="p-card-link-wrap">
+        <div class="p-card reveal reveal-delay-1">
+          <div class="p-card-img-wrap">
+            <img src="assets/images/CDIceCream.jpg" alt="Country Dairy homemade ice cream" class="p-card-img" loading="lazy">
+          </div>
+          <div class="p-card-body">
+            <div class="p-card-tag">Handcrafted Daily</div>
+            <div class="p-card-name">Ice Cream</div>
+            <p class="p-card-desc">
+              Over 40 flavors made in small batches with our own milk. Served fresh at the Farm Store and in half-gallon tubs at retailers.
+            </p>
+            <div class="p-card-availability avail-retail">
+              <div class="avail-dot"></div>
+              Half gallons at retailers
+            </div>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Sour Cream & Chip Dip -->
       <div class="p-card reveal reveal-delay-2">
