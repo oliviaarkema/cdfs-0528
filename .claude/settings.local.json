@@ -6,7 +6,9 @@
       "Bash(sed -i '' 's|href=\"#visit\" class=\"btn btn-dark|href=\"https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-dark|g' /Users/oliviaarkema/Desktop/cdfs-0528/index.html)",
       "Bash(sed -i '' 's|href=\"#tours\">Book a Tour|href=\"https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD\" target=\"_blank\" rel=\"noopener\">Book a Tour|g' /Users/oliviaarkema/Desktop/cdfs-0528/index.html)",
       "Bash(sed -i '' 's|href=\"index.html#tours\" class=\"ev-card-link\">Book a Tour|href=\"https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD\" target=\"_blank\" rel=\"noopener\" class=\"ev-card-link\">Book a Tour|g' /Users/oliviaarkema/Desktop/cdfs-0528/our-story.html)",
-      "Bash(sed -i '' 's|href=\"index.html#tours\">Book a Tour|href=\"https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD\" target=\"_blank\" rel=\"noopener\">Book a Tour|g' /Users/oliviaarkema/Desktop/cdfs-0528/our-story.html)"
+      "Bash(sed -i '' 's|href=\"index.html#tours\">Book a Tour|href=\"https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD\" target=\"_blank\" rel=\"noopener\">Book a Tour|g' /Users/oliviaarkema/Desktop/cdfs-0528/our-story.html)",
+      "Bash(cat)",
+      "Bash(bash /tmp/fix_waves.sh)"
     ]
   }
 }

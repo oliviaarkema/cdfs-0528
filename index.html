@@ -36,7 +36,7 @@
         </button>
         <div class="nav-dropdown-menu" role="menu">
           <a href="#" role="menuitem">Meat Shop</a>
-          <a href="#social" role="menuitem">Ice Cream Social</a>
+          <a href="ice-cream-social.html" role="menuitem">Ice Cream Social</a>
           <a href="#" role="menuitem">Bakery</a>
           <a href="#" role="menuitem">Catering</a>
           <a href="#" role="menuitem">Event Space</a>
@@ -56,14 +56,18 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">&#10005;</button>
-  <a href="#story">Our Story</a>
-  <a href="#kitchen">Farm Store Kitchen</a>
-  <a href="#products">Products</a>
-  <a href="#tours">Farm Tours</a>
-  <a href="#social">Ice Cream Social</a>
-  <a href="#ice-cream">Ice Cream</a>
-  <a href="#">Where to Buy</a>
-  <a href="#visit" class="btn btn-primary" style="font-size:1rem;">Plan Your Visit</a>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="products.html">Products</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="#" class="mobile-menu-sub">Meat Shop</a>
+  <a href="#social" class="mobile-menu-sub">Ice Cream Social</a>
+  <a href="#" class="mobile-menu-sub">Bakery</a>
+  <a href="#" class="mobile-menu-sub">Catering</a>
+  <a href="#" class="mobile-menu-sub">Event Space</a>
+  <a href="#" class="mobile-menu-sub">Wholesale</a>
+  <a href="#" class="mobile-menu-sub">Where to Buy</a>
 </div>
 
 <!-- ===================== HERO ===================== -->
@@ -140,10 +144,12 @@
         </div>
       </div>
       <div class="pw-p4 reveal reveal-delay-3">
-        <div class="polaroid polaroid-tilt-l pw-polaroid-lg">
-          <img src="assets/images/Nate & Adam - Dancing.jpg" alt="Ice cream social" loading="lazy">
-          <div class="polaroid-caption">Ice Cream Social '25</div>
-        </div>
+        <a href="ice-cream-social.html">
+          <div class="polaroid polaroid-tilt-l pw-polaroid-lg">
+            <img src="assets/images/Nate & Adam - Dancing.jpg" alt="Ice cream social" loading="lazy">
+            <div class="polaroid-caption">Ice Cream Social '25</div>
+          </div>
+        </a>
       </div>
       <div class="pw-p5 reveal reveal-delay-4">
         <div class="polaroid polaroid-tilt-rr pw-polaroid">
@@ -156,7 +162,7 @@
 </section>
 
 <!-- wavy divider -->
-<div class="wavy-divider" style="background:#f0ebe0;">
+<div class="wavy-divider" style="background:var(--cream);">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="var(--cream)"/>
   </svg>
@@ -220,9 +226,10 @@
 </section>
 
 <!-- ===================== FARM STORE KITCHEN ===================== -->
-<div class="wavy-divider" style="background:var(--cream);">
+<div class="wavy-divider wavy-divider-kitchen" style="background-image:url('assets/images/burger-and-chips.png'); background-size:cover; background-position:center; background-attachment:fixed;">
   <svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,25 C200,50 400,5 720,28 C1000,48 1200,10 1440,22 L1440,50 L0,50 Z" fill="#0a1a0c"/>
+    <rect width="1440" height="50" fill="rgba(5,18,7,0.62)"/>
+    <path fill-rule="evenodd" d="M0,0 L1440,0 L1440,50 L0,50 Z M0,25 C200,50 400,5 720,28 C1000,48 1200,10 1440,22 L1440,50 L0,50 Z" fill="#f8f3eb"/>
   </svg>
 </div>
 <section class="kitchen-feature section" id="kitchen" aria-label="Farm Kitchen">
@@ -247,11 +254,6 @@
 </section>
 
 <!-- ===================== FARM FRESH DAIRY PRODUCTS ===================== -->
-<div class="wavy-divider" style="background:#0a1a0c;">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C360,55 720,0 1080,35 C1260,52 1380,18 1440,28 L1440,60 L0,60 Z" fill="#1c1c1c"/>
-  </svg>
-</div>
 <section class="products section" id="products" aria-label="Farm Fresh Products">
   <div class="container prod-inner">
     <div class="prod-header">
@@ -303,12 +305,21 @@
     <!-- Where to Buy -->
     <div class="reveal reveal-delay-2" style="text-align:center; margin-top:52px;">
       <p style="font-size:.95rem; color:rgba(255,255,255,.55); margin-bottom:18px; font-weight:300;">Find Country Dairy products at grocery stores and markets across West Michigan.</p>
-      <a href="#" class="btn btn-outline">Where to Buy</a>   
-      <a href="products.html" class="btn btn-primary reveal reveal-delay-4">All Products</a>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <a href="#" class="btn btn-outline">Where to Buy</a>
+        <a href="products.html" class="btn btn-primary reveal reveal-delay-4">All Products</a>
+      </div>
 
     </div>
   </div>
 </section>
+
+<!-- wavy divider: products (charcoal) → events (warm-white) -->
+<div class="wavy-divider" style="background:#1c1c1c;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#fdfaf5"/>
+  </svg>
+</div>
 
 <!-- ===================== EVENTS SECTION ===================== -->
 <section class="events section" id="social" aria-label="Annual Ice Cream Social">
@@ -323,7 +334,7 @@
       </p>
     </div>
     <div class="ev-cards">
-      <div class="ev-card reveal">
+      <a href="ice-cream-social.html" class="ev-card reveal">
         <div class="ev-card-bg" style="background-image:url('assets/images/Nate%20%26%20Adam%20-%20Dancing.jpg');"></div>
         <div class="ev-card-overlay"></div>
         <div class="ev-card-content">
@@ -332,7 +343,7 @@
           <p class="ev-card-desc">Live music, unlimited scoops, lawn games, and the warmth of community on a perfect West Michigan evening. The event that brings families back year after year.</p>
           <div class="ev-card-link">Event Details &#8594;</div>
         </div>
-      </div>
+      </a>
       <div class="ev-card reveal reveal-delay-2">
         <div class="ev-card-bg" style="background-image:url('assets/images/Robots%20at%20ICS.jpg');"></div>
         <div class="ev-card-overlay"></div>
@@ -374,6 +385,13 @@
   </div>
 </section>
 
+<!-- wavy divider: events (warm-white) → history (cream) -->
+<div class="wavy-divider" style="background:#fdfaf5;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 C360,55 720,0 1080,35 C1260,52 1380,18 1440,28 L1440,60 L0,60 Z" fill="#f8f3eb"/>
+  </svg>
+</div>
+
 <!-- ===================== OUR STORY ===================== -->
 <section class="history section" id="story" aria-label="Our Story">
   <div class="container">
@@ -385,7 +403,7 @@
           class="hist-img-main reveal"
           loading="lazy"
         >
-        <div class="polaroid polaroid-tilt-r reveal reveal-delay-2" style="position:absolute; bottom:-20px; right:-28px; width:180px; height:180px; z-index:4;">
+        <div class="polaroid polaroid-tilt-r hist-polaroid-float reveal reveal-delay-2" style="position:absolute; bottom:-20px; right:-28px; width:180px; height:180px; z-index:4;">
           <img src="assets/images/Fleet of Trucks.jpg" alt="Country Dairy fleet" style="height:100%;" loading="lazy">
           <div class="polaroid-caption">four generations</div>
         </div>
@@ -420,9 +438,9 @@
 </section>
 
 <!-- ===================== ICE CREAM FLAVORS ===================== -->
-<div class="wavy-divider" style="background:var(--cream);">
+<div class="wavy-divider" style="background:#f8f3eb;">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C360,55 720,0 1080,35 C1260,52 1380,18 1440,28 L1440,60 L0,60 Z" fill="var(--green-deep)"/>
+    <path d="M0,20 C360,55 720,0 1080,35 C1260,52 1380,18 1440,28 L1440,60 L0,60 Z" fill="#074d1a"/>
   </svg>
 </div>
 <section class="flavors-section section" id="ice-cream" aria-label="Ice Cream">
@@ -506,7 +524,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-logo">Country Dairy</div>
-        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1927</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
         <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
         <div class="footer-social">
           <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
@@ -517,37 +535,44 @@
         </div>
       </div>
       <div>
-        <div class="footer-col-title">Explore</div>
+        <div class="footer-col-title">Ice Cream</div>
         <ul class="footer-col-links">
-          <li><a href="#ice-cream">Homemade Ice Cream</a></li>
+          <li><a href="icecream.html">All Flavors</a></li>
+          <li><a href="products.html">Farm Fresh Products</a></li>
+          <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+          <li><a href="ice-cream-social.html">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <ul class="footer-col-links">
+          <li><a href="#">Where to Buy</a></li>
+          <li><a href="#">Shop Online</a></li>
           <li><a href="farm-tours.html">Farm Tours</a></li>
-          <li><a href="#products">Farm Fresh Products</a></li>
-          <li><a href="#kitchen">Farm Kitchen</a></li>
-          <li><a href="#social">Ice Cream Social</a></li>
+          <li><a href="#">Wholesale</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Visit</div>
         <ul class="footer-col-links">
-          <li><a href="#visit">Plan Your Visit</a></li>
-          <li><a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener">Book a Tour</a></li>
-          <li><a href="#social">Moo U Schedule</a></li>
-          <li><a href="#social">Ice Cream Social</a></li>
-          <li><a href="#">Where to Buy</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-col-links">
           <li><a href="tel:2318614636">(231) 861-4636</a></li>
           <li><a href="#">3476 S 80th Ave</a></li>
           <li><a href="#">New Era, MI 49446</a></li>
-          <li><a href="#">info@countrydairy.com</a></li>
+          <li><a href="mailto:info@countrydairy.com">info@countrydairy.com</a></li>
         </ul>
-        <div style="margin-top:24px;">
-          <div class="vc-info-label" style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:8px;">Hours</div>
-          <div style="font-size:.85rem; color:rgba(255,255,255,.55); line-height:1.65;">Mon&ndash;Sat: 9am&ndash;6pm<br>Sunday: 11am&ndash;5pm</div>
+        <div style="margin-top:20px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:6px;">Hours</div>
+          <div style="font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.6;">Mon–Sat: 9am–6pm<br>Sunday: 11am–5pm</div>
         </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-col-links">
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">

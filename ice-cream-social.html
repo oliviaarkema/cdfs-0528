@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Country Dairy's Annual Ice Cream Social</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<style>
+
+      /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative; height: 52vh; min-height: 380px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; background: #0a1f0d;
+  }
+  .page-hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    transform: scale(1.04); animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay { position: absolute; inset: 0; background: rgba(5,18,7,.6); }
+  .page-hero-content { position: relative; z-index: 2; text-align: center; padding: 0 24px; }
+  .page-hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-sans); font-size: .7rem; font-weight: 700;
+    letter-spacing: .25em; text-transform: uppercase; color: var(--green-bright);
+    margin-bottom: 20px; opacity: 0; animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-bright); }
+  .page-hero-title {
+    font-family: var(--font-serif); font-size: clamp(2.8rem, 6.5vw, 5rem);
+    font-weight: 700; color: #fff; line-height: 1.05;
+    opacity: 0; animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+  .page-hero-sub {
+    font-size: 1rem; font-weight: 300; color: rgba(255,255,255,.75);
+    margin-top: 14px; opacity: 0; animation: fadeUp .9s .6s forwards;
+  }
+
+  /* ── Flavor Section ────────────────────────────── */
+  .flavor-section { padding: 88px 0 96px; }
+  .flavor-section-cream { background: var(--cream); }
+  .flavor-section-white { background: var(--warm-white); }
+  .flavor-section-dark  { background: var(--green-deep); }
+
+  .flavor-section-header { text-align: center; margin-bottom: 56px; }
+  .flavor-section-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700; line-height: 1.12; margin-bottom: 10px;
+  }
+  .flavor-section-cream .flavor-section-headline,
+  .flavor-section-white .flavor-section-headline { color: var(--dark-brown); }
+  .flavor-section-dark  .flavor-section-headline { color: #fff; }
+  .flavor-section-headline em { font-style: italic; color: var(--green-bright); }
+  .flavor-section-sub { font-size: .95rem; font-weight: 300; line-height: 1.7; }
+  .flavor-section-cream .flavor-section-sub,
+  .flavor-section-white .flavor-section-sub { color: var(--text-muted); }
+  .flavor-section-dark  .flavor-section-sub { color: rgba(255,255,255,.55); }
+
+  /* ── Flavor Grid ───────────────────────────────── */
+  .flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── Flavor Card ───────────────────────────────── */
+  .f-card {
+    border-radius: var(--radius-lg); overflow: hidden;
+    background: #fff; box-shadow: var(--shadow-card);
+    border: 1px solid var(--cream-dark);
+    transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s;
+    width: 100%;
+    max-width: 320px;
+  }
+  .f-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,.13); }
+  .flavor-section-dark .f-card {
+    background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.1);
+  }
+  .flavor-section-dark .f-card:hover { background: rgba(255,255,255,.12); }
+
+  .f-card-photo {
+    position: relative; width: 100%; height: 180px;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .f-card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .f-card-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  }
+  .f-card-placeholder-icon { opacity: .35; }
+  .f-card-placeholder-text {
+    font-family: var(--font-sans); font-size: .6rem; font-weight: 700;
+    letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.5);
+  }
+
+  .f-card-body { padding: 16px 18px 20px; }
+  .f-card-name {
+    font-family: var(--font-serif); font-size: 1.05rem; font-weight: 700;
+    line-height: 1.2; margin-bottom: 6px;
+  }
+  .flavor-section-cream .f-card-name,
+  .flavor-section-white .f-card-name { color: var(--dark-brown); }
+  .flavor-section-dark  .f-card-name { color: #fff; }
+  .f-card-desc { font-size: .78rem; font-weight: 300; line-height: 1.55; }
+  .flavor-section-cream .f-card-desc,
+  .flavor-section-white .f-card-desc { color: var(--text-muted); }
+  .flavor-section-dark  .f-card-desc { color: rgba(255,255,255,.5); }
+
+  .seasonal-badge {
+    position: absolute; top: 10px; right: 10px;
+    background: var(--terracotta); color: #fff;
+    border-radius: 50px; padding: 3px 10px;
+    font-family: var(--font-sans); font-size: .55rem; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+  }
+
+  /* ── CTA ───────────────────────────────────────── */
+  .ic-cta { background: var(--green-dark); padding: 72px 0; text-align: center; }
+  .ic-cta-headline {
+    font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 14px;
+  }
+  .ic-cta-headline em { font-style: italic; color: var(--green-bright); }
+  .ic-cta-body {
+    font-size: .98rem; color: rgba(255,255,255,.6); font-weight: 300;
+    max-width: 480px; margin: 0 auto 32px; line-height: 1.72;
+  }
+  .ic-cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* Camera icon shorthand */
+  .cam { display:block; }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 1024px) { .flavor-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .flavor-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="farm-tours.html">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="#" role="menuitem">Meat Shop</a>
+          <a href="index.html#social" role="menuitem">Ice Cream Social</a>
+          <a href="#" role="menuitem">Bakery</a>
+          <a href="#" role="menuitem">Catering</a>
+          <a href="#" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="#" role="menuitem">Wholesale</a>
+          <a href="products.html#where-to-buy" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="products.html">Products</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="#" class="mobile-menu-sub">Meat Shop</a>
+  <a href="index.html#social" class="mobile-menu-sub">Ice Cream Social</a>
+  <a href="#" class="mobile-menu-sub">Bakery</a>
+  <a href="#" class="mobile-menu-sub">Catering</a>
+  <a href="#" class="mobile-menu-sub">Event Space</a>
+  <a href="#" class="mobile-menu-sub">Wholesale</a>
+  <a href="#" class="mobile-menu-sub">Where to Buy</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" style="background-image:url('assets/images/Nate%20%26%20Adam%20-%20Dancing.jpg');" aria-label="Ice Cream Social">
+  <div class="page-hero-bg" style="background-image:url('assets/images/Nate%20%26%20Adam%20-%20Dancing.jpg');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <span class="page-hero-eyebrow-dot"></span>
+      Annual Summer Event
+      <span class="page-hero-eyebrow-dot"></span>
+    </div>
+    <h1 class="page-hero-title">Ice Cream <em>Social</em></h1>
+    <p class="page-hero-sub">Free ice cream, farm tours, and family fun at Country Dairy</p>
+  </div>
+</section>
+
+<!-- ===================== EVENT DETAILS ===================== -->
+<section class="flavor-section flavor-section-white">
+  <div class="container">
+    <div class="flavor-section-header">
+      <h2 class="flavor-section-headline">Saturday, June 27, 2026 &nbsp;&bull;&nbsp; 11 AM – 5 PM</h2>
+      <p class="flavor-section-sub">One of our favorite days of the summer—and it's FREE for the whole family!</p>
+    </div>
+
+    <div style="max-width: 700px; margin: 0 auto 60px; text-align: center;">
+      <p style="font-size: 1.02rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
+        The Country Dairy Ice Cream Social is back for 2026! Join us for a fun-filled summer day with free ice cream, farm tours, calf visits, live music, and family activities. Whether you've visited for years or it's your first time at the farm, we'd love to welcome you.
+      </p>
+    </div>
+
+    <div class="flavor-grid" style="margin-bottom: 40px;">
+      <div class="f-card">
+        <div class="f-card-photo">
+          <img src="assets/images/MMMM Ice Cream.jpg" alt="Delicious ice cream" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">FREE Ice Cream</div>
+          <div class="f-card-desc">Unlimited scoops for everyone!</div>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-card-photo">
+          <img src="assets/images/ShowBarn School Tour.jpg" alt="Farm tours with animals" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">Farm Tours</div>
+          <div class="f-card-desc">Visit the cows and dairy plant</div>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-card-photo">
+          <img src="assets/images/ICS Heel Click.jpg" alt="Celebration and dancing" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">Live Music</div>
+          <div class="f-card-desc">Entertainment all day long</div>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-card-photo">
+          <img src="assets/images/Robots at ICS.jpg" alt="Kids enjoying activities" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">Fun Activities</div>
+          <div class="f-card-desc">Bounce houses, color walls & more</div>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-card-photo">
+          <img src="assets/images/Aspargus Royalty - Ice Cream.jpg" alt="Community gathering" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">Community</div>
+          <div class="f-card-desc">Local nonprofits & neighbors</div>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-card-photo">
+          <img src="assets/images/Ice Cream Tent.jpg" alt="Beautiful farm setting" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">Perfect Setting</div>
+          <div class="f-card-desc">A West Michigan summer day</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="https://www.google.com/maps/search/Country+Dairy+New+Era+Michigan" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Ice Cream</div>
+        <ul class="footer-col-links">
+          <li><a href="icecream.html">All Flavors</a></li>
+          <li><a href="products.html">Farm Fresh Products</a></li>
+          <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+          <li><a href="ice-cream-social.html">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <ul class="footer-col-links">
+          <li><a href="#">Where to Buy</a></li>
+          <li><a href="#">Shop Online</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+          <li><a href="#">Wholesale</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2318614636">(231) 861-4636</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="mailto:info@countrydairy.com">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:20px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:6px;">Hours</div>
+          <div style="font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.6;">Mon–Sat: 9am–6pm<br>Sunday: 11am–5pm</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-col-links">
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.</div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>
