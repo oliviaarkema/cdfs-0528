@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — Country Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<style>
+
+  /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a1f0d;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.04);
+    animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 18, 7, 0.55);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--green-bright);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-bright); }
+  .page-hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: .01em;
+    opacity: 0;
+    animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+  .page-hero-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,.75);
+    margin-top: 18px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeUp .9s .6s forwards;
+  }
+
+  /* ── Intro ─────────────────────────────────────── */
+  .events-intro {
+    background: var(--warm-white);
+    padding: 80px 0 64px;
+  }
+  .events-intro-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .events-intro-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .events-intro-headline em { font-style: italic; color: var(--green-dark); }
+  .events-intro-body {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+  }
+
+  /* ── Event Feature ─────────────────────────────── */
+  .event-feature {
+    padding: 96px 0;
+    position: relative;
+  }
+  .event-feature-cream  { background: var(--cream); }
+  .event-feature-white  { background: var(--warm-white); }
+  .event-feature-dark   { background: var(--green-deep); position: relative; overflow: hidden; }
+  .event-feature-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .event-feature-inner.flip .event-img-wrap { order: 2; }
+  .event-feature-inner.flip .event-copy    { order: 1; }
+  .event-img-wrap { position: relative; }
+  .event-img-main {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    box-shadow: var(--shadow-soft);
+  }
+  .event-feature-cream .event-img-main {
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+  }
+  .event-feature-white .event-img-main {
+    border-radius: var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-xl);
+  }
+  .event-feature-dark .event-img-main {
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+  }
+  .event-img-accent {
+    position: absolute;
+    bottom: -28px;
+    right: -28px;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+  }
+  .event-feature-cream .event-img-accent { border: 6px solid var(--cream); }
+  .event-feature-white .event-img-accent { border: 6px solid var(--warm-white); }
+  .event-feature-inner.flip .event-img-accent { left: -28px; right: auto; }
+
+  .event-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+  }
+  .event-feature-dark .event-tag { color: var(--green-bright); }
+  .event-tag::before {
+    content: '';
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--green-bright);
+    border-radius: 2px;
+  }
+  .event-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .event-feature-dark .event-headline { color: #fff; }
+  .event-headline em { font-style: italic; color: var(--green-dark); }
+  .event-feature-dark .event-headline em { color: var(--green-bright); }
+  .event-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .event-feature-dark .event-body { color: rgba(255,255,255,.65); }
+  .event-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .event-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: .9rem;
+    color: var(--text-body);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+  .event-feature-dark .event-highlights li { color: rgba(255,255,255,.75); }
+  .event-highlights li::before {
+    content: '';
+    display: block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green-bright);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .event-note {
+    background: var(--cream-dark);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    color: var(--dark-brown);
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .event-feature-white .event-note { background: var(--cream); }
+  .event-feature-dark .event-note {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
+    color: rgba(255,255,255,.8);
+  }
+  .event-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ── Tours sub-cards ───────────────────────────── */
+  .tours-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+  .tours-sub-card {
+    background: var(--cream-dark);
+    border-radius: var(--radius-md);
+    padding: 20px 22px;
+  }
+  .tours-sub-card-title {
+    font-family: var(--font-sans);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--dark-brown);
+    margin-bottom: 6px;
+  }
+  .tours-sub-card-text {
+    font-size: .82rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  /* ── Unity dark texture ────────────────────────── */
+  .unity-texture {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-size: 300px; opacity: .6;
+  }
+  .unity-copy { position: relative; z-index: 1; }
+  .unity-img-wrap { position: relative; z-index: 1; }
+  .unity-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .unity-badge {
+    padding: 7px 18px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,.2);
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.65);
+  }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .event-feature-inner { grid-template-columns: 1fr; gap: 52px; }
+    .event-feature-inner.flip .event-img-wrap,
+    .event-feature-inner.flip .event-copy { order: unset; }
+    .event-img-accent { display: none; }
+    .event-img-main { height: 380px; }
+    .tours-sub-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .event-feature { padding: 64px 0; }
+    .tours-sub-grid { grid-template-columns: 1fr; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="farm-tours.html">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="index.html#" role="menuitem">Meat Shop</a>
+          <a href="events.html" role="menuitem" style="color:var(--green-bright);">Events</a>
+          <a href="bakery.html" role="menuitem">Bakery</a>
+          <a href="catering.html" role="menuitem">Catering</a>
+          <a href="index.html#" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="index.html#" role="menuitem">Wholesale</a>
+          <a href="index.html#" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="products.html">Products</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="#" class="mobile-menu-sub">Meat Shop</a>
+  <a href="events.html" class="mobile-menu-sub">Events</a>
+  <a href="bakery.html" class="mobile-menu-sub">Bakery</a>
+  <a href="catering.html" class="mobile-menu-sub">Catering</a>
+  <a href="#" class="mobile-menu-sub">Event Space</a>
+  <a href="#" class="mobile-menu-sub">Wholesale</a>
+  <a href="#" class="mobile-menu-sub">Where to Buy</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" aria-label="Events">
+  <div class="page-hero-bg" style="background-image:url('assets/images/Joe Jarvis Crowd.jpg'); background-position: center 40%;"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <div class="page-hero-eyebrow-dot"></div>
+      New Era, Michigan &nbsp;&middot;&nbsp; Community &amp; Celebration
+    </div>
+    <h1 class="page-hero-title">Events &amp; <em>Experiences</em></h1>
+    <p class="page-hero-sub">From summer socials to farm tours to Michigan's biggest Christian music festival — there's always something happening at Country Dairy.</p>
+  </div>
+</section>
+
+<!-- ===================== INTRO ===================== -->
+<section class="events-intro section">
+  <div class="container">
+    <div class="events-intro-inner">
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex;">All Year Long</div>
+      <h2 class="events-intro-headline reveal reveal-delay-1">
+        More Than a Farm Store —<br><em>A Place to Gather</em>
+      </h2>
+      <p class="events-intro-body reveal reveal-delay-2">
+        Country Dairy has always been a place where the community comes together. Whether you're bringing your family out for a tour, celebrating summer at the Ice Cream Social, or catching a show at Unity Festival, we're glad you're here.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- wave: warm-white → cream -->
+<div class="wavy-divider" style="background:#fdfaf5;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#f8f3eb"/>
+  </svg>
+</div>
+
+<!-- ===================== ICE CREAM SOCIAL ===================== -->
+<section class="event-feature event-feature-cream section" id="ice-cream-social" aria-label="Ice Cream Social">
+  <div class="container">
+    <div class="event-feature-inner">
+
+      <div class="event-img-wrap reveal">
+        <img
+          src="assets/images/ICS Heel Click.jpg"
+          alt="Guests celebrating at the Country Dairy Ice Cream Social"
+          class="event-img-main"
+          loading="lazy"
+        >
+        <img
+          src="assets/images/ICS Golf Carts.jpg"
+          alt="Golf carts at the Ice Cream Social"
+          class="event-img-accent"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="event-copy">
+        <div class="event-tag reveal">Annual Summer Event</div>
+        <h2 class="event-headline reveal reveal-delay-1">
+          Ice Cream <em>Social</em>
+        </h2>
+        <p class="event-body reveal reveal-delay-2">
+          Every summer, Country Dairy hosts its beloved Ice Cream Social — a celebration of community, farm-fresh food, and of course, ice cream. Guests enjoy live music, lawn games, great food, and all the scoops they can handle, right here on the farm. It's one of the highlights of the West Michigan summer calendar, and we'd love to see you there.
+        </p>
+        <ul class="event-highlights reveal reveal-delay-2">
+          <li>Live music and entertainment throughout the day</li>
+          <li>All-you-can-eat ice cream from our own creamery</li>
+          <li>Farm activities and family fun</li>
+          <li>Food vendors and community vendors on site</li>
+          <li>Held annually each summer — watch for dates</li>
+        </ul>
+        <div class="event-note reveal reveal-delay-3">A beloved Country Dairy tradition since the very beginning.</div>
+        <div class="event-actions reveal reveal-delay-3">
+          <a href="ice-cream-social.html" class="btn btn-primary">Learn More</a>
+          <a href="tel:2318614636" class="btn btn-dark">Call for Details</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave: cream → warm-white -->
+<div class="wavy-divider" style="background:#f8f3eb;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C360,4 720,56 1080,30 C1260,18 1380,38 1440,30 L1440,60 L0,60 Z" fill="#fdfaf5"/>
+  </svg>
+</div>
+
+<!-- ===================== TOURS, MOO U & SCHOOL TRIPS ===================== -->
+<section class="event-feature event-feature-white section" id="farm-experiences" aria-label="Farm Tours and Education">
+  <div class="container">
+    <div class="event-feature-inner flip">
+
+      <div class="event-img-wrap reveal reveal-delay-1">
+        <img
+          src="assets/images/Barefoot Jouney (Nettle Family).jpg"
+          alt="Family enjoying a farm tour at Country Dairy"
+          class="event-img-main"
+          loading="lazy"
+        >
+        <img
+          src="assets/images/ShowBarn School Tour.jpg"
+          alt="School group on a farm tour"
+          class="event-img-accent"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="event-copy">
+        <div class="event-tag reveal">Year-Round Experiences</div>
+        <h2 class="event-headline reveal reveal-delay-1">
+          Farm Tours, Moo U <em>&amp; School Trips</em>
+        </h2>
+        <p class="event-body reveal reveal-delay-2">
+          Whether you're a family looking for a fun afternoon, a school group planning a field trip, or a church group wanting something memorable — we have an experience designed for you. Our farm education program and guided tours run seasonally and can be booked for groups of all sizes.
+        </p>
+        <div class="tours-sub-grid reveal reveal-delay-2">
+          <div class="tours-sub-card">
+            <div class="tours-sub-card-title">Farm Tours</div>
+            <div class="tours-sub-card-text">Horse-drawn wagon rides, barn tours, and calf encounters for families and visitors.</div>
+          </div>
+          <div class="tours-sub-card">
+            <div class="tours-sub-card-title">Moo University</div>
+            <div class="tours-sub-card-text">Hands-on farm ed classes with butter making, milking demos, and live animal encounters.</div>
+          </div>
+          <div class="tours-sub-card">
+            <div class="tours-sub-card-title">School Trips</div>
+            <div class="tours-sub-card-text">Curriculum-connected field trips for K–12 groups. Custom programs available.</div>
+          </div>
+        </div>
+        <div class="event-actions reveal reveal-delay-3">
+          <a href="farm-tours.html" class="btn btn-primary">See All Tours</a>
+          <a href="tel:2318614636" class="btn btn-dark">Book a Group Trip</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave: warm-white → green-deep -->
+<div class="wavy-divider" style="background:#fdfaf5;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#074d1a"/>
+  </svg>
+</div>
+
+<!-- ===================== UNITY MUSIC FESTIVAL ===================== -->
+<section class="event-feature event-feature-dark section" id="unity-festival" aria-label="Unity Music Festival">
+  <div class="unity-texture"></div>
+  <div class="container">
+    <div class="event-feature-inner">
+
+      <div class="unity-img-wrap reveal">
+        <img
+          src="https://static.wixstatic.com/media/4aca22_298de5574dc64e1089e6759fa200c5f7~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG-WEDNESDAY-Z62-080724-538.jpg"
+          alt="Crowd at Unity Christian Music Festival in Muskegon"
+          class="event-img-main"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="unity-copy event-copy">
+        <div class="event-tag reveal">Main Stage Sponsor</div>
+        <h2 class="event-headline reveal reveal-delay-1">
+          Unity Christian<br><em>Music Festival</em>
+        </h2>
+        <p class="event-body reveal reveal-delay-2">
+          Country Dairy is proud to be the presenting sponsor of the Main Stage at Unity Christian Music Festival — one of the nation's largest Christian music events, held every summer in downtown Muskegon at Heritage Landing Park on the beautiful Muskegon Lake waterfront. We serve our farm-fresh ice cream on-site all weekend long, so you can enjoy a scoop while your favorite artists take the stage.
+        </p>
+        <div class="unity-badges reveal reveal-delay-2">
+          <span class="unity-badge">Main Stage Sponsor</span>
+          <span class="unity-badge">50,000+ Attendees</span>
+          <span class="unity-badge">4 Days of Music</span>
+          <span class="unity-badge">20+ Top Artists</span>
+          <span class="unity-badge">Muskegon, MI</span>
+        </div>
+        <ul class="event-highlights reveal reveal-delay-2">
+          <li>Country Dairy serves ice cream on-site throughout the festival</li>
+          <li>The Main Stage is presented by Country Dairy</li>
+          <li>Held annually each summer at Heritage Landing, downtown Muskegon</li>
+          <li>Top Christian artists perform across four days</li>
+        </ul>
+        <div class="event-actions reveal reveal-delay-3">
+          <a href="https://www.unitymusicfestival.com/" target="_blank" rel="noopener" class="btn btn-primary">Unity Festival Website</a>
+          <a href="https://www.unitychristianevents.com/unity-2026" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:rgba(255,255,255,.3); color:rgba(255,255,255,.8);">Get Tickets</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Ice Cream</div>
+        <ul class="footer-col-links">
+          <li><a href="icecream.html">All Flavors</a></li>
+          <li><a href="products.html">Farm Fresh Products</a></li>
+          <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+          <li><a href="ice-cream-social.html">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <ul class="footer-col-links">
+          <li><a href="#">Where to Buy</a></li>
+          <li><a href="#">Shop Online</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+          <li><a href="#">Wholesale</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2318614636">(231) 861-4636</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="mailto:info@countrydairy.com">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:20px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:6px;">Hours</div>
+          <div style="font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.6;">Mon–Sat: 9am–6pm<br>Sunday: 11am–5pm</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-col-links">
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="https://secure6.saashr.com/ta/6192177.careers?CareersSearch=&lang=en-US">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>

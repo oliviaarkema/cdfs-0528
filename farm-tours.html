@@ -453,10 +453,139 @@
     .moou-img-main { height: 360px; }
     .tours-book-img { height: 340px; }
   }
+  /* ── Seasonal Tours ────────────────────────────── */
+  .seasonal-tours {
+    background: var(--cream);
+    padding: 96px 0;
+  }
+  .seasonal-tours-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .seasonal-tours-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .seasonal-tours-headline em { font-style: italic; color: var(--green-dark); }
+  .seasonal-tours-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+  .seasonal-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .seasonal-card {
+    background: var(--warm-white);
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+  }
+  .seasonal-card-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+  }
+  .seasonal-card-body-wrap {
+    padding: 36px 40px 36px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .seasonal-card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 14px;
+  }
+  .seasonal-card-tag::before {
+    content: '';
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--green-bright);
+    border-radius: 2px;
+  }
+  .seasonal-card-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .seasonal-card-title em { font-style: italic; color: var(--green-dark); }
+  .seasonal-card-body {
+    font-size: .96rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  .seasonal-card-details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .seasonal-card-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: .88rem;
+    color: var(--text-body);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+  .seasonal-card-details li::before {
+    content: '';
+    display: block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green-bright);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .seasonal-card-note {
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    padding: 11px 15px;
+    font-family: var(--font-hand);
+    font-size: .95rem;
+    color: var(--dark-brown);
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    .seasonal-cards { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 768px) {
     .tour-feature { padding: 64px 0; }
     .moou { padding: 64px 0; }
     .moou-features { grid-template-columns: 1fr; }
+    .seasonal-tours { padding: 64px 0; }
+    .seasonal-card-img { height: 200px; }
+    .seasonal-card-body-wrap { padding: 24px 24px 24px; }
     .tours-book { padding: 64px 0; }
     .tours-book-info { grid-template-columns: 1fr; }
     .tp-sm { width: 140px; height: 140px; }
@@ -492,9 +621,9 @@
         </button>
         <div class="nav-dropdown-menu" role="menu">
           <a href="index.html#" role="menuitem">Meat Shop</a>
-          <a href="index.html#social" role="menuitem">Ice Cream Social</a>
-          <a href="index.html#" role="menuitem">Bakery</a>
-          <a href="index.html#" role="menuitem">Catering</a>
+          <a href="events.html" role="menuitem">Events</a>
+          <a href="bakery.html" role="menuitem">Bakery</a>
+          <a href="catering.html" role="menuitem">Catering</a>
           <a href="index.html#" role="menuitem">Event Space</a>
           <div class="nav-dropdown-divider"></div>
           <a href="index.html#" role="menuitem">Wholesale</a>
@@ -518,9 +647,9 @@
   <a href="farm-tours.html">Farm Tours</a>
   <div class="mobile-menu-divider"></div>
   <a href="#" class="mobile-menu-sub">Meat Shop</a>
-  <a href="index.html#social" class="mobile-menu-sub">Ice Cream Social</a>
-  <a href="#" class="mobile-menu-sub">Bakery</a>
-  <a href="#" class="mobile-menu-sub">Catering</a>
+  <a href="events.html" class="mobile-menu-sub">Events</a>
+  <a href="bakery.html" class="mobile-menu-sub">Bakery</a>
+  <a href="catering.html" class="mobile-menu-sub">Catering</a>
   <a href="#" class="mobile-menu-sub">Event Space</a>
   <a href="#" class="mobile-menu-sub">Wholesale</a>
   <a href="#" class="mobile-menu-sub">Where to Buy</a>
@@ -761,6 +890,59 @@
   </div>
 </section>
 
+<!-- ===================== SEASONAL TOURS ===================== -->
+<section class="seasonal-tours section" id="seasonal-tours" aria-label="Seasonal Tours">
+  <div class="container">
+    <div class="seasonal-tours-header reveal">
+      <div class="section-label section-label-green" style="justify-content:center; display:inline-flex; margin-bottom:16px;">Seasonal Experiences</div>
+      <h2 class="seasonal-tours-headline">Tours for Every <em>Season</em></h2>
+      <p class="seasonal-tours-sub">Special rides and experiences that change with the year.</p>
+    </div>
+    <div class="seasonal-cards">
+
+      <!-- Card 1: COW-lorful Tour -->
+      <div class="seasonal-card reveal">
+        <img src="assets/images/Fall D&D Driveway.jpg" alt="Daze and Dan pulling the wagon through fall foliage" class="seasonal-card-img" loading="lazy">
+        <div class="seasonal-card-body-wrap">
+        <div class="seasonal-card-tag">Fall Wagon Ride</div>
+        <h3 class="seasonal-card-title"><em>COW</em>–lorful Tour</h3>
+        <p class="seasonal-card-body">
+          Enjoy the beautiful color-filled trees with Daze and Dan as they pull our wagon through the hills and pastures of our Charolais Farm. White cows and calves, green pastures, and autumn colors…
+        </p>
+        <ul class="seasonal-card-details">
+          <li>Saturdays at 2:30PM by reservation only — other days and times available by phone</li>
+          <li>$150 for a group of up to 10 people</li>
+          <li>Wagon ride takes approximately 45 minutes to 1 hour</li>
+        </ul>
+        <div class="seasonal-card-note">Reservations required. Call to book other days or times.</div>
+        <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="btn btn-primary" style="align-self:flex-start;">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Winter Sleigh Rides -->
+      <div class="seasonal-card reveal reveal-delay-1">
+        <img src="assets/images/heifer barn winter.jpg" alt="Snow-covered barn at Country Dairy in winter" class="seasonal-card-img" loading="lazy">
+        <div class="seasonal-card-body-wrap">
+        <div class="seasonal-card-tag">Winter Sleigh Ride</div>
+        <h3 class="seasonal-card-title">Winter Horse-Drawn <em>Sleigh Rides</em></h3>
+        <p class="seasonal-card-body">
+          Come over the river and through the woods to Country Dairy for a Horse-Drawn Sleigh Ride this winter! Belgian horses pull our sleigh over the snow covered hills and pastures of Oceana County while your family enjoys the peace and beauty of this nostalgic ride. After your 45-minute ride, cozy up in our Moo School for some of our homemade hot chocolate and cookies to complete this fun family experience.
+        </p>
+        <ul class="seasonal-card-details">
+          <li>Wednesdays through Saturdays, December through February — weather permitting</li>
+          <li>$150 for up to 10 people; additional guests up to 15 at $15/person</li>
+          <li>Book online or call #231-861-4636 ext 119</li>
+          <li>All rides are weather-permitting</li>
+        </ul>
+        <div class="seasonal-card-note">Large groups welcome! Call for group pricing and scheduling.</div>
+        <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="btn btn-primary" style="align-self:flex-start;">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ===================== PHOTO STRIP ===================== -->
 <section class="tour-photos section" aria-label="Tour Memories">
   <div class="container">
@@ -772,31 +954,31 @@
       <div class="tp1 reveal">
         <div class="polaroid polaroid-tilt-ll tp-sm">
           <img src="assets/images/ACS - calf licks.jpg" alt="Calf licking a visitor" loading="lazy">
-          <div class="polaroid-caption">she wanted more pets</div>
+          <div class="polaroid-caption">Visiting the Calves</div>
         </div>
       </div>
       <div class="tp2 reveal reveal-delay-1">
         <div class="polaroid polaroid-tilt-r tp-lg">
           <img src="assets/images/Petting the newest calves.jpg" alt="Petting a newborn calf" loading="lazy">
-          <div class="polaroid-caption">brand new to the world</div>
+          <div class="polaroid-caption">Brand new to the world!</div>
         </div>
       </div>
       <div class="tp3 reveal reveal-delay-2">
         <div class="polaroid polaroid-tilt-s tp-md">
           <img src="assets/images/ACS - calf feeding.jpg" alt="Feeding a calf" loading="lazy">
-          <div class="polaroid-caption">feeding time!</div>
+          <div class="polaroid-caption">Feeding Time</div>
         </div>
       </div>
       <div class="tp4 reveal reveal-delay-3">
         <div class="polaroid polaroid-tilt-ll tp-sm">
           <img src="assets/images/Selfie with Moo.jpg" alt="Selfie with a cow" loading="lazy">
-          <div class="polaroid-caption">best selfie ever</div>
+          <div class="polaroid-caption">Best Selfie Ever</div>
         </div>
       </div>
       <div class="tp5 reveal reveal-delay-4">
         <div class="polaroid polaroid-tilt-rr tp-md">
           <img src="assets/images/Calf Barn Sisters.jpg" alt="Two girls in the calf barn" loading="lazy">
-          <div class="polaroid-caption">the calf barn sisters</div>
+          <div class="polaroid-caption">Calf Barn Sisters</div>
         </div>
       </div>
     </div>
@@ -907,8 +1089,7 @@
         <div class="footer-col-title">Company</div>
         <ul class="footer-col-links">
           <li><a href="our-story.html">Our Story</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Press</a></li>
+          <li><a href="https://secure6.saashr.com/ta/6192177.careers?CareersSearch=&lang=en-US">Careers</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </div>

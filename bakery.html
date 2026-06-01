@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bakery — Country Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<style>
+
+  /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #1a0e06;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.04);
+    animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 9, 3, 0.55);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--green-bright);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-bright); }
+  .page-hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: .01em;
+    opacity: 0;
+    animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+  .page-hero-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,.75);
+    margin-top: 18px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeUp .9s .6s forwards;
+  }
+
+  /* ── Intro ─────────────────────────────────────── */
+  .bakery-intro {
+    background: var(--warm-white);
+    padding: 80px 0 64px;
+  }
+  .bakery-intro-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .bakery-intro-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .bakery-intro-headline em { font-style: italic; color: var(--green-dark); }
+  .bakery-intro-body {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+  }
+
+  /* ── Menu Section ──────────────────────────────── */
+  .bakery-menu {
+    background: var(--cream);
+    padding: 88px 0;
+  }
+  .bakery-menu-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  /* ── Menu Card ─────────────────────────────────── */
+  .menu-card {
+    background: var(--warm-white);
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+  .menu-card-img-placeholder {
+    width: 100%;
+    height: 220px;
+    background: var(--cream-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-card-body {
+    padding: 28px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .menu-card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 10px;
+  }
+  .menu-card-tag::before {
+    content: '';
+    display: block;
+    width: 18px; height: 2px;
+    background: var(--green-bright);
+    border-radius: 2px;
+  }
+  .menu-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .menu-card-title em { font-style: italic; color: var(--green-dark); }
+  .menu-card-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+  .menu-card-items li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: .9rem;
+    color: var(--text-body);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  .menu-card-items li::before {
+    content: '';
+    display: block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green-bright);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .menu-card-items .seasonal-tag {
+    display: inline-block;
+    font-family: var(--font-hand);
+    font-size: .78rem;
+    color: var(--terracotta);
+    margin-left: 4px;
+  }
+  .menu-card-note {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--cream-dark);
+    font-family: var(--font-hand);
+    font-size: .92rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  /* ── Feature Split ─────────────────────────────── */
+  .bakery-feature {
+    background: var(--warm-white);
+    padding: 96px 0;
+  }
+  .bakery-feature-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .bakery-feature-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+  }
+  .bakery-feature-copy { }
+  .bakery-feature-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .bakery-feature-headline em { font-style: italic; color: var(--green-dark); }
+  .bakery-feature-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .bakery-feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .bakery-feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: .9rem;
+    color: var(--text-body);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+  .bakery-feature-list li::before {
+    content: '';
+    display: block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green-bright);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ── Custom Orders CTA ─────────────────────────── */
+  .bakery-custom {
+    background: var(--green-deep);
+    padding: 96px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .bakery-custom-texture {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-size: 300px; opacity: .6;
+  }
+  .bakery-custom-inner {
+    position: relative; z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .bakery-custom-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.12;
+    margin-bottom: 20px;
+  }
+  .bakery-custom-headline em { font-style: italic; color: var(--green-bright); }
+  .bakery-custom-body {
+    font-size: 1rem;
+    color: rgba(255,255,255,.65);
+    line-height: 1.82;
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bakery-custom-occasions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+  .bakery-custom-occasion {
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,.2);
+    font-family: var(--font-sans);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+  }
+  .bakery-custom-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 1100px) {
+    .bakery-menu-inner { grid-template-columns: 1fr 1fr; }
+    .bakery-feature-inner { grid-template-columns: 1fr; gap: 52px; }
+    .bakery-feature-img { height: 380px; }
+  }
+  @media (max-width: 768px) {
+    .bakery-menu { padding: 64px 0; }
+    .bakery-menu-inner { grid-template-columns: 1fr; }
+    .bakery-feature { padding: 64px 0; }
+    .bakery-custom { padding: 64px 0; }
+    .menu-card-body { padding: 22px 22px 24px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="farm-tours.html">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="index.html#" role="menuitem">Meat Shop</a>
+          <a href="events.html" role="menuitem">Events</a>
+          <a href="bakery.html" role="menuitem" style="color:var(--green-bright);">Bakery</a>
+          <a href="catering.html" role="menuitem">Catering</a>
+          <a href="index.html#" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="index.html#" role="menuitem">Wholesale</a>
+          <a href="index.html#" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="products.html">Products</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="#" class="mobile-menu-sub">Meat Shop</a>
+  <a href="events.html" class="mobile-menu-sub">Events</a>
+  <a href="bakery.html" class="mobile-menu-sub">Bakery</a>
+  <a href="catering.html" class="mobile-menu-sub">Catering</a>
+  <a href="#" class="mobile-menu-sub">Event Space</a>
+  <a href="#" class="mobile-menu-sub">Wholesale</a>
+  <a href="#" class="mobile-menu-sub">Where to Buy</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" aria-label="Bakery">
+  <div class="page-hero-bg" style="background-image:url('assets/images/cutting rhubarb cake closeup.jpg'); background-position: center 55%;"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <div class="page-hero-eyebrow-dot"></div>
+      New Era, Michigan &nbsp;&middot;&nbsp; Made From Scratch
+    </div>
+    <h1 class="page-hero-title">The <em>Bakery</em></h1>
+    <p class="page-hero-sub">Scratch-made breads, cakes, muffins, and more — baked fresh right here on the farm.</p>
+  </div>
+</section>
+
+<!-- ===================== INTRO ===================== -->
+<section class="bakery-intro section">
+  <div class="container">
+    <div class="bakery-intro-inner">
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex;">Made From Scratch</div>
+      <h2 class="bakery-intro-headline reveal reveal-delay-1">
+        Baked Fresh,<br><em>Every Day</em>
+      </h2>
+      <p class="bakery-intro-body reveal reveal-delay-2">
+        Our bakery team starts early so you don't have to. From sourdough loaves to cinnamon rolls to seasonal coffee cakes, everything is made from scratch using real ingredients — including our own farm-fresh dairy. Stop in and see what came out of the oven today.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- wave: warm-white → cream -->
+<div class="wavy-divider" style="background:#fdfaf5;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#f8f3eb"/>
+  </svg>
+</div>
+
+<!-- ===================== MENU CARDS ===================== -->
+<section class="bakery-menu section" aria-label="Bakery Menu">
+  <div class="container">
+
+    <div style="text-align:center; margin-bottom:56px;">
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex; margin-bottom:16px;">What We Bake</div>
+      <h2 class="bakery-intro-headline reveal reveal-delay-1" style="margin-bottom:0;">
+        Something for <em>Everyone</em>
+      </h2>
+    </div>
+
+    <div class="bakery-menu-inner">
+
+      <!-- Cookies -->
+      <div class="menu-card reveal">
+        <img src="assets/images/Choc Chip Cookie.jpg" alt="Fresh-baked chocolate chip cookies" class="menu-card-img" loading="lazy">
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Fresh Baked Daily</div>
+          <h3 class="menu-card-title"><em>Cookies</em></h3>
+          <ul class="menu-card-items">
+            <li>Chocolate Chip</li>
+            <li>Monster</li>
+            <li>No-Bakes</li>
+            <li>GL Coconut</li>
+            <li>Oatmeal Raisin</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cakes -->
+      <div class="menu-card reveal reveal-delay-1">
+        <img src="assets/images/cutting rhubarb cake closeup.jpg" alt="Homemade cake being sliced" class="menu-card-img" loading="lazy" style="object-position: center 30%;">
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Whole Cakes</div>
+          <h3 class="menu-card-title"><em>Cakes</em></h3>
+          <ul class="menu-card-items">
+            <li>Banana Cake <span class="seasonal-tag">with cream cheese frosting</span></li>
+            <li>Carrot Cake <span class="seasonal-tag">with cream cheese frosting</span></li>
+          </ul>
+          <p class="menu-card-note">Custom cakes available for events — just give us a call.</p>
+        </div>
+      </div>
+
+      <!-- Coffee Cakes -->
+      <div class="menu-card reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80" alt="Fresh coffee cake with streusel topping" class="menu-card-img" loading="lazy">
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Seasonal Favorites</div>
+          <h3 class="menu-card-title">Coffee <em>Cakes</em></h3>
+          <ul class="menu-card-items">
+            <li>Caramel Apple</li>
+            <li>Strawberry Cheesecake</li>
+            <li>Cinnamon Pecan</li>
+            <li>Sour Cream</li>
+            <li>Cherry Cheesecake</li>
+            <li>Strawberry-Rhubarb <span class="seasonal-tag">seasonal</span></li>
+          </ul>
+          <p class="menu-card-note">Some varieties available only while in season — ask what's fresh today.</p>
+        </div>
+      </div>
+
+      <!-- Muffins -->
+      <div class="menu-card reveal">
+        <img src="https://images.pexels.com/photos/1657343/pexels-photo-1657343.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Freshly baked blueberry muffins" class="menu-card-img" loading="lazy">
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Scratch Made</div>
+          <h3 class="menu-card-title"><em>Muffins</em></h3>
+          <ul class="menu-card-items">
+            <li>Blueberry</li>
+            <li>Orange-Cranberry</li>
+            <li>Chocolate Capp</li>
+            <li>GF Peanut Butter <span class="seasonal-tag">gluten free</span></li>
+            <li>GF Banana <span class="seasonal-tag">coming soon</span></li>
+            <li>Pumpkin <span class="seasonal-tag">seasonal</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cinnamon Rolls -->
+      <div class="menu-card reveal reveal-delay-1">
+        <img src="assets/images/cinnaMOO roll.jpg" alt="Freshly baked cinnamon roll" class="menu-card-img" loading="lazy">
+        <div class="menu-card-body">
+          <div class="menu-card-tag">A Farm Favorite</div>
+          <h3 class="menu-card-title">CinnaMOO <em>Rolls</em></h3>
+          <ul class="menu-card-items">
+            <li>Baked fresh and generously frosted</li>
+            <li>Best enjoyed warm</li>
+          </ul>
+          <p class="menu-card-note">Sell out fast — come early or call ahead.</p>
+        </div>
+      </div>
+
+      <!-- Sourdough -->
+      <div class="menu-card reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Rustic sourdough loaf with scored crust" class="menu-card-img" loading="lazy">
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Artisan Bread</div>
+          <h3 class="menu-card-title">Sourdough <em>Bread</em></h3>
+          <ul class="menu-card-items">
+            <li>Long-fermented for real sourdough flavor</li>
+            <li>Crusty outside, tender inside</li>
+            <li>Made with simple, honest ingredients</li>
+          </ul>
+          <p class="menu-card-note">Great with our farm-fresh butter — pick some up in the store.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave: cream → warm-white -->
+<div class="wavy-divider" style="background:#f8f3eb;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C360,4 720,56 1080,30 C1260,18 1380,38 1440,30 L1440,60 L0,60 Z" fill="#fdfaf5"/>
+  </svg>
+</div>
+
+<!-- ===================== FEATURE: CINNAMON ROLL CLOSE-UP ===================== -->
+<section class="bakery-feature section" aria-label="From the Oven">
+  <div class="container">
+    <div class="bakery-feature-inner">
+
+      <div class="reveal">
+        <img
+          src="assets/images/cinnaMOO roll.jpg"
+          alt="Country Dairy cinnamon roll fresh from the oven"
+          class="bakery-feature-img"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="bakery-feature-copy">
+        <div class="section-label section-label-green reveal">Baked on the Farm</div>
+        <h2 class="bakery-feature-headline reveal reveal-delay-1">
+          Real Ingredients,<br><em>Real Flavor</em>
+        </h2>
+        <p class="bakery-feature-body reveal reveal-delay-2">
+          We don't take shortcuts. Our bakery uses farm-fresh dairy, real butter, and quality ingredients in everything we make. You can taste the difference — and once you've had a warm cinnamon roll or a slice of carrot cake from our bakery, you'll keep coming back.
+        </p>
+        <ul class="bakery-feature-list reveal reveal-delay-2">
+          <li>Made from scratch, every single day</li>
+          <li>Farm-fresh dairy in everything we bake</li>
+          <li>Seasonal flavors rotate with what's fresh and in-season</li>
+          <li>Gluten-free options available</li>
+        </ul>
+        <div class="reveal reveal-delay-3" style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="tel:2318614636" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            Call the Farm
+          </a>
+          <a href="https://maps.google.com/?q=Country+Dairy+3476+S+80th+Ave+New+Era+MI" target="_blank" rel="noopener" class="btn btn-outline">Get Directions</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CUSTOM ORDERS CTA ===================== -->
+<section class="bakery-custom section" aria-label="Custom Orders">
+  <div class="bakery-custom-texture"></div>
+  <div class="container">
+    <div class="bakery-custom-inner">
+      <div class="section-label section-label-cream reveal" style="justify-content:center; display:inline-flex; margin-bottom:20px;">Weddings &amp; Events</div>
+      <h2 class="bakery-custom-headline reveal reveal-delay-1">
+        Larger &amp; Custom <em>Orders Welcome</em>
+      </h2>
+      <p class="bakery-custom-body reveal reveal-delay-2">
+        Planning a wedding, shower, corporate event, or a big family gathering? We'd love to help. Give us a call and we'll work with you on custom orders for any occasion — from large batches of your favorite cookies to a show-stopping cake for the big day.
+      </p>
+      <div class="bakery-custom-occasions reveal reveal-delay-2">
+        <span class="bakery-custom-occasion">Weddings</span>
+        <span class="bakery-custom-occasion">Baby Showers</span>
+        <span class="bakery-custom-occasion">Corporate Events</span>
+        <span class="bakery-custom-occasion">Birthday Parties</span>
+        <span class="bakery-custom-occasion">Church Groups</span>
+        <span class="bakery-custom-occasion">Family Reunions</span>
+      </div>
+      <div class="bakery-custom-actions reveal reveal-delay-3">
+        <a href="tel:2318614636" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          Call to Order
+        </a>
+        <a href="mailto:info@countrydairy.com" class="btn btn-outline" style="border-color:rgba(255,255,255,.3); color:rgba(255,255,255,.8);">Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Ice Cream</div>
+        <ul class="footer-col-links">
+          <li><a href="icecream.html">All Flavors</a></li>
+          <li><a href="products.html">Farm Fresh Products</a></li>
+          <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+          <li><a href="ice-cream-social.html">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <ul class="footer-col-links">
+          <li><a href="#">Where to Buy</a></li>
+          <li><a href="#">Shop Online</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+          <li><a href="#">Wholesale</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2318614636">(231) 861-4636</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="mailto:info@countrydairy.com">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:20px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:6px;">Hours</div>
+          <div style="font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.6;">Mon–Sat: 9am–6pm<br>Sunday: 11am–5pm</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-col-links">
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="https://secure6.saashr.com/ta/6192177.careers?CareersSearch=&lang=en-US">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>

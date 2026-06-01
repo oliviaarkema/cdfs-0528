@@ -8,7 +8,11 @@
       "Bash(sed -i '' 's|href=\"index.html#tours\" class=\"ev-card-link\">Book a Tour|href=\"https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD\" target=\"_blank\" rel=\"noopener\" class=\"ev-card-link\">Book a Tour|g' /Users/oliviaarkema/Desktop/cdfs-0528/our-story.html)",
       "Bash(sed -i '' 's|href=\"index.html#tours\">Book a Tour|href=\"https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD\" target=\"_blank\" rel=\"noopener\">Book a Tour|g' /Users/oliviaarkema/Desktop/cdfs-0528/our-story.html)",
       "Bash(cat)",
-      "Bash(bash /tmp/fix_waves.sh)"
+      "Bash(bash /tmp/fix_waves.sh)",
+      "WebFetch(domain:www.machinerypete.com)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(mkdir -p /Users/oliviaarkema/Desktop/peak-custom-solutions/.claude)",
+      "Bash(ls /Users/oliviaarkema/Desktop/peak-custom-solutions/images/)"
     ]
   }
 }
