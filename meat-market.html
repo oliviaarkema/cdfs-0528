@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bakery — Country Dairy</title>
+<title>Meat Market — Country Dairy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: #1a0e06;
+    background: #1a0a06;
   }
   .page-hero-bg {
     position: absolute;
@@ -32,7 +32,7 @@
   .page-hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(18, 9, 3, 0.55);
+    background: rgba(14, 6, 2, 0.58);
   }
   .page-hero-content {
     position: relative;
@@ -79,16 +79,16 @@
   }
 
   /* ── Intro ─────────────────────────────────────── */
-  .bakery-intro {
+  .meat-intro {
     background: var(--warm-white);
     padding: 80px 0 64px;
   }
-  .bakery-intro-inner {
+  .meat-intro-inner {
     max-width: 720px;
     margin: 0 auto;
     text-align: center;
   }
-  .bakery-intro-headline {
+  .meat-intro-headline {
     font-family: var(--font-serif);
     font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 700;
@@ -96,26 +96,26 @@
     line-height: 1.15;
     margin-bottom: 18px;
   }
-  .bakery-intro-headline em { font-style: italic; color: var(--green-dark); }
-  .bakery-intro-body {
+  .meat-intro-headline em { font-style: italic; color: var(--green-dark); }
+  .meat-intro-body {
     font-size: 1.02rem;
     color: var(--text-muted);
     line-height: 1.82;
     font-weight: 300;
   }
 
-  /* ── Menu Section ──────────────────────────────── */
-  .bakery-menu {
+  /* ── Products Section ──────────────────────────── */
+  .meat-products {
     background: var(--cream);
     padding: 88px 0;
   }
-  .bakery-menu-inner {
+  .meat-products-inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
   }
 
-  /* ── Menu Card ─────────────────────────────────── */
+  /* ── Product Card ──────────────────────────────── */
   .menu-card {
     background: var(--warm-white);
     border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
@@ -129,14 +129,6 @@
     height: 220px;
     object-fit: cover;
     display: block;
-  }
-  .menu-card-img-placeholder {
-    width: 100%;
-    height: 220px;
-    background: var(--cream-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .menu-card-body {
     padding: 28px 30px 30px;
@@ -197,7 +189,7 @@
     flex-shrink: 0;
     margin-top: 5px;
   }
-  .menu-card-items .seasonal-tag {
+  .menu-card-items .detail-tag {
     display: inline-block;
     font-family: var(--font-hand);
     font-size: .78rem;
@@ -215,25 +207,24 @@
   }
 
   /* ── Feature Split ─────────────────────────────── */
-  .bakery-feature {
+  .meat-feature {
     background: var(--warm-white);
     padding: 96px 0;
   }
-  .bakery-feature-inner {
+  .meat-feature-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
   }
-  .bakery-feature-img {
+  .meat-feature-img {
     width: 100%;
     height: 500px;
     object-fit: cover;
     border-radius: var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-xl);
     box-shadow: var(--shadow-soft);
   }
-  .bakery-feature-copy { }
-  .bakery-feature-headline {
+  .meat-feature-headline {
     font-family: var(--font-serif);
     font-size: clamp(2rem, 3.2vw, 2.8rem);
     font-weight: 700;
@@ -241,22 +232,22 @@
     line-height: 1.15;
     margin-bottom: 18px;
   }
-  .bakery-feature-headline em { font-style: italic; color: var(--green-dark); }
-  .bakery-feature-body {
+  .meat-feature-headline em { font-style: italic; color: var(--green-dark); }
+  .meat-feature-body {
     font-size: 1rem;
     color: var(--text-muted);
     line-height: 1.82;
     font-weight: 300;
     margin-bottom: 28px;
   }
-  .bakery-feature-list {
+  .meat-feature-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 36px;
   }
-  .bakery-feature-list li {
+  .meat-feature-list li {
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -265,7 +256,7 @@
     font-weight: 300;
     line-height: 1.55;
   }
-  .bakery-feature-list li::before {
+  .meat-feature-list li::before {
     content: '';
     display: block;
     width: 7px; height: 7px;
@@ -275,25 +266,25 @@
     margin-top: 6px;
   }
 
-  /* ── Custom Orders CTA ─────────────────────────── */
-  .bakery-custom {
+  /* ── Bulk CTA ──────────────────────────────────── */
+  .meat-bulk {
     background: var(--green-deep);
     padding: 96px 0;
     position: relative;
     overflow: hidden;
   }
-  .bakery-custom-texture {
+  .meat-bulk-texture {
     position: absolute; inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
     background-size: 300px; opacity: .6;
   }
-  .bakery-custom-inner {
+  .meat-bulk-inner {
     position: relative; z-index: 1;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
   }
-  .bakery-custom-headline {
+  .meat-bulk-headline {
     font-family: var(--font-serif);
     font-size: clamp(2rem, 3.5vw, 3.2rem);
     font-weight: 700;
@@ -301,8 +292,8 @@
     line-height: 1.12;
     margin-bottom: 20px;
   }
-  .bakery-custom-headline em { font-style: italic; color: var(--green-bright); }
-  .bakery-custom-body {
+  .meat-bulk-headline em { font-style: italic; color: var(--green-bright); }
+  .meat-bulk-body {
     font-size: 1rem;
     color: rgba(255,255,255,.65);
     line-height: 1.82;
@@ -312,14 +303,14 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .bakery-custom-occasions {
+  .meat-bulk-tags {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 44px;
   }
-  .bakery-custom-occasion {
+  .meat-bulk-tag {
     padding: 8px 20px;
     border-radius: 50px;
     border: 1.5px solid rgba(255,255,255,.2);
@@ -330,7 +321,7 @@
     text-transform: uppercase;
     color: rgba(255,255,255,.7);
   }
-  .bakery-custom-actions {
+  .meat-bulk-actions {
     display: flex;
     justify-content: center;
     gap: 14px;
@@ -339,15 +330,15 @@
 
   /* ── Responsive ────────────────────────────────── */
   @media (max-width: 1100px) {
-    .bakery-menu-inner { grid-template-columns: 1fr 1fr; }
-    .bakery-feature-inner { grid-template-columns: 1fr; gap: 52px; }
-    .bakery-feature-img { height: 380px; }
+    .meat-products-inner { grid-template-columns: 1fr 1fr; }
+    .meat-feature-inner { grid-template-columns: 1fr; gap: 52px; }
+    .meat-feature-img { height: 380px; }
   }
   @media (max-width: 768px) {
-    .bakery-menu { padding: 64px 0; }
-    .bakery-menu-inner { grid-template-columns: 1fr; }
-    .bakery-feature { padding: 64px 0; }
-    .bakery-custom { padding: 64px 0; }
+    .meat-products { padding: 64px 0; }
+    .meat-products-inner { grid-template-columns: 1fr; }
+    .meat-feature { padding: 64px 0; }
+    .meat-bulk { padding: 64px 0; }
     .menu-card-body { padding: 22px 22px 24px; }
   }
 
@@ -372,21 +363,21 @@
 
   <div class="nav-right">
     <ul class="nav-links-right">
-      <li><a href="index.html#products">Products</a></li>
+      <li><a href="products.html">Products</a></li>
       <li><a href="farm-tours.html">Farm Tours</a></li>
       <li class="nav-dropdown">
         <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
           + More <span class="nav-dropdown-arrow">&#9660;</span>
         </button>
         <div class="nav-dropdown-menu" role="menu">
-          <a href="meat-market.html" role="menuitem">Meat Market</a>
+          <a href="meat-market.html" role="menuitem" style="color:var(--green-bright);">Meat Market</a>
           <a href="events.html" role="menuitem">Events</a>
-          <a href="bakery.html" role="menuitem" style="color:var(--green-bright);">Bakery</a>
+          <a href="bakery.html" role="menuitem">Bakery</a>
           <a href="catering.html" role="menuitem">Catering</a>
           <a href="event-space.html" role="menuitem">Event Space</a>
           <div class="nav-dropdown-divider"></div>
-          <a href="index.html#" role="menuitem">Wholesale</a>
-          <a href="index.html#" role="menuitem">Where to Buy</a>
+          <a href="#" role="menuitem">Wholesale</a>
+          <a href="#" role="menuitem">Where to Buy</a>
         </div>
       </li>
     </ul>
@@ -405,7 +396,7 @@
   <a href="products.html">Products</a>
   <a href="farm-tours.html">Farm Tours</a>
   <div class="mobile-menu-divider"></div>
-  <a href="meat-market.html" class="mobile-menu-sub">Meat Market</a>
+  <a href="meat-market.html" class="mobile-menu-sub" style="color:var(--green-bright);">Meat Market</a>
   <a href="events.html" class="mobile-menu-sub">Events</a>
   <a href="bakery.html" class="mobile-menu-sub">Bakery</a>
   <a href="catering.html" class="mobile-menu-sub">Catering</a>
@@ -415,29 +406,29 @@
 </div>
 
 <!-- ===================== PAGE HERO ===================== -->
-<section class="page-hero" aria-label="Bakery">
-  <div class="page-hero-bg" style="background-image:url('assets/images/cutting rhubarb cake closeup.jpg'); background-position: center 55%;"></div>
+<section class="page-hero" aria-label="Meat Market">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558030137-a56c1b004fa3?auto=format&fit=crop&w=1600&q=80'); background-position: center 50%;"></div>
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <div class="page-hero-eyebrow">
       <div class="page-hero-eyebrow-dot"></div>
-      New Era, Michigan &nbsp;&middot;&nbsp; Made From Scratch
+      New Era, Michigan &nbsp;&middot;&nbsp; Farm Raised &amp; Butcher Fresh
     </div>
-    <h1 class="page-hero-title">The <em>Bakery</em></h1>
-    <p class="page-hero-sub">Scratch-made breads, cakes, muffins, and more — baked fresh right here on the farm.</p>
+    <h1 class="page-hero-title">The <em>Meat Market</em></h1>
+    <p class="page-hero-sub">Premium beef raised right here on our farm — cut fresh and sold by the piece or in bulk bundles.</p>
   </div>
 </section>
 
 <!-- ===================== INTRO ===================== -->
-<section class="bakery-intro section">
+<section class="meat-intro section">
   <div class="container">
-    <div class="bakery-intro-inner">
-      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex;">Made From Scratch</div>
-      <h2 class="bakery-intro-headline reveal reveal-delay-1">
-        Baked Fresh,<br><em>Every Day</em>
+    <div class="meat-intro-inner">
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex;">Farm Raised Beef</div>
+      <h2 class="meat-intro-headline reveal reveal-delay-1">
+        You Know Where It<br><em>Comes From</em>
       </h2>
-      <p class="bakery-intro-body reveal reveal-delay-2">
-        Our bakery team starts early so you don't have to. From sourdough loaves to cinnamon rolls to seasonal coffee cakes, everything is made from scratch using real ingredients — including our own farm-fresh dairy. Stop in and see what came out of the oven today.
+      <p class="meat-intro-body reveal reveal-delay-2">
+        Our beef is raised right here on the farm — the same land, the same family, the same care that goes into everything we do. From a perfectly marbled ribeye to hearty ground beef for the grill, every cut is handled with pride and sold fresh in our farm store.
       </p>
     </div>
   </div>
@@ -450,110 +441,106 @@
   </svg>
 </div>
 
-<!-- ===================== MENU CARDS ===================== -->
-<section class="bakery-menu section" aria-label="Bakery Menu">
+<!-- ===================== PRODUCT CARDS ===================== -->
+<section class="meat-products section" aria-label="Meat Market Products">
   <div class="container">
 
     <div style="text-align:center; margin-bottom:56px;">
-      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex; margin-bottom:16px;">What We Bake</div>
-      <h2 class="bakery-intro-headline reveal reveal-delay-1" style="margin-bottom:0;">
-        Something for <em>Everyone</em>
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex; margin-bottom:16px;">What We Carry</div>
+      <h2 class="meat-intro-headline reveal reveal-delay-1" style="margin-bottom:0;">
+        Something for <em>Every Table</em>
       </h2>
     </div>
 
-    <div class="bakery-menu-inner">
+    <div class="meat-products-inner">
 
-      <!-- Cookies -->
+      <!-- Steaks -->
       <div class="menu-card reveal">
-        <img src="assets/images/Choc Chip Cookie.jpg" alt="Fresh-baked chocolate chip cookies" class="menu-card-img" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1616252980327-ec70572e5df9?auto=format&fit=crop&w=800&q=80" alt="Fresh-cut steaks on the grill" class="menu-card-img" loading="lazy">
         <div class="menu-card-body">
-          <div class="menu-card-tag">Fresh Baked Daily</div>
-          <h3 class="menu-card-title"><em>Cookies</em></h3>
+          <div class="menu-card-tag">Grill Ready</div>
+          <h3 class="menu-card-title"><em>Steaks</em></h3>
           <ul class="menu-card-items">
-            <li>Chocolate Chip</li>
-            <li>Monster</li>
-            <li>No-Bakes</li>
-            <li>GL Coconut</li>
-            <li>Oatmeal Raisin</li>
+            <li>T-Bone</li>
+            <li>Ribeye</li>
+            <li>Sirloin</li>
           </ul>
+          <p class="menu-card-note">Cut fresh in-store. Ask the butcher about current availability and thickness.</p>
         </div>
       </div>
 
-      <!-- Cakes -->
+      <!-- Roasts -->
       <div class="menu-card reveal reveal-delay-1">
-        <img src="assets/images/cutting rhubarb cake closeup.jpg" alt="Homemade cake being sliced" class="menu-card-img" loading="lazy" style="object-position: center 30%;">
+        <img src="assets/images/Roast Beef Sammich.jpg" alt="Farm-raised beef roast" class="menu-card-img" loading="lazy">
         <div class="menu-card-body">
-          <div class="menu-card-tag">Whole Cakes</div>
-          <h3 class="menu-card-title"><em>Cakes</em></h3>
+          <div class="menu-card-tag">Slow Cooker Favorites</div>
+          <h3 class="menu-card-title"><em>Roasts</em></h3>
           <ul class="menu-card-items">
-            <li>Banana Cake <span class="seasonal-tag">with cream cheese frosting</span></li>
-            <li>Carrot Cake <span class="seasonal-tag">with cream cheese frosting</span></li>
+            <li>Chuck Roast</li>
+            <li>Rump Roast</li>
+            <li>Arm Roast</li>
           </ul>
-          <p class="menu-card-note">Custom cakes available for events — just give us a call.</p>
+          <p class="menu-card-note">Perfect for Sunday dinners and slow-cooker meals the whole family will love.</p>
         </div>
       </div>
 
-      <!-- Coffee Cakes -->
+      <!-- Ground Beef -->
       <div class="menu-card reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80" alt="Fresh coffee cake with streusel topping" class="menu-card-img" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1609183556292-f208be1a9644?auto=format&fit=crop&w=800&q=80" alt="Fresh ground beef" class="menu-card-img" loading="lazy">
         <div class="menu-card-body">
-          <div class="menu-card-tag">Seasonal Favorites</div>
-          <h3 class="menu-card-title">Coffee <em>Cakes</em></h3>
+          <div class="menu-card-tag">Farm Fresh</div>
+          <h3 class="menu-card-title">Ground <em>Beef</em></h3>
           <ul class="menu-card-items">
-            <li>Caramel Apple</li>
-            <li>Strawberry Cheesecake</li>
-            <li>Cinnamon Pecan</li>
-            <li>Sour Cream</li>
-            <li>Cherry Cheesecake</li>
-            <li>Strawberry-Rhubarb <span class="seasonal-tag">seasonal</span></li>
+            <li>By the pound <span class="detail-tag">single packs</span></li>
+            <li>25 lb bundle <span class="detail-tag">great for families</span></li>
+            <li>50 lb bundle <span class="detail-tag">best value</span></li>
           </ul>
-          <p class="menu-card-note">Some varieties available only while in season — ask what's fresh today.</p>
+          <p class="menu-card-note">Stock the freezer and save. Bundle pricing available in-store.</p>
         </div>
       </div>
 
-      <!-- Muffins -->
+      <!-- Brats -->
       <div class="menu-card reveal">
-        <img src="https://images.pexels.com/photos/1657343/pexels-photo-1657343.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Freshly baked blueberry muffins" class="menu-card-img" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1591989330748-777649e84466?auto=format&fit=crop&w=800&q=80" alt="Fresh brats on the grill" class="menu-card-img" loading="lazy">
         <div class="menu-card-body">
-          <div class="menu-card-tag">Scratch Made</div>
-          <h3 class="menu-card-title"><em>Muffins</em></h3>
+          <div class="menu-card-tag">Summer Staple</div>
+          <h3 class="menu-card-title"><em>Brats</em></h3>
           <ul class="menu-card-items">
-            <li>Blueberry</li>
-            <li>Orange-Cranberry</li>
-            <li>Chocolate Capp</li>
-            <li>GF Peanut Butter <span class="seasonal-tag">gluten free</span></li>
-            <li>GF Banana <span class="seasonal-tag">coming soon</span></li>
-            <li>Pumpkin <span class="seasonal-tag">seasonal</span></li>
+            <li>Original</li>
+            <li>Cheddar</li>
+            <li>Jalapeño Cheddar</li>
           </ul>
+          <p class="menu-card-note">A West Michigan backyard essential. Made fresh right here on the farm.</p>
         </div>
       </div>
 
-      <!-- Cinnamon Rolls -->
+      <!-- Bundles -->
       <div class="menu-card reveal reveal-delay-1">
-        <img src="assets/images/cinnaMOO roll.jpg" alt="Freshly baked cinnamon roll" class="menu-card-img" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1580821074864-8653bab910be?auto=format&fit=crop&w=800&q=80" alt="Bulk ground beef bundles" class="menu-card-img" loading="lazy">
         <div class="menu-card-body">
-          <div class="menu-card-tag">A Farm Favorite</div>
-          <h3 class="menu-card-title">CinnaMOO <em>Rolls</em></h3>
+          <div class="menu-card-tag">Stock the Freezer</div>
+          <h3 class="menu-card-title">Bulk <em>Bundles</em></h3>
           <ul class="menu-card-items">
-            <li>Baked fresh and generously frosted</li>
-            <li>Best enjoyed warm</li>
+            <li>Ground beef 25 lb bundle</li>
+            <li>Ground beef 50 lb bundle</li>
+            <li>Custom mixed bundles available</li>
           </ul>
-          <p class="menu-card-note">Sell out fast — come early or call ahead.</p>
+          <p class="menu-card-note">Call ahead to arrange large orders or custom cuts for your household.</p>
         </div>
       </div>
 
-      <!-- Sourdough -->
+      <!-- Coming to the Counter -->
       <div class="menu-card reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Rustic sourdough loaf with scored crust" class="menu-card-img" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1690983323238-0b91789e1b5a?auto=format&fit=crop&w=800&q=80" alt="Raw meats at the butcher counter" class="menu-card-img" loading="lazy">
         <div class="menu-card-body">
-          <div class="menu-card-tag">Artisan Bread</div>
-          <h3 class="menu-card-title">Sourdough <em>Bread</em></h3>
+          <div class="menu-card-tag">Visit the Counter</div>
+          <h3 class="menu-card-title">Ask the <em>Butcher</em></h3>
           <ul class="menu-card-items">
-            <li>Long-fermented for real sourdough flavor</li>
-            <li>Crusty outside, tender inside</li>
-            <li>Made with simple, honest ingredients</li>
+            <li>Special cuts by request</li>
+            <li>Seasonal and limited availability items</li>
+            <li>Catering quantities available</li>
           </ul>
-          <p class="menu-card-note">Great with our farm-fresh butter — pick some up in the store.</p>
+          <p class="menu-card-note">Stop in and let us know what you need — we're happy to help find the right cut for any occasion.</p>
         </div>
       </div>
 
@@ -568,33 +555,33 @@
   </svg>
 </div>
 
-<!-- ===================== FEATURE: CINNAMON ROLL CLOSE-UP ===================== -->
-<section class="bakery-feature section" aria-label="From the Oven">
+<!-- ===================== FEATURE SPLIT ===================== -->
+<section class="meat-feature section" aria-label="Farm Raised Beef">
   <div class="container">
-    <div class="bakery-feature-inner">
+    <div class="meat-feature-inner">
 
       <div class="reveal">
         <img
-          src="assets/images/cinnaMOO roll.jpg"
-          alt="Country Dairy cinnamon roll fresh from the oven"
-          class="bakery-feature-img"
+          src="assets/images/Roast Beef Sammich.jpg"
+          alt="Country Dairy farm-raised beef"
+          class="meat-feature-img"
           loading="lazy"
         >
       </div>
 
-      <div class="bakery-feature-copy">
-        <div class="section-label section-label-green reveal">Baked on the Farm</div>
-        <h2 class="bakery-feature-headline reveal reveal-delay-1">
-          Real Ingredients,<br><em>Real Flavor</em>
+      <div>
+        <div class="section-label section-label-green reveal">Raised on Our Farm</div>
+        <h2 class="meat-feature-headline reveal reveal-delay-1">
+          You Know the Farm.<br><em>Know the Beef.</em>
         </h2>
-        <p class="bakery-feature-body reveal reveal-delay-2">
-          We don't take shortcuts. Our bakery uses farm-fresh dairy, real butter, and quality ingredients in everything we make. You can taste the difference — and once you've had a warm cinnamon roll or a slice of carrot cake from our bakery, you'll keep coming back.
+        <p class="meat-feature-body reveal reveal-delay-2">
+          When you buy meat from Country Dairy, you know exactly where it came from. Our cattle are raised right here in New Era on the same land that's fed four generations of the Van Gunst family. No middleman, no mystery — just honest beef from a farm that takes pride in doing things right.
         </p>
-        <ul class="bakery-feature-list reveal reveal-delay-2">
-          <li>Made from scratch, every single day</li>
-          <li>Farm-fresh dairy in everything we bake</li>
-          <li>Seasonal flavors rotate with what's fresh and in-season</li>
-          <li>Gluten-free options available</li>
+        <ul class="meat-feature-list reveal reveal-delay-2">
+          <li>Farm-raised on our New Era, Michigan land</li>
+          <li>Cut fresh in our farm store</li>
+          <li>Bulk bundles available for families and households</li>
+          <li>Call ahead for large or custom orders</li>
         </ul>
         <div class="reveal reveal-delay-3" style="display:flex; gap:14px; flex-wrap:wrap;">
           <a href="tel:2318614636" class="btn btn-primary">
@@ -609,27 +596,25 @@
   </div>
 </section>
 
-<!-- ===================== CUSTOM ORDERS CTA ===================== -->
-<section class="bakery-custom section" aria-label="Custom Orders">
-  <div class="bakery-custom-texture"></div>
+<!-- ===================== BULK ORDER CTA ===================== -->
+<section class="meat-bulk section" aria-label="Bulk Orders">
+  <div class="meat-bulk-texture"></div>
   <div class="container">
-    <div class="bakery-custom-inner">
-      <div class="section-label section-label-cream reveal" style="justify-content:center; display:inline-flex; margin-bottom:20px;">Weddings &amp; Events</div>
-      <h2 class="bakery-custom-headline reveal reveal-delay-1">
-        Larger &amp; Custom <em>Orders Welcome</em>
+    <div class="meat-bulk-inner">
+      <div class="section-label section-label-cream reveal" style="justify-content:center; display:inline-flex; margin-bottom:20px;">Ground Beef Bundles</div>
+      <h2 class="meat-bulk-headline reveal reveal-delay-1">
+        Stock the Freezer &amp;<br><em>Save on Every Pound</em>
       </h2>
-      <p class="bakery-custom-body reveal reveal-delay-2">
-        Planning a wedding, shower, corporate event, or a big family gathering? We'd love to help. Give us a call and we'll work with you on custom orders for any occasion — from large batches of your favorite cookies to a show-stopping cake for the big day.
+      <p class="meat-bulk-body reveal reveal-delay-2">
+        Whether you're feeding a big family, stocking up for the season, or filling orders for a group, our ground beef bundles are the smart choice. Buy by the pound or go big with a 25 or 50 lb bundle and save. Call us ahead of time for large quantities so we can have it ready for you.
       </p>
-      <div class="bakery-custom-occasions reveal reveal-delay-2">
-        <span class="bakery-custom-occasion">Weddings</span>
-        <span class="bakery-custom-occasion">Baby Showers</span>
-        <span class="bakery-custom-occasion">Corporate Events</span>
-        <span class="bakery-custom-occasion">Birthday Parties</span>
-        <span class="bakery-custom-occasion">Church Groups</span>
-        <span class="bakery-custom-occasion">Family Reunions</span>
+      <div class="meat-bulk-tags reveal reveal-delay-2">
+        <span class="meat-bulk-tag">By the Pound</span>
+        <span class="meat-bulk-tag">25 lb Bundle</span>
+        <span class="meat-bulk-tag">50 lb Bundle</span>
+        <span class="meat-bulk-tag">Custom Cuts</span>
       </div>
-      <div class="bakery-custom-actions reveal reveal-delay-3">
+      <div class="meat-bulk-actions reveal reveal-delay-3">
         <a href="tel:2318614636" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
           Call to Order
@@ -671,7 +656,7 @@
           <li><a href="#">Where to Buy</a></li>
           <li><a href="#">Shop Online</a></li>
           <li><a href="farm-tours.html">Farm Tours</a></li>
-          <li><a href="#">Wholesale</a></li>
+          <li><a href="meat-market.html">Meat Market</a></li>
         </ul>
       </div>
       <div>

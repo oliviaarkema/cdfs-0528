@@ -12,7 +12,8 @@
       "WebFetch(domain:www.machinerypete.com)",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
       "Bash(mkdir -p /Users/oliviaarkema/Desktop/peak-custom-solutions/.claude)",
-      "Bash(ls /Users/oliviaarkema/Desktop/peak-custom-solutions/images/)"
+      "Bash(ls /Users/oliviaarkema/Desktop/peak-custom-solutions/images/)",
+      "WebFetch(domain:unsplash.com)"
     ]
   }
 }

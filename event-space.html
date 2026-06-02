@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Space — Country Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<style>
+
+  /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #100c06;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.04);
+    animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 7, 3, 0.52);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--green-bright);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-bright); }
+  .page-hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: .01em;
+    opacity: 0;
+    animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+  .page-hero-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,.75);
+    margin-top: 18px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeUp .9s .6s forwards;
+  }
+
+  /* ── Intro ─────────────────────────────────────── */
+  .es-intro {
+    background: var(--warm-white);
+    padding: 80px 0 64px;
+  }
+  .es-intro-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .es-intro-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .es-intro-headline em { font-style: italic; color: var(--green-dark); }
+  .es-intro-body {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+  }
+
+  /* ── Venue Feature Splits ───────────────────────── */
+  .es-venue {
+    padding: 96px 0;
+  }
+  .es-venue--cream { background: var(--cream); }
+  .es-venue--warm  { background: var(--warm-white); }
+
+  .es-venue-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .es-venue-inner--flip { direction: rtl; }
+  .es-venue-inner--flip > * { direction: ltr; }
+
+  .es-venue-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    display: block;
+  }
+
+  .es-venue-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 14px;
+  }
+  .es-venue-tag::before {
+    content: '';
+    display: block;
+    width: 18px; height: 2px;
+    background: var(--green-bright);
+    border-radius: 2px;
+  }
+  .es-venue-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .es-venue-headline em { font-style: italic; color: var(--green-dark); }
+  .es-venue-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .es-venue-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .es-venue-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: .9rem;
+    color: var(--text-body);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+  .es-venue-list li::before {
+    content: '';
+    display: block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green-bright);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ── Occasions Strip ────────────────────────────── */
+  .es-occasions {
+    background: var(--green-deep);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .es-occasions-texture {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-size: 300px; opacity: .6;
+  }
+  .es-occasions-inner {
+    position: relative; z-index: 1;
+    text-align: center;
+  }
+  .es-occasions-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .es-occasions-headline em { font-style: italic; color: var(--green-bright); }
+  .es-occasions-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,.6);
+    font-weight: 300;
+    margin-bottom: 44px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .es-occasion-chips {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .es-occasion-chip {
+    padding: 10px 24px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,.22);
+    font-family: var(--font-sans);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.75);
+  }
+
+  /* ── CTA ────────────────────────────────────────── */
+  .es-cta {
+    background: var(--cream);
+    padding: 96px 0;
+  }
+  .es-cta-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .es-cta-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .es-cta-headline em { font-style: italic; color: var(--green-dark); }
+  .es-cta-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .es-cta-contact {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 36px;
+  }
+  .es-cta-contact-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    font-style: italic;
+  }
+  .es-cta-contact-role {
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+  }
+  .es-cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 1000px) {
+    .es-venue-inner { grid-template-columns: 1fr; gap: 48px; direction: ltr; }
+    .es-venue-inner--flip { direction: ltr; }
+    .es-venue-img { height: 360px; }
+    .es-venue { padding: 64px 0; }
+  }
+  @media (max-width: 768px) {
+    .es-intro { padding: 60px 0 48px; }
+    .es-occasions { padding: 60px 0; }
+    .es-cta { padding: 64px 0; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="farm-tours.html">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="meat-market.html" role="menuitem">Meat Market</a>
+          <a href="events.html" role="menuitem">Events</a>
+          <a href="bakery.html" role="menuitem">Bakery</a>
+          <a href="catering.html" role="menuitem">Catering</a>
+          <a href="event-space.html" role="menuitem" style="color:var(--green-bright);">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="#" role="menuitem">Wholesale</a>
+          <a href="#" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="products.html">Products</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="meat-market.html" class="mobile-menu-sub">Meat Market</a>
+  <a href="events.html" class="mobile-menu-sub">Events</a>
+  <a href="bakery.html" class="mobile-menu-sub">Bakery</a>
+  <a href="catering.html" class="mobile-menu-sub">Catering</a>
+  <a href="event-space.html" class="mobile-menu-sub" style="color:var(--green-bright);">Event Space</a>
+  <a href="#" class="mobile-menu-sub">Wholesale</a>
+  <a href="#" class="mobile-menu-sub">Where to Buy</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" aria-label="Event Space">
+  <div class="page-hero-bg" style="background-image:url('assets/images/moo-school-interior.jpg'); background-position: center 40%;"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <div class="page-hero-eyebrow-dot"></div>
+      New Era, Michigan &nbsp;&middot;&nbsp; Private Events &amp; Gatherings
+    </div>
+    <h1 class="page-hero-title"><em>Event Space</em></h1>
+    <p class="page-hero-sub">Gather on the farm for the moments that matter most — from bridal showers to family reunions, there's no place quite like this.</p>
+  </div>
+</section>
+
+<!-- ===================== INTRO ===================== -->
+<section class="es-intro section">
+  <div class="container">
+    <div class="es-intro-inner">
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex;">Host Your Next Gathering Here</div>
+      <h2 class="es-intro-headline reveal reveal-delay-1">
+        A Farm Setting Like<br><em>No Other</em>
+      </h2>
+      <p class="es-intro-body reveal reveal-delay-2">
+        The Moo School is our charming on-farm event space — a warm, one-of-a-kind setting that's perfect for the gatherings that mean the most. Whether you're celebrating a new baby, a bride-to-be, or just bringing the family together, we'd love to host you here on the farm.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- wave: warm-white → cream -->
+<div class="wavy-divider" style="background:#fdfaf5;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#f8f3eb"/>
+  </svg>
+</div>
+
+<!-- ===================== MOO SCHOOL ===================== -->
+<section class="es-venue es-venue--cream section" aria-label="Moo School">
+  <div class="container">
+    <div class="es-venue-inner">
+
+      <div class="reveal" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <img src="assets/images/moo-school-interior.jpg" alt="Moo School set up for a bridal shower" class="es-venue-img" loading="lazy" style="height:280px; border-radius:var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);">
+        <img src="assets/images/moo-school-tablescape.jpg" alt="Moo School table setting" class="es-venue-img" loading="lazy" style="height:280px; border-radius:var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-xl);">
+        <img src="assets/images/moo-school-exterior.jpg" alt="Moo School exterior" class="es-venue-img" loading="lazy" style="height:280px; border-radius:var(--radius-xl) var(--radius-xl) var(--radius-xl) var(--radius-sm);">
+        <img src="assets/images/moo-school-baby-shower.jpg" alt="Baby shower at Moo School" class="es-venue-img" loading="lazy" style="height:280px; border-radius:var(--radius-xl) var(--radius-xl) var(--radius-sm) var(--radius-xl);">
+      </div>
+
+      <div>
+        <div class="es-venue-tag reveal">Est. 2005 &middot; New Era, Michigan</div>
+        <h2 class="es-venue-headline reveal reveal-delay-1">
+          The <em>Moo School</em>
+        </h2>
+        <p class="es-venue-body reveal reveal-delay-2">
+          The Moo School is our charming on-farm event space — a warm, character-filled building that makes the perfect backdrop for life's special celebrations. It's cozy, it's unique, and there's truly no place like it. From beautifully decorated bridal showers to sweet baby shower setups, guests love the farm setting as much as the gathering itself.
+        </p>
+        <ul class="es-venue-list reveal reveal-delay-2">
+          <li>Bridal showers &amp; bachelorette gatherings</li>
+          <li>Baby showers</li>
+          <li>Birthday parties &amp; milestone celebrations</li>
+          <li>Family gatherings &amp; holiday get-togethers</li>
+          <li>Church groups &amp; community events</li>
+        </ul>
+        <div class="reveal reveal-delay-3" style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="tel:2318614636" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            Call to Inquire
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OCCASIONS STRIP ===================== -->
+<div class="wavy-divider" style="background:#fdfaf5;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 C360,55 720,0 1080,35 C1260,52 1380,18 1440,28 L1440,60 L0,60 Z" fill="#074d1a"/>
+  </svg>
+</div>
+<section class="es-occasions section" aria-label="Event Occasions">
+  <div class="es-occasions-texture"></div>
+  <div class="container">
+    <div class="es-occasions-inner">
+      <div class="section-label section-label-cream reveal" style="justify-content:center; display:inline-flex; margin-bottom:18px;">Every Occasion Welcome</div>
+      <h2 class="es-occasions-headline reveal reveal-delay-1">
+        We've Hosted <em>All Kinds</em> of Gatherings
+      </h2>
+      <p class="es-occasions-sub reveal reveal-delay-2">
+        The Moo School has been the backdrop for all kinds of celebrations — the farm has a way of making every occasion feel special.
+      </p>
+      <div class="es-occasion-chips reveal reveal-delay-2">
+        <span class="es-occasion-chip">Bridal Showers</span>
+        <span class="es-occasion-chip">Baby Showers</span>
+        <span class="es-occasion-chip">Weddings</span>
+        <span class="es-occasion-chip">Family Reunions</span>
+        <span class="es-occasion-chip">Birthday Parties</span>
+        <span class="es-occasion-chip">Church Groups</span>
+        <span class="es-occasion-chip">Holiday Gatherings</span>
+        <span class="es-occasion-chip">Corporate Events</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT CTA ===================== -->
+<div class="wavy-divider" style="background:#074d1a;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 C360,55 720,0 1080,35 C1260,52 1380,18 1440,28 L1440,60 L0,60 Z" fill="#f8f3eb"/>
+  </svg>
+</div>
+<section class="es-cta section" aria-label="Inquire About Event Space">
+  <div class="container">
+    <div class="es-cta-inner">
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex; margin-bottom:20px;">Ready to Plan Your Event?</div>
+      <h2 class="es-cta-headline reveal reveal-delay-1">
+        Give Us a Call &amp;<br><em>Let's Make It Happen</em>
+      </h2>
+      <p class="es-cta-body reveal reveal-delay-2">
+        We'd love to hear about your event. Reach out to Betsy to ask questions, check availability, and get started planning your celebration at the farm.
+      </p>
+      <div class="es-cta-contact reveal reveal-delay-2">
+        <div class="es-cta-contact-name">Betsy</div>
+        <div class="es-cta-contact-role">Event Space Inquiries</div>
+      </div>
+      <div class="es-cta-actions reveal reveal-delay-3">
+        <a href="tel:2318614636" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          Call (231) 861-4636
+        </a>
+        <a href="mailto:info@countrydairy.com" class="btn btn-outline">Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Ice Cream</div>
+        <ul class="footer-col-links">
+          <li><a href="icecream.html">All Flavors</a></li>
+          <li><a href="products.html">Farm Fresh Products</a></li>
+          <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+          <li><a href="ice-cream-social.html">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <ul class="footer-col-links">
+          <li><a href="#">Where to Buy</a></li>
+          <li><a href="#">Shop Online</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+          <li><a href="meat-market.html">Meat Market</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2318614636">(231) 861-4636</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="mailto:info@countrydairy.com">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:20px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:6px;">Hours</div>
+          <div style="font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.6;">Mon–Sat: 9am–6pm<br>Sunday: 11am–5pm</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-col-links">
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="https://secure6.saashr.com/ta/6192177.careers?CareersSearch=&lang=en-US">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>
