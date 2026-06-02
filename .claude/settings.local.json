@@ -13,7 +13,9 @@
       "mcp__Claude_in_Chrome__tabs_context_mcp",
       "Bash(mkdir -p /Users/oliviaarkema/Desktop/peak-custom-solutions/.claude)",
       "Bash(ls /Users/oliviaarkema/Desktop/peak-custom-solutions/images/)",
-      "WebFetch(domain:unsplash.com)"
+      "WebFetch(domain:unsplash.com)",
+      "Bash(sed -i '' 's|href=\"#\" role=\"menuitem\">Wholesale|href=\"https://countrydairy.com/products/\" role=\"menuitem\">Wholesale|g' /Users/oliviaarkema/Desktop/cdfs-0528/*.html)",
+      "Bash(sed -i '' 's|href=\"#\" class=\"mobile-menu-sub\">Wholesale|href=\"https://countrydairy.com/products/\" class=\"mobile-menu-sub\">Wholesale|g' /Users/oliviaarkema/Desktop/cdfs-0528/*.html)"
     ]
   }
 }
