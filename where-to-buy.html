@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where to Buy — Country Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<link rel="stylesheet" href="css/leaflet.css">
+<style>
+
+  /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative;
+    height: 44vh;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0d1a0f;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 55%;
+    transform: scale(1.04);
+    animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay {
+    position: absolute; inset: 0;
+    background: rgba(5, 18, 7, 0.62);
+  }
+  .page-hero-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-sans); font-size: .7rem; font-weight: 700;
+    letter-spacing: .25em; text-transform: uppercase;
+    color: var(--green-bright); margin-bottom: 16px;
+    opacity: 0; animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-bright); }
+  .page-hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    font-weight: 700; color: #fff; line-height: 1.0;
+    opacity: 0; animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+
+  /* ── Search Bar ────────────────────────────────── */
+  .wtb-search-wrap {
+    background: var(--green-deep);
+    padding: 32px 0;
+    position: relative;
+    z-index: 200;
+  }
+  .wtb-search-inner {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wtb-search-label {
+    font-family: var(--font-sans);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.55);
+    white-space: nowrap;
+  }
+  .wtb-search-field-wrap {
+    position: relative;
+    min-width: 320px;
+    max-width: 480px;
+    flex: 1;
+  }
+  .wtb-search-field {
+    display: flex;
+    gap: 0;
+    background: #fff;
+    border-radius: 50px;
+    overflow: visible;
+    box-shadow: 0 4px 24px rgba(0,0,0,.2);
+  }
+  .wtb-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 14px 20px;
+    font-family: var(--font-sans);
+    font-size: .9rem;
+    color: var(--dark-brown);
+    background: transparent;
+    border-radius: 50px 0 0 50px;
+    min-width: 0;
+  }
+  .wtb-search-btn {
+    padding: 12px 24px;
+    background: var(--green-bright);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #fff;
+    transition: background .2s;
+    white-space: nowrap;
+    border-radius: 0 50px 50px 0;
+    flex-shrink: 0;
+  }
+  .wtb-search-btn:hover { background: var(--green-dark); }
+
+  /* ── Autocomplete Dropdown ─────────────────────── */
+  .wtb-autocomplete {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0; right: 0;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.18);
+    overflow: hidden;
+    display: none;
+    z-index: 9999;
+  }
+  .wtb-autocomplete.open { display: block; }
+  .wtb-ac-item {
+    padding: 12px 18px;
+    font-size: .88rem;
+    color: var(--dark-brown);
+    cursor: pointer;
+    border-bottom: 1px solid var(--cream-dark);
+    line-height: 1.4;
+    transition: background .12s;
+  }
+  .wtb-ac-item:last-child { border-bottom: none; }
+  .wtb-ac-item:hover, .wtb-ac-item.focused { background: var(--cream); }
+  .wtb-ac-item strong { color: var(--green-dark); font-weight: 700; }
+
+  /* ── Filter Chips ──────────────────────────────── */
+  .wtb-filters {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 16px 0;
+  }
+  .wtb-filters-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .wtb-filter-label {
+    font-family: var(--font-sans);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 4px;
+    white-space: nowrap;
+  }
+  .wtb-chip {
+    padding: 7px 16px;
+    border-radius: 50px;
+    border: 1.5px solid var(--cream-dark);
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all .18s;
+    background: transparent;
+  }
+  .wtb-chip:hover { border-color: var(--green-bright); color: var(--green-dark); }
+  .wtb-chip.active {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    color: #fff;
+  }
+
+  /* ── Main Layout ───────────────────────────────── */
+  .wtb-main {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    align-items: stretch;
+  }
+
+  /* ── Map ───────────────────────────────────────── */
+  #wtb-map {
+    width: 100%;
+    height: 580px;
+    z-index: 1;
+    background: #e8ede8;
+  }
+
+  /* ── Retailer List ─────────────────────────────── */
+  .wtb-list {
+    background: var(--warm-white);
+    overflow-y: auto;
+    border-left: 1px solid var(--cream-dark);
+    display: flex;
+    flex-direction: column;
+  }
+  .wtb-list-header {
+    padding: 20px 24px 14px;
+    border-bottom: 1px solid var(--cream-dark);
+    position: sticky;
+    top: 0;
+    background: var(--warm-white);
+    z-index: 2;
+  }
+  .wtb-list-count {
+    font-family: var(--font-sans);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 4px;
+  }
+  .wtb-list-title {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+  }
+  .wtb-retailer-list { flex: 1; }
+
+  /* ── Retailer Card ─────────────────────────────── */
+  .wtb-retailer {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--cream-dark);
+    cursor: pointer;
+    transition: background .15s;
+    position: relative;
+  }
+  .wtb-retailer:hover { background: var(--cream); }
+  .wtb-retailer.active { background: #eef6f0; border-left: 3px solid var(--green-bright); }
+  .wtb-retailer-name {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 3px;
+  }
+  .wtb-retailer-addr {
+    font-size: .8rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 8px;
+    line-height: 1.45;
+  }
+  .wtb-retailer-dist {
+    font-family: var(--font-sans);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+  }
+  .wtb-retailer-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .wtb-tag {
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-family: var(--font-sans);
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .wtb-tag--icecream  { background: #e8f5ee; color: #1a5c30; }
+  .wtb-tag--dairy     { background: #fdf3e3; color: #7a4a10; }
+  .wtb-tag--meat      { background: #fce8e8; color: #7a1a1a; }
+  .wtb-tag--seasonal  { background: #f0eaf8; color: #4a2a7a; }
+
+  /* ── No Results ────────────────────────────────── */
+  .wtb-empty {
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    display: none;
+  }
+  .wtb-empty-icon { font-size: 2rem; margin-bottom: 12px; opacity: .4; }
+
+  /* ── Leaflet custom pin ────────────────────────── */
+  .wtb-pin {
+    width: 32px; height: 32px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+  }
+  .wtb-pin--default  { background: var(--green-dark, #074d1a); }
+  .wtb-pin--active   { background: #c0392b; }
+
+  /* Leaflet popup style override */
+  .leaflet-popup-content-wrapper {
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,.18) !important;
+    font-family: inherit !important;
+  }
+  .leaflet-popup-content { margin: 16px 18px !important; }
+  .wtb-popup-name {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 4px;
+  }
+  .wtb-popup-addr { font-size: .8rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.45; }
+  .wtb-popup-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 900px) {
+    .wtb-main { grid-template-columns: 1fr; }
+    #wtb-map { height: 380px; }
+    .wtb-list { max-height: 420px; border-left: none; border-top: 1px solid var(--cream-dark); }
+  }
+  @media (max-width: 600px) {
+    .wtb-search-field-wrap { min-width: 260px; }
+    #wtb-map { height: 300px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="farm-tours.html">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="meat-market.html" role="menuitem">Meat Market</a>
+          <a href="events.html" role="menuitem">Events</a>
+          <a href="bakery.html" role="menuitem">Bakery</a>
+          <a href="catering.html" role="menuitem">Catering</a>
+          <a href="event-space.html" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="https://countrydairy.com/products/" role="menuitem">Wholesale</a>
+          <a href="where-to-buy.html" role="menuitem" style="color:var(--green-bright);">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="products.html">Products</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="meat-market.html" class="mobile-menu-sub">Meat Market</a>
+  <a href="events.html" class="mobile-menu-sub">Events</a>
+  <a href="bakery.html" class="mobile-menu-sub">Bakery</a>
+  <a href="catering.html" class="mobile-menu-sub">Catering</a>
+  <a href="event-space.html" class="mobile-menu-sub">Event Space</a>
+  <a href="https://countrydairy.com/products/" class="mobile-menu-sub">Wholesale</a>
+  <a href="where-to-buy.html" class="mobile-menu-sub" style="color:var(--green-bright);">Where to Buy</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" aria-label="Where to Buy">
+  <div class="page-hero-bg" style="background-image:url('assets/images/6-3-25.jpeg');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <div class="page-hero-eyebrow-dot"></div>
+      West Michigan &nbsp;&middot;&nbsp; Grocery Stores &amp; Local Markets
+    </div>
+    <h1 class="page-hero-title">Where to <em>Buy</em></h1>
+  </div>
+</section>
+
+<!-- ===================== SEARCH BAR ===================== -->
+<div class="wtb-search-wrap">
+  <div class="container">
+    <div class="wtb-search-inner">
+      <span class="wtb-search-label">Find retailers near you</span>
+      <div class="wtb-search-field-wrap">
+        <div class="wtb-search-field">
+          <input
+            type="text"
+            id="wtbSearchInput"
+            class="wtb-search-input"
+            placeholder="Enter your address or zip code…"
+            autocomplete="off"
+          >
+          <button class="wtb-search-btn" id="wtbSearchBtn">Search</button>
+        </div>
+        <div class="wtb-autocomplete" id="wtbAutocomplete"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FILTERS ===================== -->
+<div class="wtb-filters">
+  <div class="container">
+    <div class="wtb-filters-inner">
+      <span class="wtb-filter-label">Filter by product:</span>
+      <button class="wtb-chip active" data-filter="all">All Products</button>
+      <button class="wtb-chip" data-filter="icecream">Ice Cream</button>
+      <button class="wtb-chip" data-filter="dairy">Dairy</button>
+      <button class="wtb-chip" data-filter="meat">Meat</button>
+      <button class="wtb-chip" data-filter="seasonal">Seasonal</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MAP + LIST ===================== -->
+<div class="wtb-main">
+  <div id="wtb-map"></div>
+  <div class="wtb-list">
+    <div class="wtb-list-header">
+      <div class="wtb-list-count" id="wtbCount">— Retailers</div>
+      <div class="wtb-list-title" id="wtbListTitle">Showing all locations</div>
+    </div>
+    <div class="wtb-retailer-list" id="wtbRetailerList"></div>
+    <div class="wtb-empty" id="wtbEmpty">
+      <div class="wtb-empty-icon">📍</div>
+      No retailers match your search.<br>Try a different location or filter.
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PRODUCTS CTA ===================== -->
+<section style="background:var(--warm-white); padding:80px 0;">
+  <div class="container" style="max-width:760px; text-align:center;">
+    <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex; margin-bottom:18px;">Farm Fresh &amp; Michigan Made</div>
+    <h2 class="reveal reveal-delay-1" style="font-family:var(--font-serif); font-size:clamp(2rem,3.5vw,2.8rem); font-weight:700; color:var(--dark-brown); line-height:1.15; margin-bottom:18px;">
+      See Everything<br><em style="font-style:italic; color:var(--green-dark);">We Make</em>
+    </h2>
+    <p class="reveal reveal-delay-2" style="font-size:1rem; color:var(--text-muted); line-height:1.82; font-weight:300; margin-bottom:36px;">
+      From farm-fresh milk and homemade ice cream to artisan butter, chip dip, egg nog, and more — browse the full lineup of Country Dairy products and find your new favorites.
+    </p>
+    <div class="reveal reveal-delay-3" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="products.html" class="btn btn-primary">View All Products</a>
+      <a href="icecream.html" class="btn btn-dark">Ice Cream Flavors</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where honest food, open pastures, and four generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Ice Cream</div>
+        <ul class="footer-col-links">
+          <li><a href="icecream.html">All Flavors</a></li>
+          <li><a href="products.html">Farm Fresh Products</a></li>
+          <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+          <li><a href="ice-cream-social.html">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <ul class="footer-col-links">
+          <li><a href="where-to-buy.html">Where to Buy</a></li>
+          <li><a href="#">Shop Online</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+          <li><a href="https://countrydairy.com/products/">Wholesale</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2318614636">(231) 861-4636</a></li>
+          <li><a href="#">3476 S 80th Ave</a></li>
+          <li><a href="#">New Era, MI 49446</a></li>
+          <li><a href="mailto:info@countrydairy.com">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:20px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:6px;">Hours</div>
+          <div style="font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.6;">Mon–Sat: 9am–6pm<br>Sunday: 11am–5pm</div>
+        </div>
+      </div>
+      <div class="footer-col--inline">
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-col-links">
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="https://secure6.saashr.com/ta/6192177.careers?CareersSearch=&lang=en-US">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/leaflet.js"></script>
+<script src="js/country-dairy.js"></script>
+<script>
+// ─────────────────────────────────────────────────────────────
+// RETAILER DATA
+// Replace this array with CSV-parsed data when ready.
+// Fields: name, address, city, state, zip, lat, lng, products[]
+// Products can include: "icecream", "dairy", "meat", "seasonal"
+// ─────────────────────────────────────────────────────────────
+const RETAILERS = [
+  {
+    name: "Placeholder Market – Muskegon",
+    address: "1234 Sherman Blvd",
+    city: "Muskegon", state: "MI", zip: "49444",
+    lat: 43.2342, lng: -86.2484,
+    products: ["icecream", "dairy", "seasonal"]
+  },
+  {
+    name: "Placeholder Grocery – Grand Haven",
+    address: "567 Beacon Blvd",
+    city: "Grand Haven", state: "MI", zip: "49417",
+    lat: 43.0631, lng: -86.2284,
+    products: ["icecream", "dairy"]
+  },
+  {
+    name: "Placeholder Foods – Holland",
+    address: "890 Chicago Dr",
+    city: "Holland", state: "MI", zip: "49423",
+    lat: 42.7876, lng: -86.1089,
+    products: ["icecream", "dairy", "meat", "seasonal"]
+  },
+  {
+    name: "Placeholder Market – Hart",
+    address: "123 State St",
+    city: "Hart", state: "MI", zip: "49420",
+    lat: 43.6967, lng: -86.3673,
+    products: ["icecream", "dairy", "meat"]
+  },
+  {
+    name: "Placeholder Grocery – Fremont",
+    address: "456 Main Ave",
+    city: "Fremont", state: "MI", zip: "49412",
+    lat: 43.4667, lng: -85.9481,
+    products: ["icecream", "dairy", "seasonal"]
+  },
+  {
+    name: "Placeholder Co-op – Traverse City",
+    address: "789 Front St",
+    city: "Traverse City", state: "MI", zip: "49684",
+    lat: 44.7631, lng: -85.6206,
+    products: ["icecream", "dairy"]
+  },
+  {
+    name: "Placeholder Market – Ludington",
+    address: "321 Ludington Ave",
+    city: "Ludington", state: "MI", zip: "49431",
+    lat: 43.9553, lng: -86.4525,
+    products: ["icecream", "dairy", "meat"]
+  },
+  {
+    name: "Placeholder Foods – Grand Rapids",
+    address: "654 Leonard St NW",
+    city: "Grand Rapids", state: "MI", zip: "49504",
+    lat: 42.9634, lng: -85.6681,
+    products: ["icecream", "dairy", "meat", "seasonal"]
+  },
+  {
+    name: "Placeholder Market – Pentwater",
+    address: "100 Hancock St",
+    city: "Pentwater", state: "MI", zip: "49449",
+    lat: 43.7778, lng: -86.4306,
+    products: ["icecream", "dairy"]
+  },
+  {
+    name: "Placeholder Grocery – Shelby",
+    address: "200 W State St",
+    city: "Shelby", state: "MI", zip: "49455",
+    lat: 43.6067, lng: -86.3642,
+    products: ["icecream", "dairy", "meat", "seasonal"]
+  },
+  {
+    name: "Placeholder Market – Whitehall",
+    address: "300 Colby St",
+    city: "Whitehall", state: "MI", zip: "49461",
+    lat: 43.4103, lng: -86.3528,
+    products: ["icecream", "dairy"]
+  },
+  {
+    name: "Placeholder Foods – Newaygo",
+    address: "400 State Rd",
+    city: "Newaygo", state: "MI", zip: "49337",
+    lat: 43.4184, lng: -85.7997,
+    products: ["icecream", "dairy", "seasonal"]
+  },
+];
+
+// ─────────────────────────────────────────────────────────────
+// PRODUCT TAG CONFIG
+// ─────────────────────────────────────────────────────────────
+const PRODUCT_LABELS = {
+  icecream: { label: "Ice Cream",  cls: "wtb-tag--icecream" },
+  dairy:    { label: "Dairy",      cls: "wtb-tag--dairy" },
+  meat:     { label: "Meat",       cls: "wtb-tag--meat" },
+  seasonal: { label: "Seasonal",   cls: "wtb-tag--seasonal" },
+};
+
+// ─────────────────────────────────────────────────────────────
+// MAP INIT
+// ─────────────────────────────────────────────────────────────
+const map = L.map('wtb-map', { zoomControl: true }).setView([43.55, -86.1], 8);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+// Farm pin
+const farmIcon = L.divIcon({
+  className: '',
+  html: `<div style="width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#074d1a;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.35);"></div>`,
+  iconSize: [36, 36],
+  iconAnchor: [18, 36],
+  popupAnchor: [0, -38],
+});
+L.marker([43.5499, -86.3486], { icon: farmIcon })
+  .addTo(map)
+  .bindPopup(`<div class="wtb-popup-name">Country Dairy Farm Store</div><div class="wtb-popup-addr">3476 S 80th Ave<br>New Era, MI 49446</div>`)
+  .openPopup();
+
+// Retailer pin icon factory
+function makeIcon(active) {
+  const bg = active ? '#c0392b' : '#2e7d4f';
+  return L.divIcon({
+    className: '',
+    html: `<div style="width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:${bg};border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.25);"></div>`,
+    iconSize: [28, 28],
+    iconAnchor: [14, 28],
+    popupAnchor: [0, -30],
+  });
+}
+
+// ─────────────────────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────────────────────
+let activeFilter = 'all';
+let userLat = null, userLng = null;
+let markers = {};       // id → leaflet marker
+let activeRetailerId = null;
+
+// ─────────────────────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────────────────────
+function haversine(lat1, lng1, lat2, lng2) {
+  const R = 3958.8; // miles
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+function tagsHtml(products) {
+  return products.map(p => {
+    const cfg = PRODUCT_LABELS[p];
+    return cfg ? `<span class="wtb-tag ${cfg.cls}">${cfg.label}</span>` : '';
+  }).join('');
+}
+
+function popupHtml(r) {
+  return `
+    <div class="wtb-popup-name">${r.name}</div>
+    <div class="wtb-popup-addr">${r.address}<br>${r.city}, ${r.state} ${r.zip}</div>
+    <div class="wtb-popup-tags">${tagsHtml(r.products)}</div>`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// RENDER
+// ─────────────────────────────────────────────────────────────
+function render() {
+  // Filter retailers
+  let list = RETAILERS.filter(r =>
+    activeFilter === 'all' || r.products.includes(activeFilter)
+  );
+
+  // Sort by distance if we have a user location
+  if (userLat !== null) {
+    list = list.map(r => ({ ...r, dist: haversine(userLat, userLng, r.lat, r.lng) }))
+               .sort((a, b) => a.dist - b.dist);
+  }
+
+  // Clear existing retailer markers
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  markers = {};
+
+  // Re-add markers
+  list.forEach((r, i) => {
+    const marker = L.marker([r.lat, r.lng], { icon: makeIcon(false) })
+      .addTo(map)
+      .bindPopup(popupHtml(r));
+
+    marker.on('click', () => activateRetailer(i, false));
+    markers[i] = marker;
+  });
+
+  // Render list
+  const listEl = document.getElementById('wtbRetailerList');
+  const emptyEl = document.getElementById('wtbEmpty');
+  const countEl = document.getElementById('wtbCount');
+  const titleEl = document.getElementById('wtbListTitle');
+
+  countEl.textContent = `${list.length} Retailer${list.length !== 1 ? 's' : ''}`;
+  if (userLat !== null) {
+    titleEl.textContent = 'Sorted by distance from you';
+  } else {
+    titleEl.textContent = 'Showing all locations';
+  }
+
+  if (list.length === 0) {
+    listEl.innerHTML = '';
+    emptyEl.style.display = 'block';
+    return;
+  }
+  emptyEl.style.display = 'none';
+
+  listEl.innerHTML = list.map((r, i) => `
+    <div class="wtb-retailer" data-idx="${i}" onclick="activateRetailer(${i}, true)">
+      <div class="wtb-retailer-name">${r.name}</div>
+      <div class="wtb-retailer-addr">${r.address}, ${r.city}, ${r.state} ${r.zip}</div>
+      ${r.dist !== undefined ? `<div class="wtb-retailer-dist">${r.dist.toFixed(1)} miles away</div>` : ''}
+      <div class="wtb-retailer-tags">${tagsHtml(r.products)}</div>
+    </div>
+  `).join('');
+}
+
+function activateRetailer(idx, scrollToMap) {
+  // Deactivate previous
+  if (activeRetailerId !== null && markers[activeRetailerId]) {
+    markers[activeRetailerId].setIcon(makeIcon(false));
+  }
+  document.querySelectorAll('.wtb-retailer').forEach(el => el.classList.remove('active'));
+
+  // Activate new
+  activeRetailerId = idx;
+  if (markers[idx]) {
+    markers[idx].setIcon(makeIcon(true));
+    markers[idx].openPopup();
+    if (scrollToMap) map.panTo(markers[idx].getLatLng());
+  }
+  const cardEl = document.querySelector(`.wtb-retailer[data-idx="${idx}"]`);
+  if (cardEl) {
+    cardEl.classList.add('active');
+    cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// FILTER CHIPS
+// ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.wtb-chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.wtb-chip').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    activeRetailerId = null;
+    render();
+  });
+});
+
+// ─────────────────────────────────────────────────────────────
+// AUTOCOMPLETE
+// ─────────────────────────────────────────────────────────────
+const inputEl      = document.getElementById('wtbSearchInput');
+const acEl         = document.getElementById('wtbAutocomplete');
+let acResults      = [];
+let acFocusIdx     = -1;
+let acDebounce     = null;
+let suppressFetch  = false;
+
+function renderAC(results) {
+  acResults  = results;
+  acFocusIdx = -1;
+  if (!results.length) { acEl.classList.remove('open'); return; }
+  acEl.innerHTML = results.map((r, i) =>
+    `<div class="wtb-ac-item" data-idx="${i}">${r.display_name}</div>`
+  ).join('');
+  acEl.classList.add('open');
+  acEl.querySelectorAll('.wtb-ac-item').forEach(el => {
+    el.addEventListener('mousedown', e => {
+      e.preventDefault();
+      selectAC(parseInt(el.dataset.idx));
+    });
+  });
+}
+
+function closeAC() { acEl.classList.remove('open'); acResults = []; acFocusIdx = -1; }
+
+function selectAC(idx) {
+  const r = acResults[idx];
+  if (!r) return;
+  suppressFetch = true;
+  inputEl.value = r.display_name;
+  closeAC();
+  geocodeAndSearch(parseFloat(r.lat), parseFloat(r.lon));
+  setTimeout(() => { suppressFetch = false; }, 300);
+}
+
+inputEl.addEventListener('input', () => {
+  if (suppressFetch) return;
+  clearTimeout(acDebounce);
+  const q = inputEl.value.trim();
+  if (q.length < 3) { closeAC(); return; }
+  acDebounce = setTimeout(async () => {
+    try {
+      const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q + ' Michigan USA')}&format=json&limit=5&countrycodes=us&addressdetails=0`;
+      const res  = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+      const data = await res.json();
+      renderAC(data);
+    } catch { closeAC(); }
+  }, 320);
+});
+
+inputEl.addEventListener('keydown', e => {
+  const items = acEl.querySelectorAll('.wtb-ac-item');
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    acFocusIdx = Math.min(acFocusIdx + 1, items.length - 1);
+    items.forEach((el, i) => el.classList.toggle('focused', i === acFocusIdx));
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    acFocusIdx = Math.max(acFocusIdx - 1, 0);
+    items.forEach((el, i) => el.classList.toggle('focused', i === acFocusIdx));
+  } else if (e.key === 'Enter') {
+    if (acFocusIdx >= 0 && acResults[acFocusIdx]) {
+      selectAC(acFocusIdx);
+    } else {
+      closeAC();
+      doSearch();
+    }
+  } else if (e.key === 'Escape') {
+    closeAC();
+  }
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.wtb-search-field-wrap')) closeAC();
+});
+
+// ─────────────────────────────────────────────────────────────
+// GEOCODE SEARCH
+// ─────────────────────────────────────────────────────────────
+function geocodeAndSearch(lat, lng) {
+  userLat = lat; userLng = lng;
+  map.setView([lat, lng], 9);
+  render();
+}
+
+async function doSearch() {
+  const query = inputEl.value.trim();
+  if (!query) return;
+  closeAC();
+  const btn = document.getElementById('wtbSearchBtn');
+  btn.textContent = 'Searching…';
+  btn.disabled = true;
+  try {
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query + ' Michigan USA')}&format=json&limit=1&countrycodes=us`;
+    const res  = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+    const data = await res.json();
+    if (data.length > 0) {
+      geocodeAndSearch(parseFloat(data[0].lat), parseFloat(data[0].lon));
+    } else {
+      alert('Location not found. Try a city name or zip code.');
+    }
+  } catch { alert('Search failed. Please check your connection and try again.'); }
+  finally { btn.textContent = 'Search'; btn.disabled = false; }
+}
+
+document.getElementById('wtbSearchBtn').addEventListener('click', doSearch);
+
+// ─────────────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────────────
+render();
+// Force tile repaint after layout fully settles
+setTimeout(() => map.invalidateSize(), 200);
+window.addEventListener('load', () => setTimeout(() => map.invalidateSize(), 100));
+</script>
+</body>
+</html>
