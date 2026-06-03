@@ -1800,6 +1800,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: color .2s;
 }
 .footer-col-links a:hover { color: var(--green-bright); }
+.footer-col--inline .footer-col-links { flex-direction: row; flex-wrap: wrap; gap: 6px 20px; }
 .footer-bottom {
   display: flex;
   align-items: center;
