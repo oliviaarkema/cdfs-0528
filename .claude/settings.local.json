@@ -21,7 +21,9 @@
       "Bash(sed -i '' 's|href=\"#\" class=\"mobile-menu-sub\">Where to Buy|href=\"where-to-buy.html\" class=\"mobile-menu-sub\">Where to Buy|g' /Users/oliviaarkema/Desktop/cdfs-0528/*.html)",
       "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png -o /Users/oliviaarkema/Desktop/cdfs-0528/css/images/marker-icon.png)",
       "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png -o /Users/oliviaarkema/Desktop/cdfs-0528/css/images/marker-icon-2x.png)",
-      "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png -o /Users/oliviaarkema/Desktop/cdfs-0528/css/images/marker-shadow.png)"
+      "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png -o /Users/oliviaarkema/Desktop/cdfs-0528/css/images/marker-shadow.png)",
+      "WebFetch(domain:www.toasttab.com)",
+      "WebSearch"
     ]
   }
 }
