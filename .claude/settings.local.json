@@ -23,7 +23,10 @@
       "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png -o /Users/oliviaarkema/Desktop/cdfs-0528/css/images/marker-icon-2x.png)",
       "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png -o /Users/oliviaarkema/Desktop/cdfs-0528/css/images/marker-shadow.png)",
       "WebFetch(domain:www.toasttab.com)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:countrydairy.com)",
+      "Bash(awk '{print $5, $9}')",
+      "WebFetch(domain:www.youtube.com)"
     ]
   }
 }

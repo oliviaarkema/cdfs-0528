@@ -131,6 +131,25 @@
   }
   .ic-cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
+  /* Allergen tags */
+  .f-card-allergens {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    margin-top: 10px; padding-top: 10px;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .f-allergen {
+    font-family: var(--font-sans); font-size: .52rem; font-weight: 700;
+    letter-spacing: .09em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 50px;
+    background: #fef3c7; color: #92400e;
+    border: 1px solid #fde68a;
+  }
+  .flavor-section-dark .f-card-allergens { border-top-color: rgba(255,255,255,.12); }
+  .flavor-section-dark .f-allergen {
+    background: rgba(255,255,255,.1); color: rgba(255,255,255,.75);
+    border-color: rgba(255,255,255,.18);
+  }
+
   /* Camera icon shorthand */
   .cam { display:block; }
 
@@ -222,43 +241,33 @@
     <div class="flavor-grid">
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#5db88e,#7ec8a4);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">A Moo's Mint</div><div class="f-card-desc">Mint ice cream with fudge pieces and mint cups.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_a-moos-mint.jpg" alt="A Moo's Mint" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">A Moo's Mint</div><div class="f-card-desc">Mint ice cream with fudge pieces and mint cups.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Peanut</span><span class="f-allergen">Soy</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#8b1a3a,#a83050);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Amooretto Cherry</div><div class="f-card-desc">Almond ice cream with a cherry brandy ribbon and fudge pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_amooretto-cherry.jpg" alt="Amooretto Cherry" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Amooretto Cherry</div><div class="f-card-desc">Almond ice cream with a cherry brandy ribbon and fudge pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Almond</span><span class="f-allergen">Egg</span><span class="f-allergen">Soy</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#93c5fd,#60a5fa);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Birthday Cake</div><div class="f-card-desc">Angel food cake ice cream with a blue frosting ribbon and cake pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_birthday-cake.jpg" alt="Birthday Cake" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Birthday Cake</div><div class="f-card-desc">Angel food cake ice cream with a blue frosting ribbon and cake pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Egg</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#6b1d3a,#8b1a3a);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Black Cherry</div><div class="f-card-desc">Black cherry ice cream with real cherries.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_michigan_black_cherry.jpg" alt="Black Cherry" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Black Cherry</div><div class="f-card-desc">Black cherry ice cream with real Michigan cherries.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#c8953a,#d4a843);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Butter Churn Pecan</div><div class="f-card-desc">Rich butter pecan ice cream with pecan pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_butter-churn-pecan.jpg" alt="Butter Churn Pecan" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Butter Churn Pecan</div><div class="f-card-desc">Rich butter pecan ice cream with pecan pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Pecans</span><span class="f-allergen">Soy</span></div></div>
       </div>
 
       <div class="f-card reveal">
@@ -278,19 +287,15 @@
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#5c3317,#7a4a2d);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Cow-conut Fudge</div><div class="f-card-desc">Toasted coconut ice cream with praline coconut flakes and fudge pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_cow-conut-cream.jpg" alt="Cow-conut Fudge" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Cow-conut Fudge</div><div class="f-card-desc">Toasted coconut ice cream with praline coconut flakes and fudge pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Coconut</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#c8953a,#e0a840);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Hoofprints</div><div class="f-card-desc">Caramel ice cream with a caramel ribbon and caramel cups.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_hoofprints.jpg" alt="Hoofprints" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Hoofprints</div><div class="f-card-desc">Caramel ice cream with a caramel ribbon and caramel cups.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div></div>
       </div>
 
       <div class="f-card reveal">
@@ -302,19 +307,15 @@
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#5db88e,#3da87a);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Mint Mookies</div><div class="f-card-desc">Mint ice cream packed with chocolate sandwich cookie pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_mint-mookies.jpg" alt="Mint Mookies" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Mint Mookies</div><div class="f-card-desc">Mint ice cream packed with chocolate sandwich cookie pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#d4b896,#c49a7a);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Mom's Cookie Dough</div><div class="f-card-desc">Cookie dough ice cream with chocolate chip cookie dough pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_moms-cookie-dough.jpg" alt="Mom's Cookie Dough" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Mom's Cookie Dough</div><div class="f-card-desc">Cookie dough ice cream with chocolate chip cookie dough pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Eggs</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
@@ -326,75 +327,57 @@
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#4b2e23,#2d1a10);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Mooey Gooey Fudge</div><div class="f-card-desc">Premium vanilla ice cream with a fudge ribbon and chewy brownie pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_mooey-gooey-fudge.jpg" alt="Mooey Gooey Fudge" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Mooey Gooey Fudge</div><div class="f-card-desc">Premium vanilla ice cream with a fudge ribbon and chewy brownie pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Eggs</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#2d2d2d,#444);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Mookies-n-Cream</div><div class="f-card-desc">Premium vanilla ice cream with chocolate sandwich cookie pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_mookies_cream.jpg" alt="Mookies-n-Cream" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Mookies-n-Cream</div><div class="f-card-desc">Premium vanilla ice cream with chocolate sandwich cookie pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#5c3317,#3d1c0e);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Nutty Java Moo</div><div class="f-card-desc">Coffee ice cream with chocolate covered almonds and chocolate covered coffee beans.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_nutty_java_moo.jpg" alt="Nutty Java Moo" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Nutty Java Moo</div><div class="f-card-desc">Coffee ice cream with chocolate covered almonds and chocolate covered coffee beans.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Almond</span><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#c49a3c,#b88430);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Peanut 'udder Bliss</div><div class="f-card-desc">Peanut butter ice cream with a fudge ribbon and chocolate peanut butter cups.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_peanut-udder-bliss.jpg" alt="Peanut 'udder Bliss" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Peanut 'udder Bliss</div><div class="f-card-desc">Peanut butter ice cream with a fudge ribbon and chocolate peanut butter cups.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Peanuts</span><span class="f-allergen">Soy</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#c4445a,#e0536e);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Raspberry Round-Up</div><div class="f-card-desc">Raspberry ice cream with raspberry cups and fudge pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_raspberry-roundup.jpg" alt="Raspberry Round-Up" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Raspberry Round-Up</div><div class="f-card-desc">Raspberry ice cream with raspberry cups and fudge pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Peanut</span><span class="f-allergen">Soy</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#8b6914,#a07820);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">S'Moores</div><div class="f-card-desc">Toasted marshmallow ice cream with a graham cracker ribbon and chocolate pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_smoores.jpg" alt="S'Mooores" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">S'Moores</div><div class="f-card-desc">Toasted marshmallow ice cream with a graham cracker ribbon and chocolate pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Sulfites</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#f472b6,#e05590);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Strawberry Cheesecake</div><div class="f-card-desc">Cheesecake ice cream with a strawberry ribbon and cheesecake pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_strawberry-cheesecake.jpg" alt="Strawberry Cheesecake" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Strawberry Cheesecake</div><div class="f-card-desc">Cheesecake ice cream with a strawberry ribbon and cheesecake pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Egg</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#1c0a05,#3d1c0e);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Triple Cho-cow-late</div><div class="f-card-desc">Chocolate ice cream with a fudge swirl and brownie pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/Triple-Cho-cow-late4-scaled.jpg" alt="Triple Cho-cow-late" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Triple Cho-cow-late</div><div class="f-card-desc">Chocolate ice cream with a fudge swirl and brownie pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Eggs</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#3d1c0e,#5c3317);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Udder Nutsense</div><div class="f-card-desc">Chocolate ice cream with chocolate covered almonds.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_udder-nutsense.jpg" alt="Udder Nutsense" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Udder Nutsense</div><div class="f-card-desc">Chocolate ice cream with chocolate covered almonds.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Almond</span><span class="f-allergen">Cashew</span><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div></div>
       </div>
 
       <div class="f-card reveal">
@@ -426,50 +409,39 @@
     <div class="flavor-grid">
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#3b82f6,#60a5fa);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Simply Blue Moo</div><div class="f-card-desc">Delightfully blue and distinctively flavored "Blue Moon" premium ice cream.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_blue-moo.jpg" alt="Simply Blue Moo" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Simply Blue Moo</div><div class="f-card-desc">Delightfully blue and distinctively flavored "Blue Moon" premium ice cream.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#f5e6c8,#e8d4a8);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text" style="color:rgba(0,0,0,.25);">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Simply Cow-conut Cream</div><div class="f-card-desc">Toasted coconut ice cream with praline coconut flakes.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_cow-conut-cream.jpg" alt="Simply Cow-conut Cream" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Simply Cow-conut Cream</div><div class="f-card-desc">Toasted coconut ice cream with praline coconut flakes.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Coconut</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo">
-          <img src="assets/images/Dutch Chocolate Cup.jpg" alt="Simply Dutch Chocolate" loading="lazy">
-        </div>
-        <div class="f-card-body"><div class="f-card-name">Simply Dutch Chocolate</div><div class="f-card-desc">Premium dutch chocolate ice cream.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_dutch-chocolate.jpg" alt="Simply Dutch Chocolate" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Simply Dutch Chocolate</div><div class="f-card-desc">Premium dutch chocolate ice cream.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#f3d27a,#f0c84a);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text" style="color:rgba(0,0,0,.3);">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Simply Grandpa's Vanilla</div><div class="f-card-desc">Premium vanilla ice cream just like Grandpa used to make.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_grandpas-vanilla.jpg" alt="Simply Grandpa's Vanilla" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Simply Grandpa's Vanilla</div><div class="f-card-desc">Premium vanilla ice cream just like Grandpa used to make.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#d4a843,#c49030);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Simply HayDay</div><div class="f-card-desc">Salted caramel ice cream with a salty caramel ribbon and roasted, salted peanuts.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_hayday.jpg" alt="Simply HayDay" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Simply HayDay</div><div class="f-card-desc">Salted caramel ice cream with a salty caramel ribbon and roasted, salted peanuts.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Peanut</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#6b82c4,#4f6ab0);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Simply Lemon Blueberry</div><div class="f-card-desc">Tart lemon ice cream with a blueberry ribbon and cake pieces.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_lemon-blueberry_rgb-v2-scaled.jpg" alt="Simply Lemon Blueberry" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Simply Lemon Blueberry</div><div class="f-card-desc">Tart lemon ice cream with a blueberry ribbon and cake pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Egg</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
       <div class="f-card reveal">
@@ -481,19 +453,15 @@
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#f4c2c2,#e8a0a0);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text" style="color:rgba(0,0,0,.25);">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Simply Strawberry Patch</div><div class="f-card-desc">Strawberry ice cream with real strawberries.</div></div>
+        <div class="f-card-photo"><img src="assets/images/20200911_121951-2.jpg" alt="Simply Strawberry Patch" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Simply Strawberry Patch</div><div class="f-card-desc">Strawberry ice cream with real strawberries.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
       </div>
 
       <div class="f-card reveal">
-        <div class="f-card-photo"><div class="f-card-placeholder" style="background:linear-gradient(135deg,#4ade80,#3b82f6,#f472b6);">
-          <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span class="f-card-placeholder-text">Photo Coming Soon</span>
-        </div></div>
-        <div class="f-card-body"><div class="f-card-name">Simply Super Cow</div><div class="f-card-desc">Blue Moo, Wild Cherry and Fresh Lemon ice cream swirled for pure nostalgia.</div></div>
+        <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_simply-supercow.jpg" alt="Simply Super Cow" loading="lazy"></div>
+        <div class="f-card-body"><div class="f-card-name">Simply Super Cow</div><div class="f-card-desc">Blue Moo, Wild Cherry and Fresh Lemon ice cream swirled for pure nostalgia.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
       </div>
 
     </div>
@@ -514,25 +482,24 @@
       <h2 class="flavor-section-headline reveal reveal-delay-1"><em>Seasonal</em> Flavors</h2>
       <p class="flavor-section-sub reveal reveal-delay-2">Available for a limited time. Ask at the counter for current seasonal offerings.</p>
     </div>
-    <div class="flavor-grid" style="max-width:680px;margin:0 auto;">
+    <div class="flavor-grid">
 
       <div class="f-card reveal">
         <div class="f-card-photo">
           <img src="assets/images/Peppermint Stick IC.jpg" alt="Peppermint Stick ice cream" loading="lazy">
           <div class="seasonal-badge">Seasonal</div>
         </div>
-        <div class="f-card-body"><div class="f-card-name">Peppermint Stick</div><div class="f-card-desc">Mint ice cream with red and green crushed peppermint candies.</div></div>
+        <div class="f-card-body"><div class="f-card-name">Peppermint Stick</div><div class="f-card-desc">Mint ice cream with red and green crushed peppermint candies.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div></div>
       </div>
 
       <div class="f-card reveal reveal-delay-1">
         <div class="f-card-photo">
-          <div class="f-card-placeholder" style="background:linear-gradient(135deg,#ea580c,#c2440a);">
-            <svg class="f-card-placeholder-icon cam" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            <span class="f-card-placeholder-text">Photo Coming Soon</span>
-          </div>
+          <img src="assets/images/Pumpkin-Cheesecake-2.jpeg" alt="Pumpkin Cheesecake" loading="lazy">
           <div class="seasonal-badge">Seasonal</div>
         </div>
-        <div class="f-card-body"><div class="f-card-name">Pumpkin Cheesecake</div><div class="f-card-desc">Pumpkin ice cream with cheesecake pieces.</div></div>
+        <div class="f-card-body"><div class="f-card-name">Pumpkin Cheesecake</div><div class="f-card-desc">Pumpkin ice cream with cheesecake pieces.</div>
+          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Eggs</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
       </div>
 
     </div>
@@ -547,7 +514,6 @@
     <p class="ic-cta-body reveal reveal-delay-2">Our full flavor menu is available daily at the Farm Store in New Era. Half-gallon tubs of select flavors are also available at retailers across West Michigan.</p>
     <div class="ic-cta-actions reveal reveal-delay-3">
       <a href="farm-store-kitchen.html" class="btn btn-primary">Visit the Farm Store</a>
-      <a href="assets/files/SpringSummerMenu2026.pdf" target="_blank" rel="noopener" class="btn btn-outline">View Ingredients</a>
       <a href="products.html#where-to-buy" class="btn btn-dark">Where to Buy</a>
     </div>
   </div>

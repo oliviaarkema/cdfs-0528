@@ -119,6 +119,163 @@
   .avail-store { color: var(--text-muted); }
   .avail-store .avail-dot { background: var(--terracotta); }
 
+  /* ── Milk Section ─────────────────────────────── */
+  .milk-section {
+    background: var(--cream);
+    padding: 88px 0 96px;
+  }
+  .milk-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .milk-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700; color: var(--dark-brown); line-height: 1.12;
+    margin: 10px 0 14px;
+  }
+  .milk-headline em { font-style: italic; color: var(--green-dark); }
+  .milk-sub {
+    font-size: 1rem; color: var(--text-muted); font-weight: 300;
+    max-width: 560px; margin: 0 auto; line-height: 1.75;
+  }
+
+  /* Intro split */
+  .milk-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 64px;
+  }
+  .milk-intro-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .milk-intro-main {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    display: block;
+  }
+  .milk-intro-sub {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .milk-intro-sub img {
+    width: 100%; height: 160px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    display: block;
+  }
+
+  /* Claims */
+  .milk-claims {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .milk-claim {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .milk-claim-icon {
+    width: 32px; height: 32px;
+    background: var(--green-dark);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    margin-top: 2px;
+  }
+  .milk-claim-title {
+    font-family: var(--font-sans); font-size: .78rem; font-weight: 700;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: var(--dark-brown); margin-bottom: 4px;
+  }
+  .milk-claim-body {
+    font-size: .88rem; color: var(--text-muted); font-weight: 300; line-height: 1.6;
+  }
+
+  .milk-intro-photo-link { display: block; text-decoration: none; }
+  .milk-intro-lifestyle {
+    width: 100%; height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    display: block;
+  }
+
+  /* Variety grid */
+  .milk-varieties-title {
+    font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700;
+    color: var(--dark-brown); margin-bottom: 24px;
+  }
+  .milk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .milk-grid--cream {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+  }
+  .milk-card {
+    background: #fff;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--cream-dark);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .milk-card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.11); }
+  .milk-card-img-wrap { overflow: hidden; }
+  .milk-card-img {
+    width: 100%; height: 160px;
+    object-fit: cover; display: block;
+    transition: transform .4s ease;
+  }
+  .milk-card:hover .milk-card-img { transform: scale(1.04); }
+  .milk-card-body { padding: 16px 18px 20px; }
+  .milk-card-name {
+    font-family: var(--font-serif); font-size: 1rem; font-weight: 700;
+    color: var(--dark-brown); line-height: 1.25; margin-bottom: 10px;
+  }
+  .milk-card-sizes {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .milk-size {
+    font-family: var(--font-sans); font-size: .58rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 50px;
+    background: var(--cream);
+    color: var(--text-muted);
+    border: 1px solid var(--cream-dark);
+  }
+  .milk-card-seasonal {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: var(--font-sans); font-size: .58rem; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: #7a4a10; background: #fdf3e3;
+    padding: 3px 10px; border-radius: 50px;
+  }
+
+  @media (max-width: 900px) {
+    .milk-intro { grid-template-columns: 1fr; gap: 32px; }
+    .milk-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .milk-grid { grid-template-columns: 1fr; }
+    .milk-grid--cream { grid-template-columns: 1fr; max-width: 100%; }
+    .milk-intro-sub img { height: 120px; }
+  }
+
   /* ── Order Online ──────────────────────────────── */
   .order-section {
     background: var(--cream);
@@ -481,6 +638,184 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ===================== MILK SPOTLIGHT ===================== -->
+<section class="milk-section section" aria-label="Our Milk" style="display:none;">
+  <div class="container">
+
+    <div class="milk-header">
+      <div class="section-label section-label-green reveal" style="justify-content:center; display:inline-flex;">Straight from the Herd</div>
+      <h2 class="milk-headline reveal reveal-delay-1">Fresh <em>Michigan</em> Milk</h2>
+      <p class="milk-sub reveal reveal-delay-2">Every drop starts with our own Holstein herd in New Era — non-GMO fed, hormone-free, and processed right on the farm so it reaches you as fresh as milk can be.</p>
+    </div>
+
+    <!-- Intro: product images left, claims right -->
+    <div class="milk-intro reveal">
+      <div class="milk-intro-visual">
+        <img src="assets/images/vitamin-d-milk.webp" alt="Country Dairy Vitamin D Whole Milk" class="milk-intro-main">
+        <div class="milk-intro-sub">
+          <img src="assets/images/dutch-chocolate-milk.webp" alt="Dutch Chocolate Milk">
+          <img src="assets/images/strawberry-milk.webp" alt="Strawberry Whole Milk">
+        </div>
+      </div>
+      <div class="milk-intro-copy">
+        <div class="milk-claims">
+          <div class="milk-claim">
+            <div class="milk-claim-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="milk-claim-title">Certified Non-GMO</div>
+              <div class="milk-claim-body">Our cows are fed a non-GMO verified diet — no genetically modified feed, ever.</div>
+            </div>
+          </div>
+          <div class="milk-claim">
+            <div class="milk-claim-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="milk-claim-title">No Artificial Growth Hormones</div>
+              <div class="milk-claim-body">Just cows being cows — no rBST or synthetic hormone treatments in our herd.</div>
+            </div>
+          </div>
+          <div class="milk-claim">
+            <div class="milk-claim-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="milk-claim-title">Farm-Processed &amp; Fresh</div>
+              <div class="milk-claim-body">Milked and bottled on-site in New Era so you get the freshest product on the shelf.</div>
+            </div>
+          </div>
+        </div>
+        <a href="assets/images/group with milk.jpg" class="milk-intro-photo-link">
+          <img src="assets/images/group with milk.jpg" alt="Country Dairy milk products" class="milk-intro-lifestyle">
+        </a>
+      </div>
+    </div>
+
+    <!-- Variety grid -->
+    <h3 class="milk-varieties-title reveal">Milk Varieties</h3>
+    <div class="milk-grid reveal reveal-delay-1">
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/vitamin-d-milk.webp" alt="Vitamin D Whole Milk" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Vitamin D Whole Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Gallon</span>
+            <span class="milk-size">Half Gallon</span>
+            <span class="milk-size">Quart</span>
+            <span class="milk-size">Pint</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/SWDMilk.jpg" alt="2% Reduced Fat Milk" class="milk-card-img" style="object-position: center 20%;">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">2% Reduced Fat Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Gallon</span>
+            <span class="milk-size">Half Gallon</span>
+            <span class="milk-size">Quart</span>
+            <span class="milk-size">Pint</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/milk_bottling_labels.jpg" alt="1% Lowfat Milk" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">1% Lowfat Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Gallon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/SWDMilk.jpg" alt="Fat Free Milk" class="milk-card-img" style="object-position: right 20%;">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Fat Free Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Gallon</span>
+            <span class="milk-size">Half Gallon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/dutch-chocolate-milk.webp" alt="Dutch Chocolate Milk" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Dutch Chocolate Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Gallon</span>
+            <span class="milk-size">Half Gallon</span>
+            <span class="milk-size">Quart</span>
+            <span class="milk-size">Pint</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/strawberry-milk.webp" alt="Strawberry Whole Milk" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Strawberry Whole Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Pint</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /milk-grid -->
+
+    <!-- Cream & Seasonal -->
+    <h3 class="milk-varieties-title reveal" style="margin-top:52px;">Cream &amp; Seasonal</h3>
+    <div class="milk-grid milk-grid--cream reveal reveal-delay-1">
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/milk_bottling_labels.jpg" alt="Heavy Whipping Cream" class="milk-card-img" style="object-position: center 60%;">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Heavy Whipping Cream</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Half Gallon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/11-19 Landscape.jpg" alt="Premium Egg Nog" class="milk-card-img" style="object-position: center 40%;">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Premium Egg Nog</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Quart</span>
+            <span class="milk-size">Pint</span>
+          </div>
+          <div class="milk-card-seasonal">Seasonal</div>
+        </div>
+      </div>
+
+    </div><!-- /milk-grid--cream -->
+
   </div>
 </section>
 
