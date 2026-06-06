@@ -237,6 +237,47 @@
     font-style: italic; border-top: 1px solid rgba(255,255,255,.06);
   }
 
+  /* Retailer finder card */
+  .where-retailer-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(61,174,43,.35);
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    text-decoration: none;
+    transition: background .2s, border-color .2s;
+    margin-bottom: 0;
+  }
+  .where-retailer-card:hover {
+    background: rgba(61,174,43,.15);
+    border-color: rgba(61,174,43,.6);
+  }
+  .where-retailer-card-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(61,174,43,.2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--green-bright);
+  }
+  .where-retailer-card-copy { flex: 1; }
+  .where-retailer-card-title {
+    font-family: var(--font-sans);
+    font-size: .82rem; font-weight: 700;
+    color: #fff; margin-bottom: 3px;
+  }
+  .where-retailer-card-sub {
+    font-size: .75rem; color: rgba(255,255,255,.5);
+    font-weight: 300; line-height: 1.4;
+  }
+  .where-retailer-card-arrow {
+    font-size: 1.1rem; color: var(--green-bright);
+    flex-shrink: 0; transition: transform .2s;
+  }
+  .where-retailer-card:hover .where-retailer-card-arrow { transform: translateX(4px); }
+
   .where-actions { display: flex; gap: 14px; flex-wrap: wrap; }
   .where-img {
     width: 100%; height: 440px; object-fit: cover;
@@ -539,7 +580,19 @@
           </div>
         </div>
 
-        <div class="where-actions reveal reveal-delay-3">
+        <!-- Find a Retailer card -->
+        <a href="where-to-buy.html" class="where-retailer-card reveal reveal-delay-3">
+          <div class="where-retailer-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:22px;height:22px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="where-retailer-card-copy">
+            <div class="where-retailer-card-title">Find a Retailer Near You</div>
+            <div class="where-retailer-card-sub">Search stores carrying Country Dairy products by location</div>
+          </div>
+          <div class="where-retailer-card-arrow">→</div>
+        </a>
+
+        <div class="where-actions reveal reveal-delay-3" style="margin-top:20px;">
           <a href="farm-store-kitchen.html" class="btn btn-primary">Visit the Farm Store</a>
           <a href="tel:2312590515" class="btn btn-outline">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
