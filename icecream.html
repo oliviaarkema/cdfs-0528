@@ -131,12 +131,56 @@
   }
   .ic-cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-  /* Allergen tags */
-  .f-card-allergens {
-    display: flex; flex-wrap: wrap; gap: 4px;
-    margin-top: 10px; padding-top: 10px;
+  /* ── Info toggle button ────────────────────────── */
+  .f-info-toggle {
+    display: flex; align-items: center; gap: 8px;
+    width: 100%; background: none; border: none; cursor: pointer;
+    padding: 11px 0 0; margin-top: 11px;
     border-top: 1px solid var(--cream-dark);
+    font-family: var(--font-sans); font-size: .6rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--green-dark);
+    transition: color .15s;
   }
+  .f-info-toggle:hover { color: var(--green-bright); }
+  .f-info-toggle-icon {
+    width: 18px; height: 18px; flex-shrink: 0;
+    border-radius: 50%; background: var(--green-dark); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .25s ease, background .15s;
+  }
+  .f-info-toggle:hover .f-info-toggle-icon { background: var(--green-bright); }
+  .f-card.info-open .f-info-toggle-icon { transform: rotate(45deg); }
+  .flavor-section-dark .f-info-toggle {
+    border-top-color: rgba(255,255,255,.12);
+    color: rgba(255,255,255,.6);
+  }
+  .flavor-section-dark .f-info-toggle:hover { color: #fff; }
+  .flavor-section-dark .f-info-toggle-icon { background: rgba(255,255,255,.2); }
+  .flavor-section-dark .f-info-toggle:hover .f-info-toggle-icon { background: rgba(255,255,255,.35); }
+
+  /* ── Info drawer ───────────────────────────────── */
+  .f-info-drawer {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease;
+  }
+  .f-card.info-open .f-info-drawer { max-height: 500px; }
+  .f-info-drawer-inner {
+    padding: 14px 18px 18px;
+    border-top: 1px solid var(--cream-dark);
+    background: var(--cream);
+  }
+  .flavor-section-dark .f-info-drawer-inner {
+    background: rgba(0,0,0,.25);
+    border-top-color: rgba(255,255,255,.08);
+  }
+  .f-info-section-label {
+    font-family: var(--font-sans); font-size: .55rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 6px;
+  }
+  .flavor-section-dark .f-info-section-label { color: rgba(255,255,255,.35); }
+  .f-info-allergen-row { display: flex; flex-wrap: wrap; gap: 4px; }
   .f-allergen {
     font-family: var(--font-sans); font-size: .52rem; font-weight: 700;
     letter-spacing: .09em; text-transform: uppercase;
@@ -144,11 +188,15 @@
     background: #fef3c7; color: #92400e;
     border: 1px solid #fde68a;
   }
-  .flavor-section-dark .f-card-allergens { border-top-color: rgba(255,255,255,.12); }
   .flavor-section-dark .f-allergen {
-    background: rgba(255,255,255,.1); color: rgba(255,255,255,.75);
+    background: rgba(255,255,255,.1); color: rgba(255,255,255,.8);
     border-color: rgba(255,255,255,.18);
   }
+  .f-info-ing-text {
+    font-size: .72rem; color: var(--text-muted);
+    line-height: 1.65; font-weight: 300; margin: 0;
+  }
+  .flavor-section-dark .f-info-ing-text { color: rgba(255,255,255,.45); }
 
   /* Camera icon shorthand */
   .cam { display:block; }
@@ -243,31 +291,86 @@
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_a-moos-mint.jpg" alt="A Moo's Mint" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">A Moo's Mint</div><div class="f-card-desc">Mint ice cream with fudge pieces and mint cups.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Peanut</span><span class="f-allergen">Soy</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Peanut</span><span class="f-allergen">Soy</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Mint Cups [Coating (Sugar, Coconut Oil, Cocoa Processed With Alkali, Cocoa, Milkfat, Soy Lecithin, Natural Flavors), Sugar, Partially Hydrogenated Soybean Oil, Skim Milk, Milk, Soy Lecithin, Oil of Peppermint, Salt, Vanillin (Artificial Flavor), Yellow #5 Lake, Blue #1 Lake], Nonfat Milk, Fudge Pieces [Powdered Sugar (Sugar, Cornstarch), Coconut Oil, Cocoa Processed With Alkali, Peanut Oil, Cocoa, Butter Oil, Soy Lecithin, Vanilla Extract], Natural Flavor, Locust Bean Gum, Guar Gum, Carrageenan, Yellow #5, Blue #1</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_amooretto-cherry.jpg" alt="Amooretto Cherry" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Amooretto Cherry</div><div class="f-card-desc">Almond ice cream with a cherry brandy ribbon and fudge pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Almond</span><span class="f-allergen">Egg</span><span class="f-allergen">Soy</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Almond</span><span class="f-allergen">Egg</span><span class="f-allergen">Soy</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Cherry Ribbon [High Fructose Corn Syrup, Water, Natural and Artificial Flavors, Modified Corn Starch, Citric Acid, Potassium Sorbate as Preservative, FD&C Red 40, Xanthan Gum, Caramel Color, Propylene Glycol], Fudge Pieces [Powdered Sugar (Sugar, Cornstarch), Coconut Oil, Cocoa Processed with Alkali, Cocoa, Soy Lecithin (an Emulsifier)], Almond Base [High Fructose Corn Syrup, Almond Meal, Water, Condensed Skim Milk, Brown Sugar, Sugar, Butter, Salt, Natural Color, Modified Corn Starch, Natural Flavor, Caramel Color, Citric Acid, Potassium Sorbate (a Preservative), Xanthan Gum and Sodium Bicarbonate], Skim Milk, Amaretto Flavor, Water, Propylene Glycol, Ethyl Alcohol, Salt, Citric Acid, Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_birthday-cake.jpg" alt="Birthday Cake" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Birthday Cake</div><div class="f-card-desc">Angel food cake ice cream with a blue frosting ribbon and cake pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Egg</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Egg</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Blue Icing Variegate (High Fructose Corn Syrup, Corn Syrup, Water, Sugar, Modified Corn Starch, Vanillin [An Artificial Flavor], Guar Gum, Potassium Sorbate [A Preservative], Calcium Carrageenan, Titanium Dioxide and FD&C Blue #1), Yellow Cake Pieces (Sugar, Wheat Flour, Eggs, Partially Hydrogenated Soybean Oil, Water, Corn Starch, High Fructose Corn Syrup, Salt, Distilled Monoglycerides, Natural Vanilla Flavor, Xanthan Gum, Annatto Extract [Color], FD&C Yellow #5), Skim Milk, Cake Batter Flavor (Water, Propylene Glycol, Ethyl Alcohol, Invert Sugar, Caramel Color, Modified Corn Starch, Xanthan Gum, Citric Acid, Glycerin), Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_michigan_black_cherry.jpg" alt="Black Cherry" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Black Cherry</div><div class="f-card-desc">Black cherry ice cream with real Michigan cherries.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Black Sweet Cherries [Cherries, Water, High Fructose Corn Syrup, Corn Syrup, Citric Acid, Sugar, Natural Flavor, Sodium Benzoate and Potassium Sorbate (Preservatives), Tara Gum, Dextrose, Guar Gum, FD&C Red #40 and Blue #1, Sulfur Dioxide (Preservative)], Nonfat Milk, Vanilla, Locust Bean Gum, Guar Gum, Carrageenan, FD&C Red #40 and Blue #1</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_butter-churn-pecan.jpg" alt="Butter Churn Pecan" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Butter Churn Pecan</div><div class="f-card-desc">Rich butter pecan ice cream with pecan pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Pecans</span><span class="f-allergen">Soy</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Pecans</span><span class="f-allergen">Soy</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Pecans, Butter Pecan Flavor [Sugar, Water, Salt, Natural Flavor, Molasses, Butter (Cream, Salt), Soy Lecithin, Potassium Sorbate (a Preservative), Citric Acid, Instant Coffee], Nonfat Milk, Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
@@ -289,13 +392,35 @@
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_cow-conut-cream.jpg" alt="Cow-conut Fudge" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Cow-conut Fudge</div><div class="f-card-desc">Toasted coconut ice cream with praline coconut flakes and fudge pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Coconut</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Coconut</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Pralined Coconut (Sugar, Coconut Flake [Coconut, Sodium Metabisulfite, Sugar, Dextrose, Salt], Corn Syrup, Butter [Cream, Salt], Salt), Skim Milk, Natural Coconut Flavors (Water, Ethyl Alcohol, Propylene Glycol), Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_hoofprints.jpg" alt="Hoofprints" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Hoofprints</div><div class="f-card-desc">Caramel ice cream with a caramel ribbon and caramel cups.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Caramel Variegate [Corn Syrup, Water, Sweetened Condensed Skim Milk (Condensed Skim Milk, Sugar), Sugar, Modified Corn Starch, Butter, Salt, Potassium Sorbate (Preservative), Sodium Bicarbonate, Artificial Flavor], Caramel Cups [Coating (Sugar, Coconut Oil, Cocoa Processed With Alkali, Nonfat Milk, Whole Milk, Soy Lecithin [an Emulsifier], Natural Flavors), Corn Syrup, Sweetened Condensed Milk (Milk, Sugar), Heavy Cream, Butter (Cream, Salt), Palm Kernel Oil, Salt, Natural and Artificial Flavors, Soy Lecithin (an Emulsifier), Vanillin (an Artificial Flavor), Potassium Sorbate (a Preservative)], Nonfat Milk, Natural and Artificial Caramel Flavor, Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
@@ -309,13 +434,35 @@
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_mint-mookies.jpg" alt="Mint Mookies" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Mint Mookies</div><div class="f-card-desc">Mint ice cream packed with chocolate sandwich cookie pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Cookies (Sugar, Enriched Flour [Wheat Flour, Niacin, Reduced Iron, Thiamin Mononitrate, Riboflavin, Folic Acid], Soybean and Palm Oil with TBHQ for Freshness, Cocoa Processed with Alkali, Invert Sugar, Degerminated Yellow Corn Flour, Cornstarch, Chocolate, Salt, Leavening [Baking Soda, Monocalcium Phosphate], Artificial Flavor, Soy Lecithin, Whey), Skim Milk, Propylene Glycol, Alcohol, Water, Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_moms-cookie-dough.jpg" alt="Mom's Cookie Dough" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Mom's Cookie Dough</div><div class="f-card-desc">Cookie dough ice cream with chocolate chip cookie dough pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Eggs</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Eggs</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Chocolate Chip Cookie Dough [Unenriched Wheat Flour, Sugar, Margarine (Liquid Soybean Oil, Partially Hydrogenated Soybean Oil, Water, Salt, Whey, Soy Lecithin, Soy Mono- and Diglycerides, Sodium Benzoate [Preservative], Artificial Butter Flavor, Beta Carotene, Vitamin A Palmitate), Chocolate Chips (Sugar, Chocolate Liquor, Cocoa Butter, Soy Lecithin, Vanilla), Butter (Cream, Salt), Pasteurized Egg, Brown Sugar, Powdered Sugar (Sugar, Corn Starch), Natural and Artificial Flavors, Salt], Cookie Dough Flavor [Brown Sugar, Water, Nonfat Milk, Corn Syrup, Butter (Cream, Salt), Sugar, Molasses, Potassium Sorbate (Preservative), Natural Flavors, Sodium Citrate, Salt], Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
@@ -329,55 +476,154 @@
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_mooey-gooey-fudge.jpg" alt="Mooey Gooey Fudge" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Mooey Gooey Fudge</div><div class="f-card-desc">Premium vanilla ice cream with a fudge ribbon and chewy brownie pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Eggs</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Eggs</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Fudge [Refined Peanut Oil, Sugar, Cocoa (Processed with Alkali), Whey, Salt and Soy Lecithin], Brownie Pieces [Sugar, Vegetable Shortening (Partially Hydrogenated Soybean Oil), Whole Eggs, Wheat Flour, Cocoa (Processed with Alkali), Water, High Fructose Corn Syrup, Corn Starch, Salt, Natural Flavors], Skim Milk, Vanilla, Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_mookies_cream.jpg" alt="Mookies-n-Cream" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Mookies-n-Cream</div><div class="f-card-desc">Premium vanilla ice cream with chocolate sandwich cookie pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Cookies [Sugar, Enriched Flour (Wheat Flour, Niacin, Reduced Iron, Thiamin Mononitrate, Riboflavin, Folic Acid), Vegetable Oil (Soybean, Palm, Palm Kernel Oil with TBHQ for Freshness), Cocoa Treated with Alkali, Invert Sugar, Yellow Corn Flour, Chocolate, Cornstarch, Salt, Leavening (Baking Soda, Monocalcium Phosphate), Whey, Natural and Artificial Flavor, Soy Lecithin], Nonfat Milk, Vanilla, Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_nutty_java_moo.jpg" alt="Nutty Java Moo" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Nutty Java Moo</div><div class="f-card-desc">Coffee ice cream with chocolate covered almonds and chocolate covered coffee beans.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Almond</span><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Almond</span><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Chocolate Covered Almonds [Roasted Almonds (Roasted in Safflower Oil), Powdered Sugar (Sugar, Cornstarch), Partially Hydrogenated Coconut Oil, Coconut Oil, Cocoa (Processed with Alkali), Salt, Soy Lecithin], Nonfat Milk, Natural Coffee Flavor (Contains Sulfites), Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_peanut-udder-bliss.jpg" alt="Peanut 'udder Bliss" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Peanut 'udder Bliss</div><div class="f-card-desc">Peanut butter ice cream with a fudge ribbon and chocolate peanut butter cups.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Peanuts</span><span class="f-allergen">Soy</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Peanuts</span><span class="f-allergen">Soy</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Peanut Butter [Peanuts, Canola Oil, Corn Syrup, Salt and Mono &amp; Diglycerides], Thick Fudge [Peanut Oil, Sugar, Cocoa (Processed with Alkali), Whey, Salt and Soy Lecithin], Peanut Butter Cups [Sugar, Peanut Butter (Peanuts, Salt), Coconut Oil, Nonfat Milk, Whole Milk, Cocoa Processed with Alkali, Soy Lecithin (an Emulsifier), Natural Flavors], Skim Milk, Peanut Butter Flavor [Caramel Color, Water, Peanut Oil, Propylene Glycol, Xanthan Gum, FD&C Yellow 5, FD&C Yellow 6, FD&C Red 40, Potassium Sorbate (a Preservative), Benzyl Alcohol], Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_raspberry-roundup.jpg" alt="Raspberry Round-Up" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Raspberry Round-Up</div><div class="f-card-desc">Raspberry ice cream with raspberry cups and fudge pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Peanut</span><span class="f-allergen">Soy</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Peanut</span><span class="f-allergen">Soy</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Black Raspberry Cups [Sugar, Corn Syrup, Coconut Oil, Cocoa Processed with Alkali, Palm Kernel Oil, Cocoa, Red Raspberry Puree, Black Raspberry Juice Concentrate, Lemon Juice Concentrate, Milkfat, Soy Lecithin, Natural and Artificial Flavors, Citric Acid, Sodium Benzoate and Potassium Sorbate (Preservatives)], Nonfat Milk, Fudge Pieces [Powdered Sugar (Sugar, Cornstarch), Coconut Oil, Cocoa Processed with Alkali, Peanut Oil, Cocoa, Butter Oil, Soy Lecithin, Vanilla Extract], Natural and Artificial Black Raspberry Flavor [Water, FD&C Red #40 and Blue #1, Citric Acid, Sodium Benzoate (Preservative)], Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_smoores.jpg" alt="S'Mooores" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">S'Moores</div><div class="f-card-desc">Toasted marshmallow ice cream with a graham cracker ribbon and chocolate pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Sulfites</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Sulfites</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Graham Cracker Crumb [(Unbleached Unenriched Wheat Flour, Whole Wheat/Graham Flour, Palm and Palm Kernel Oil, Molasses, Honey, Salt, Sodium Bicarbonate), Cottonseed Oil, Confectioner Sugar, Coconut Oil, Salt, Soy Lecithin, Natural Flavor, and Cinnamon], Cornstarch, Coconut Oil, Cocoa Processed with Alkali, Cocoa, Soy Lecithin (an Emulsifier), Ethyl Alcohol, Propylene Glycol, Water, High Fructose Corn Syrup, Caramel Color, Natural Smoke Flavoring, Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_strawberry-cheesecake.jpg" alt="Strawberry Cheesecake" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Strawberry Cheesecake</div><div class="f-card-desc">Cheesecake ice cream with a strawberry ribbon and cheesecake pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Egg</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Egg</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, High Fructose Corn Syrup, Strawberry Puree, Water, Locust Bean Gum, Citric Acid, Potassium Sorbate (a Preservative), FD&C Red #40, Artificial Flavor, Xanthan Gum, Cream Cheese (Pasteurized Cream, Cheese Culture, Salt, Carob Bean Gum, Guar Gum), Enriched Flour [Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid], Graham Flour, Partially Hydrogenated Soybean and/or Cottonseed Oils, Brown Sugar, Molasses, Natural Flavors, Leavening Agents (Sodium Bicarbonate, Ammonium Bicarbonate), Eggs, Liquid Soybean Oil, Whey, Vegetable Mono and Diglycerides, Soy Lecithin, Sodium Benzoate (as a Preservative), Beta Carotene, Vitamin A Palmitate Added, Powdered Sugar, Freeze Dried Key Lime Juice Concentrate, Maltodextrin, Silicon Dioxide (Prevents Caking), Ground Lemon Peel, Lemon Oil, Invert Sugar, Skim Milk, Carrageenan, Pure Vanilla</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/Triple-Cho-cow-late4-scaled.jpg" alt="Triple Cho-cow-late" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Triple Cho-cow-late</div><div class="f-card-desc">Chocolate ice cream with a fudge swirl and brownie pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Eggs</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Eggs</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Thick Fudge [Peanut Oil, Sugar, Cocoa (Processed with Alkali), Whey, Salt and Soy Lecithin], Brownie Pieces [Sugar, Vegetable Shortening (Partially Hydrogenated Soybean Oil), Whole Eggs, Wheat Flour, Cocoa (Processed with Alkali), Water, High Fructose Corn Syrup, Corn Starch, Salt, Natural Flavors], Skim Milk, Cocoa (Processed with Alkali), Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_udder-nutsense.jpg" alt="Udder Nutsense" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Udder Nutsense</div><div class="f-card-desc">Chocolate ice cream with chocolate covered almonds.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Almond</span><span class="f-allergen">Cashew</span><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Almond</span><span class="f-allergen">Cashew</span><span class="f-allergen">Coconut</span><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Chocolate Syrup [Water, Corn Syrup, Dutch Cocoa, Citric Acid, Salt, Vanilla, Potassium Sorbate (Preservative), Xanthan Gum], Chocolate Coated Roasted Almonds (Roasted Almonds [Roasted in Safflower Oil], Powdered Sugar [Sugar, Cornstarch], Partially Hydrogenated Coconut Oil, Coconut Oil, Cocoa Processed with Alkali, Salt, Soy Lecithin), Chocolate Covered Roasted Cashews (Cashews [Roasted in Cottonseed Oil], Powdered Sugar [Sugar, Cornstarch], Coconut Oil, Partially Hydrogenated Coconut Oil, Cocoa Processed with Alkali, Soy Lecithin, Salt), Nonfat Milk, Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
@@ -411,37 +657,103 @@
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_blue-moo.jpg" alt="Simply Blue Moo" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Simply Blue Moo</div><div class="f-card-desc">Delightfully blue and distinctively flavored "Blue Moon" premium ice cream.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Nonfat Milk, Natural and Artificial Flavoring, Locust Bean Gum, Guar Gum, Carrageenan, Artificial Color (FD&C Blue #1)</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_cow-conut-cream.jpg" alt="Simply Cow-conut Cream" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Simply Cow-conut Cream</div><div class="f-card-desc">Toasted coconut ice cream with praline coconut flakes.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Coconut</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Coconut</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Pralined Coconut (Sugar, Coconut Flake [Coconut, Sodium Metabisulfite, Sugar, Dextrose, Salt], Corn Syrup, Butter [Cream, Salt], Salt), Skim Milk, Natural Coconut Flavors (Water, Ethyl Alcohol, Propylene Glycol), Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_dutch-chocolate.jpg" alt="Simply Dutch Chocolate" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Simply Dutch Chocolate</div><div class="f-card-desc">Premium dutch chocolate ice cream.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Nonfat Milk, Cocoa (processed with alkali), Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_grandpas-vanilla.jpg" alt="Simply Grandpa's Vanilla" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Simply Grandpa's Vanilla</div><div class="f-card-desc">Premium vanilla ice cream just like Grandpa used to make.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Nonfat Milk, Vanilla, Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_hayday.jpg" alt="Simply HayDay" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Simply HayDay</div><div class="f-card-desc">Salted caramel ice cream with a salty caramel ribbon and roasted, salted peanuts.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Peanut</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Peanut</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Salty Caramel Variegate [Corn Syrup, Water, Sweetened Condensed Milk (Condensed Milk, Sugar), Sweetened Condensed Skim Milk (Condensed Skim Milk, Sugar), Sugar, Sea Salt, Pectin, Xanthan Gum, Sodium Bicarbonate], Peanuts, Cottonseed Oil, Salt, Skim Milk, Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose, Natural &amp; Artificial Salted Caramel Flavor (Propylene Glycol, Water)</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_lemon-blueberry_rgb-v2-scaled.jpg" alt="Simply Lemon Blueberry" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Simply Lemon Blueberry</div><div class="f-card-desc">Tart lemon ice cream with a blueberry ribbon and cake pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Egg</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Egg</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Blueberry Puree (Sugar, Modified Cornstarch, Natural Blueberry Flavor), Cake Pieces (Wheat Flour, Liquid Pasteurized Eggs, Margarine [Soybean Oil, Palm Oil, Water, Salt, Mono and Diglycerides, Soybean Lecithin, Natural Butter Flavor, Colored with Annatto, Vitamin A Palmitate Added], Corn Starch, Natural Flavors, Soy Lecithin, Salt), Natural Flavors, Turmeric Extract (Color), Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
@@ -455,13 +767,35 @@
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/20200911_121951-2.jpg" alt="Simply Strawberry Patch" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Simply Strawberry Patch</div><div class="f-card-desc">Strawberry ice cream with real strawberries.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Skim Milk, Sliced Strawberries, Natural Flavors, Vanilla, Red Beet Juice Concentrate (Color), Corn Starch, Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal">
         <div class="f-card-photo"><img src="assets/images/product-photo-ice-cream_simply-supercow.jpg" alt="Simply Super Cow" loading="lazy"></div>
         <div class="f-card-body"><div class="f-card-name">Simply Super Cow</div><div class="f-card-desc">Blue Moo, Wild Cherry and Fresh Lemon ice cream swirled for pure nostalgia.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Skim Milk, Sugar, Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose, Spirulina Extract (Color), Natural Flavors, Turmeric Extract (Color), Red Beet Juice Concentrate (Color)</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -490,7 +824,18 @@
           <div class="seasonal-badge">Seasonal</div>
         </div>
         <div class="f-card-body"><div class="f-card-name">Peppermint Stick</div><div class="f-card-desc">Mint ice cream with red and green crushed peppermint candies.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Soy</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Cream, Milk, Skim Milk, Sugar, Locust Bean Gum, Guar Gum, Carrageenan, Standardized with Dextrose, Peppermint Stick Pieces (Sugar, Corn Syrup, Partially Hydrogenated Vegetable Oil [May Contain One or More of the Following Oils: Palm Kernel, Soybean, Cottonseed], Natural Flavor, Soy Lecithin, Artificial Color [Red 40, Yellow 5, Blue 1]), Natural Flavor (Propylene Glycol, Alcohol, and Water), Artificial Color (Red 40 &amp; Blue 1)</p>
+          </div>
+        </div>
       </div>
 
       <div class="f-card reveal reveal-delay-1">
@@ -499,7 +844,18 @@
           <div class="seasonal-badge">Seasonal</div>
         </div>
         <div class="f-card-body"><div class="f-card-name">Pumpkin Cheesecake</div><div class="f-card-desc">Pumpkin ice cream with cheesecake pieces.</div>
-          <div class="f-card-allergens"><span class="f-allergen">Milk</span><span class="f-allergen">Eggs</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div></div>
+          <button class="f-info-toggle" aria-expanded="false" aria-label="View ingredients and allergens">
+            <span class="f-info-toggle-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="10"/><rect x="0" y="4" width="10" height="2"/></svg></span>
+            Ingredients &amp; Allergens
+          </button></div>
+        <div class="f-info-drawer" aria-hidden="true">
+          <div class="f-info-drawer-inner">
+            <div class="f-info-section-label">Contains</div>
+            <div class="f-info-allergen-row"><span class="f-allergen">Milk</span><span class="f-allergen">Eggs</span><span class="f-allergen">Soy</span><span class="f-allergen">Wheat</span></div>
+            <div class="f-info-section-label" style="margin-top:10px;">Ingredients</div>
+            <p class="f-info-ing-text">Milk, Cream, Sugar, Cheesecake Pieces [Cream Cheese (Pasteurized Cream, Cheese Culture, Salt, Carob Bean Gum, Guar Gum), Graham Cracker Crumbs (Enriched Flour {Flour, Niacin, Iron, Thiamin Mononitrate, Riboflavin, Folic Acid}, Graham Flour, Partially Hydrogenated Soybean and/or Cottonseed Oils, Sugar, Brown Sugar, Molasses, Salt, Natural and Artificial Flavors, Leavening Agents {Sodium Bicarbonate, Ammonium Bicarbonate}), Sugar, Eggs, Margarine (Liquid Soybean Oil, Partially Hydrogenated Soybean Oil, Water, Salt, Whey, Vegetable Mono and Diglycerides, Soy Lecithin, Sodium Benzoate {a Preservative}, Artificial Flavor, Beta Carotene, Vitamin A Palmitate Added), Cream, Powdered Sugar, Enriched Bleached Flour (Bleached Wheat Flour, Niacin, Reduced Iron, Thiamin Mononitrate, Folic Acid, Riboflavin), Lime Flavoring (Freeze Dried Key Lime Juice Concentrate, Maltodextrin, Silicon Dioxide {Prevents Caking}), Lemon Flavoring (Ground Lemon Peel, Sugar, Lemon Oil), Xanthan Gum, Pure Vanilla], Pumpkin Flavoring [Pumpkin, High Fructose Corn Syrup, Brown Sugar, Sweetened Condensed Milk, Water, Caramel Color, Spices, Natural and Artificial Flavor, Potassium Sorbate and Sodium Benzoate (Preservatives)], Nonfat Milk, Locust Bean Gum, Guar Gum, Carrageenan</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -588,5 +944,25 @@
 </footer>
 
 <script src="js/country-dairy.js"></script>
+<script>
+  document.querySelectorAll('.f-info-toggle').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const card = btn.closest('.f-card');
+      const isOpen = card.classList.contains('info-open');
+      // Close any other open cards
+      document.querySelectorAll('.f-card.info-open').forEach(c => {
+        c.classList.remove('info-open');
+        c.querySelector('.f-info-toggle').setAttribute('aria-expanded', 'false');
+        c.querySelector('.f-info-drawer').setAttribute('aria-hidden', 'true');
+      });
+      if (!isOpen) {
+        card.classList.add('info-open');
+        btn.setAttribute('aria-expanded', 'true');
+        card.querySelector('.f-info-drawer').setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+</script>
 </body>
 </html>
