@@ -26,7 +26,31 @@
       "WebSearch",
       "WebFetch(domain:countrydairy.com)",
       "Bash(awk '{print $5, $9}')",
-      "WebFetch(domain:www.youtube.com)"
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(brew install *)",
+      "Bash(/opt/homebrew/bin/brew install *)",
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/oliviaarkema/homebrew/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(gs -dBATCH -dNOPAUSE -sDEVICE=jpeg -r120 -dFirstPage=1 -dLastPage=5 -sOutputFile=/tmp/sg_%02d.jpg '/Users/oliviaarkema/Downloads/Style Guide \\(1\\).pdf')",
+      "Bash(gs -dBATCH -dNOPAUSE -sDEVICE=jpeg -r100 -sOutputFile=/tmp/sg_%02d.jpg '/Users/oliviaarkema/Downloads/Style Guide \\(1\\).pdf')",
+      "Read(//private/tmp/**)",
+      "Bash(sips -s format jpeg '/Users/oliviaarkema/Desktop/country-dairy-inc/assets/images/CD Pasture Cow.HEIC' --out '/Users/oliviaarkema/Desktop/country-dairy-inc/assets/images/pasture-cow.jpg')",
+      "Bash(find /Users/oliviaarkema/Desktop/country-dairy-inc -name \"*.html\" | xargs grep -l \"story\\\\|Story\" | head -10)",
+      "Bash(python3 -)",
+      "Bash(npx serve *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3457/)",
+      "Bash(grep -n \"Hoofin\\\\|hoofin\\\\|duration\\\\|price\\\\|cost\\\\|\\\\$\\\\|minute\\\\|hour\\\\|ticket\" /Users/oliviaarkema/Desktop/cdfs-0528/farm-tours.html)",
+      "Bash(grep -n \"tour-note\\\\|duration\\\\|minute\\\\|price\\\\|\\\\$[0-9]\\\\|per person\\\\|adults\\\\|children\" /Users/oliviaarkema/Desktop/cdfs-0528/farm-tours.html)",
+      "Bash(sed -i '' 's/four generations of tradition/five generations of tradition/g' *.html)",
+      "Bash(sed -i '' 's/four generations of the Van Gunst/five generations of the Van Gunst/g' *.html)",
+      "Bash(sed -i '' 's/fourth generation of the Van Gunst/fifth generation of the Van Gunst/g' *.html)",
+      "Bash(sed -i '' 's/fourth generation of family/fifth generation of family/g' *.html)",
+      "Bash(sed -i '' 's/polaroid-caption\">four generations/polaroid-caption\">five generations/g' *.html)",
+      "Bash(sed -i '' 's|<a href=\"#\">Privacy Policy</a>|<a href=\"privacy.html\">Privacy Policy</a>|g; *)",
+      "Bash(sed -i '' 's|<a href=\"#\" class=\"footer-social-link\" aria-label=\"Facebook\">|<a href=\"https://www.facebook.com/countrydairy/\" target=\"_blank\" rel=\"noopener\" class=\"footer-social-link\" aria-label=\"Facebook\">|g' *.html)",
+      "Bash(sed -i '' 's|<a href=\"#\" class=\"footer-social-link\" aria-label=\"Instagram\">|<a href=\"https://www.instagram.com/countrydairyinc/\" target=\"_blank\" rel=\"noopener\" class=\"footer-social-link\" aria-label=\"Instagram\">|g' *.html)",
+      "Read(//Users/oliviaarkema/Desktop/**)"
     ]
   }
 }

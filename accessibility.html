@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility Statement — Country Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css">
+<style>
+  .policy-hero {
+    background: var(--green-deep);
+    padding: 100px 0 64px;
+    text-align: center;
+  }
+  .policy-hero-eyebrow {
+    font-family: var(--font-sans); font-size: .7rem; font-weight: 700;
+    letter-spacing: .25em; text-transform: uppercase; color: var(--green-bright);
+    margin-bottom: 16px;
+  }
+  .policy-hero-title {
+    font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 700; color: #fff; line-height: 1.1;
+  }
+  .policy-hero-title em { font-style: italic; color: var(--green-bright); }
+  .policy-hero-sub {
+    font-size: .9rem; color: rgba(255,255,255,.55); margin-top: 14px; font-weight: 300;
+  }
+  .policy-body {
+    background: var(--warm-white);
+    padding: 80px 0 100px;
+  }
+  .policy-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .policy-content h2 {
+    font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;
+    color: var(--dark-brown); margin: 48px 0 14px;
+  }
+  .policy-content h2:first-child { margin-top: 0; }
+  .policy-content p {
+    font-size: .97rem; color: var(--text-muted); line-height: 1.82;
+    font-weight: 300; margin-bottom: 16px;
+  }
+  .policy-content ul {
+    margin: 0 0 16px 20px;
+    font-size: .97rem; color: var(--text-muted); line-height: 1.82; font-weight: 300;
+  }
+  .policy-content ul li { margin-bottom: 6px; }
+  .policy-content a { color: var(--green-dark); text-decoration: underline; }
+  .policy-updated {
+    font-family: var(--font-sans); font-size: .72rem; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted);
+    border-bottom: 1px solid var(--cream-dark); padding-bottom: 24px; margin-bottom: 40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="farm-tours.html">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="meat-market.html" role="menuitem">Meat Market</a>
+          <a href="events.html" role="menuitem">Events</a>
+          <a href="bakery.html" role="menuitem">Bakery</a>
+          <a href="catering.html" role="menuitem">Catering</a>
+          <a href="event-space.html" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="news.html" role="menuitem">News</a>
+          <a href="contact.html" role="menuitem">Contact</a>
+        </div>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <a href="products.html">Products</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="meat-market.html" class="mobile-menu-sub">Meat Market</a>
+  <a href="events.html" class="mobile-menu-sub">Events</a>
+  <a href="bakery.html" class="mobile-menu-sub">Bakery</a>
+  <a href="catering.html" class="mobile-menu-sub">Catering</a>
+  <a href="event-space.html" class="mobile-menu-sub">Event Space</a>
+  <a href="news.html" class="mobile-menu-sub">News</a>
+  <a href="contact.html" class="mobile-menu-sub">Contact</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="policy-hero">
+  <div class="container">
+    <div class="policy-hero-eyebrow">Commitment</div>
+    <h1 class="policy-hero-title">Accessibility <em>Statement</em></h1>
+    <p class="policy-hero-sub">Last updated: June 2026</p>
+  </div>
+</section>
+
+<!-- ===================== CONTENT ===================== -->
+<section class="policy-body">
+  <div class="policy-content">
+
+    <div class="policy-updated">Effective Date: June 1, 2026 &nbsp;&middot;&nbsp; Country Dairy, Inc. &nbsp;&middot;&nbsp; New Era, Michigan</div>
+
+    <p>Country Dairy, Inc. is committed to ensuring that our website is accessible to all users, including individuals with disabilities. We strive to provide a positive experience for everyone and are continually working to improve the accessibility of our digital content.</p>
+
+    <h2>Our Goal</h2>
+    <p>We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, published by the World Wide Web Consortium (W3C). These guidelines explain how to make web content more accessible to people with disabilities. Conformance to these guidelines helps make the web more usable for all people.</p>
+
+    <h2>Measures We Are Taking</h2>
+    <p>Country Dairy takes the following steps to ensure accessibility of our website:</p>
+    <ul>
+      <li>Including meaningful alternative text for images</li>
+      <li>Using sufficient color contrast between text and background</li>
+      <li>Structuring content with semantic HTML to support screen readers</li>
+      <li>Ensuring interactive elements are keyboard-navigable</li>
+      <li>Using ARIA labels where appropriate to improve assistive technology compatibility</li>
+      <li>Designing layouts that are responsive and usable on mobile devices</li>
+    </ul>
+
+    <h2>Known Limitations</h2>
+    <p>While we strive to meet accessibility standards, some content on our Site may not yet fully conform to WCAG 2.1 Level AA. We are actively working to identify and address these gaps. Third-party content, including embedded booking tools and social media feeds, may not meet the same standards, as those are outside our direct control.</p>
+
+    <h2>Feedback and Contact</h2>
+    <p>We welcome your feedback on the accessibility of our website. If you experience any barriers to access or would like to request content in an accessible format, please contact us:</p>
+    <ul>
+      <li><strong>Country Dairy, Inc.</strong></li>
+      <li>3476 S 80th Ave, New Era, MI 49446</li>
+      <li><a href="tel:2318614636">(231) 861-4636</a></li>
+      <li><a href="mailto:info@countrydairy.com">info@countrydairy.com</a></li>
+    </ul>
+    <p>We try to respond to accessibility feedback within 5 business days.</p>
+
+    <h2>Physical Accessibility</h2>
+    <p>For questions about physical accessibility at our farm, store, or event spaces, please call us at <a href="tel:2318614636">(231) 861-4636</a>. We are happy to make accommodations and answer any questions before your visit.</p>
+
+    <h2>Formal Complaints</h2>
+    <p>If you are not satisfied with our response to your accessibility concern, you may contact the relevant authorities in your jurisdiction. In the United States, the U.S. Department of Justice handles ADA-related complaints at <a href="https://www.ada.gov" target="_blank" rel="noopener">ada.gov</a>.</p>
+
+    <h2>Ongoing Commitment</h2>
+    <p>This statement was prepared in June 2026. We review and update our accessibility practices on an ongoing basis and will revise this statement as our work progresses.</p>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Country Dairy</div>
+        <div class="footer-logo-sub">New Era, Michigan &middot; Est. 1907</div>
+        <p class="footer-tagline">A Michigan Centennial Farm where real food, open pastures, and five generations of tradition come together.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/countrydairy/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/countrydairyinc/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="TikTok">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Ice Cream</div>
+        <ul class="footer-col-links">
+          <li><a href="icecream.html">All Flavors</a></li>
+          <li><a href="products.html">Farm Fresh Products</a></li>
+          <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+          <li><a href="ice-cream-social.html">Ice Cream Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <ul class="footer-col-links">
+          <li><a href="where-to-buy.html">Where to Buy</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:2318614636">(231) 861-4636</a></li>
+          <li><a href="contact.html">3476 S 80th Ave, New Era, MI 49446</a></li>
+          <li><a href="mailto:info@countrydairy.com">info@countrydairy.com</a></li>
+        </ul>
+        <div style="margin-top:20px;">
+          <div style="font-family:var(--font-sans); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:6px;">Hours</div>
+          <div style="font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.6;">Farm Store &amp; Ice Cream: Mon–Sat 9am–9pm<br>Kitchen: Mon–Sat 10am–7pm<br>Sunday: Closed</div>
+        </div>
+      </div>
+      <div class="footer-col--inline">
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-col-links">
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js"></script>
+</body>
+</html>
