@@ -84,7 +84,7 @@
   /* ── Intro / Roots ─────────────────────────────── */
   .os-intro {
     background: var(--warm-white);
-    padding: 100px 0 90px;
+    padding: 48px 0 90px;
   }
   .os-intro-inner {
     display: grid;
@@ -108,35 +108,24 @@
     height: 175px;
     z-index: 4;
   }
+  /* ── Centennial badge ──────────────────────────────────────────────────── */
   .os-centennial-badge {
     position: absolute;
     top: 28px;
-    left: -20px;
-    background: var(--green-dark);
-    color: #fff;
-    padding: 18px 22px;
-    border-radius: var(--radius-md);
-    box-shadow: 0 8px 28px rgba(7,77,26,.4);
-    text-align: center;
+    left: -24px;
+    width: 130px;
+    z-index: 5;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,.4));
   }
-  .os-centennial-badge strong {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--terracotta-light);
-    line-height: 1;
-    margin-bottom: 4px;
+  /* ── Second polaroid ───────────────────────────────────────────────────── */
+  .os-intro-polaroid-2 {
+    position: absolute;
+    bottom: -48px;
+    right: 60px;
+    width: 150px;
+    height: 150px;
+    z-index: 3;
   }
-  .os-centennial-badge span {
-    font-family: var(--font-sans);
-    font-size: .58rem;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.7);
-  }
-  .os-intro-copy { }
   .os-intro-headline {
     font-family: var(--font-serif);
     font-size: clamp(2.2rem, 3.5vw, 3.2rem);
@@ -215,16 +204,16 @@
   }
   .os-timeline-track {
     position: relative;
-    max-width: 860px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 40px 0 270px;
     z-index: 1;
   }
   /* vertical line */
   .os-timeline-track::before {
     content: '';
     position: absolute;
-    left: 48px;
+    left: 270px;
     top: 8px;
     bottom: 8px;
     width: 2px;
@@ -233,15 +222,14 @@
   }
   .tl-entry {
     display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 28px;
+    grid-template-columns: 82px 1fr;
+    gap: 24px;
     margin-bottom: 0;
     padding: 32px 0;
     border-bottom: 1px solid var(--cream-dark);
     position: relative;
   }
   .tl-entry:last-child { border-bottom: none; }
-  /* dot on the line */
   .tl-entry::before {
     content: '';
     position: absolute;
@@ -261,7 +249,6 @@
     line-height: 1.3;
     padding-top: 2px;
   }
-  .tl-body { }
   .tl-title {
     font-family: var(--font-sans);
     font-size: .8rem;
@@ -278,10 +265,175 @@
     font-weight: 300;
   }
 
+  /* ── Image panel — left of the line ───────────────── */
+  .tl-img-panel {
+    position: absolute;
+    left: -258px;   /* panel width 240 + 18px gap */
+    width: 240px;
+    top: 28px;
+    display: block; /* photos positioned by JS margin-left */
+    transform-origin: center top;
+    transform: scale(0.82) translateY(8px);
+    opacity: 0;
+    transition: transform .6s cubic-bezier(.22,1,.36,1), opacity .6s ease;
+  }
+  .tl-img-panel.tl-img-visible {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  @supports (animation-timeline: view()) {
+    .tl-img-panel {
+      transform: none;
+      opacity: 1;
+      transition: none;
+      animation: tl-img-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+  }
+  @keyframes tl-img-in {
+    from { transform: scale(0.82) translateY(10px); opacity: 0; }
+    to   { transform: scale(1)    translateY(0);    opacity: 1; }
+  }
+
+  /* ── Timeline photos ───────────────────────────────── */
+  .tl-photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: 0 6px 24px rgba(0,0,0,.22);
+    cursor: pointer;
+    width: 148px;  /* narrower photos = more room to spread L-R */
+    display: block;
+  }
+  .tl-photo img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    transition: transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .tl-photo:hover img { transform: scale(1.06); }
+  .tl-photo--tall img { height: 190px; }
+  .tl-photo-expand {
+    position: absolute;
+    top: 8px; right: 8px;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.45);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0;
+    transition: opacity .25s;
+    pointer-events: none;
+  }
+  .tl-photo-expand svg { width: 13px; height: 13px; fill: #fff; }
+  .tl-photo:hover .tl-photo-expand { opacity: 1; }
+  .tl-photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 8px 10px;
+    background: linear-gradient(to top, rgba(5,18,7,.82), transparent);
+    font-family: var(--font-sans);
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.9);
+  }
+
+  /* ── Lightbox ──────────────────────────────────────── */
+  .tl-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(5,12,7,.92);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    cursor: zoom-out;
+    animation: lb-fade .25s ease;
+  }
+  .tl-lightbox.active { display: flex; }
+  @keyframes lb-fade { from { opacity:0; } to { opacity:1; } }
+  .tl-lightbox img {
+    max-width: min(90vw, 820px);
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 24px 80px rgba(0,0,0,.6);
+    cursor: default;
+    animation: lb-scale .3s cubic-bezier(.22,1,.36,1);
+  }
+  @keyframes lb-scale { from { transform: scale(.9); } to { transform: scale(1); } }
+  .tl-lightbox-caption {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-sans);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+    white-space: nowrap;
+  }
+  .tl-lightbox-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.12);
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .tl-lightbox-close:hover { background: rgba(255,255,255,.22); }
+
+  @media (max-width: 920px) {
+    .os-timeline-track { padding: 0 24px 0 210px; }
+    .os-timeline-track::before { left: 210px; }
+    .tl-img-panel { left: -196px; width: 186px; }
+    .tl-photo { width: 130px; }
+    .tl-photo img { height: 120px; }
+    .tl-photo--tall img { height: 160px; }
+  }
+  @media (max-width: 640px) {
+    .os-timeline-track { padding: 0 12px 0 36px; }
+    .os-timeline-track::before { left: 36px; }
+    .tl-img-panel {
+      position: static;
+      grid-column: 1 / -1;
+      width: 100%;
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+      transform: none !important;
+      opacity: 1 !important;
+      animation: none !important;
+    }
+    .tl-photo {
+      flex: 1;
+      width: auto !important;
+      margin-left: 0 !important;
+      margin-top: 0 !important;
+      position: relative !important;
+      z-index: auto !important;
+    }
+    .tl-photo img { height: 90px; }
+    .tl-photo--tall img { height: 90px; }
+  }
+
   /* ── Farm Today ────────────────────────────────── */
   .os-today {
     background: var(--green-deep);
-    padding: 100px 0;
+    padding: 60px 0;
     position: relative;
     overflow: hidden;
   }
@@ -382,7 +534,7 @@
   /* ── Values ────────────────────────────────────── */
   .os-values {
     background: var(--warm-white);
-    padding: 100px 0;
+    padding: 60px 0;
   }
   .os-values-header {
     text-align: center;
@@ -465,10 +617,9 @@
   @media (max-width: 768px) {
     .os-intro { padding: 64px 0; }
     .os-timeline { padding: 64px 0; }
-    .os-today { padding: 64px 0; }
+    .os-today { padding: 40px 0; }
     .os-values-grid { grid-template-columns: 1fr; }
     .os-stats-row { grid-template-columns: 1fr 1fr; }
-    .os-timeline-track { padding: 0 24px 0 48px; }
     .os-today-photo { height: 260px; }
     .os-cta { padding: 64px 0; }
   }
@@ -556,18 +707,22 @@
 
       <div class="os-intro-visual reveal">
         <img
-          src="assets/images/Original Farm STore.jpg"
-          alt="The original Country Dairy farm store"
+          src="assets/images/CD Pasture Cow.jpg"
+          alt="Holstein cow in the pasture at Country Dairy"
           class="os-intro-img"
           loading="lazy"
+          style="object-position: center 30%;"
         >
+        <div class="polaroid polaroid-tilt-r os-intro-polaroid-2">
+          <img src="assets/images/old_converted/old_farmhouse.jpg" alt="The original Van Gunst farmhouse" style="height:100%;object-fit:cover;object-position:center center;" loading="lazy">
+          <div class="polaroid-caption">Est. 1907</div>
+        </div>
         <div class="polaroid polaroid-tilt-r os-intro-polaroid">
-          <img src="assets/images/Fleet of Trucks.jpg" alt="Country Dairy delivery fleet" style="height:100%;" loading="lazy">
-          <div class="polaroid-caption">Delivering since 1983</div>
+          <img src="assets/images/heifer barn winter.jpg" alt="The herd year-round" style="height:100%;object-fit:cover;" loading="lazy">
+          <div class="polaroid-caption">Rain or Shine</div>
         </div>
         <div class="os-centennial-badge reveal">
-          <strong>Michigan</strong>
-          <span>Centennial<br>Farm</span>
+          <img src="assets/images/Michigan Centennial Farms.webp" alt="Michigan Centennial Farm" style="width:100%;height:auto;display:block;">
         </div>
       </div>
 
@@ -610,6 +765,13 @@
     <div class="os-timeline-track">
 
       <div class="tl-entry reveal">
+        <div class="tl-img-panel">
+          <div class="tl-photo tl-photo--tall">
+            <img src="assets/images/old_converted/Andrew_Van_Gunst.jpg" alt="Andrew Van Gunst" loading="lazy" style="object-position: center center;">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">Andrew Van Gunst</div>
+          </div>
+        </div>
         <div class="tl-year">1880s</div>
         <div class="tl-body">
           <div class="tl-title">The Beginning</div>
@@ -618,6 +780,13 @@
       </div>
 
       <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-img-panel">
+          <div class="tl-photo tl-photo--tall">
+            <img src="assets/images/old_converted/original40acres.jpg" alt="The original 40 acres" loading="lazy" style="object-position: center center;">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">The Original 80 Acres</div>
+          </div>
+        </div>
         <div class="tl-year">1907</div>
         <div class="tl-body">
           <div class="tl-title">The Land</div>
@@ -626,6 +795,13 @@
       </div>
 
       <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-img-panel">
+          <div class="tl-photo">
+            <img src="assets/images/old_converted/Ellen_driving_tractor.jpg" alt="Ellen driving the tractor" loading="lazy" style="object-position: center center;">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">Ellen on the Tractor</div>
+          </div>
+        </div>
         <div class="tl-year">1936–1956</div>
         <div class="tl-body">
           <div class="tl-title">Second Generation</div>
@@ -634,6 +810,18 @@
       </div>
 
       <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-img-panel">
+          <div class="tl-photo">
+            <img src="assets/images/old_converted/Holstein_old_picture.jpg" alt="Holstein cows on the farm" loading="lazy" style="object-position: center center;">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">The Holstein Herd</div>
+          </div>
+          <div class="tl-photo">
+            <img src="assets/images/old_converted/Old_Milking_Parlor.jpg" alt="The original milking parlor" loading="lazy" style="object-position: center center;">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">Old Milking Parlor</div>
+          </div>
+        </div>
         <div class="tl-year">1964–1968</div>
         <div class="tl-body">
           <div class="tl-title">Third Generation</div>
@@ -642,6 +830,18 @@
       </div>
 
       <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-img-panel">
+          <div class="tl-photo">
+            <img src="assets/images/old_converted/Wendy_in_the_plant.jpg" alt="Wendy in the processing plant" loading="lazy">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">Inside the Plant</div>
+          </div>
+          <div class="tl-photo">
+            <img src="assets/images/old_converted/Ludington_Area_Ad.jpg" alt="Vintage Country Dairy advertisement" loading="lazy" style="object-fit: contain; background: #f5f0e8;">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">Early Advertisement</div>
+          </div>
+        </div>
         <div class="tl-year">1983</div>
         <div class="tl-body">
           <div class="tl-title">Processing Plant Opens</div>
@@ -650,6 +850,18 @@
       </div>
 
       <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-img-panel">
+          <div class="tl-photo">
+            <img src="assets/images/CD Farm Store.jpg" alt="Country Dairy Farm Store" loading="lazy" style="object-position: center center;">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">The Farm Store</div>
+          </div>
+          <div class="tl-photo">
+            <img src="assets/images/old_converted/Vintage_Ice_Cream_Sign.jpg" alt="Vintage Country Dairy ice cream sign" loading="lazy" style="object-fit: contain; background: #f5f0e8;">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">Vintage Ice Cream Sign</div>
+          </div>
+        </div>
         <div class="tl-year">2004</div>
         <div class="tl-body">
           <div class="tl-title">The Farm Store Opens</div>
@@ -658,6 +870,13 @@
       </div>
 
       <div class="tl-entry reveal reveal-delay-1">
+        <div class="tl-img-panel">
+          <div class="tl-photo tl-photo--tall">
+            <img src="assets/images/Princess 2.0.jpg" alt="Princess, a modern Holstein wearing a robotic RFID collar" loading="lazy" style="object-position: center 30%;">
+            <div class="tl-photo-expand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zM21 15v6h-6v-2h4v-4h2zM3 3h6v2H5v4H3V3z"/></svg></div>
+            <div class="tl-photo-caption">Princess — Modern Dairy</div>
+          </div>
+        </div>
         <div class="tl-year">Today</div>
         <div class="tl-body">
           <div class="tl-title">Fourth Generation &amp; Growing</div>
@@ -706,7 +925,7 @@
       </div>
       <div class="os-today-photo">
         <img src="assets/images/11-19 Landscape.jpg" alt="Country Dairy products" loading="lazy">
-        <div class="os-today-photo-label">Farm Fresh Products</div>
+        <a href="products.html" class="os-today-photo-label" style="display:block;text-decoration:none;">Farm Fresh Products &#8594;</a>
       </div>
     </div>
 
@@ -851,5 +1070,83 @@
 </footer>
 
 <script src="js/country-dairy.js"></script>
+<script>
+  // ── Timeline photo offsets — hand-tuned for full L-R spread per entry ───────
+  // Each sub-array is [photo1_marginLeft, photo2_marginLeft] in px (max 92)
+  const tlOffsets = [
+    [80],       // 1880s   — far right
+    [6],        // 1907    — far left
+    [54],       // 1936–56 — right-centre
+    [10, 78],   // 1964–68 — left + far right
+    [70, 14],   // 1983    — far right + left
+    [22, 86],   // 2004    — left + far right
+    [46],       // Today   — centre
+  ];
+
+  document.querySelectorAll('.tl-img-panel').forEach((panel, pi) => {
+    const shifts = tlOffsets[pi] || [40];
+    panel.querySelectorAll('.tl-photo').forEach((photo, i) => {
+      photo.style.marginLeft = (shifts[i] ?? shifts[0]) + 'px';
+      if (i > 0) {
+        photo.style.marginTop = '-28px';
+        photo.style.position  = 'relative';
+        photo.style.zIndex    = i + 1;
+      }
+    });
+  });
+
+  // ── Scroll-in animation (fallback for browsers without animation-timeline) ──
+  if (!CSS.supports('animation-timeline', 'view()')) {
+    const panels = document.querySelectorAll('.tl-img-panel');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('tl-img-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    panels.forEach(p => io.observe(p));
+  }
+
+  // ── Lightbox ────────────────────────────────────────────────────────────────
+  const lb = document.createElement('div');
+  lb.className = 'tl-lightbox';
+  lb.innerHTML = `
+    <button class="tl-lightbox-close" aria-label="Close">&#10005;</button>
+    <img src="" alt="">
+    <div class="tl-lightbox-caption"></div>
+  `;
+  document.body.appendChild(lb);
+
+  const lbImg     = lb.querySelector('img');
+  const lbCaption = lb.querySelector('.tl-lightbox-caption');
+
+  function openLightbox(src, alt, caption) {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lbCaption.textContent = caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Click on any tl-photo opens lightbox
+  document.querySelectorAll('.tl-photo').forEach(photo => {
+    photo.addEventListener('click', () => {
+      const img     = photo.querySelector('img');
+      const caption = photo.querySelector('.tl-photo-caption');
+      openLightbox(img.src, img.alt, caption ? caption.textContent.trim() : '');
+    });
+  });
+
+  // Close on overlay click or close button
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+  lb.querySelector('.tl-lightbox-close').addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
 </body>
 </html>

@@ -50,7 +50,15 @@
       "Bash(sed -i '' 's|<a href=\"#\">Privacy Policy</a>|<a href=\"privacy.html\">Privacy Policy</a>|g; *)",
       "Bash(sed -i '' 's|<a href=\"#\" class=\"footer-social-link\" aria-label=\"Facebook\">|<a href=\"https://www.facebook.com/countrydairy/\" target=\"_blank\" rel=\"noopener\" class=\"footer-social-link\" aria-label=\"Facebook\">|g' *.html)",
       "Bash(sed -i '' 's|<a href=\"#\" class=\"footer-social-link\" aria-label=\"Instagram\">|<a href=\"https://www.instagram.com/countrydairyinc/\" target=\"_blank\" rel=\"noopener\" class=\"footer-social-link\" aria-label=\"Instagram\">|g' *.html)",
-      "Read(//Users/oliviaarkema/Desktop/**)"
+      "Read(//Users/oliviaarkema/Desktop/**)",
+      "mcp__Claude_in_Chrome__javascript_tool",
+      "mcp__Claude_in_Chrome__navigate",
+      "Bash(python3 -m http.server 3456 --directory /Users/oliviaarkema/Desktop/peak-custom-solutions &>/tmp/pcs-server.log & *)",
+      "Bash(python3 -c \"from PIL import Image; print\\('pillow ok'\\)\")",
+      "Bash(brew list *)",
+      "Bash(python3)",
+      "Bash(convert --version)",
+      "Bash(sips -s format jpeg \"/Users/oliviaarkema/Desktop/cdfs-0528/assets/images/CD Pasture Cow.HEIC\" --out \"/Users/oliviaarkema/Desktop/cdfs-0528/assets/images/CD Pasture Cow.jpg\")"
     ]
   }
 }
