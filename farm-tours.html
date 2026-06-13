@@ -678,7 +678,7 @@
         Experience a Real Dairy Farm
       </h2>
       <p class="tours-intro-body reveal reveal-delay-2">
-        Get an up-close look at dairy cows, calves, and life on a fourth-generation family farm.
+        Get an up-close look at dairy cows, calves, and life on a fifth-generation family farm.
       </p>
       <div class="tours-nav-pills reveal reveal-delay-3">
         <a href="#behind-the-barn" class="tours-nav-pill">Behind the Barn</a>
@@ -1205,5 +1205,16 @@
 </footer>
 
 <script src="js/country-dairy.js"></script>
+<script>
+  // Make entire seasonal card clickable (external links — open in new tab)
+  document.querySelectorAll('.seasonal-card').forEach(card => {
+    const link = card.querySelector('a[href]');
+    if (!link) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', e => {
+      if (!e.target.closest('a')) window.open(link.href, '_blank', 'noopener');
+    });
+  });
+</script>
 </body>
 </html>
