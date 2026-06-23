@@ -1129,74 +1129,36 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ============================================================ */
 .cert-strip {
   background: var(--charcoal, #1c1c1c);
-  padding: 32px 48px;
+  padding: 24px 48px;
 }
-.cert-strip-inner {
-  max-width: 900px;
-  margin: 0 auto;
+.cert-logos {
   display: flex;
   align-items: center;
   gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
 }
-.cert-strip-label {
-  font-family: var(--font-sans);
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.45);
-  white-space: nowrap;
-}
-.cert-logos {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 .cert-logo-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  opacity: .88;
+  transition: opacity .2s;
 }
+.cert-logo-item:hover { opacity: 1; }
 .cert-logo {
-  height: 64px;
+  height: 60px;
   width: auto;
-  max-width: 120px;
+  max-width: 130px;
   object-fit: contain;
   border-radius: 6px;
-}
-.cert-logo-name {
-  font-family: var(--font-sans);
-  font-size: .65rem;
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.5);
-  text-align: center;
-  line-height: 1.4;
-}
-.cert-placeholder-box {
-  height: 64px;
-  width: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid rgba(255,255,255,.2);
-  border-radius: 8px;
-  font-family: var(--font-sans);
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: rgba(255,255,255,.4);
-  letter-spacing: .04em;
+  mix-blend-mode: luminosity;
+  filter: brightness(1.1);
 }
 .cert-divider {
   width: 1px;
-  height: 48px;
-  background: rgba(255,255,255,.12);
+  height: 40px;
+  background: rgba(255,255,255,.15);
+  flex-shrink: 0;
 }
 
 /* ============================================================ */
