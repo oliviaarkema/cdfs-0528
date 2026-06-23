@@ -58,7 +58,11 @@
       "Bash(brew list *)",
       "Bash(python3)",
       "Bash(convert --version)",
-      "Bash(sips -s format jpeg \"/Users/oliviaarkema/Desktop/cdfs-0528/assets/images/CD Pasture Cow.HEIC\" --out \"/Users/oliviaarkema/Desktop/cdfs-0528/assets/images/CD Pasture Cow.jpg\")"
+      "Bash(sips -s format jpeg \"/Users/oliviaarkema/Desktop/cdfs-0528/assets/images/CD Pasture Cow.HEIC\" --out \"/Users/oliviaarkema/Desktop/cdfs-0528/assets/images/CD Pasture Cow.jpg\")",
+      "WebFetch(domain:www.facebook.com)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
