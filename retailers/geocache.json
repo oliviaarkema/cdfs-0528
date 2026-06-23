@@ -1,0 +1,5354 @@
+{
+  "1051 north ave battle creek": {
+    "lat": 42.3556898,
+    "lng": -85.1812935
+  },
+  "521 44th st sw wyoming": {
+    "lat": 42.8842502,
+    "lng": -85.6772378
+  },
+  "60902 m51 paw paw": {
+    "lat": 42.1976618,
+    "lng": -85.9669554
+  },
+  "1556 s meridian rd midland": {
+    "lat": 43.5671938,
+    "lng": -84.3703191
+  },
+  "802 butterworth grand rapids": {
+    "lat": 42.9592287,
+    "lng": -85.6876103
+  },
+  "132 perry road grand blanc": {
+    "lat": 42.9242756,
+    "lng": -83.6255528
+  },
+  "2897 10th street bradley": {
+    "lat": 42.6301884,
+    "lng": -85.6423555
+  },
+  "57887 red arrow hwy lawrence": {
+    "lat": 42.2163255,
+    "lng": -86.1082716
+  },
+  "639 wright ave alma": {
+    "lat": 43.3829726,
+    "lng": -84.6670846
+  },
+  "2982 w monroe rd alma": {
+    "lat": 43.4084248,
+    "lng": -84.6656553
+  },
+  "314 s euclid ave bay city": {
+    "lat": 43.5990108,
+    "lng": -83.9159332
+  },
+  "1102 e main st edmore": {
+    "lat": 43.4074365,
+    "lng": -85.0321761
+  },
+  "2525 s state rd ionia": {
+    "lat": 42.9507698,
+    "lng": -85.0740569
+  },
+  "2001 main st lowell": {
+    "lat": 42.9318373,
+    "lng": -85.3605103
+  },
+  "1959 e main owosso": {
+    "lat": 42.998644,
+    "lng": -84.1287108
+  },
+  "5605 state st saginaw": {
+    "lat": 43.436592,
+    "lng": -84.025802
+  },
+  "130 state st scottville": {
+    "lat": 43.9552448,
+    "lng": -86.2833649
+  },
+  "560 seminole rd muskegon": {
+    "lat": 43.1868746,
+    "lng": -86.2573305
+  },
+  "560 e division sparta": {
+    "lat": 43.1604477,
+    "lng": -85.69681
+  },
+  "12432 mason dr grant": {
+    "lat": 43.3285142,
+    "lng": -85.8100221
+  },
+  "150 36th st sw wyoming": {
+    "lat": 42.8983649,
+    "lng": -85.6698136
+  },
+  "1131 west state belding": {
+    "lat": 43.0885393,
+    "lng": -85.2435561
+  },
+  "4010 17 mile rd cedar springs": {
+    "lat": 43.2193847,
+    "lng": -85.5705665
+  },
+  "3895 plainfield ne grand rapids": {
+    "lat": 43.0341978,
+    "lng": -85.622301
+  },
+  "2805 port sheldon hudsonville": {
+    "lat": 42.8878387,
+    "lng": -85.8524127
+  },
+  "4640 32nd ave hudsonville": {
+    "lat": 42.8538206,
+    "lng": -85.8604959
+  },
+  "3176 niles rd st joseph": {
+    "lat": 42.0591917,
+    "lng": -86.4596303
+  },
+  "220 n main st st joseph": {
+    "lat": 42.1110685,
+    "lng": -86.4789483
+  },
+  "2501 niles ave st joseph": {
+    "lat": 42.0903858,
+    "lng": -86.4846257
+  },
+  "4558 west river dr comstock park": {
+    "lat": 43.0452465,
+    "lng": -85.6572367
+  },
+  "6045 kalamazoo se kentwood": {
+    "lat": 42.8821863,
+    "lng": -85.6259973
+  },
+  "2770 10 mile rd ne rockford": {
+    "lat": 43.116564,
+    "lng": -85.6015836
+  },
+  "6820 cascade rd se grand rapids": {
+    "lat": 42.9136377,
+    "lng": -85.5000319
+  },
+  "284 84th st sw byron center": {
+    "lat": 42.8114564,
+    "lng": -85.6703215
+  },
+  "4710 stadium dr kalamazoo": {
+    "lat": 42.2699868,
+    "lng": -85.6472232
+  },
+  "1325 w washington greenville": {
+    "lat": 43.1769167,
+    "lng": -85.2742966
+  },
+  "20222 edgar rd howard city": {
+    "lat": 43.4250919,
+    "lng": -85.4873836
+  },
+  "707 e main st stanton": {
+    "lat": 43.2930563,
+    "lng": -85.0740201
+  },
+  "102 e main st carson city": {
+    "lat": 43.1766729,
+    "lng": -84.8460938
+  },
+  "7990 s sheridan rd sheridan": {
+    "lat": 43.1791442,
+    "lng": -85.0742693
+  },
+  "130 n ensley howard city": {
+    "lat": 43.3921424,
+    "lng": -85.4713445
+  },
+  "1355 post dr belmont": {
+    "lat": 43.0919324,
+    "lng": -85.6345861
+  },
+  "5155 28th st se grand rapids": {
+    "lat": 42.9132383,
+    "lng": -85.5406089
+  },
+  "6051 belding rd rockford": {
+    "lat": 43.0865604,
+    "lng": -85.5192371
+  },
+  "4405 s division wyoming": {
+    "lat": 42.8836884,
+    "lng": -85.6653021
+  },
+  "12795 old 14 mile rd greenville": {
+    "lat": 43.1766481,
+    "lng": -85.3532642
+  },
+  "1560 lake dr se grand rapids": {
+    "lat": 42.9545306,
+    "lng": -85.6307627
+  },
+  "470 e division rockford": {
+    "lat": 43.1171842,
+    "lng": -85.5494045
+  },
+  "3271 alpine ave nw grand rapids": {
+    "lat": 42.999237,
+    "lng": -85.688441
+  },
+  "7025 sprinkle rd portage": {
+    "lat": 42.2151833,
+    "lng": -85.540515
+  },
+  "5500 west d ave kalamazoo": {
+    "lat": 42.3766564,
+    "lng": -85.6592616
+  },
+  "5233 s 9th street kalamazoo": {
+    "lat": 42.2421566,
+    "lng": -85.6774021
+  },
+  "800 burton sw wyoming": {
+    "lat": 42.9277448,
+    "lng": -85.6867519
+  },
+  "1169 w randall coopersville": {
+    "lat": 43.0599472,
+    "lng": -85.957989
+  },
+  "3935 28th st sw grandville": {
+    "lat": 42.914198,
+    "lng": -85.7621577
+  },
+  "12091 18 mile gowen": {
+    "lat": 43.2356598,
+    "lng": -85.3697124
+  },
+  "8768 belding road rockford": {
+    "lat": 43.0848542,
+    "lng": -85.4510714
+  },
+  "1220 n lafayette greenville": {
+    "lat": 43.1922968,
+    "lng": -85.2526205
+  },
+  "5960 alpine avenue nw comstock park": {
+    "lat": 43.0718523,
+    "lng": -85.6891832
+  },
+  "1920 44th street se kentwood": {
+    "lat": 42.8826183,
+    "lng": -85.6185358
+  },
+  "100 e saginaw st east lansing": {
+    "lat": 42.746331,
+    "lng": -84.4829448
+  },
+  "232 e bard rd muskegon": {
+    "lat": 43.3252069,
+    "lng": -86.2360802
+  },
+  "1845 white lake dr whitehall": {
+    "lat": 43.3858683,
+    "lng": -86.3573334
+  },
+  "4160 fruitvale rd montague": {
+    "lat": 43.4441504,
+    "lng": -86.3451348
+  },
+  "4061 s oceana dr new era": {
+    "lat": 43.5700985,
+    "lng": -86.3522806
+  },
+  "2015 s m33 west branch": {
+    "lat": 44.2758282,
+    "lng": -84.1251241
+  },
+  "1537 s getty st muskegon": {
+    "lat": 43.2244578,
+    "lng": -86.2244779
+  },
+  "12748 e mcnichols rd detroit": {
+    "lat": 42.4235304,
+    "lng": -82.9937721
+  },
+  "103 s randolph st garrett": {
+    "lat": 41.3502512,
+    "lng": -85.1353941
+  },
+  "17645 tyrone ave kent city": {
+    "lat": 43.2862162,
+    "lng": -85.7324579
+  },
+  "11764 n division sparta": {
+    "lat": 43.1779531,
+    "lng": -85.6706478
+  },
+  "1596 e 88th street newaygo": {
+    "lat": 43.3927627,
+    "lng": -85.7625858
+  },
+  "802 e superior st alma": {
+    "lat": 43.378787,
+    "lng": -84.650159
+  },
+  "102 n main st almont township": {
+    "lat": 42.9206984,
+    "lng": -83.0449924
+  },
+  "1303 mainaloha cheboygan": {
+    "lat": 45.5264227,
+    "lng": -84.4662914
+  },
+  "505 s wisconsin ave gaylord": {
+    "lat": 45.0233592,
+    "lng": -84.6820065
+  },
+  "9963 e stanton rd crystal": {
+    "lat": 43.2924282,
+    "lng": -84.8794473
+  },
+  "187 monroe nw grand rapids": {
+    "lat": 42.9654333,
+    "lng": -85.6711231
+  },
+  "134 n main st watervliet": {
+    "lat": 42.1882347,
+    "lng": -86.2601303
+  },
+  "6398 96th avenue zeeland": {
+    "lat": 42.8849482,
+    "lng": -86.0205004
+  },
+  "2381 e apple ave muskegon": {
+    "lat": 43.2341364,
+    "lng": -86.1847386
+  },
+  "17073 6th st arcadia": {
+    "lat": 44.5080465,
+    "lng": -86.2313752
+  },
+  "4225 32nd ave hudsonville": {
+    "lat": 42.8457876,
+    "lng": -85.8621511
+  },
+  "128 s sterling ashley": {
+    "lat": 43.1861783,
+    "lng": -84.4752907
+  },
+  "10989 210th ave reed city": {
+    "lat": 43.8781196,
+    "lng": -85.5032605
+  },
+  "8451 belding rd ne rockford": {
+    "lat": 43.0846292,
+    "lng": -85.4593396
+  },
+  "5815 st clair highway china": {
+    "lat": 42.801155,
+    "lng": -82.5459477
+  },
+  "1443 m89 otsego": {
+    "lat": 42.4523067,
+    "lng": -85.6831013
+  },
+  "509 leonard grand rapids": {
+    "lat": 42.9850568,
+    "lng": -85.6803676
+  },
+  "331 south washington square lansing": {
+    "lat": 42.7302084,
+    "lng": -84.5520441
+  },
+  "711 n michigan ave baldwin": {
+    "lat": 43.8911871,
+    "lng": -85.8517589
+  },
+  "3721 corunna rd flint": {
+    "lat": 43.0020452,
+    "lng": -83.7523656
+  },
+  "1866 w trask lake rd barton city": {
+    "lat": 44.6834745,
+    "lng": -83.601117
+  },
+  "13321 stark rd livonia": {
+    "lat": 42.3796991,
+    "lng": -83.3788215
+  },
+  "2988 w beal city road mt pleasant": {
+    "lat": 43.669481,
+    "lng": -84.9083253
+  },
+  "11740 chippewa hwy bear lake": {
+    "lat": 44.41344,
+    "lng": -86.1521449
+  },
+  "11289 silver lake rd byron": {
+    "lat": 42.8171428,
+    "lng": -83.9333277
+  },
+  "1491 huron road linwood": {
+    "lat": 43.7804211,
+    "lng": -83.9734832
+  },
+  "513 conrad rd standish": {
+    "lat": 44.0255224,
+    "lng": -83.8271109
+  },
+  "145 w superior wayland": {
+    "lat": 42.6737405,
+    "lng": -85.6440004
+  },
+  "5233 s straits hwy indian river": {
+    "lat": 45.3866769,
+    "lng": -84.6287715
+  },
+  "1008 e center ithaca": {
+    "lat": 43.2915662,
+    "lng": -84.5931423
+  },
+  "621 a way grand haven": {
+    "lat": 43.0677903,
+    "lng": -86.2207127
+  },
+  "3424 lincoln road hamilton": {
+    "lat": 42.6693159,
+    "lng": -85.9969731
+  },
+  "67421 s main street richmond": {
+    "lat": 42.7980403,
+    "lng": -82.7390459
+  },
+  "3743 e holland rd saginaw": {
+    "lat": 43.4149339,
+    "lng": -83.9054474
+  },
+  "11360 n saginaw st mt morris": {
+    "lat": 43.1149109,
+    "lng": -83.69427
+  },
+  "805 marshall st allegan": {
+    "lat": 42.5185267,
+    "lng": -85.8384233
+  },
+  "213 e mckinley mishawaka": {
+    "lat": 41.6803509,
+    "lng": -86.1792059
+  },
+  "717 n 1st st harrison": {
+    "lat": 44.026464,
+    "lng": -84.8039501
+  },
+  "320 brooklyn rd jackson": {
+    "lat": 42.1678024,
+    "lng": -84.2616653
+  },
+  "3511 mertz rd caro": {
+    "lat": 43.4084488,
+    "lng": -83.3829863
+  },
+  "8741 w saginaw hwy lansing": {
+    "lat": 42.7406081,
+    "lng": -84.6802135
+  },
+  "2701 woodville rd northwood": {
+    "lat": 41.616267,
+    "lng": -83.485898
+  },
+  "660 chicago dr holland": {
+    "lat": 42.7976253,
+    "lng": -86.0785969
+  },
+  "1000 washington ave holland": {
+    "lat": 42.761479,
+    "lng": -86.116713
+  },
+  "501 west main ave zeeland": {
+    "lat": 42.8127677,
+    "lng": -86.0340529
+  },
+  "225 college ave holland": {
+    "lat": 42.7890037,
+    "lng": -86.1031704
+  },
+  "12719 riley st holland": {
+    "lat": 42.8280859,
+    "lng": -86.0961084
+  },
+  "1818 n mitchell cadillac": {
+    "lat": 44.276659,
+    "lng": -85.4065254
+  },
+  "13181 schavey rd dewitt": {
+    "lat": 42.825178,
+    "lng": -84.5886336
+  },
+  "4031 n mccord rd sylvania": {
+    "lat": 41.6910938,
+    "lng": -83.7040473
+  },
+  "1429 w saginaw st 100 east lansing": {
+    "lat": 42.7420101,
+    "lng": -84.5023591
+  },
+  "1025 n wisner jackson": {
+    "lat": 42.2568472,
+    "lng": -84.4283169
+  },
+  "4560 w main st kalamazoo": {
+    "lat": 42.2969149,
+    "lng": -85.6453976
+  },
+  "947 trowbridge rd east lansing": {
+    "lat": 42.7209612,
+    "lng": -84.4926579
+  },
+  "1077 south us 27 st johns": {
+    "lat": 42.9920298,
+    "lng": -84.545686
+  },
+  "2002 w saginaw hwy lansing": {
+    "lat": 42.7411906,
+    "lng": -84.8728853
+  },
+  "4204 sylvania ave toledo": {
+    "lat": 41.6912649,
+    "lng": -83.6423496
+  },
+  "661 n cedar st mason": {
+    "lat": 42.5889745,
+    "lng": -84.4583182
+  },
+  "3295 henry st muskegon": {
+    "lat": 43.1922747,
+    "lng": -86.2641325
+  },
+  "1475 e main st owosso": {
+    "lat": 42.9975125,
+    "lng": -84.1690418
+  },
+  "3093 s linden rd flint": {
+    "lat": 43.0093022,
+    "lng": -83.7728727
+  },
+  "1110 w michigan ave marshall": {
+    "lat": 42.272032,
+    "lng": -84.9785525
+  },
+  "217 e michigan ave albion": {
+    "lat": 42.2471015,
+    "lng": -84.7506014
+  },
+  "6426 100th st se caledonia": {
+    "lat": 42.7829842,
+    "lng": -85.5060396
+  },
+  "11826 fulton st lowell": {
+    "lat": 42.9304447,
+    "lng": -85.3770689
+  },
+  "1602 haslett rd haslett": {
+    "lat": 42.7476583,
+    "lng": -84.4075463
+  },
+  "1684 e apple ave muskegon": {
+    "lat": 43.234612,
+    "lng": -86.2022172
+  },
+  "7427 w central ave toledo": {
+    "lat": 41.6733492,
+    "lng": -83.7212759
+  },
+  "1114 superior st wayland": {
+    "lat": 42.6736014,
+    "lng": -85.6543817
+  },
+  "6333 st joseph hwy lansing": {
+    "lat": 42.7265553,
+    "lng": -84.6128638
+  },
+  "275 s state st sparta": {
+    "lat": 43.155363,
+    "lng": -85.7100693
+  },
+  "2896 springport rd jackson": {
+    "lat": 42.2873858,
+    "lng": -84.4645357
+  },
+  "1101 w columbia ave battle creek": {
+    "lat": 42.2974352,
+    "lng": -85.2200381
+  },
+  "405 s cooper st jackson": {
+    "lat": 42.2454266,
+    "lng": -84.4003273
+  },
+  "1231 west main st fremont": {
+    "lat": 43.467289,
+    "lng": -85.966622
+  },
+  "343 blue star hwy south haven": {
+    "lat": 42.4024137,
+    "lng": -86.258774
+  },
+  "6429 w pierson rd flushing": {
+    "lat": 43.059777,
+    "lng": -83.809569
+  },
+  "2003 horton rd jackson": {
+    "lat": 42.2004373,
+    "lng": -84.4377513
+  },
+  "709 s state rd davison": {
+    "lat": 43.0233868,
+    "lng": -83.517694
+  },
+  "7851 spring arbor rd spring arbor": {
+    "lat": 42.2081666,
+    "lng": -84.5366238
+  },
+  "12798 old 14 mile road greenville": {
+    "lat": 43.176118,
+    "lng": -85.3532648
+  },
+  "5230 beck dr elkhart": {
+    "lat": 41.6939269,
+    "lng": -85.8893057
+  },
+  "103 n dixie way roseland": {
+    "lat": 41.7211139,
+    "lng": -86.2504899
+  },
+  "1145 w randall st coopersville": {
+    "lat": 43.0599488,
+    "lng": -85.9542427
+  },
+  "308 w cleveland rd granger": {
+    "lat": 41.7245063,
+    "lng": -86.0947761
+  },
+  "6432 blue star hwy saugatuck": {
+    "lat": 42.6789933,
+    "lng": -86.1770664
+  },
+  "2010 elkhart rd goshen": {
+    "lat": 41.5980908,
+    "lng": -85.8616128
+  },
+  "6556 w main kalamazoo": {
+    "lat": 42.2958691,
+    "lng": -85.6791622
+  },
+  "503 e chicago st jonesville": {
+    "lat": 41.9817603,
+    "lng": -84.6666664
+  },
+  "4165 morrish rd swartz creek": {
+    "lat": 42.9675073,
+    "lng": -83.8306605
+  },
+  "2458 s center rd burton": {
+    "lat": 42.9918308,
+    "lng": -83.6339334
+  },
+  "6264 s pennsylvania ave lansing": {
+    "lat": 42.6671111,
+    "lng": -84.5394606
+  },
+  "1850 cedar st holt": {
+    "lat": 42.6311335,
+    "lng": -84.5060382
+  },
+  "4933 red arrow hwy stevensville": {
+    "lat": 42.027645,
+    "lng": -86.5156129
+  },
+  "1820 holton rd north muskegon": {
+    "lat": 43.2664885,
+    "lng": -86.2490347
+  },
+  "124 e michigan ave clinton": {
+    "lat": 42.0722822,
+    "lng": -83.9710416
+  },
+  "2819 lansing rd perry": {
+    "lat": 42.836485,
+    "lng": -84.2168714
+  },
+  "2518 s 11th st niles": {
+    "lat": 41.8194661,
+    "lng": -86.2471157
+  },
+  "1220 w parnall jackson": {
+    "lat": 42.2926158,
+    "lng": -84.4092813
+  },
+  "1308 mcdevitt jackson": {
+    "lat": 42.1967787,
+    "lng": -84.3786746
+  },
+  "4041 us 31 s traverse city": {
+    "lat": 44.6716079,
+    "lng": -85.6575248
+  },
+  "6577 paw paw ave coloma": {
+    "lat": 42.1944602,
+    "lng": -86.2981588
+  },
+  "1244 e center st ithaca": {
+    "lat": 43.2909218,
+    "lng": -84.5888714
+  },
+  "15 caberfae hwy manistee": {
+    "lat": 44.2668233,
+    "lng": -86.2952876
+  },
+  "367 lake nepessing lapeer": {
+    "lat": 43.036108,
+    "lng": -83.3617388
+  },
+  "10459 s clare ave clare": {
+    "lat": 43.837569,
+    "lng": -84.768102
+  },
+  "9299 e belding belding": {
+    "lat": 43.0959796,
+    "lng": -85.2258473
+  },
+  "0 bellevue leslie": {
+    "lat": 42.4511436,
+    "lng": -84.4264652
+  },
+  "14111 white creek ave ne cedar springs": {
+    "lat": 43.2218528,
+    "lng": -85.571297
+  },
+  "1302 w main st owosso": {
+    "lat": 42.9977771,
+    "lng": -84.1889713
+  },
+  "1100 w south airport rd traverse city": {
+    "lat": 44.7337371,
+    "lng": -85.5970328
+  },
+  "202 w prairie ronde st dowagiac": {
+    "lat": 41.9910683,
+    "lng": -86.1092308
+  },
+  "3522 s lapeer rd metamora": {
+    "lat": 42.9552776,
+    "lng": -83.3146744
+  },
+  "10500 red arrow hwy bridgman": {
+    "lat": 41.928532,
+    "lng": -86.572603
+  },
+  "201 west mars st berrien springs": {
+    "lat": 41.947162,
+    "lng": -86.339596
+  },
+  "1002 cooper st jackson": {
+    "lat": 42.2591637,
+    "lng": -84.4039942
+  },
+  "4220 w polk rd hart": {
+    "lat": 43.6892968,
+    "lng": -86.3835945
+  },
+  "11858 northland dr ne rockford": {
+    "lat": 43.1289254,
+    "lng": -85.5507552
+  },
+  "5782 w houghton lake rd lake city": {
+    "lat": 44.3392418,
+    "lng": -85.2108433
+  },
+  "25380 van born rd dearborn heights": {
+    "lat": 42.2693169,
+    "lng": -83.2601078
+  },
+  "125 n otsego avenue gaylord": {
+    "lat": 45.0283582,
+    "lng": -84.6775645
+  },
+  "9032 kasson st cedar": {
+    "lat": 44.8472083,
+    "lng": -85.7954811
+  },
+  "2103 horton rd jackson": {
+    "lat": 42.1999002,
+    "lng": -84.4385818
+  },
+  "10010 werth road herron": {
+    "lat": 44.9827424,
+    "lng": -83.6472309
+  },
+  "2688 coolidge hwy berkley": {
+    "lat": 42.4968956,
+    "lng": -83.1834385
+  },
+  "6210 96th ave zeeland": {
+    "lat": 42.881722,
+    "lng": -86.021018
+  },
+  "4981 northland dr morley": {
+    "lat": 43.5395213,
+    "lng": -85.4438911
+  },
+  "1805 e 11 mile rd madison heights": {
+    "lat": 42.4906879,
+    "lng": -83.086923
+  },
+  "4 e 8th st holland": {
+    "lat": 42.7902329,
+    "lng": -86.106977
+  },
+  "15793 james st holland": {
+    "lat": 42.8121248,
+    "lng": -86.1052412
+  },
+  "470 n lake street boyne city": {
+    "lat": 45.2211752,
+    "lng": -85.0152151
+  },
+  "1607 e mckinley mishawaka": {
+    "lat": 41.6802081,
+    "lng": -86.157489
+  },
+  "14981 sr23 granger": {
+    "lat": 41.734856,
+    "lng": -86.1555054
+  },
+  "3627 mckinley ave south bend": {
+    "lat": 41.6803502,
+    "lng": -86.1975288
+  },
+  "72025 sr 15 new paris": {
+    "lat": 41.4935747,
+    "lng": -85.8347314
+  },
+  "6595 albert s white dr whitestown": {
+    "lat": 39.9813393,
+    "lng": -86.3513445
+  },
+  "613 bridge st nw grand rapids": {
+    "lat": 42.9707333,
+    "lng": -85.6830168
+  },
+  "137 e main caledonia": {
+    "lat": 42.7894242,
+    "lng": -85.5150718
+  },
+  "6773 broadmoor ave caledonia": {
+    "lat": 42.8408922,
+    "lng": -85.5322428
+  },
+  "3701 west 72nd st newaygo": {
+    "lat": 43.4237476,
+    "lng": -85.8890045
+  },
+  "209 e walled lake dr walled lake": {
+    "lat": 42.5316751,
+    "lng": -83.4838584
+  },
+  "1472 nelson rd traverse city": {
+    "lat": 44.8613866,
+    "lng": -85.5469081
+  },
+  "13000 s west bay shore dr traverse city": {
+    "lat": 44.7899915,
+    "lng": -85.6384956
+  },
+  "106 n main st ovid": {
+    "lat": 43.0055533,
+    "lng": -84.3715939
+  },
+  "960 e midland st bay city": {
+    "lat": 43.6015074,
+    "lng": -83.8957984
+  },
+  "3555 burlingame sw wyoming": {
+    "lat": 42.8995421,
+    "lng": -85.7048796
+  },
+  "435 burton sw grand rapids": {
+    "lat": 42.927789,
+    "lng": -85.67721
+  },
+  "512 broad street st joseph": {
+    "lat": 42.1090328,
+    "lng": -86.4833542
+  },
+  "1230 greenville rd stanton": {
+    "lat": 43.3127178,
+    "lng": -85.2433575
+  },
+  "5575 s gordon ave newaygo": {
+    "lat": 43.4523826,
+    "lng": -85.8207648
+  },
+  "8000 cannonsburg road cannonsburg": {
+    "lat": 43.053772,
+    "lng": -85.469512
+  },
+  "3112 e michigan avenue lansing": {
+    "lat": 42.7331194,
+    "lng": -84.5076729
+  },
+  "211 s harbor drive grand haven": {
+    "lat": 43.0630612,
+    "lng": -86.235228
+  },
+  "6420 e gill rd carp lake": {
+    "lat": 45.6944539,
+    "lng": -84.7813171
+  },
+  "1800 s brown st jackson": {
+    "lat": 42.2364829,
+    "lng": -84.4331021
+  },
+  "6730 main street caseville": {
+    "lat": 43.9397021,
+    "lng": -83.2724375
+  },
+  "6614 main st cass city": {
+    "lat": 43.600875,
+    "lng": -83.171343
+  },
+  "30910 harper st clair shores": {
+    "lat": 42.52199,
+    "lng": -82.898742
+  },
+  "2660 28th st grand rapids": {
+    "lat": 42.9112666,
+    "lng": -85.6012828
+  },
+  "1982 w grand river ave okemos": {
+    "lat": 42.7248122,
+    "lng": -84.418606
+  },
+  "4001 pratt lake road gladwin": {
+    "lat": 44.0091468,
+    "lng": -84.5255745
+  },
+  "2110 evanston muskegon": {
+    "lat": 43.2193524,
+    "lng": -86.1915837
+  },
+  "101 s kalamazoo mall kalamazoo": {
+    "lat": 42.2931149,
+    "lng": -85.5833697
+  },
+  "424 n state st shelby": {
+    "lat": 43.616352,
+    "lng": -86.3579637
+  },
+  "9896 w fisher st empire": {
+    "lat": 44.818514,
+    "lng": -86.0563914
+  },
+  "3478 calkins rd flint": {
+    "lat": 43.0175488,
+    "lng": -83.7503587
+  },
+  "2250 east main owosso": {
+    "lat": 42.9975125,
+    "lng": -84.1690418
+  },
+  "5930a west jefferson blvd fort wayne": {
+    "lat": 41.0158945,
+    "lng": -85.3113462
+  },
+  "280 e merrill st birmingham": {
+    "lat": 42.5455187,
+    "lng": -83.2135265
+  },
+  "44621 mound rd sterling heights": {
+    "lat": 42.6217481,
+    "lng": -83.052261
+  },
+  "116 e bridge portland": {
+    "lat": 42.8692626,
+    "lng": -84.903237
+  },
+  "2227 north michigan st plymouth": {
+    "lat": 41.3611075,
+    "lng": -86.312625
+  },
+  "4020 28th street se kentwood": {
+    "lat": 42.9124593,
+    "lng": -85.5671337
+  },
+  "1033 n bendix dr south bend": {
+    "lat": 41.6892317,
+    "lng": -86.2935181
+  },
+  "401 s main street clarksville": {
+    "lat": 42.83731,
+    "lng": -85.242369
+  },
+  "47053 hayes road shelby township": {
+    "lat": 42.6422307,
+    "lng": -82.9739871
+  },
+  "141 east saint joseph st coloma": {
+    "lat": 42.183406,
+    "lng": -86.304449
+  },
+  "509 arlington middleville": {
+    "lat": 42.713255,
+    "lng": -85.4700056
+  },
+  "55 w 300 s kokomo": {
+    "lat": 40.4330535,
+    "lng": -86.1282966
+  },
+  "300 n water st owosso": {
+    "lat": 42.999623,
+    "lng": -84.17304
+  },
+  "8145 rapid city rd nw rapid city": {
+    "lat": 44.8330301,
+    "lng": -85.2830444
+  },
+  "1960 whitehall rd muskegon": {
+    "lat": 43.2913067,
+    "lng": -86.260977
+  },
+  "12018 liberty st clio": {
+    "lat": 43.1780841,
+    "lng": -83.7155198
+  },
+  "9180 birch run rd birch run": {
+    "lat": 43.2497561,
+    "lng": -83.7716873
+  },
+  "815 s mill st clio": {
+    "lat": 43.1707616,
+    "lng": -83.7341854
+  },
+  "1015 s main st frankenmuth": {
+    "lat": 43.3211922,
+    "lng": -83.7399838
+  },
+  "110 state rd montrose": {
+    "lat": 43.1761014,
+    "lng": -83.9364095
+  },
+  "213 north state rd otisville": {
+    "lat": 43.1677854,
+    "lng": -83.5248169
+  },
+  "104 s jefferson st converse": {
+    "lat": 40.577956,
+    "lng": -85.8735959
+  },
+  "20 front st lake orion": {
+    "lat": 42.7837512,
+    "lng": -83.23944
+  },
+  "303 main street coopersville": {
+    "lat": 43.0637093,
+    "lng": -85.9345126
+  },
+  "18571 cadillac hwy copemish": {
+    "lat": 44.4800741,
+    "lng": -85.9250393
+  },
+  "5154 flushing rd flushing": {
+    "lat": 43.0391334,
+    "lng": -83.777172
+  },
+  "323 e main street flushing": {
+    "lat": 43.0632265,
+    "lng": -83.8511649
+  },
+  "287 e state st montrose": {
+    "lat": 43.1763268,
+    "lng": -83.8860622
+  },
+  "11998 fulton street lowell": {
+    "lat": 42.9308364,
+    "lng": -85.3718888
+  },
+  "168 s hancock st pentwater": {
+    "lat": 43.780283,
+    "lng": -86.4329742
+  },
+  "2500 south m37 hastings": {
+    "lat": 42.6168591,
+    "lng": -85.2737308
+  },
+  "5317 n saginaw rd midland": {
+    "lat": 43.644479,
+    "lng": -84.2993714
+  },
+  "2236 imlay city rd lapeer": {
+    "lat": 43.0445854,
+    "lng": -83.2558772
+  },
+  "1101 e state st johns": {
+    "lat": 43.0012108,
+    "lng": -84.5446564
+  },
+  "22828 dequindre warren": {
+    "lat": 42.4706261,
+    "lng": -83.0844033
+  },
+  "415 w main st hale": {
+    "lat": 44.377893,
+    "lng": -83.8065718
+  },
+  "1700 university ave flint": {
+    "lat": 43.0140409,
+    "lng": -83.714004
+  },
+  "1835 knollcrest circle grand rapids": {
+    "lat": 42.9290454,
+    "lng": -85.5882209
+  },
+  "3777 west road east lansing": {
+    "lat": 42.7787783,
+    "lng": -84.5114276
+  },
+  "7373 west saginaw hwy lansing": {
+    "lat": 42.7410757,
+    "lng": -84.9827834
+  },
+  "800 s chipman owosso": {
+    "lat": 43.0129552,
+    "lng": -84.1832759
+  },
+  "505 west apple hastings": {
+    "lat": 42.649722,
+    "lng": -85.2938772
+  },
+  "620 maple big rapids": {
+    "lat": 43.6995746,
+    "lng": -85.4740888
+  },
+  "25 squires street rockford": {
+    "lat": 43.1203308,
+    "lng": -85.5609828
+  },
+  "3038 n kings highway luther": {
+    "lat": 44.0316365,
+    "lng": -85.7220774
+  },
+  "5118 west d ave kalamazoo": {
+    "lat": 42.3769125,
+    "lng": -85.6513022
+  },
+  "740 lamoreaux dr comstock park": {
+    "lat": 43.0360872,
+    "lng": -85.6682003
+  },
+  "5487 division ave grand rapids": {
+    "lat": 42.9801754,
+    "lng": -85.6682977
+  },
+  "300 s greenville w dr greenville": {
+    "lat": 43.1809496,
+    "lng": -85.2778453
+  },
+  "4965 lake michigan dr allendale": {
+    "lat": 42.972568,
+    "lng": -85.908669
+  },
+  "1755 e sherman blvd muskegon": {
+    "lat": 43.2052421,
+    "lng": -86.2006171
+  },
+  "124 west 8th street mio": {
+    "lat": 44.6524657,
+    "lng": -84.1311855
+  },
+  "7035 s cedar lansing": {
+    "lat": 42.655643,
+    "lng": -84.5331341
+  },
+  "6473 blue star hwy saugatuck": {
+    "lat": 42.6783758,
+    "lng": -86.1788291
+  },
+  "3950 west river dr comstock park": {
+    "lat": 43.0338813,
+    "lng": -85.6657078
+  },
+  "534 s chestnut st reed city": {
+    "lat": 43.870666,
+    "lng": -85.5096704
+  },
+  "2745 136th ave hopkins": {
+    "lat": 42.6822352,
+    "lng": -85.8139387
+  },
+  "12095 e curtis rd frankenmuth": {
+    "lat": 43.3214796,
+    "lng": -83.7129726
+  },
+  "601 e ash mason": {
+    "lat": 42.5785947,
+    "lng": -84.4336442
+  },
+  "1131 n mcewan st clare": {
+    "lat": 43.8248651,
+    "lng": -84.768463
+  },
+  "1717 142nd ave dorr": {
+    "lat": 42.7256682,
+    "lng": -85.7142594
+  },
+  "218 s harbor grand haven": {
+    "lat": 43.0629485,
+    "lng": -86.235049
+  },
+  "403 n st joseph st suttons bay": {
+    "lat": 44.9780813,
+    "lng": -85.6502563
+  },
+  "422 s main st middlebury": {
+    "lat": 41.6699772,
+    "lng": -85.7056506
+  },
+  "978 jackson st dansville": {
+    "lat": 42.5562105,
+    "lng": -84.3033421
+  },
+  "408 wood st hart": {
+    "lat": 43.6965475,
+    "lng": -86.3608217
+  },
+  "5436 tyler rd se kalkaska": {
+    "lat": 44.6989724,
+    "lng": -85.0647741
+  },
+  "94 s emmons st denver": {
+    "lat": 40.865042,
+    "lng": -86.0773966
+  },
+  "1760 44th street southwest wyoming": {
+    "lat": 42.8838442,
+    "lng": -85.708267
+  },
+  "7131 old 27 gaylord": {
+    "lat": 44.9952714,
+    "lng": -84.6772148
+  },
+  "49 n bridge st saranac": {
+    "lat": 42.9299438,
+    "lng": -85.2132852
+  },
+  "25600 harper ave st clair shores": {
+    "lat": 42.4832027,
+    "lng": -82.9000238
+  },
+  "23421 woodward ave ferndale": {
+    "lat": 42.4662185,
+    "lng": -83.1380548
+  },
+  "2392 orchard ln white lake": {
+    "lat": 42.6710684,
+    "lng": -83.463166
+  },
+  "11890 us 27 dewitt": {
+    "lat": 42.8428167,
+    "lng": -84.5437415
+  },
+  "129 s bridge street dewitt": {
+    "lat": 42.8419121,
+    "lng": -84.5690023
+  },
+  "4647 w columbia ave battle creek": {
+    "lat": 42.2788352,
+    "lng": -85.2863574
+  },
+  "3031 packard st ann arbor": {
+    "lat": 42.245123,
+    "lng": -83.701472
+  },
+  "37337 huron river drive new boston": {
+    "lat": 42.1624864,
+    "lng": -83.4026568
+  },
+  "4668 n bailey rd coral": {
+    "lat": 43.361971,
+    "lng": -85.402809
+  },
+  "1008 orchard ave ferndale": {
+    "lat": 42.4642998,
+    "lng": -83.1265366
+  },
+  "6111 n canton center rd canton": {
+    "lat": 42.3254749,
+    "lng": -83.4882295
+  },
+  "6975 19 mile rd sterling heights": {
+    "lat": 42.607889,
+    "lng": -83.0799302
+  },
+  "26449 gratiot ave roseville": {
+    "lat": 42.4902642,
+    "lng": -82.9415685
+  },
+  "1157 bank st kalamazoo": {
+    "lat": 42.2802666,
+    "lng": -85.5746441
+  },
+  "3315 e michigan lansing": {
+    "lat": 42.7347717,
+    "lng": -84.5022479
+  },
+  "1310 e pickard mt pleasant": {
+    "lat": 43.611716,
+    "lng": -84.7890072
+  },
+  "2515 s huron road kawkawlin": {
+    "lat": 43.6670367,
+    "lng": -83.9511916
+  },
+  "2525 euclid ave bay city": {
+    "lat": 43.5771653,
+    "lng": -83.9157286
+  },
+  "2003 m33 alger": {
+    "lat": 44.1420554,
+    "lng": -84.128005
+  },
+  "510 n tuscola bay city": {
+    "lat": 43.5878468,
+    "lng": -83.8637791
+  },
+  "1179 e cedar avenue gladwin": {
+    "lat": 43.9811525,
+    "lng": -84.4707079
+  },
+  "825 e beaver road kawkawlin": {
+    "lat": 43.6678176,
+    "lng": -84.01542
+  },
+  "874 e linwood road linwood": {
+    "lat": 43.7386881,
+    "lng": -84.0126637
+  },
+  "19 e us23 omer": {
+    "lat": 44.0391192,
+    "lng": -83.8749711
+  },
+  "5353 m61 standish": {
+    "lat": 43.9826868,
+    "lng": -84.0206426
+  },
+  "1250 us23 tawas city": {
+    "lat": 44.2454469,
+    "lng": -83.5462444
+  },
+  "601 state st melrose": {
+    "lat": 41.09129,
+    "lng": -84.419021
+  },
+  "3180 west wilke rd rothbury": {
+    "lat": 43.5149864,
+    "lng": -86.3559195
+  },
+  "112 w market st warsaw": {
+    "lat": 41.2371814,
+    "lng": -85.8569308
+  },
+  "7212 port sheldon hudsonville": {
+    "lat": 42.887638,
+    "lng": -85.8594601
+  },
+  "1155 w riley thompson rd muskegon": {
+    "lat": 43.3380915,
+    "lng": -86.2697152
+  },
+  "26497 anderson rd albion": {
+    "lat": 42.3740892,
+    "lng": -84.7889023
+  },
+  "2498 30th st allegan": {
+    "lat": 42.6024304,
+    "lng": -85.8439587
+  },
+  "6397 blue star hwy saugatuck": {
+    "lat": 42.6812326,
+    "lng": -86.1734802
+  },
+  "21765 m60 cassopolis": {
+    "lat": 41.9114423,
+    "lng": -85.9881449
+  },
+  "1137 e grand river east lansing": {
+    "lat": 42.7313669,
+    "lng": -84.4678482
+  },
+  "1605 e kalamazoo st lansing": {
+    "lat": 42.7301477,
+    "lng": -84.5268948
+  },
+  "9482 terry street lake": {
+    "lat": 43.8502602,
+    "lng": -85.0052089
+  },
+  "4700 hudson rd osseo": {
+    "lat": 41.8852326,
+    "lng": -84.5592815
+  },
+  "115 bailey street east lansing": {
+    "lat": 42.733484,
+    "lng": -84.4764504
+  },
+  "525 e main st hartford": {
+    "lat": 42.2075009,
+    "lng": -86.1576283
+  },
+  "104 s division fremont": {
+    "lat": 43.4660555,
+    "lng": -85.9448135
+  },
+  "109 e main st elsie": {
+    "lat": 43.0887802,
+    "lng": -84.3868502
+  },
+  "3864 breen rd emmett": {
+    "lat": 43.0080401,
+    "lng": -82.847827
+  },
+  "137 ashman midland": {
+    "lat": 43.6135035,
+    "lng": -84.2452744
+  },
+  "45 n broad street hillsdale": {
+    "lat": 41.9224266,
+    "lng": -84.6319331
+  },
+  "214 w 7th st us 10 evart": {
+    "lat": 43.900575,
+    "lng": -85.258097
+  },
+  "460 76th st sw byron center": {
+    "lat": 42.8257485,
+    "lng": -85.6748832
+  },
+  "4461 8th ave grandville": {
+    "lat": 42.8494796,
+    "lng": -85.8028872
+  },
+  "201 s lake st boyne city": {
+    "lat": 45.2125491,
+    "lng": -85.0144775
+  },
+  "1482 w main gaylord": {
+    "lat": 45.0280406,
+    "lng": -84.7025494
+  },
+  "2560 e division cadillac": {
+    "lat": 44.2525302,
+    "lng": -85.3849923
+  },
+  "3010 e lake lansing rd east lansing": {
+    "lat": 42.7556586,
+    "lng": -84.4629684
+  },
+  "11800 northland dr rockford": {
+    "lat": 43.1240351,
+    "lng": -85.5508935
+  },
+  "1041 w main gaylord": {
+    "lat": 45.0271879,
+    "lng": -84.6920223
+  },
+  "10197 s clare ave clare": {
+    "lat": 43.8410273,
+    "lng": -84.7674099
+  },
+  "4404 clyde park wyoming": {
+    "lat": 42.8838723,
+    "lng": -85.6836005
+  },
+  "329 s 48th ave coopersville": {
+    "lat": 43.0530368,
+    "lng": -85.9068487
+  },
+  "8407 cottonwood jenison": {
+    "lat": 42.920707,
+    "lng": -85.8117186
+  },
+  "1311 142nd ave dorr": {
+    "lat": 42.7248846,
+    "lng": -85.6743472
+  },
+  "1198 s harrison east lansing": {
+    "lat": 42.7205579,
+    "lng": -84.4935797
+  },
+  "605 s otsego ave gaylord": {
+    "lat": 45.0211806,
+    "lng": -84.6771612
+  },
+  "2271 port sheldon st jenison": {
+    "lat": 42.8880592,
+    "lng": -85.8385152
+  },
+  "601 n james st grayling": {
+    "lat": 44.6632142,
+    "lng": -84.7174712
+  },
+  "3604 lincoln rd hamilton": {
+    "lat": 42.6822993,
+    "lng": -86.0115217
+  },
+  "900 marlette rd waters": {
+    "lat": 44.8786285,
+    "lng": -84.6857514
+  },
+  "580 west shaw howard city": {
+    "lat": 43.3951516,
+    "lng": -85.4762657
+  },
+  "1991 baldwin jenison": {
+    "lat": 42.9072531,
+    "lng": -85.8315719
+  },
+  "207 n cedar st kalkaska": {
+    "lat": 44.737061,
+    "lng": -85.1747558
+  },
+  "201 w grand river rd laingsburg": {
+    "lat": 42.8908064,
+    "lng": -84.3534544
+  },
+  "6485 belding rd rockford": {
+    "lat": 43.0867867,
+    "lng": -85.5077244
+  },
+  "4475 alden nash ave lowell": {
+    "lat": 42.8839342,
+    "lng": -85.3716579
+  },
+  "293 84th street byron center": {
+    "lat": 42.812273,
+    "lng": -85.6703164
+  },
+  "1190 m222 martin": {
+    "lat": 42.5365331,
+    "lng": -85.6615088
+  },
+  "3620 14 mile rd rockford": {
+    "lat": 43.1170924,
+    "lng": -85.5895565
+  },
+  "9673 adams st holland": {
+    "lat": 42.783856,
+    "lng": -86.020228
+  },
+  "1140 ottawa beach rd holland": {
+    "lat": 42.7933569,
+    "lng": -86.1566567
+  },
+  "411 w mitchell st petoskey": {
+    "lat": 45.3738033,
+    "lng": -84.9660659
+  },
+  "21774 w cannonsville pierson": {
+    "lat": 43.3377276,
+    "lng": -85.5207055
+  },
+  "2257 chicago dr wyoming": {
+    "lat": 42.9317481,
+    "lng": -85.7220778
+  },
+  "2171 plainfield grand rapids": {
+    "lat": 43.0027317,
+    "lng": -85.6541803
+  },
+  "119 100th street byron center": {
+    "lat": 42.7833493,
+    "lng": -85.6663462
+  },
+  "319 w main stanton": {
+    "lat": 43.2921708,
+    "lng": -85.0849106
+  },
+  "1298 m32 e gaylord": {
+    "lat": 45.0273888,
+    "lng": -84.6732313
+  },
+  "4380 kenowa sw grandville": {
+    "lat": 42.8858793,
+    "lng": -85.7816852
+  },
+  "4360 lincoln rd holland": {
+    "lat": 42.7377697,
+    "lng": -86.0659904
+  },
+  "5536 holton rd twin lake": {
+    "lat": 43.3551578,
+    "lng": -86.1671582
+  },
+  "1229 walker nw grand rapids": {
+    "lat": 42.9826616,
+    "lng": -85.6987513
+  },
+  "3360 walker ave grand rapids": {
+    "lat": 42.989542,
+    "lng": -85.7118244
+  },
+  "12575 riley st holland": {
+    "lat": 42.827043,
+    "lng": -86.0924
+  },
+  "6066 wilson ave wyoming": {
+    "lat": 42.8544128,
+    "lng": -85.7623308
+  },
+  "1122 lincoln holland": {
+    "lat": 42.7569677,
+    "lng": -86.0977284
+  },
+  "305 s westphalia st westphalia": {
+    "lat": 42.9266729,
+    "lng": -84.7986516
+  },
+  "1196 e sternberg muskegon": {
+    "lat": 43.1543254,
+    "lng": -86.2175467
+  },
+  "7211 e apple ave muskegon": {
+    "lat": 43.2349316,
+    "lng": -86.0664242
+  },
+  "10945 w grand river hwy grand ledge": {
+    "lat": 42.7973776,
+    "lng": -84.7387317
+  },
+  "6209 lake michigan dr allendale": {
+    "lat": 42.9728058,
+    "lng": -85.9395888
+  },
+  "1764 alpine grand rapids": {
+    "lat": 42.9959703,
+    "lng": -85.6882473
+  },
+  "335 burton st sw grand rapids": {
+    "lat": 42.9280118,
+    "lng": -85.6751874
+  },
+  "4842 port sheldon hudsonville": {
+    "lat": 42.8848278,
+    "lng": -85.9024349
+  },
+  "432 lincoln lake ave se lowell": {
+    "lat": 42.9580306,
+    "lng": -85.3540473
+  },
+  "2977 w remus rd mt pleasant": {
+    "lat": 43.5968945,
+    "lng": -84.9069518
+  },
+  "4919 town center dr se grand rapids": {
+    "lat": 42.859197,
+    "lng": -85.5448894
+  },
+  "505 town center drive middleville": {
+    "lat": 42.7183174,
+    "lng": -85.4718712
+  },
+  "1150 129th wayland": {
+    "lat": 42.6305,
+    "lng": -85.6526805
+  },
+  "552 lincoln rd otsego": {
+    "lat": 42.4594931,
+    "lng": -85.7193151
+  },
+  "917 e main st owosso": {
+    "lat": 42.9977094,
+    "lng": -84.1588713
+  },
+  "1604 post dr ne belmont": {
+    "lat": 43.0877228,
+    "lng": -85.6288437
+  },
+  "9950 shaver rd portage": {
+    "lat": 42.1735031,
+    "lng": -85.6132748
+  },
+  "4200 32nd ave hudsonville": {
+    "lat": 42.8446658,
+    "lng": -85.8607413
+  },
+  "8739 west main st kalamazoo": {
+    "lat": 42.2951415,
+    "lng": -85.7207233
+  },
+  "4258 alpine ave comstock park": {
+    "lat": 43.0408682,
+    "lng": -85.6889659
+  },
+  "11800 northland drive rockford": {
+    "lat": 43.1289254,
+    "lng": -85.5507552
+  },
+  "5587 w us 10 ludington": {
+    "lat": 43.955987,
+    "lng": -86.4188339
+  },
+  "1612 north west ave jackson": {
+    "lat": 42.2680074,
+    "lng": -84.4245256
+  },
+  "8830 main st birch run": {
+    "lat": 43.2494709,
+    "lng": -83.7777986
+  },
+  "56 north tuscola bay city": {
+    "lat": 43.5906542,
+    "lng": -83.866166
+  },
+  "105 west saginaw merrill": {
+    "lat": 43.4098213,
+    "lng": -84.3304958
+  },
+  "7015 gratiot rd saginaw": {
+    "lat": 43.4154407,
+    "lng": -84.0525395
+  },
+  "520 pinconning rd pinconning": {
+    "lat": 43.8533551,
+    "lng": -84.0248095
+  },
+  "633 west isabella midland": {
+    "lat": 43.6104228,
+    "lng": -84.3944903
+  },
+  "3670 east washington ave saginaw": {
+    "lat": 43.5248999,
+    "lng": -84.1203754
+  },
+  "4480 state st saginaw": {
+    "lat": 43.4372125,
+    "lng": -84.0043786
+  },
+  "9050 m52 manchester": {
+    "lat": 42.1907981,
+    "lng": -84.0327837
+  },
+  "110 south jackson st hanover": {
+    "lat": 42.1016929,
+    "lng": -84.551958
+  },
+  "4749 knowles rd north adams": {
+    "lat": 41.9678925,
+    "lng": -84.5252104
+  },
+  "6100 dexterpinckney dexter": {
+    "lat": 42.3746842,
+    "lng": -83.9209959
+  },
+  "4610 south m52 stockbridge": {
+    "lat": 42.4480044,
+    "lng": -84.1801049
+  },
+  "6553 main st cass city": {
+    "lat": 43.6012746,
+    "lng": -83.1728809
+  },
+  "505 e main st mayville": {
+    "lat": 43.3371785,
+    "lng": -83.346177
+  },
+  "366 e north territorial rd whitmore lake": {
+    "lat": 42.3788499,
+    "lng": -83.7551207
+  },
+  "1601 w morrell st jackson": {
+    "lat": 42.2396935,
+    "lng": -84.4335058
+  },
+  "710 e south st jackson": {
+    "lat": 42.2263167,
+    "lng": -84.3886095
+  },
+  "2410 west michigan ave battle creek": {
+    "lat": 42.3505981,
+    "lng": -85.2489173
+  },
+  "2718 west michigan ave battle creek": {
+    "lat": 42.3547047,
+    "lng": -85.2590065
+  },
+  "4200 west dickman rd battle creek": {
+    "lat": 42.3280464,
+    "lng": -85.2646887
+  },
+  "620 north grand st schoolcraft": {
+    "lat": 42.1176228,
+    "lng": -85.6374621
+  },
+  "170 capital ave sw battle creek": {
+    "lat": 42.3165494,
+    "lng": -85.1876571
+  },
+  "5195 beckley rd battle creek": {
+    "lat": 42.2610791,
+    "lng": -85.2190284
+  },
+  "737 capital ave sw battle creek": {
+    "lat": 42.3004604,
+    "lng": -85.1990859
+  },
+  "751 w grand river portland": {
+    "lat": 42.8714655,
+    "lng": -84.9104567
+  },
+  "1508 n abbe road fairview": {
+    "lat": 44.7252995,
+    "lng": -84.0501497
+  },
+  "1185 s washington holland": {
+    "lat": 42.7563272,
+    "lng": -86.1142511
+  },
+  "6380 lake michigan dr allendale": {
+    "lat": 42.9725178,
+    "lng": -85.943635
+  },
+  "2275 health dr sw wyoming": {
+    "lat": 42.8604261,
+    "lng": -85.7200821
+  },
+  "159 marshall st litchfield": {
+    "lat": 42.0452982,
+    "lng": -84.7601341
+  },
+  "6472 m 25 akron": {
+    "lat": 43.6087034,
+    "lng": -83.6033062
+  },
+  "602 grand river ave brighton": {
+    "lat": 42.5340463,
+    "lng": -83.7823896
+  },
+  "15815 south oakley chesaning": {
+    "lat": 43.1576168,
+    "lng": -84.1685943
+  },
+  "6206 rives junction jackson": {
+    "lat": 42.3222414,
+    "lng": -84.4628977
+  },
+  "551 west columbia st mason": {
+    "lat": 42.5818816,
+    "lng": -84.4522195
+  },
+  "8010 north dort hwy mt morris": {
+    "lat": 43.1204436,
+    "lng": -83.6753525
+  },
+  "2428 n dearing rd parma": {
+    "lat": 42.2676929,
+    "lng": -84.5400528
+  },
+  "2791 bay rd saginaw": {
+    "lat": 43.4460405,
+    "lng": -83.9759549
+  },
+  "3540 state st saginaw": {
+    "lat": 43.4370139,
+    "lng": -83.9917417
+  },
+  "213 s main st fowler": {
+    "lat": 43.0016303,
+    "lng": -84.7393298
+  },
+  "20751 8 mile rd stanwood": {
+    "lat": 43.5834369,
+    "lng": -85.4980785
+  },
+  "198 e main street mecosta": {
+    "lat": 43.6200114,
+    "lng": -85.2258959
+  },
+  "100 w wheatland remus": {
+    "lat": 43.5965184,
+    "lng": -85.1520915
+  },
+  "2490 n elba rd lapeer": {
+    "lat": 43.0974333,
+    "lng": -83.4428828
+  },
+  "3239 elms road swartz creek": {
+    "lat": 42.9797148,
+    "lng": -83.8107808
+  },
+  "11025 south jackson rd somerset center": {
+    "lat": 42.0589565,
+    "lng": -84.4060328
+  },
+  "415 s main street standish": {
+    "lat": 43.9780174,
+    "lng": -83.9596676
+  },
+  "421 n main street standish": {
+    "lat": 43.9878328,
+    "lng": -83.9601636
+  },
+  "111 e kalamazoo bloomingdale": {
+    "lat": 42.3828632,
+    "lng": -85.9624769
+  },
+  "1076 phoenix street south haven": {
+    "lat": 42.4031204,
+    "lng": -86.2598102
+  },
+  "4108 red arrow hwy stevensville": {
+    "lat": 42.0431405,
+    "lng": -86.5144231
+  },
+  "458 water street allegan": {
+    "lat": 42.5293627,
+    "lng": -85.8491869
+  },
+  "109 monroe street bangor": {
+    "lat": 42.3103153,
+    "lng": -86.1038581
+  },
+  "111 east saint joseph street coloma": {
+    "lat": 42.183326,
+    "lng": -86.3051652
+  },
+  "202 west main street fennville": {
+    "lat": 42.5944271,
+    "lng": -86.1061259
+  },
+  "101 north state street gobles": {
+    "lat": 42.3612374,
+    "lng": -85.8793464
+  },
+  "54312 n main street mattawan": {
+    "lat": 42.221653,
+    "lng": -85.7860968
+  },
+  "4781 territorial road benton harbor": {
+    "lat": 42.1228025,
+    "lng": -86.3418639
+  },
+  "3468 coloma road coloma": {
+    "lat": 42.1858893,
+    "lng": -86.3747317
+  },
+  "1551 phoenix street south haven": {
+    "lat": 42.4040135,
+    "lng": -86.2488706
+  },
+  "6380 blue star hwy saugatuck": {
+    "lat": 42.6806835,
+    "lng": -86.1723134
+  },
+  "469 broadway street south haven": {
+    "lat": 42.3998927,
+    "lng": -86.2705654
+  },
+  "222 hilltop road st joseph": {
+    "lat": 42.0801648,
+    "lng": -86.4956242
+  },
+  "2600 niles road st joseph": {
+    "lat": 42.0707956,
+    "lng": -86.4750027
+  },
+  "13781 m 140 south haven": {
+    "lat": 42.367816,
+    "lng": -86.2679274
+  },
+  "4668 cascade rd se grand rapids": {
+    "lat": 42.9457534,
+    "lng": -85.553956
+  },
+  "4931 n cleveland st fountain": {
+    "lat": 44.0448537,
+    "lng": -86.1811258
+  },
+  "1339 weiss frankenmuth": {
+    "lat": 43.3169929,
+    "lng": -83.7346843
+  },
+  "750 washington ave frankfort": {
+    "lat": 40.2848874,
+    "lng": -86.5008848
+  },
+  "1139 w lake street tawas": {
+    "lat": 44.2536773,
+    "lng": -83.5361381
+  },
+  "43702 schoenherr rd sterling heights": {
+    "lat": 42.6161018,
+    "lng": -82.9927972
+  },
+  "15 n elm st three oaks": {
+    "lat": 41.8012657,
+    "lng": -86.610516
+  },
+  "1190 w broad st chesaning": {
+    "lat": 43.1867338,
+    "lng": -84.1287489
+  },
+  "9245 bernice dr pinckney": {
+    "lat": 42.466504,
+    "lng": -83.877591
+  },
+  "6886 cascade rd grand rapids": {
+    "lat": 42.9124576,
+    "lng": -85.4986647
+  },
+  "1757 plainfield ave grand rapids": {
+    "lat": 42.995194,
+    "lng": -85.6599966
+  },
+  "5030 gull road kalamazoo": {
+    "lat": 42.319353,
+    "lng": -85.530299
+  },
+  "1201 cooper st jackson": {
+    "lat": 42.2712063,
+    "lng": -84.4038444
+  },
+  "503 e main st lowell": {
+    "lat": 42.9353214,
+    "lng": -85.3340586
+  },
+  "516 e mcdevitt jackson": {
+    "lat": 42.1974836,
+    "lng": -84.3733758
+  },
+  "333 n mill street st louis": {
+    "lat": 43.4109966,
+    "lng": -84.6088702
+  },
+  "2565 lakeshore dr muskegon": {
+    "lat": 43.2141667,
+    "lng": -86.3061209
+  },
+  "2887 w houghton lake dr houghton lake": {
+    "lat": 44.2987507,
+    "lng": -84.6959513
+  },
+  "2181 w sherman muskegon": {
+    "lat": 43.2057298,
+    "lng": -86.2976061
+  },
+  "329 n broadway hastings": {
+    "lat": 42.651228,
+    "lng": -85.290558
+  },
+  "208 pine street mcbain": {
+    "lat": 44.1901978,
+    "lng": -85.2137842
+  },
+  "1416 north ave ne grand rapids": {
+    "lat": 42.988826,
+    "lng": -85.65951
+  },
+  "33 e state rd grant": {
+    "lat": 43.3366254,
+    "lng": -85.8100577
+  },
+  "3127 turner st lansing": {
+    "lat": 42.7648754,
+    "lng": -84.5558609
+  },
+  "2017 lakeshore drive muskegon": {
+    "lat": 43.2152227,
+    "lng": -86.2931777
+  },
+  "226 s blackstone ave colon": {
+    "lat": 41.9572382,
+    "lng": -85.3263688
+  },
+  "12633 mason dr grant": {
+    "lat": 43.3246772,
+    "lng": -85.8108106
+  },
+  "1431 s getty street muskegon": {
+    "lat": 43.2265807,
+    "lng": -86.2244717
+  },
+  "214 e 8th st holland": {
+    "lat": 42.7876022,
+    "lng": -86.1090828
+  },
+  "1563 s meridian rd midland": {
+    "lat": 43.5670661,
+    "lng": -84.3694768
+  },
+  "1226 madison ave se grand rapids": {
+    "lat": 42.940384,
+    "lng": -85.6588331
+  },
+  "901 e ashman midland": {
+    "lat": 43.6263106,
+    "lng": -84.2271981
+  },
+  "240 s hancock st pentwater": {
+    "lat": 43.7795686,
+    "lng": -86.4329201
+  },
+  "22883 greenfield rd southfield": {
+    "lat": 42.458603,
+    "lng": -83.2019836
+  },
+  "624 nstate st big rapids": {
+    "lat": 43.7056992,
+    "lng": -85.4837501
+  },
+  "7030 96th ave zeeland": {
+    "lat": 42.8924037,
+    "lng": -86.0213357
+  },
+  "15000 8 mile rd detroit": {
+    "lat": 42.4465587,
+    "lng": -83.1234183
+  },
+  "3450 s straits hwy indian river": {
+    "lat": 45.4121341,
+    "lng": -84.6122359
+  },
+  "709 s harbor dr grand haven": {
+    "lat": 43.0595471,
+    "lng": -86.2423863
+  },
+  "41554 garfield rd clinton twp": {
+    "lat": 42.6022292,
+    "lng": -82.9524434
+  },
+  "1163 e west maple rd walled lake": {
+    "lat": 42.5386025,
+    "lng": -83.4772633
+  },
+  "9130 birch run rd birch run": {
+    "lat": 43.2501112,
+    "lng": -83.7721288
+  },
+  "1166 n belsay rd burton": {
+    "lat": 43.0235953,
+    "lng": -83.5947942
+  },
+  "1355 n leroy st fenton": {
+    "lat": 42.8139289,
+    "lng": -83.7075521
+  },
+  "3388 s linden rd flint": {
+    "lat": 43.0093022,
+    "lng": -83.7728727
+  },
+  "3750 w polk rd hart": {
+    "lat": 43.688852,
+    "lng": -86.3697379
+  },
+  "709 w state st saint johns": {
+    "lat": 43.0011797,
+    "lng": -84.5683875
+  },
+  "19585 30th ave barryton": {
+    "lat": 43.7497828,
+    "lng": -85.1477377
+  },
+  "117 w main street harbor springs": {
+    "lat": 45.4295157,
+    "lng": -84.9892325
+  },
+  "5729 saint joseph ave stevensville": {
+    "lat": 42.0132673,
+    "lng": -86.5196368
+  },
+  "107 north dunn st bloomington": {
+    "lat": 39.1669391,
+    "lng": -86.5283206
+  },
+  "1144 peavy rd howell": {
+    "lat": 42.5881387,
+    "lng": -83.9528069
+  },
+  "203 w grand river ave howell": {
+    "lat": 42.6076899,
+    "lng": -83.9308171
+  },
+  "5522 north state davison": {
+    "lat": 43.0923797,
+    "lng": -83.517774
+  },
+  "220 e main st carson city": {
+    "lat": 43.1768783,
+    "lng": -84.8449085
+  },
+  "12032 red arrow hwy sawyer": {
+    "lat": 41.9026085,
+    "lng": -86.5979575
+  },
+  "640 n main st hersey": {
+    "lat": 43.8567071,
+    "lng": -85.4436852
+  },
+  "9105 helena rd alden": {
+    "lat": 44.8810751,
+    "lng": -85.2752804
+  },
+  "1612 142nd ave dorr": {
+    "lat": 42.7247617,
+    "lng": -85.703466
+  },
+  "7117 south st benzonia": {
+    "lat": 44.6103841,
+    "lng": -86.0984522
+  },
+  "365 douglas holland": {
+    "lat": 42.7978269,
+    "lng": -86.1243429
+  },
+  "7072 grange hall rd holly": {
+    "lat": 42.8140925,
+    "lng": -83.5646543
+  },
+  "8545 holton rd holton": {
+    "lat": 43.4109784,
+    "lng": -86.0794935
+  },
+  "7906 n welling rd eureka": {
+    "lat": 43.1030172,
+    "lng": -84.5135193
+  },
+  "26866 telegraph rd flat rock": {
+    "lat": 42.1099465,
+    "lng": -83.2849075
+  },
+  "5115 boyne city road boyne city": {
+    "lat": 45.228955,
+    "lng": -85.0333662
+  },
+  "2543 84th st byron center": {
+    "lat": 42.8123026,
+    "lng": -85.7265365
+  },
+  "131 washington street hubbardston": {
+    "lat": 43.0927109,
+    "lng": -84.8420236
+  },
+  "2763 madison se grand rapids": {
+    "lat": 42.9131571,
+    "lng": -85.6573051
+  },
+  "4554 32nd ave hudsonville": {
+    "lat": 42.8520784,
+    "lng": -85.860514
+  },
+  "10010 east pickard rd mt pleasant": {
+    "lat": 43.6114749,
+    "lng": -84.6475138
+  },
+  "106 s bridge st linden": {
+    "lat": 42.8145465,
+    "lng": -83.7826848
+  },
+  "4010 lake michigan drive walker": {
+    "lat": 42.9721105,
+    "lng": -85.7667678
+  },
+  "409 n third st rogers city": {
+    "lat": 45.4231583,
+    "lng": -83.820072
+  },
+  "720 s grant ave crawfordsville": {
+    "lat": 40.034114,
+    "lng": -86.9040665
+  },
+  "5010 lum rd lum": {
+    "lat": 43.0989547,
+    "lng": -83.1655611
+  },
+  "134 w main street stanton": {
+    "lat": 43.2928129,
+    "lng": -85.0825109
+  },
+  "119 w lake st crystal": {
+    "lat": 43.2631044,
+    "lng": -84.915414
+  },
+  "126 n telegraph monroe": {
+    "lat": 41.9310413,
+    "lng": -83.4106395
+  },
+  "1229 south university ave ann arbor": {
+    "lat": 42.2751419,
+    "lng": -83.7336045
+  },
+  "809 broad ripple ave indianapolis": {
+    "lat": 39.8695626,
+    "lng": -86.1445182
+  },
+  "44 ionia ave sw grand rapids": {
+    "lat": 42.9619304,
+    "lng": -85.6699805
+  },
+  "840 s calhoun street fort wayne": {
+    "lat": 41.0783729,
+    "lng": -85.1395222
+  },
+  "5171 anthony wayne dr detroit": {
+    "lat": 42.3562852,
+    "lng": -83.0719743
+  },
+  "917 indiana ave indianapolis": {
+    "lat": 39.779936,
+    "lng": -86.1724829
+  },
+  "2905 howard street kalamazoo": {
+    "lat": 42.2773546,
+    "lng": -85.6172071
+  },
+  "1218 walton blvd rochester hills": {
+    "lat": 42.6825249,
+    "lng": -83.150743
+  },
+  "733 west cross street ypsilanti": {
+    "lat": 42.245586,
+    "lng": -83.6230766
+  },
+  "1620 s mission street mt pleasant": {
+    "lat": 43.5865888,
+    "lng": -84.768349
+  },
+  "603 e grand river ave east lansing": {
+    "lat": 42.7334813,
+    "lng": -84.4762151
+  },
+  "602 w stadium ave west lafayette": {
+    "lat": 40.4315129,
+    "lng": -86.913018
+  },
+  "455 w main street manchester": {
+    "lat": 42.1469653,
+    "lng": -84.0439774
+  },
+  "7420 w saginaw hwy lansing": {
+    "lat": 42.7421354,
+    "lng": -84.6615076
+  },
+  "6330 holton rd twin lake": {
+    "lat": 43.3684669,
+    "lng": -86.1535862
+  },
+  "4190 grand haven rd muskegon": {
+    "lat": 43.1767208,
+    "lng": -86.2199883
+  },
+  "987 m55 west branch": {
+    "lat": 44.276428,
+    "lng": -84.2485834
+  },
+  "3479 lakeshore deckerville": {
+    "lat": 43.5305418,
+    "lng": -82.582859
+  },
+  "7545 heights ravenna rd ravenna": {
+    "lat": 43.1909331,
+    "lng": -86.0566272
+  },
+  "5885 hillman six lakes": {
+    "lat": 43.3772134,
+    "lng": -85.1841841
+  },
+  "6044 main st twin lake": {
+    "lat": 43.3644576,
+    "lng": -86.1645208
+  },
+  "5283 e apple ave muskegon": {
+    "lat": 43.234736,
+    "lng": -86.115076
+  },
+  "7065 jose lake rd south branch": {
+    "lat": 44.4840376,
+    "lng": -83.8241226
+  },
+  "235 n clare ave harrison": {
+    "lat": 43.9911521,
+    "lng": -84.7803663
+  },
+  "303 w 7th street evart": {
+    "lat": 43.9003195,
+    "lng": -85.2623707
+  },
+  "10511 red arrow hwy bridgman": {
+    "lat": 41.9279896,
+    "lng": -86.5722603
+  },
+  "104 e eliza street schoolcraft": {
+    "lat": 42.1141432,
+    "lng": -85.6368709
+  },
+  "3028 j maddy parkway interlochen": {
+    "lat": 44.6438304,
+    "lng": -85.767527
+  },
+  "6628 main st cass city": {
+    "lat": 43.600886,
+    "lng": -83.170889
+  },
+  "9439 e north down river rd grayling": {
+    "lat": 44.7166611,
+    "lng": -84.4239771
+  },
+  "612 stitt st wabash": {
+    "lat": 40.8033961,
+    "lng": -85.8326659
+  },
+  "515 n huron rd au gres": {
+    "lat": 44.100638,
+    "lng": -83.575345
+  },
+  "735 w michigan ave marshall": {
+    "lat": 42.2718624,
+    "lng": -84.9710935
+  },
+  "8840 m 72 east traverse city": {
+    "lat": 44.7641461,
+    "lng": -85.58846
+  },
+  "4900 w deren rd ludington": {
+    "lat": 43.8580956,
+    "lng": -86.4013463
+  },
+  "12030 s m 52 perry": {
+    "lat": 42.8188619,
+    "lng": -84.2189003
+  },
+  "2225 plainfield ne grand rapids": {
+    "lat": 43.0039301,
+    "lng": -85.6532474
+  },
+  "5111 lapeer rd kimball": {
+    "lat": 42.981808,
+    "lng": -82.5290661
+  },
+  "605 n us 27 st johns": {
+    "lat": 43.000928,
+    "lng": -84.5585098
+  },
+  "4007 jefferson ave midland": {
+    "lat": 43.6341115,
+    "lng": -84.2270029
+  },
+  "130 e lakewood blvd holland": {
+    "lat": 42.8060317,
+    "lng": -86.1026411
+  },
+  "310 w main street fennville": {
+    "lat": 42.5943447,
+    "lng": -86.1067748
+  },
+  "1546 clyde park wyoming": {
+    "lat": 42.9354826,
+    "lng": -85.6865079
+  },
+  "109 w main st hopkins": {
+    "lat": 42.6240407,
+    "lng": -85.7664978
+  },
+  "9978 round lake rd laingsburg": {
+    "lat": 42.8883471,
+    "lng": -84.3649592
+  },
+  "3985 saginaw st national city": {
+    "lat": 44.3189346,
+    "lng": -83.6835674
+  },
+  "9300 school st lake": {
+    "lat": 43.8538537,
+    "lng": -85.0065201
+  },
+  "542 tawas beach rd east tawas": {
+    "lat": 44.2643216,
+    "lng": -83.4392384
+  },
+  "155 blue star hwy douglas": {
+    "lat": 42.6306145,
+    "lng": -86.2119
+  },
+  "1026 cottage grove fremont": {
+    "lat": 43.4570858,
+    "lng": -85.9615027
+  },
+  "158 n lincoln ave lakeview": {
+    "lat": 43.4453614,
+    "lng": -85.2818956
+  },
+  "47174 jefferson chesterfield": {
+    "lat": 42.6471695,
+    "lng": -82.8102026
+  },
+  "3231 john conley dr lapeer": {
+    "lat": 43.0349181,
+    "lng": -83.3519291
+  },
+  "4350 n eastman rd midland": {
+    "lat": 43.7373124,
+    "lng": -84.2466429
+  },
+  "5449 round lake rd gladwin": {
+    "lat": 44.1306314,
+    "lng": -84.486909
+  },
+  "147 n paw paw st coloma": {
+    "lat": 42.1861494,
+    "lng": -86.308356
+  },
+  "3650 van buren st hudsonville": {
+    "lat": 42.8708,
+    "lng": -85.8726133
+  },
+  "836 indianapolis ave lebanon": {
+    "lat": 40.0414297,
+    "lng": -86.4595139
+  },
+  "505 s warner sumner": {
+    "lat": 43.283036,
+    "lng": -84.7762234
+  },
+  "1315 leonard st ne grand rapids": {
+    "lat": 42.9845119,
+    "lng": -85.6369428
+  },
+  "13276 m40 gobles": {
+    "lat": 42.3645488,
+    "lng": -85.8789675
+  },
+  "5539 e washington st indianapolis": {
+    "lat": 39.7705472,
+    "lng": -86.0722839
+  },
+  "1001 24 mile rd homer": {
+    "lat": 42.0876827,
+    "lng": -84.8237468
+  },
+  "211 w center linwood": {
+    "lat": 43.7387057,
+    "lng": -83.966432
+  },
+  "4180 w m20 new era": {
+    "lat": 43.5597716,
+    "lng": -86.3835538
+  },
+  "2424 s division grand rapids": {
+    "lat": 42.9197392,
+    "lng": -85.6661986
+  },
+  "254 pickeral lake newaygo": {
+    "lat": 43.4540107,
+    "lng": -85.8087006
+  },
+  "24 s division grand rapids": {
+    "lat": 42.962407,
+    "lng": -85.667758
+  },
+  "8856 unionville rd sebewaing": {
+    "lat": 43.7223374,
+    "lng": -83.4460059
+  },
+  "3375 division ave south wyoming": {
+    "lat": 42.9026894,
+    "lng": -85.667108
+  },
+  "3535 park rd luzerne": {
+    "lat": 44.6155521,
+    "lng": -84.2730117
+  },
+  "617 lyon street ne grand rapids": {
+    "lat": 42.9674268,
+    "lng": -85.6539476
+  },
+  "12642 n woodbridge bitely": {
+    "lat": 43.7828135,
+    "lng": -85.8494344
+  },
+  "4773 lake michigan dr allendale": {
+    "lat": 42.9729914,
+    "lng": -85.9037466
+  },
+  "8990 e monroe rd wheeler": {
+    "lat": 43.4079006,
+    "lng": -84.429503
+  },
+  "4050 e clinton trail charlotte": {
+    "lat": 42.553121,
+    "lng": -84.8161238
+  },
+  "17275 caberfae hwy wellston": {
+    "lat": 44.2246842,
+    "lng": -85.9558135
+  },
+  "3700 chicago dr hudsonville": {
+    "lat": 42.8625455,
+    "lng": -85.8742704
+  },
+  "160 northern ave barryton": {
+    "lat": 43.7499068,
+    "lng": -85.1455665
+  },
+  "32140 m40 paw paw": {
+    "lat": 42.3021739,
+    "lng": -85.8795
+  },
+  "6436 w main eau claire": {
+    "lat": 41.9852892,
+    "lng": -86.3019753
+  },
+  "3440 main st deckerville": {
+    "lat": 43.5251845,
+    "lng": -82.7347254
+  },
+  "208 n main st leslie": {
+    "lat": 42.4534782,
+    "lng": -84.432518
+  },
+  "792 s angola rd coldwater": {
+    "lat": 41.7978375,
+    "lng": -85.0056085
+  },
+  "305 w main st manton": {
+    "lat": 44.410763,
+    "lng": -85.4005024
+  },
+  "111 s sterling street ashley": {
+    "lat": 43.1863294,
+    "lng": -84.4750608
+  },
+  "831 maple island muskegon": {
+    "lat": 43.2378561,
+    "lng": -86.0676113
+  },
+  "84060 co687 hartford": {
+    "lat": 42.1143459,
+    "lng": -86.1666566
+  },
+  "3951 e 10 mile rd warren": {
+    "lat": 42.4770002,
+    "lng": -83.0657212
+  },
+  "54950 mound shelby township": {
+    "lat": 42.6976846,
+    "lng": -83.0535811
+  },
+  "1751 28th st sw wyoming": {
+    "lat": 42.9136766,
+    "lng": -85.7095921
+  },
+  "200 union ne grand rapids": {
+    "lat": 42.9675038,
+    "lng": -85.6543628
+  },
+  "2005 n melita rd sterling": {
+    "lat": 44.1419235,
+    "lng": -84.0076379
+  },
+  "11184 davison rd davison": {
+    "lat": 43.0350428,
+    "lng": -83.5035809
+  },
+  "2341 n lapeer rd lapeer": {
+    "lat": 43.0975971,
+    "lng": -83.3081707
+  },
+  "224 n clinton st johns": {
+    "lat": 43.0032462,
+    "lng": -84.5580997
+  },
+  "220 s hughston st mcbain": {
+    "lat": 44.1902096,
+    "lng": -85.2097773
+  },
+  "4315 division mcbride": {
+    "lat": 43.353737,
+    "lng": -85.0444074
+  },
+  "126 n roland st mcbain": {
+    "lat": 44.1926014,
+    "lng": -85.2103837
+  },
+  "8605 e 34 rd cadillac": {
+    "lat": 44.2808769,
+    "lng": -85.5202952
+  },
+  "1500 us 31 grand haven": {
+    "lat": 43.0472456,
+    "lng": -86.2205091
+  },
+  "700 w norton ave muskegon": {
+    "lat": 43.193014,
+    "lng": -86.2613015
+  },
+  "315 wilson ave nw standale": {
+    "lat": 42.9699816,
+    "lng": -85.7791638
+  },
+  "3320 west shore drive holland": {
+    "lat": 42.8289147,
+    "lng": -86.0904984
+  },
+  "5300 s harvey st muskegon": {
+    "lat": 43.1553362,
+    "lng": -86.2029504
+  },
+  "4900 m72 e williamsburg": {
+    "lat": 44.769936,
+    "lng": -85.4775496
+  },
+  "5019 red arrow highway stevensville": {
+    "lat": 42.0248718,
+    "lng": -86.5217042
+  },
+  "1223 phoenix st south haven": {
+    "lat": 42.4065001,
+    "lng": -86.2564445
+  },
+  "4665 south green ave fremont": {
+    "lat": 43.4702862,
+    "lng": -85.9813976
+  },
+  "1920 pipestone rd benton harbor": {
+    "lat": 42.0820164,
+    "lng": -86.4220504
+  },
+  "746 east 16th st holland": {
+    "lat": 42.7809589,
+    "lng": -86.0754342
+  },
+  "1800 holton road north muskegon": {
+    "lat": 43.2833432,
+    "lng": -86.2203418
+  },
+  "1115 washington ave grand haven": {
+    "lat": 43.0610474,
+    "lng": -86.2152657
+  },
+  "437 n larch st lansing": {
+    "lat": 42.737788,
+    "lng": -84.5447272
+  },
+  "140 n main st north liberty": {
+    "lat": 41.5352035,
+    "lng": -86.4267946
+  },
+  "12025 south merrill rd brant": {
+    "lat": 43.2437833,
+    "lng": -84.3275128
+  },
+  "7944 w hazel rd mears": {
+    "lat": 43.6682756,
+    "lng": -86.4763549
+  },
+  "20536 15 mile rd clinton township": {
+    "lat": 42.5543661,
+    "lng": -82.9116586
+  },
+  "32 43rd st sw wyoming": {
+    "lat": 42.8858171,
+    "lng": -85.6656918
+  },
+  "474 s shaw ln east lansing": {
+    "lat": 42.7245513,
+    "lng": -84.479109
+  },
+  "3821 s evergreen white cloud": {
+    "lat": 43.485032,
+    "lng": -85.7738015
+  },
+  "2276 f41 mikado": {
+    "lat": 44.5864696,
+    "lng": -83.422628
+  },
+  "2005 e gordonville rd midland": {
+    "lat": 43.568628,
+    "lng": -84.2900543
+  },
+  "8279 arnt blvd watervliet": {
+    "lat": 42.1797932,
+    "lng": -86.2593919
+  },
+  "240 e front st traverse city": {
+    "lat": 44.7639695,
+    "lng": -85.6192788
+  },
+  "14711 clinton river rd sterling heights": {
+    "lat": 42.5841972,
+    "lng": -82.9771231
+  },
+  "16500 32 mile ray township": {
+    "lat": 42.8047349,
+    "lng": -82.9631549
+  },
+  "749 featherstone st pontiac": {
+    "lat": 42.6483414,
+    "lng": -83.2712616
+  },
+  "3983 van dyke almont": {
+    "lat": 42.9492806,
+    "lng": -83.0556884
+  },
+  "20700 mack ave grosse pointe": {
+    "lat": 42.4033878,
+    "lng": -82.9167559
+  },
+  "401 n 7th st grand haven": {
+    "lat": 43.0630734,
+    "lng": -86.2283864
+  },
+  "113 main street east jordan": {
+    "lat": 45.1544322,
+    "lng": -85.1277043
+  },
+  "8718 water street montague": {
+    "lat": 43.4169469,
+    "lng": -86.3537001
+  },
+  "8200 grand river brighton": {
+    "lat": 42.552392,
+    "lng": -83.7902471
+  },
+  "7263 n long lake rd traverse city": {
+    "lat": 44.744777,
+    "lng": -85.7208915
+  },
+  "5982 state st saginaw": {
+    "lat": 43.4370289,
+    "lng": -84.0339972
+  },
+  "301 s cass st morley": {
+    "lat": 43.4883315,
+    "lng": -85.4445979
+  },
+  "280 s cass morley": {
+    "lat": 43.4939601,
+    "lng": -85.4447937
+  },
+  "6880 lake michigan dr allendale": {
+    "lat": 42.9723498,
+    "lng": -85.9552118
+  },
+  "5835 balsam dr hudsonville": {
+    "lat": 42.8742397,
+    "lng": -85.8593617
+  },
+  "8001 elizabeth lake road white lake": {
+    "lat": 42.643433,
+    "lng": -83.447924
+  },
+  "53941 cr 388 grand junction": {
+    "lat": 42.4041253,
+    "lng": -86.0720471
+  },
+  "32050 gratiot ave roseville": {
+    "lat": 42.532591,
+    "lng": -82.9130253
+  },
+  "474 south shaw lane east lansing": {
+    "lat": 42.7245513,
+    "lng": -84.479109
+  },
+  "771 chestnut rd east lansing": {
+    "lat": 42.721146,
+    "lng": -84.4870679
+  },
+  "763 south michigan ave howell": {
+    "lat": 42.6005607,
+    "lng": -83.9331114
+  },
+  "9925 spencer rd brighton": {
+    "lat": 42.5342298,
+    "lng": -83.7565148
+  },
+  "5042 e berry rd pleasant lake": {
+    "lat": 42.3804224,
+    "lng": -84.3254918
+  },
+  "137 north main perry": {
+    "lat": 42.8257216,
+    "lng": -84.2194735
+  },
+  "102 s morrice rd morrice": {
+    "lat": 42.8347448,
+    "lng": -84.1797821
+  },
+  "9782 m36 whitmore lake": {
+    "lat": 42.4422099,
+    "lng": -83.7572724
+  },
+  "329 n main st munith": {
+    "lat": 42.3932925,
+    "lng": -84.2505367
+  },
+  "11055 highland rd hartland": {
+    "lat": 42.6358323,
+    "lng": -83.7377755
+  },
+  "7999 mason rd fowlerville": {
+    "lat": 42.5989032,
+    "lng": -84.070871
+  },
+  "202 n michigan ave howell": {
+    "lat": 42.6084083,
+    "lng": -83.9291565
+  },
+  "1630 s main street chelsea": {
+    "lat": 42.2969536,
+    "lng": -84.0261937
+  },
+  "6801 oak grove rd howell": {
+    "lat": 42.6966048,
+    "lng": -83.9404538
+  },
+  "20490 m52 chelsea": {
+    "lat": 42.3338063,
+    "lng": -84.0257203
+  },
+  "211 east main st pinckney": {
+    "lat": 42.4570888,
+    "lng": -83.9448826
+  },
+  "201 s clinton st stockbridge": {
+    "lat": 42.4499751,
+    "lng": -84.179973
+  },
+  "2940 baker rd dexter": {
+    "lat": 42.3329693,
+    "lng": -83.8870205
+  },
+  "15241 north holly rd holly": {
+    "lat": 42.8068002,
+    "lng": -83.6276717
+  },
+  "3864 mount hope rd grass lake twp": {
+    "lat": 42.288451,
+    "lng": -84.2048478
+  },
+  "433 highland rd howell": {
+    "lat": 42.622515,
+    "lng": -83.9183927
+  },
+  "296 e maple st muir": {
+    "lat": 43.0020095,
+    "lng": -84.9403101
+  },
+  "2131 kalamazoo grand rapids": {
+    "lat": 42.9244749,
+    "lng": -85.6336525
+  },
+  "3917 leland ave ne comstock park": {
+    "lat": 43.033143,
+    "lng": -85.667906
+  },
+  "112 w main st owosso": {
+    "lat": 42.9976129,
+    "lng": -84.171259
+  },
+  "4035 burton st se grand rapids": {
+    "lat": 42.9269305,
+    "lng": -85.5846275
+  },
+  "8587 narrow lake rd springport": {
+    "lat": 42.4420811,
+    "lng": -84.7789058
+  },
+  "4660 f41 mikado": {
+    "lat": 44.520219,
+    "lng": -83.422013
+  },
+  "11923 us 23 south ossineke": {
+    "lat": 44.9030914,
+    "lng": -83.4424984
+  },
+  "220 e lake st tawas city": {
+    "lat": 44.2731294,
+    "lng": -83.5101524
+  },
+  "e15 e main street mayville": {
+    "lat": 43.3368516,
+    "lng": -83.3488773
+  },
+  "469 w 112th grant": {
+    "lat": 43.3511667,
+    "lng": -85.8058934
+  },
+  "45 e higgins lake dr roscommon": {
+    "lat": 44.4214299,
+    "lng": -84.6822863
+  },
+  "2326 s 11th st niles": {
+    "lat": 41.7838187,
+    "lng": -86.2509796
+  },
+  "116 e jackson st paulding": {
+    "lat": 41.138329,
+    "lng": -84.5804407
+  },
+  "15998 w brant rd brant": {
+    "lat": 43.2593589,
+    "lng": -84.2288717
+  },
+  "350 n 3rd ave fruitport": {
+    "lat": 43.1308744,
+    "lng": -86.1553204
+  },
+  "502 n cochran ave charlotte": {
+    "lat": 42.5703585,
+    "lng": -84.8358272
+  },
+  "11031 northland dr big rapids": {
+    "lat": 43.627871,
+    "lng": -85.4845025
+  },
+  "6388 bryant rd ludington": {
+    "lat": 43.9707168,
+    "lng": -86.438811
+  },
+  "2260 n state st ionia": {
+    "lat": 42.9888911,
+    "lng": -85.0749858
+  },
+  "23015 21 mile rd macomb": {
+    "lat": 42.6443251,
+    "lng": -82.8764193
+  },
+  "3381 mccracken muskegon": {
+    "lat": 43.1914716,
+    "lng": -86.293596
+  },
+  "1702 suncrist st midland": {
+    "lat": 43.6230059,
+    "lng": -84.2418424
+  },
+  "3371 port austin rd port austin": {
+    "lat": 44.0091275,
+    "lng": -83.0508846
+  },
+  "1937 e state blvd fort wayne": {
+    "lat": 41.0971233,
+    "lng": -85.1126249
+  },
+  "227 w buffalo new buffalo": {
+    "lat": 41.7925994,
+    "lng": -86.7465704
+  },
+  "168 s 2nd st decatur": {
+    "lat": 40.8288795,
+    "lng": -84.9239871
+  },
+  "883 e river road oscoda": {
+    "lat": 44.4449045,
+    "lng": -83.483146
+  },
+  "9866 cherry valley ave se caledonia": {
+    "lat": 42.7857201,
+    "lng": -85.5066972
+  },
+  "230 s adams st newaygo": {
+    "lat": 43.4116331,
+    "lng": -85.8069078
+  },
+  "6530 airline rd fruitport": {
+    "lat": 43.1332462,
+    "lng": -86.1537992
+  },
+  "17026 lloyds bayou dr spring lake": {
+    "lat": 43.0775243,
+    "lng": -86.1724875
+  },
+  "430 s state rd otisville": {
+    "lat": 43.1367876,
+    "lng": -83.5190992
+  },
+  "2256 ottawa beach rd holland": {
+    "lat": 42.775784,
+    "lng": -86.2006663
+  },
+  "4392 n irish rd davison": {
+    "lat": 43.070158,
+    "lng": -83.5444671
+  },
+  "8368 w c ave kalamazoo": {
+    "lat": 42.394083,
+    "lng": -85.7169444
+  },
+  "340 n loomis rd mt pleasant": {
+    "lat": 43.6463159,
+    "lng": -84.6629025
+  },
+  "4738 foco rd standish": {
+    "lat": 43.9461084,
+    "lng": -83.9268826
+  },
+  "334 melita rd sterling": {
+    "lat": 44.0744789,
+    "lng": -84.0195573
+  },
+  "9900 russell rd twin lake": {
+    "lat": 43.451504,
+    "lng": -86.2115017
+  },
+  "113 w main st westphalia": {
+    "lat": 42.9292758,
+    "lng": -84.7991434
+  },
+  "5490 butman rd gladwin": {
+    "lat": 44.1315975,
+    "lng": -84.4675416
+  },
+  "135 n main st three rivers": {
+    "lat": 41.9464502,
+    "lng": -85.6345258
+  },
+  "6320 park lake rd bath": {
+    "lat": 42.7927807,
+    "lng": -84.4369493
+  },
+  "133 w main st elsie": {
+    "lat": 43.0886245,
+    "lng": -84.3881178
+  },
+  "517 n state st caro": {
+    "lat": 43.4922759,
+    "lng": -83.3924505
+  },
+  "291 n michigan ave beulah": {
+    "lat": 44.6360347,
+    "lng": -86.0887565
+  },
+  "4374 w monroe rd pentwater": {
+    "lat": 43.762018,
+    "lng": -86.3880448
+  },
+  "11 n hancock pentwater": {
+    "lat": 43.7819587,
+    "lng": -86.4333203
+  },
+  "210 s hancock st pentwater": {
+    "lat": 43.7797669,
+    "lng": -86.4329364
+  },
+  "7161 lakeshore rd lakeport": {
+    "lat": 43.1127418,
+    "lng": -82.4915317
+  },
+  "429 main st frankfort": {
+    "lat": 44.6325659,
+    "lng": -86.2390723
+  },
+  "372 e lakewood blvd holland": {
+    "lat": 42.8046688,
+    "lng": -86.0929794
+  },
+  "2808 e beltline ave ne grand rapids": {
+    "lat": 43.0136762,
+    "lng": -85.5893896
+  },
+  "9633 cherry valley caledonia": {
+    "lat": 42.7897326,
+    "lng": -85.5073388
+  },
+  "2560 e beltline ave se grand rapids": {
+    "lat": 42.9166774,
+    "lng": -85.5833177
+  },
+  "4204 18th st dorr": {
+    "lat": 42.7253269,
+    "lng": -85.722407
+  },
+  "762 cabill drive holland": {
+    "lat": 42.7465335,
+    "lng": -86.0737473
+  },
+  "1515 s patterson wayland": {
+    "lat": 42.6772002,
+    "lng": -85.5450042
+  },
+  "3416 lincoln rd hamilton": {
+    "lat": 42.6669237,
+    "lng": -85.9955075
+  },
+  "403 west main st lowell": {
+    "lat": 42.9338075,
+    "lng": -85.3422024
+  },
+  "3980 44th st sw grandville": {
+    "lat": 42.8842313,
+    "lng": -85.7620378
+  },
+  "9170 us 31 west olive": {
+    "lat": 42.9337026,
+    "lng": -86.155045
+  },
+  "409 east main street fennville": {
+    "lat": 42.5946285,
+    "lng": -86.1017512
+  },
+  "12011 lake michigan west olive": {
+    "lat": 42.9728019,
+    "lng": -86.0835537
+  },
+  "6725 s division grand rapids": {
+    "lat": 42.9159301,
+    "lng": -85.6661349
+  },
+  "910 w pickard st mt pleasant": {
+    "lat": 43.6118083,
+    "lng": -84.7870556
+  },
+  "2490 e huron rd au gres": {
+    "lat": 44.0478235,
+    "lng": -83.7067728
+  },
+  "169 e main st pinckney": {
+    "lat": 42.4570809,
+    "lng": -83.9457486
+  },
+  "6117 us10 custer": {
+    "lat": 43.9531029,
+    "lng": -86.1263189
+  },
+  "121 east elizabeth st stockbridge": {
+    "lat": 42.450101,
+    "lng": -84.1797755
+  },
+  "5472 e grand lake road presque isle": {
+    "lat": 45.3432941,
+    "lng": -83.4853321
+  },
+  "107 sage lake rd prescott": {
+    "lat": 44.1908196,
+    "lng": -83.9245941
+  },
+  "1022 cass st ft wayne": {
+    "lat": 41.0839265,
+    "lng": -85.14423
+  },
+  "1102 ann arbor rd plymouth": {
+    "lat": 42.3585617,
+    "lng": -83.4768672
+  },
+  "409 s mable pinconning": {
+    "lat": 43.8604459,
+    "lng": -83.966231
+  },
+  "6015 s m 52 owosso": {
+    "lat": 42.9882764,
+    "lng": -84.1769243
+  },
+  "135 s saginaw st byron": {
+    "lat": 42.8230813,
+    "lng": -83.9438584
+  },
+  "1740 w main st owosso": {
+    "lat": 42.9979983,
+    "lng": -84.1985133
+  },
+  "441 west main st flushing": {
+    "lat": 43.0623641,
+    "lng": -83.8622095
+  },
+  "3543 byron center wyoming": {
+    "lat": 42.900332,
+    "lng": -85.724658
+  },
+  "582 10th street plainwell": {
+    "lat": 42.4346371,
+    "lng": -85.6413536
+  },
+  "655 leonard st nw grand rapids": {
+    "lat": 42.9852043,
+    "lng": -85.6846061
+  },
+  "20 n beacon blvd grand haven": {
+    "lat": 43.0610087,
+    "lng": -86.22036
+  },
+  "2210 holton rd muskegon": {
+    "lat": 43.2953712,
+    "lng": -86.2017761
+  },
+  "309 main st spring arbor": {
+    "lat": 42.203646,
+    "lng": -84.5594956
+  },
+  "3112 south westnedge kalamazoo": {
+    "lat": 42.2604228,
+    "lng": -85.5895001
+  },
+  "1679 e sherman blvd muskegon": {
+    "lat": 43.2057908,
+    "lng": -86.1942829
+  },
+  "10982 old 27 hwy n vanderbilt": {
+    "lat": 45.1432435,
+    "lng": -84.6632358
+  },
+  "236 w leigh st homer": {
+    "lat": 42.1471501,
+    "lng": -84.8111948
+  },
+  "400 w laketon muskegon": {
+    "lat": 43.2196402,
+    "lng": -86.2343789
+  },
+  "6237 bishop rd lansing": {
+    "lat": 42.6614366,
+    "lng": -84.5917922
+  },
+  "3780 w huron rd standish": {
+    "lat": 43.9900872,
+    "lng": -83.9565165
+  },
+  "1989 w pine river rd breckenridge": {
+    "lat": 43.5303792,
+    "lng": -84.4484141
+  },
+  "10958 w monroe rd riverdale": {
+    "lat": 43.4087087,
+    "lng": -84.8260634
+  },
+  "10450 s warner ave fremont": {
+    "lat": 43.3649658,
+    "lng": -85.9387064
+  },
+  "5042 scenic hwy honor": {
+    "lat": 44.7109148,
+    "lng": -86.1194145
+  },
+  "108 s saginaw st byron": {
+    "lat": 42.8241868,
+    "lng": -83.9442956
+  },
+  "3034 w lansing rd perry": {
+    "lat": 42.8360535,
+    "lng": -84.2210278
+  },
+  "508 n james st grayling": {
+    "lat": 44.6625715,
+    "lng": -84.7159821
+  },
+  "3710 chicago dr grandville": {
+    "lat": 42.9115745,
+    "lng": -85.755635
+  },
+  "500 w ervin rd van wert": {
+    "lat": 40.858794,
+    "lng": -84.59017
+  },
+  "1428 grandville ave grand rapids": {
+    "lat": 42.9377267,
+    "lng": -85.6847174
+  },
+  "5760 west houghton lake road lake city": {
+    "lat": 44.340053,
+    "lng": -85.210693
+  },
+  "985 w midland rd auburn": {
+    "lat": 43.6032962,
+    "lng": -84.0569094
+  },
+  "3257 s state rd glennie": {
+    "lat": 44.5613955,
+    "lng": -83.7258058
+  },
+  "5112 us 23 oscoda": {
+    "lat": 44.4272661,
+    "lng": -83.3300882
+  },
+  "1607 lakeshore dr st joseph": {
+    "lat": 42.0984241,
+    "lng": -86.490849
+  },
+  "120 e main fennville": {
+    "lat": 42.5941888,
+    "lng": -86.1041102
+  },
+  "520 south williams st mancelona": {
+    "lat": 44.8990391,
+    "lng": -85.0641327
+  },
+  "360 n ross st beaverton": {
+    "lat": 43.8798586,
+    "lng": -84.4853254
+  },
+  "1830 e greenwood rd prescott": {
+    "lat": 44.1911723,
+    "lng": -83.9044222
+  },
+  "34 lake st sand lake": {
+    "lat": 43.2918627,
+    "lng": -85.5164907
+  },
+  "279 cr 665 paw paw": {
+    "lat": 42.1974647,
+    "lng": -85.8917522
+  },
+  "112 s center st bremen": {
+    "lat": 41.4463347,
+    "lng": -86.1463914
+  },
+  "1729 s m37 hastings": {
+    "lat": 42.6322011,
+    "lng": -85.2836135
+  },
+  "110 e michigan ave paw paw": {
+    "lat": 42.2176782,
+    "lng": -85.892415
+  },
+  "4061 page ave michigan center": {
+    "lat": 42.2377045,
+    "lng": -84.3436024
+  },
+  "4122 w michigan ave jackson": {
+    "lat": 42.2547966,
+    "lng": -84.4702255
+  },
+  "201 n bridge st bellaire": {
+    "lat": 44.9775223,
+    "lng": -85.2101184
+  },
+  "247 w 40th holland": {
+    "lat": 42.761674,
+    "lng": -86.1181885
+  },
+  "5537 huron rd pinconning": {
+    "lat": 43.8976303,
+    "lng": -83.9662574
+  },
+  "5850 balsam hudsonville": {
+    "lat": 42.8741046,
+    "lng": -85.8591989
+  },
+  "2040 leonard nw grand rapids": {
+    "lat": 42.9859365,
+    "lng": -85.7183926
+  },
+  "1057 estey rd beaverton": {
+    "lat": 43.8717894,
+    "lng": -84.3256683
+  },
+  "2755 port austin rd port austin": {
+    "lat": 44.0091275,
+    "lng": -83.0508846
+  },
+  "201 butler st saugatuck": {
+    "lat": 42.6558369,
+    "lng": -86.2037607
+  },
+  "740 denmark st baldwin": {
+    "lat": 43.9051987,
+    "lng": -85.8525212
+  },
+  "300 state st st joseph": {
+    "lat": 42.10944,
+    "lng": -86.481979
+  },
+  "227 w wright ave shepherd": {
+    "lat": 43.5242046,
+    "lng": -84.6933467
+  },
+  "106 s main st cheboygan": {
+    "lat": 45.6429019,
+    "lng": -84.478506
+  },
+  "209 e railway st coleman": {
+    "lat": 43.7563892,
+    "lng": -84.5861732
+  },
+  "126 n bridge st dewitt": {
+    "lat": 42.8428316,
+    "lng": -84.568872
+  },
+  "6432 28th st se cascade": {
+    "lat": 42.9130454,
+    "lng": -85.5093441
+  },
+  "1278 perry ave big rapids": {
+    "lat": 43.6877557,
+    "lng": -85.5022778
+  },
+  "910 w grand river ave brighton": {
+    "lat": 42.5365443,
+    "lng": -83.7840347
+  },
+  "1242 e bristol rd burton": {
+    "lat": 42.9741498,
+    "lng": -83.6837118
+  },
+  "2745 union lake rd commerce twp": {
+    "lat": 42.5954651,
+    "lng": -83.4460208
+  },
+  "2380 44th st se kentwood": {
+    "lat": 42.8836526,
+    "lng": -85.6069114
+  },
+  "19100 farmington road livonia": {
+    "lat": 42.426259,
+    "lng": -83.374809
+  },
+  "3150 plainfield ave ne grand rapids": {
+    "lat": 43.0204294,
+    "lng": -85.6343551
+  },
+  "1490 w ann arbor rd plymouth": {
+    "lat": 42.3588479,
+    "lng": -83.4788859
+  },
+  "10025 telegraph rd taylor": {
+    "lat": 42.2335896,
+    "lng": -83.2691241
+  },
+  "4023 talmadge rd toledo": {
+    "lat": 41.6916731,
+    "lng": -83.6447145
+  },
+  "8399 south 36th street scotts": {
+    "lat": 42.1957883,
+    "lng": -85.4127016
+  },
+  "536 pine st sebewaing": {
+    "lat": 43.74049,
+    "lng": -83.4449312
+  },
+  "2080 w hyde rd st johns": {
+    "lat": 43.0970539,
+    "lng": -84.5648311
+  },
+  "310 east main st benton harbor": {
+    "lat": 42.1166777,
+    "lng": -86.4510331
+  },
+  "4252 w shelby rd shelby": {
+    "lat": 43.609624,
+    "lng": -86.3842467
+  },
+  "4559 red arrow hwy stevensville": {
+    "lat": 42.0349486,
+    "lng": -86.5134126
+  },
+  "1959 e napier benton harbor": {
+    "lat": 42.0911347,
+    "lng": -86.4110239
+  },
+  "201 e mcarthur st corunna": {
+    "lat": 42.980812,
+    "lng": -84.1158619
+  },
+  "2008 greenwood rd prescott": {
+    "lat": 44.190888,
+    "lng": -83.9757581
+  },
+  "378 w chicago st coldwater": {
+    "lat": 41.9436635,
+    "lng": -85.0164704
+  },
+  "7999 11 mile rd bitely": {
+    "lat": 43.7136348,
+    "lng": -85.9992579
+  },
+  "5748 round lake rd laingsburg": {
+    "lat": 42.881132,
+    "lng": -84.4494689
+  },
+  "7575 w taylor rd mears": {
+    "lat": 43.6746991,
+    "lng": -86.4181776
+  },
+  "8214 w hazel mears": {
+    "lat": 43.6678338,
+    "lng": -86.4832223
+  },
+  "8447 w hazel rd mears": {
+    "lat": 43.6675942,
+    "lng": -86.4883822
+  },
+  "809 s michigan ave manton": {
+    "lat": 44.4034576,
+    "lng": -85.3981771
+  },
+  "2437 s division wyoming": {
+    "lat": 42.9189847,
+    "lng": -85.6663842
+  },
+  "16830 robbins rd grand haven": {
+    "lat": 43.0447539,
+    "lng": -86.2058523
+  },
+  "100 woodworth ave alma": {
+    "lat": 43.3745077,
+    "lng": -84.6598581
+  },
+  "1310 brady st chesaning": {
+    "lat": 43.1877212,
+    "lng": -84.1308281
+  },
+  "1256 s poseyville rd midland": {
+    "lat": 43.5758032,
+    "lng": -84.2480028
+  },
+  "5716 state st saginaw": {
+    "lat": 43.4370189,
+    "lng": -84.0282427
+  },
+  "218 e saginaw breckenridge": {
+    "lat": 43.4077904,
+    "lng": -84.4769879
+  },
+  "1489 lake drive se grand rapids": {
+    "lat": 42.9560372,
+    "lng": -85.6322853
+  },
+  "210 e prosper road falmouth": {
+    "lat": 44.2433696,
+    "lng": -85.0899133
+  },
+  "715 w michigan ave three rivers": {
+    "lat": 41.9428246,
+    "lng": -85.6414278
+  },
+  "3450 remembrance rd nw walker": {
+    "lat": 42.9903191,
+    "lng": -85.753039
+  },
+  "9622 port sheldon borculo": {
+    "lat": 42.8852405,
+    "lng": -86.0219399
+  },
+  "1601 phoenix st south haven": {
+    "lat": 42.4036089,
+    "lng": -86.2510407
+  },
+  "407 phoenix st south haven": {
+    "lat": 42.4032302,
+    "lng": -86.2755627
+  },
+  "819 s westnedge kalamazoo": {
+    "lat": 42.2825289,
+    "lng": -85.5893771
+  },
+  "442 s sandusky rd sandusky": {
+    "lat": 43.4079392,
+    "lng": -82.8292542
+  },
+  "302 s broadway peru": {
+    "lat": 40.7479755,
+    "lng": -86.064619
+  },
+  "5746 clark rd bath": {
+    "lat": 42.8127757,
+    "lng": -84.4488652
+  },
+  "967 e fulton grand rapids": {
+    "lat": 42.9628661,
+    "lng": -85.6519178
+  },
+  "12837 lincoln st grand haven": {
+    "lat": 43.0018049,
+    "lng": -86.1047982
+  },
+  "9021 howard city edmore rd vestaburg": {
+    "lat": 43.4083386,
+    "lng": -84.8654778
+  },
+  "17176 w spring lake rd spring lake": {
+    "lat": 43.088578,
+    "lng": -86.202594
+  },
+  "3530 sprinkle rd kalamazoo": {
+    "lat": 42.255614,
+    "lng": -85.530923
+  },
+  "6450 28th ave hudsonville": {
+    "lat": 42.8858322,
+    "lng": -85.8503922
+  },
+  "9365a cherry valley ave caledonia": {
+    "lat": 42.805521,
+    "lng": -85.5071044
+  },
+  "1237 leonard grand rapids": {
+    "lat": 42.9845077,
+    "lng": -85.6388843
+  },
+  "4165 grand haven rd norton shores": {
+    "lat": 43.1770486,
+    "lng": -86.2203364
+  },
+  "5657 w fox rd mears": {
+    "lat": 43.6821195,
+    "lng": -86.4197965
+  },
+  "2800 n grand river ave lansing": {
+    "lat": 42.7618592,
+    "lng": -84.5710073
+  },
+  "612 east main st centreville": {
+    "lat": 41.9234366,
+    "lng": -85.5152623
+  },
+  "705 e washington st st louis": {
+    "lat": 43.4080631,
+    "lng": -84.5973867
+  },
+  "103 w main st westphalia": {
+    "lat": 42.9292768,
+    "lng": -84.7990114
+  },
+  "11761 northland dr ne rockford": {
+    "lat": 43.1289254,
+    "lng": -85.5507552
+  },
+  "5031 brooklyn rd jackson": {
+    "lat": 42.1940726,
+    "lng": -84.3258575
+  },
+  "14150 cypress ave sand lake": {
+    "lat": 43.2988411,
+    "lng": -85.6209706
+  },
+  "317 e central ave mackinaw city": {
+    "lat": 45.7817889,
+    "lng": -84.7263149
+  },
+  "1604 e superior st alma": {
+    "lat": 43.3788139,
+    "lng": -84.6371283
+  },
+  "182 n state st sparta": {
+    "lat": 43.1645511,
+    "lng": -85.7101806
+  },
+  "3001 bay city rd midland": {
+    "lat": 43.6054024,
+    "lng": -84.1908436
+  },
+  "1100 s euclid ave bay city": {
+    "lat": 43.5899619,
+    "lng": -83.9158299
+  },
+  "304 e mcneil corunna": {
+    "lat": 42.9768515,
+    "lng": -84.120688
+  },
+  "12723 m115 marion": {
+    "lat": 43.9970427,
+    "lng": -85.1022987
+  },
+  "1160 chicago dr sw grand rapids": {
+    "lat": 42.9358747,
+    "lng": -85.6874522
+  },
+  "2390 w sherman muskegon": {
+    "lat": 43.2059426,
+    "lng": -86.302829
+  },
+  "14360 s grange eagle": {
+    "lat": 42.80825,
+    "lng": -84.7887563
+  },
+  "658 42nd st allegan": {
+    "lat": 42.4678837,
+    "lng": -85.9546803
+  },
+  "6969 s division grand rapids": {
+    "lat": 42.9138335,
+    "lng": -85.6660224
+  },
+  "1963 cedar st holt": {
+    "lat": 42.6390993,
+    "lng": -84.5142485
+  },
+  "815 marshall st allegan": {
+    "lat": 42.5160279,
+    "lng": -85.8346166
+  },
+  "7595 w 5 mile rd irons": {
+    "lat": 44.0610116,
+    "lng": -85.9541396
+  },
+  "123 w main street ft wayne": {
+    "lat": 41.0800363,
+    "lng": -85.1408384
+  },
+  "3501 s division wyoming": {
+    "lat": 42.900357,
+    "lng": -85.665517
+  },
+  "3517 holt rd holt": {
+    "lat": 42.6402828,
+    "lng": -84.5332481
+  },
+  "744 east main street fennville": {
+    "lat": 42.5942926,
+    "lng": -86.098335
+  },
+  "220 s broadway cassopolis": {
+    "lat": 41.9088048,
+    "lng": -86.0126788
+  },
+  "306 w lake street tawas city": {
+    "lat": 44.2699107,
+    "lng": -83.5142978
+  },
+  "717 main st elwood": {
+    "lat": 40.2768715,
+    "lng": -85.8525097
+  },
+  "123 n division hesperia": {
+    "lat": 43.5705162,
+    "lng": -86.0397542
+  },
+  "460 w us 10 scottville": {
+    "lat": 43.9549979,
+    "lng": -86.2870421
+  },
+  "1445 lake drive grand rapids": {
+    "lat": 42.9568678,
+    "lng": -85.6337574
+  },
+  "103 w elm st gaston": {
+    "lat": 40.3139311,
+    "lng": -85.5005278
+  },
+  "6787 m65 hale": {
+    "lat": 44.4210866,
+    "lng": -83.8049828
+  },
+  "902 mill st crawfordsville": {
+    "lat": 40.0321774,
+    "lng": -86.8898729
+  },
+  "752 fulton st w grand rapids": {
+    "lat": 42.9633316,
+    "lng": -85.6870949
+  },
+  "312 n main st milford": {
+    "lat": 42.5897363,
+    "lng": -83.6001705
+  },
+  "4450 main st port hope": {
+    "lat": 43.9414969,
+    "lng": -82.7133236
+  },
+  "346 e front street traverse city": {
+    "lat": 44.7639255,
+    "lng": -85.6162477
+  },
+  "1225 michigan ne grand rapids": {
+    "lat": 42.9700607,
+    "lng": -85.6389301
+  },
+  "306 main st frankfort": {
+    "lat": 44.6323696,
+    "lng": -86.2409416
+  },
+  "201 west jefferson st grand ledge": {
+    "lat": 42.754123,
+    "lng": -84.747456
+  },
+  "5951 marsh rd haslett": {
+    "lat": 42.753605,
+    "lng": -84.40872
+  },
+  "27726 plymouth rd livonia": {
+    "lat": 42.3697104,
+    "lng": -83.3163186
+  },
+  "350 s jefferson st mason": {
+    "lat": 42.5795011,
+    "lng": -84.4433185
+  },
+  "750 e grand river rd laingsburg": {
+    "lat": 42.8883115,
+    "lng": -84.3461503
+  },
+  "405 n division street traverse city": {
+    "lat": 44.7675296,
+    "lng": -85.6347823
+  },
+  "1879 w river rd oscoda": {
+    "lat": 44.4422151,
+    "lng": -83.5609186
+  },
+  "555 dyckman ave south haven": {
+    "lat": 42.406318,
+    "lng": -86.271476
+  },
+  "362 lake george st lake george": {
+    "lat": 43.9643911,
+    "lng": -84.9463188
+  },
+  "2282 e salzburg rd bay city": {
+    "lat": 43.5803678,
+    "lng": -83.9180329
+  },
+  "1602 n mitchell st cadillac": {
+    "lat": 44.2743174,
+    "lng": -85.4064863
+  },
+  "1034 n saginaw st st charles": {
+    "lat": 43.3044219,
+    "lng": -84.1434874
+  },
+  "2280 e broomfield rd mt pleasant": {
+    "lat": 43.5823772,
+    "lng": -84.8045508
+  },
+  "7434 moscow rd horton": {
+    "lat": 42.1554766,
+    "lng": -84.5190272
+  },
+  "2840 180th ave hersey": {
+    "lat": 43.8571705,
+    "lng": -85.4438775
+  },
+  "742 s poseyville rd midland": {
+    "lat": 43.5919722,
+    "lng": -84.2475368
+  },
+  "2442 us10 ludington": {
+    "lat": 43.9487937,
+    "lng": -86.4505067
+  },
+  "250 n state st big rapids": {
+    "lat": 43.6992014,
+    "lng": -85.4838947
+  },
+  "591 ada dr ada": {
+    "lat": 42.9543121,
+    "lng": -85.4887607
+  },
+  "1401 daniel rd jackson": {
+    "lat": 42.2519366,
+    "lng": -84.4315392
+  },
+  "3031 patterson road bay city": {
+    "lat": 43.6512126,
+    "lng": -83.8723972
+  },
+  "1053 e wilcox ave white cloud": {
+    "lat": 43.5502587,
+    "lng": -85.7747782
+  },
+  "45 main st north judson": {
+    "lat": 41.2154257,
+    "lng": -86.7752482
+  },
+  "2120 s milford rd highland": {
+    "lat": 42.6212225,
+    "lng": -83.6162469
+  },
+  "30 n main street rockford": {
+    "lat": 43.1207177,
+    "lng": -85.5592139
+  },
+  "233 e michigan ave paw paw": {
+    "lat": 42.2177077,
+    "lng": -85.8902908
+  },
+  "103 n bridge st grand ledge": {
+    "lat": 42.7552043,
+    "lng": -84.7432049
+  },
+  "53 east bridge street rockford": {
+    "lat": 43.1198816,
+    "lng": -85.5589075
+  },
+  "123 n roland st mcbain": {
+    "lat": 44.19254,
+    "lng": -85.2106121
+  },
+  "3976 pelham st dearborn": {
+    "lat": 42.2818331,
+    "lng": -83.2317265
+  },
+  "210 s main st fowler": {
+    "lat": 43.0015462,
+    "lng": -84.7400688
+  },
+  "1507 s lake mitchell dr cadillac": {
+    "lat": 44.2290852,
+    "lng": -85.4773891
+  },
+  "4005 e m79 hwy hastings": {
+    "lat": 42.6109618,
+    "lng": -85.2110532
+  },
+  "2405 w ludington dr farwell": {
+    "lat": 43.854309,
+    "lng": -84.897368
+  },
+  "10213 w front st empire": {
+    "lat": 44.8109724,
+    "lng": -86.0605679
+  },
+  "853 s clinton stockbridge": {
+    "lat": 42.4423184,
+    "lng": -84.1794927
+  },
+  "9390 genesee st new lothrop": {
+    "lat": 43.1167303,
+    "lng": -83.9719084
+  },
+  "4107 west 13 mile rd royal oak": {
+    "lat": 42.5174718,
+    "lng": -83.1994707
+  },
+  "3830 chicago dr sw grandville": {
+    "lat": 42.9109347,
+    "lng": -85.7584907
+  },
+  "738 munson ave traverse city": {
+    "lat": 44.75473,
+    "lng": -85.5723464
+  },
+  "2963 coit ne grand rapids": {
+    "lat": 43.0169032,
+    "lng": -85.6560051
+  },
+  "10606 old 27 south waters": {
+    "lat": 44.8787246,
+    "lng": -84.6987801
+  },
+  "102 s main st sweetser": {
+    "lat": 40.5673482,
+    "lng": -85.768983
+  },
+  "1442 burton st sw wyoming": {
+    "lat": 42.9280149,
+    "lng": -85.7022368
+  },
+  "3687 dumont rd allegan": {
+    "lat": 42.5919866,
+    "lng": -85.9070773
+  },
+  "2635 n williamston rd williamston": {
+    "lat": 42.6627986,
+    "lng": -84.282378
+  },
+  "6308 s warner ave fremont": {
+    "lat": 43.458348,
+    "lng": -85.9399938
+  },
+  "403 s kalamazoo marshall": {
+    "lat": 42.2823456,
+    "lng": -84.9688112
+  },
+  "1116 n johnson st bay city": {
+    "lat": 43.6000494,
+    "lng": -83.8713879
+  },
+  "2023 s greenville rd greenville": {
+    "lat": 43.2645492,
+    "lng": -85.2565688
+  },
+  "149 page st west branch": {
+    "lat": 44.2753191,
+    "lng": -84.2294673
+  },
+  "6219 main st twin lake": {
+    "lat": 43.3659686,
+    "lng": -86.1647381
+  },
+  "9800 wheeler rd hanover": {
+    "lat": 42.1172226,
+    "lng": -84.6939594
+  },
+  "901 s main chelsea": {
+    "lat": 42.3090714,
+    "lng": -84.0210268
+  },
+  "7636 midland rd freeland": {
+    "lat": 43.5384936,
+    "lng": -84.1390308
+  },
+  "956 fulton st w grand rapids": {
+    "lat": 42.9635486,
+    "lng": -85.6917046
+  },
+  "4005 lansing ave jackson": {
+    "lat": 42.2989402,
+    "lng": -84.4134699
+  },
+  "330 s riverview parchment": {
+    "lat": 42.3256582,
+    "lng": -85.5704915
+  },
+  "327 s waverly lansing": {
+    "lat": 42.7305178,
+    "lng": -84.602426
+  },
+  "204 e grand river ave williamston": {
+    "lat": 42.6886596,
+    "lng": -84.2808202
+  },
+  "1409 south airport rd traverse city": {
+    "lat": 44.7331168,
+    "lng": -85.6034024
+  },
+  "121 w chicago rd jonesville": {
+    "lat": 41.9748489,
+    "lng": -84.684079
+  },
+  "2420 sunnyside dr cadillac": {
+    "lat": 44.2312482,
+    "lng": -85.4468715
+  },
+  "13329 unadilla rd gregory": {
+    "lat": 42.4560891,
+    "lng": -84.0764624
+  },
+  "1462 n leroy st fenton": {
+    "lat": 42.8167583,
+    "lng": -83.7074017
+  },
+  "5422 division ave s kentwood": {
+    "lat": 42.8685011,
+    "lng": -85.6642066
+  },
+  "1423 w 53rd st anderson": {
+    "lat": 40.0614303,
+    "lng": -85.7000967
+  },
+  "601 e saginaw st breckenridge": {
+    "lat": 43.4082349,
+    "lng": -84.4713839
+  },
+  "110 w 2nd st pinconning": {
+    "lat": 43.8567252,
+    "lng": -83.9613116
+  },
+  "8416 s 116th ave rothbury": {
+    "lat": 43.4914256,
+    "lng": -86.2674205
+  },
+  "32 w munger rd munger": {
+    "lat": 43.522093,
+    "lng": -83.77962
+  },
+  "119 e main vernon": {
+    "lat": 42.9392756,
+    "lng": -84.0323466
+  },
+  "1325 s ensley st howard city": {
+    "lat": 43.380804,
+    "lng": -85.4737815
+  },
+  "1810 breton rd se grand rapids": {
+    "lat": 42.9306409,
+    "lng": -85.6084625
+  },
+  "251 s bridge st dimondale": {
+    "lat": 42.6440151,
+    "lng": -84.6509684
+  },
+  "7600 112th ave holland": {
+    "lat": 42.907046,
+    "lng": -86.061133
+  },
+  "9979 s 8 mile rd mcbain": {
+    "lat": 44.1927738,
+    "lng": -85.0525096
+  },
+  "6420 byron rd zeeland": {
+    "lat": 42.8112831,
+    "lng": -85.9407727
+  },
+  "13051 wacousta road grand ledge": {
+    "lat": 42.8272484,
+    "lng": -84.7005287
+  },
+  "30990 dequindre warren": {
+    "lat": 42.5198327,
+    "lng": -83.0861243
+  },
+  "3298 n lakeshore dr ludington": {
+    "lat": 44.0161259,
+    "lng": -86.4574577
+  },
+  "103 e grand river webberville": {
+    "lat": 42.6670829,
+    "lng": -84.1738783
+  },
+  "3300 36th st se grand rapids": {
+    "lat": 42.8983232,
+    "lng": -85.6450996
+  },
+  "2019 chicago dr sw wyoming": {
+    "lat": 42.9334283,
+    "lng": -85.7160198
+  },
+  "910 s state st oscoda": {
+    "lat": 44.4160865,
+    "lng": -83.3300629
+  },
+  "4101 lansing ave jackson": {
+    "lat": 42.2998672,
+    "lng": -84.4133918
+  },
+  "8976 tittabasassee rd saginaw": {
+    "lat": 43.4200387,
+    "lng": -83.9490365
+  },
+  "308 garden avenue holland": {
+    "lat": 42.7876022,
+    "lng": -86.1090828
+  },
+  "802 superior dr alma": {
+    "lat": 43.37892,
+    "lng": -84.659727
+  },
+  "3880 w houghton lake rd houghton lake": {
+    "lat": 44.314739,
+    "lng": -84.7647496
+  },
+  "1309 e center rd ithaca": {
+    "lat": 43.291698,
+    "lng": -84.6075
+  },
+  "11233 68th ave suite a allendale": {
+    "lat": 42.9722455,
+    "lng": -85.9536535
+  },
+  "109 ampy rd paw paw": {
+    "lat": 42.2178171,
+    "lng": -85.8911246
+  },
+  "3050 fruitridge nw walker": {
+    "lat": 42.9816935,
+    "lng": -85.6325298
+  },
+  "3050 fruitridge walker": {
+    "lat": 42.9816935,
+    "lng": -85.6325298
+  },
+  "7938 oakland ave portage": {
+    "lat": 42.2011538,
+    "lng": -85.5800022
+  },
+  "7100 e fulton ada": {
+    "lat": 42.9547136,
+    "lng": -85.4879523
+  },
+  "250 76th street sw kentwood": {
+    "lat": 42.8694731,
+    "lng": -85.6447492
+  },
+  "4019 s martin l king blvd lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "1162 wilson ave grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "12997 old us 27 dewitt": {
+    "lat": 42.8424784,
+    "lng": -84.5697965
+  },
+  "3445 s maple island rd ravenna": {
+    "lat": 43.189626,
+    "lng": -85.93704
+  },
+  "5160 n hubbard lake rd spruce": {
+    "lat": 44.8441787,
+    "lng": -83.4658074
+  },
+  "5488 northland dr ne grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "8101 w vernor detroit": {
+    "lat": 42.3315509,
+    "lng": -83.0466403
+  },
+  "3974 s m18 beaverton": {
+    "lat": 43.882247,
+    "lng": -84.484732
+  },
+  "692 w center essexville": {
+    "lat": 43.6153,
+    "lng": -83.841919
+  },
+  "17626 frank myers rd cambridge city": {
+    "lat": 39.8129285,
+    "lng": -85.1708971
+  },
+  "1101 pheonix st south haven": {
+    "lat": 42.4030865,
+    "lng": -86.2736407
+  },
+  "8918 first street baroda": {
+    "lat": 41.9570248,
+    "lng": -86.4843483
+  },
+  "2415 ottawa beach road holland": {
+    "lat": 42.7876022,
+    "lng": -86.1090828
+  },
+  "540 s beech street grand haven": {
+    "lat": 43.0630734,
+    "lng": -86.2283864
+  },
+  "6035 us 223 unit a addison": {
+    "lat": 41.9863066,
+    "lng": -84.3479749
+  },
+  "58878 m51 south dowagiac": {
+    "lat": 41.9824681,
+    "lng": -86.1088809
+  },
+  "18945 56th ave coopersville": {
+    "lat": 43.0639112,
+    "lng": -85.9347667
+  },
+  "12584 oak park ave sawyer": {
+    "lat": 41.8853207,
+    "lng": -86.5894666
+  },
+  "2638 s 148th ave hesperia": {
+    "lat": 43.5685532,
+    "lng": -86.0396009
+  },
+  "2703 w 76th street baldwin": {
+    "lat": 43.901123,
+    "lng": -85.851729
+  },
+  "300 w grand rivere ave east lansing": {
+    "lat": 42.7320307,
+    "lng": -84.4721678
+  },
+  "3743 baldwin st hudsonville": {
+    "lat": 42.870889,
+    "lng": -85.865235
+  },
+  "20055 w edgar rd howard city": {
+    "lat": 43.395583,
+    "lng": -85.467815
+  },
+  "6910 airport hwy suite 1 holland": {
+    "lat": 41.621718,
+    "lng": -83.711604
+  },
+  "26567 n dixie hwy 133 perrysburg": {
+    "lat": 41.5571178,
+    "lng": -83.6279321
+  },
+  "1515 s bryne rd toledo": {
+    "lat": 41.6529143,
+    "lng": -83.5378173
+  },
+  "820 charlevoix dr grand ledge": {
+    "lat": 42.7524401,
+    "lng": -84.7463572
+  },
+  "750 n cedar st 100 lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "195 county rd 6 w elkhart": {
+    "lat": 41.6819935,
+    "lng": -85.9766671
+  },
+  "2700 kraft ave se grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "500 e michigan ave 190 lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "559 n telegraph ste 548 monroe": {
+    "lat": 41.9145037,
+    "lng": -83.3968252
+  },
+  "3980 platt rd ste a ann arbor": {
+    "lat": 42.2813722,
+    "lng": -83.7484616
+  },
+  "4230 s mlk blvd lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "510 w savidge rd spring lake": {
+    "lat": 43.076963,
+    "lng": -86.196997
+  },
+  "4551 west us hwy 10 ludington": {
+    "lat": 43.9555406,
+    "lng": -86.4477416
+  },
+  "5105 w vienna rd clio": {
+    "lat": 43.1774215,
+    "lng": -83.7346897
+  },
+  "536 elmwood dr lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "1315 colby rd whitehall": {
+    "lat": 43.410011,
+    "lng": -86.348679
+  },
+  "5169 harvey st ste a norton shores": {
+    "lat": 43.1689044,
+    "lng": -86.2639461
+  },
+  "1990 mall place benton harbor": {
+    "lat": 42.1167065,
+    "lng": -86.4541894
+  },
+  "13936 w bayshore dr traverse city": {
+    "lat": 44.7606481,
+    "lng": -85.6165976
+  },
+  "748 munson ave ste 3 traverse city": {
+    "lat": 44.7606481,
+    "lng": -85.6165976
+  },
+  "1415 s main st d eaton rapids": {
+    "lat": 42.5092039,
+    "lng": -84.655814
+  },
+  "176 w river valley drive newaygo": {
+    "lat": 43.5121225,
+    "lng": -85.7944976
+  },
+  "1307 m89 e plainwell": {
+    "lat": 42.4426144,
+    "lng": -85.6417645
+  },
+  "201 teridee blvd ste d cadillac": {
+    "lat": 44.2519526,
+    "lng": -85.4011619
+  },
+  "2250 lake lansing rd ste e east lansing": {
+    "lat": 42.7320307,
+    "lng": -84.4721678
+  },
+  "7237 104th street howard city": {
+    "lat": 43.395583,
+    "lng": -85.467815
+  },
+  "2902 middleton rd prescott": {
+    "lat": 44.191964,
+    "lng": -83.930825
+  },
+  "300 e crystal lake rd twin lake": {
+    "lat": 43.3629794,
+    "lng": -86.1638953
+  },
+  "9448 east m21 ovid": {
+    "lat": 43.0058396,
+    "lng": -84.3714696
+  },
+  "7024 e pickard mt pleasant": {
+    "lat": 43.597646,
+    "lng": -84.7668495
+  },
+  "9455 e us 10 branch": {
+    "lat": 43.9462075,
+    "lng": -86.0393851
+  },
+  "6785 whitneyville road alto": {
+    "lat": 42.8565044,
+    "lng": -85.3804447
+  },
+  "10747 m32 east johannesburg": {
+    "lat": 44.9855663,
+    "lng": -84.4558515
+  },
+  "1800 w milham ave portage": {
+    "lat": 42.2011538,
+    "lng": -85.5800022
+  },
+  "314 e cesar chavez ave lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "8401 w thomas shelby": {
+    "lat": 43.608619,
+    "lng": -86.363963
+  },
+  "4155 snover rd carsonville": {
+    "lat": 43.426967,
+    "lng": -82.671318
+  },
+  "6457 s croton hardy dr newaygo": {
+    "lat": 43.5121225,
+    "lng": -85.7944976
+  },
+  "3448 n us 23 greenbush": {
+    "lat": 44.5877884,
+    "lng": -83.316345
+  },
+  "14680 lincoln lake ave gowen": {
+    "lat": 43.2516973,
+    "lng": -85.30197
+  },
+  "902 sr 114 w n manchester": {
+    "lat": 41.0006005,
+    "lng": -85.768597
+  },
+  "5665 n us 23 oscoda": {
+    "lat": 44.4204174,
+    "lng": -83.3303186
+  },
+  "2224 clear lake west branch": {
+    "lat": 44.276408,
+    "lng": -84.238613
+  },
+  "1196 shetter rd muskegon": {
+    "lat": 43.2341813,
+    "lng": -86.2483921
+  },
+  "4115 s 700 e lagro": {
+    "lat": 40.8380995,
+    "lng": -85.7302608
+  },
+  "3311 e colby st ste a whitehall": {
+    "lat": 43.410011,
+    "lng": -86.348679
+  },
+  "1205 north fancher ave mt pleasant": {
+    "lat": 43.597646,
+    "lng": -84.7668495
+  },
+  "6184 e m115 suite 114 cadillac": {
+    "lat": 44.2519526,
+    "lng": -85.4011619
+  },
+  "4514 w viena r clio": {
+    "lat": 43.1774215,
+    "lng": -83.7346897
+  },
+  "1025 w main st suite 1051 fremont": {
+    "lat": 43.467517,
+    "lng": -85.942001
+  },
+  "12158 s beyer rd ste v009b birch run": {
+    "lat": 43.250859,
+    "lng": -83.794131
+  },
+  "1280 n m18 gladwin": {
+    "lat": 43.9747774,
+    "lng": -84.3873235
+  },
+  "2020 n mission rd mt pleasant": {
+    "lat": 43.597646,
+    "lng": -84.7668495
+  },
+  "6481 28th ave hudsonville": {
+    "lat": 42.870889,
+    "lng": -85.865235
+  },
+  "80559 32nd ave covert": {
+    "lat": 42.2936458,
+    "lng": -86.2622477
+  },
+  "39397 m140 hwy covert": {
+    "lat": 42.2936458,
+    "lng": -86.2622477
+  },
+  "6051 belding dr rockford": {
+    "lat": 43.119721,
+    "lng": -85.559604
+  },
+  "619 s campus dr lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "6101 ana capri blvd lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "1 corporate way jackson n lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "14315 lake michigan dr west olive": {
+    "lat": 42.921341,
+    "lng": -86.1471466
+  },
+  "12854 m79 hwy wayland": {
+    "lat": 42.6745321,
+    "lng": -85.6457663
+  },
+  "2022 apple orchard ave ne grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "2660 benstein rd walled lake": {
+    "lat": 42.537811,
+    "lng": -83.4810481
+  },
+  "2264 m119 petoskey": {
+    "lat": 45.373343,
+    "lng": -84.95533
+  },
+  "76241 14th ave south haven": {
+    "lat": 42.4030865,
+    "lng": -86.2736407
+  },
+  "15431 dix toledo southgate": {
+    "lat": 42.2037103,
+    "lng": -83.2067556
+  },
+  "3685 hagan dr se wyoming": {
+    "lat": 42.9132581,
+    "lng": -85.7057035
+  },
+  "6183 west side saginaw rd bay city": {
+    "lat": 43.5962107,
+    "lng": -83.8881711
+  },
+  "3013 s m65 whittemore": {
+    "lat": 44.23363,
+    "lng": -83.803042
+  },
+  "4971 e m55 prescott": {
+    "lat": 44.191964,
+    "lng": -83.930825
+  },
+  "3284 rememberance nw grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "5900 water rd rothbury": {
+    "lat": 43.507232,
+    "lng": -86.347572
+  },
+  "8960 w park rd ludington": {
+    "lat": 43.9555406,
+    "lng": -86.4477416
+  },
+  "1891 n cedar st holt": {
+    "lat": 42.6414805,
+    "lng": -84.5201719
+  },
+  "465 n park blvd lake orion": {
+    "lat": 42.7844752,
+    "lng": -83.2396612
+  },
+  "8391 byron center ave sw 165 byron center": {
+    "lat": 42.8122508,
+    "lng": -85.7228062
+  },
+  "5568 byron center ave grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "5021 county rd 612 lewiston": {
+    "lat": 44.8839001,
+    "lng": -84.3055687
+  },
+  "4475 alden nashave lowell": {
+    "lat": 42.933601,
+    "lng": -85.3418551
+  },
+  "19504 w edgar rd howard city": {
+    "lat": 43.395583,
+    "lng": -85.467815
+  },
+  "6363 136th st holland": {
+    "lat": 42.7876022,
+    "lng": -86.1090828
+  },
+  "3434 remembrance rd grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "8501 algoma rd rockford": {
+    "lat": 43.119721,
+    "lng": -85.559604
+  },
+  "2859 old us 27 s gaylord": {
+    "lat": 45.027513,
+    "lng": -84.674752
+  },
+  "5 w main st zeeland": {
+    "lat": 42.8123375,
+    "lng": -86.0165267
+  },
+  "26778 m43 hwy paw paw": {
+    "lat": 42.2178171,
+    "lng": -85.8911246
+  },
+  "6480 28th ave hudsonville": {
+    "lat": 42.870889,
+    "lng": -85.865235
+  },
+  "1282 s m 66 hwy nashville": {
+    "lat": 42.6028137,
+    "lng": -85.0930536
+  },
+  "8950 e howard cityedmore road vestaburg": {
+    "lat": 43.3991982,
+    "lng": -84.905571
+  },
+  "13342 m50 brooklyn": {
+    "lat": 42.105874,
+    "lng": -84.2482819
+  },
+  "2398 68th street fennville": {
+    "lat": 42.5941052,
+    "lng": -86.1045955
+  },
+  "61828 county rd hartford": {
+    "lat": 42.2067051,
+    "lng": -86.1666876
+  },
+  "7096 gilette rd flushing": {
+    "lat": 43.0630834,
+    "lng": -83.8510732
+  },
+  "330 marshall st suite 102 lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "220 kenwood twin lake": {
+    "lat": 43.3629794,
+    "lng": -86.1638953
+  },
+  "1118 washington st grand haven": {
+    "lat": 43.0630734,
+    "lng": -86.2283864
+  },
+  "103 e huron rd augres": {
+    "lat": 43.9889456,
+    "lng": -83.6824193
+  },
+  "57875 gratiot rd new haven": {
+    "lat": 42.7294758,
+    "lng": -82.8013107
+  },
+  "7303 s croton hardy dr newaygo": {
+    "lat": 43.5121225,
+    "lng": -85.7944976
+  },
+  "2722 n ridge rd mears": {
+    "lat": 43.6819514,
+    "lng": -86.4197997
+  },
+  "2100 n ridge rd mears": {
+    "lat": 43.6819514,
+    "lng": -86.4197997
+  },
+  "1986 arther street marne": {
+    "lat": 43.0354509,
+    "lng": -85.8277515
+  },
+  "8360 new lothrup rd new lothrop": {
+    "lat": 43.116695,
+    "lng": -83.969967
+  },
+  "2248 e hill rd grand blanc": {
+    "lat": 42.9275277,
+    "lng": -83.6299518
+  },
+  "1944 n greenville rd stanton": {
+    "lat": 43.292532,
+    "lng": -85.081407
+  },
+  "32624 five mile rd livonia": {
+    "lat": 42.36837,
+    "lng": -83.3527097
+  },
+  "8998 e m 21 ovid": {
+    "lat": 43.0058396,
+    "lng": -84.3714696
+  },
+  "632 race rd coldwater": {
+    "lat": 41.941091,
+    "lng": -85.0030617
+  },
+  "1858 s maple island rd fremont": {
+    "lat": 43.467517,
+    "lng": -85.942001
+  },
+  "309 s divison hesperia": {
+    "lat": 43.5685532,
+    "lng": -86.0396009
+  },
+  "9671 w silver lake rd mears": {
+    "lat": 43.6819514,
+    "lng": -86.4197997
+  },
+  "8915 n business 31 pentwater": {
+    "lat": 43.7817341,
+    "lng": -86.4331053
+  },
+  "12402a highland rd hartland": {
+    "lat": 42.656697,
+    "lng": -83.7530022
+  },
+  "292 western ave suite 101 muskegon": {
+    "lat": 43.2341813,
+    "lng": -86.2483921
+  },
+  "4455 breton rd se kentwood": {
+    "lat": 42.8694731,
+    "lng": -85.6447492
+  },
+  "6914 hubert road hubbard lake": {
+    "lat": 44.8059565,
+    "lng": -83.5575806
+  },
+  "10745 48th ave ste a100 allendale": {
+    "lat": 42.9722455,
+    "lng": -85.9536535
+  },
+  "4745 s fraser road bay city": {
+    "lat": 43.5962107,
+    "lng": -83.8881711
+  },
+  "592 cass ave frankenmuth": {
+    "lat": 43.3323684,
+    "lng": -83.7392288
+  },
+  "8239 w hazel road mears": {
+    "lat": 43.6819514,
+    "lng": -86.4197997
+  },
+  "8406 judevine rd palo": {
+    "lat": 43.1125325,
+    "lng": -84.9855634
+  },
+  "2359 joslyn ct lake orion": {
+    "lat": 42.7844752,
+    "lng": -83.2396612
+  },
+  "50792 cr 652 mattawan": {
+    "lat": 42.2094839,
+    "lng": -85.784453
+  },
+  "4140 148th ave holland": {
+    "lat": 42.7876022,
+    "lng": -86.1090828
+  },
+  "330 e maint st walkerville": {
+    "lat": 43.714455,
+    "lng": -86.124513
+  },
+  "3824 east napier ave benton harbor": {
+    "lat": 42.1167065,
+    "lng": -86.4541894
+  },
+  "18325 barber rd lake ann": {
+    "lat": 44.723889,
+    "lng": -85.843139
+  },
+  "184 east kentwood twin lake": {
+    "lat": 43.3629794,
+    "lng": -86.1638953
+  },
+  "620 n second st carson city": {
+    "lat": 43.176977,
+    "lng": -84.846395
+  },
+  "4735 ranger rd perrinton": {
+    "lat": 43.182839,
+    "lng": -84.678856
+  },
+  "1639 w leonard grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "1280 us hwy 31n greenwood": {
+    "lat": 39.6136987,
+    "lng": -86.1095429
+  },
+  "111 e 16th st ste 105 indianapolis": {
+    "lat": 39.7683331,
+    "lng": -86.1583502
+  },
+  "2407 riley st hudsonville": {
+    "lat": 42.870889,
+    "lng": -85.865235
+  },
+  "3611 n jebavy rd ludington": {
+    "lat": 43.9555406,
+    "lng": -86.4477416
+  },
+  "6738 n academy road edmore": {
+    "lat": 43.408087,
+    "lng": -85.038632
+  },
+  "60893 m51 dowagiac": {
+    "lat": 41.9824681,
+    "lng": -86.1088809
+  },
+  "106 w second st trufant": {
+    "lat": 43.3139184,
+    "lng": -85.3544742
+  },
+  "78 s ridge dr port sanilac": {
+    "lat": 43.430858,
+    "lng": -82.542424
+  },
+  "8464 mt morris rd flushing": {
+    "lat": 43.0630834,
+    "lng": -83.8510732
+  },
+  "50463 m152 dowagiac": {
+    "lat": 41.9824681,
+    "lng": -86.1088809
+  },
+  "3980 henderson lake rd prescott": {
+    "lat": 44.191964,
+    "lng": -83.930825
+  },
+  "3585 clyde park ave wyoming": {
+    "lat": 42.9132581,
+    "lng": -85.7057035
+  },
+  "3900 w us10 ludington": {
+    "lat": 43.9555406,
+    "lng": -86.4477416
+  },
+  "3900 w us 10 ludington": {
+    "lat": 43.9555406,
+    "lng": -86.4477416
+  },
+  "3955 us31 south traverse city": {
+    "lat": 44.7606481,
+    "lng": -85.6165976
+  },
+  "2289 west barnes road mason": {
+    "lat": 42.5797113,
+    "lng": -84.4422845
+  },
+  "1700 n littlefield weidman": {
+    "lat": 43.6875278,
+    "lng": -84.9689133
+  },
+  "13100 territorial rd stockbridge": {
+    "lat": 42.4511466,
+    "lng": -84.1805146
+  },
+  "4988 s croton hardy dr newaygo": {
+    "lat": 43.5121225,
+    "lng": -85.7944976
+  },
+  "10 miller rd east tawas": {
+    "lat": 44.279461,
+    "lng": -83.490252
+  },
+  "16421 star lake dr baldwin": {
+    "lat": 43.901123,
+    "lng": -85.851729
+  },
+  "48 breslin center east lansing": {
+    "lat": 42.7320307,
+    "lng": -84.4721678
+  },
+  "921 e grand river rd howell": {
+    "lat": 42.6072552,
+    "lng": -83.9293952
+  },
+  "1644 pinkney rd howell": {
+    "lat": 42.6072552,
+    "lng": -83.9293952
+  },
+  "106 east m 36 gregory": {
+    "lat": 42.4583684,
+    "lng": -84.0843979
+  },
+  "3540 state park rd bay city": {
+    "lat": 43.5962107,
+    "lng": -83.8881711
+  },
+  "5826 n bass lake rd irons": {
+    "lat": 44.1400073,
+    "lng": -85.9159037
+  },
+  "142 north whitaker new buffalo": {
+    "lat": 41.7952562,
+    "lng": -86.7444526
+  },
+  "9260 mcgregor rd pinckney": {
+    "lat": 42.4567013,
+    "lng": -83.9463359
+  },
+  "48900 vandyke utica": {
+    "lat": 42.6261446,
+    "lng": -83.0335384
+  },
+  "9347 tyler st zeeland": {
+    "lat": 42.8123375,
+    "lng": -86.0165267
+  },
+  "16177 seymour rd linden": {
+    "lat": 42.8146748,
+    "lng": -83.7821563
+  },
+  "1578 us31 s manistee": {
+    "lat": 44.2476682,
+    "lng": -86.3237448
+  },
+  "6622 w m72 hwy grayling": {
+    "lat": 44.661517,
+    "lng": -84.714637
+  },
+  "4967 lumber jack rd elm hall": {
+    "lat": 43.3650318,
+    "lng": -84.8352896
+  },
+  "6989 marsh rd et shelbyville": {
+    "lat": 42.5941998,
+    "lng": -85.6372414
+  },
+  "8400 n us 31 freesoil": {
+    "lat": 44.1069444,
+    "lng": -86.2172222
+  },
+  "1050 husak rd omer": {
+    "lat": 44.04752,
+    "lng": -83.854433
+  },
+  "15600 peacock rd haslett": {
+    "lat": 42.7468204,
+    "lng": -84.4011363
+  },
+  "8587 w silver lake rd mears": {
+    "lat": 43.6819514,
+    "lng": -86.4197997
+  },
+  "2359 health dr sw ste 110 wyoming": {
+    "lat": 42.9132581,
+    "lng": -85.7057035
+  },
+  "6521 n us 23 oscoda": {
+    "lat": 44.4204174,
+    "lng": -83.3303186
+  },
+  "1169 east beltline ne grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "11300 wm179 hwy middleville": {
+    "lat": 42.7130889,
+    "lng": -85.4619599
+  },
+  "5187 s henry muskegon": {
+    "lat": 43.2341813,
+    "lng": -86.2483921
+  },
+  "60010 corey lake rd three rivers": {
+    "lat": 41.9442722,
+    "lng": -85.6346222
+  },
+  "10467 m37 wellston": {
+    "lat": 44.2169505,
+    "lng": -85.9578528
+  },
+  "5081 bauer road hudsonville": {
+    "lat": 42.870889,
+    "lng": -85.865235
+  },
+  "2233 s cedar holt": {
+    "lat": 42.6414805,
+    "lng": -84.5201719
+  },
+  "8995 e m 21 corunna": {
+    "lat": 42.9819728,
+    "lng": -84.1177451
+  },
+  "8982 e lansing rd durand": {
+    "lat": 42.9120239,
+    "lng": -83.9845777
+  },
+  "8 e bridge st ne ste 102 rockford": {
+    "lat": 43.119721,
+    "lng": -85.559604
+  },
+  "04237 co rd 687 south haven": {
+    "lat": 42.4030865,
+    "lng": -86.2736407
+  },
+  "5755 n townline rd sterling": {
+    "lat": 44.033354,
+    "lng": -84.022772
+  },
+  "2829 division sw wyoming": {
+    "lat": 42.9132581,
+    "lng": -85.7057035
+  },
+  "3195 n m65 hale": {
+    "lat": 44.3777947,
+    "lng": -83.8047087
+  },
+  "4516 m30 beaverton": {
+    "lat": 43.882247,
+    "lng": -84.484732
+  },
+  "176 hemlock plaza dr hemlock": {
+    "lat": 43.4147379,
+    "lng": -84.229942
+  },
+  "605 n scenic dr north muskegon": {
+    "lat": 43.256125,
+    "lng": -86.26756
+  },
+  "210 n dawson stfairgrounds sandusky": {
+    "lat": 43.420299,
+    "lng": -82.829657
+  },
+  "5820 s 600e knox": {
+    "lat": 41.2974406,
+    "lng": -86.6233079
+  },
+  "3331 in127 angola": {
+    "lat": 41.634874,
+    "lng": -84.99928
+  },
+  "15175 n holly rd holly": {
+    "lat": 42.7919727,
+    "lng": -83.6277255
+  },
+  "39890 van dyke rd sterling heights": {
+    "lat": 42.5803122,
+    "lng": -83.0302033
+  },
+  "3785 king rd toledo": {
+    "lat": 41.6529143,
+    "lng": -83.5378173
+  },
+  "6840 w beard rd shaftsburg": {
+    "lat": 42.8046881,
+    "lng": -84.2928431
+  },
+  "7002 e m21 ovid": {
+    "lat": 43.0058396,
+    "lng": -84.3714696
+  },
+  "12024 cypress sand lake": {
+    "lat": 43.29238,
+    "lng": -85.518073
+  },
+  "1786 n 34th ave mears": {
+    "lat": 43.6819514,
+    "lng": -86.4197997
+  },
+  "8450 hazel rd mears": {
+    "lat": 43.6819514,
+    "lng": -86.4197997
+  },
+  "6386 e country line rd south branch": {
+    "lat": 44.5112504,
+    "lng": -84.5056213
+  },
+  "3999 e m72 hwy grayling": {
+    "lat": 44.661517,
+    "lng": -84.714637
+  },
+  "03403 64th street south haven": {
+    "lat": 42.4030865,
+    "lng": -86.2736407
+  },
+  "11332 m179 hwy middleville": {
+    "lat": 42.7130889,
+    "lng": -85.4619599
+  },
+  "452 ada dr se suite 130 ada": {
+    "lat": 42.9547136,
+    "lng": -85.4879523
+  },
+  "62 w eighth st holland": {
+    "lat": 42.7876022,
+    "lng": -86.1090828
+  },
+  "8467 algoma ave ne rockford": {
+    "lat": 43.119721,
+    "lng": -85.559604
+  },
+  "11145 68th ave ste a allendale": {
+    "lat": 42.9722455,
+    "lng": -85.9536535
+  },
+  "1028 virginia ave ste 100 indianapolis": {
+    "lat": 39.7683331,
+    "lng": -86.1583502
+  },
+  "635 n saginaw rd st charles": {
+    "lat": 43.2969699,
+    "lng": -84.1405346
+  },
+  "4588 d drive south battle creek": {
+    "lat": 42.3192548,
+    "lng": -85.1824269
+  },
+  "7898 w stoney lake road new era": {
+    "lat": 43.559176,
+    "lng": -86.345628
+  },
+  "4724 s scenic dr shelby": {
+    "lat": 43.608619,
+    "lng": -86.363963
+  },
+  "5008 s mlk jr blvd lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "15610 e13 mile roseville": {
+    "lat": 42.4972583,
+    "lng": -82.9371409
+  },
+  "925 s main street g3 frankenmuth": {
+    "lat": 43.3323684,
+    "lng": -83.7392288
+  },
+  "260 s huron ave the crsngs mackinaw city": {
+    "lat": 45.783901,
+    "lng": -84.727828
+  },
+  "406 center st omer": {
+    "lat": 44.04752,
+    "lng": -83.854433
+  },
+  "16567 32 mile rd armada park": {
+    "lat": 38.8148108,
+    "lng": -90.3547348
+  },
+  "1633 28th st sw suite j wyoming": {
+    "lat": 42.9132581,
+    "lng": -85.7057035
+  },
+  "3375 s division ave ste a wyoming": {
+    "lat": 42.9132581,
+    "lng": -85.7057035
+  },
+  "3778 alpine ave nw comstock park": {
+    "lat": 43.0342874,
+    "lng": -85.6655303
+  },
+  "2038 cass lake rd ste 9 keego harbor": {
+    "lat": 42.6080884,
+    "lng": -83.3438248
+  },
+  "101 s first st edmore": {
+    "lat": 43.408087,
+    "lng": -85.038632
+  },
+  "4930 s creyts rd lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "3955 ernest way lansing": {
+    "lat": 42.7338254,
+    "lng": -84.5546295
+  },
+  "203 n michigan st 1 plymouth": {
+    "lat": 41.3436555,
+    "lng": -86.3097278
+  },
+  "8547 silver lake rd mears": {
+    "lat": 43.6819514,
+    "lng": -86.4197997
+  },
+  "2963 arthur rd remus": {
+    "lat": 43.5966952,
+    "lng": -85.1447524
+  },
+  "200 king st freeland": {
+    "lat": 43.5250265,
+    "lng": -84.1227598
+  },
+  "6586 122nd ave fennville": {
+    "lat": 42.5941052,
+    "lng": -86.1045955
+  },
+  "1402 adams rd blue star hwy fennville": {
+    "lat": 42.5941052,
+    "lng": -86.1045955
+  },
+  "11748 w jefferson rd riverdale": {
+    "lat": 43.3855873,
+    "lng": -84.835568
+  },
+  "8427 silver lake rd mears": {
+    "lat": 43.6819514,
+    "lng": -86.4197997
+  },
+  "411 standale plaza dr grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "2263 w 14th street white cloud": {
+    "lat": 43.550297,
+    "lng": -85.771997
+  },
+  "312 s water suite 6 marine city": {
+    "lat": 42.7190045,
+    "lng": -82.4941921
+  },
+  "1260 s division se grand rapids": {
+    "lat": 42.9632425,
+    "lng": -85.6678639
+  },
+  "3614 e houghton lake dr houghton lake": {
+    "lat": 44.314739,
+    "lng": -84.7647496
+  },
+  "2294 m119 petoskey": {
+    "lat": 45.373343,
+    "lng": -84.95533
+  },
+  "525 s third st suite b big rapids": {
+    "lat": 43.698078,
+    "lng": -85.483656
+  },
+  "7295 n alger alma": {
+    "lat": 43.37892,
+    "lng": -84.659727
+  },
+  "1050 superior dr st johns": {
+    "lat": 43.000928,
+    "lng": -84.5585098
+  },
+  "3890 w monroe rd hart": {
+    "lat": 43.698341,
+    "lng": -86.363965
+  },
+  "7130 heritage sq suite 440 granger": {
+    "lat": 41.7533819,
+    "lng": -86.1108377
+  },
+  "216 s washington st hale": {
+    "lat": 44.3777947,
+    "lng": -83.8047087
+  },
+  "3231 s gulley rd ste c dearborn": {
+    "lat": 42.3222599,
+    "lng": -83.1763145
+  },
+  "4035 renwick lane unit 17 walloon lake": {
+    "lat": 45.2661206,
+    "lng": -84.9336597
+  },
+  "7685 e lehring road durand": {
+    "lat": 42.9120239,
+    "lng": -83.9845777
+  },
+  "597 n first st harrison": {
+    "lat": 44.0192188,
+    "lng": -84.7997872
+  },
+  "1410 w maumee adrian": {
+    "lat": 41.8975152,
+    "lng": -84.0373054
+  },
+  "10409 west brooklyn rd brooklyn": {
+    "lat": 42.105874,
+    "lng": -84.2482819
+  }
+}
