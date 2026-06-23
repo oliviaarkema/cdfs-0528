@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/country-dairy.css">
+<link rel="stylesheet" href="css/country-dairy.css?v=20260622">
 <style>
 
   /* ── Page Hero ─────────────────────────────────── */
@@ -109,11 +109,38 @@
     background: var(--cream);
     padding: 88px 0;
   }
-  .meat-products-inner {
+
+  /* ── Product Group (category header + card grid) ── */
+  .product-group {
+    margin-bottom: 64px;
+  }
+  .product-group:last-child { margin-bottom: 0; }
+  .product-group-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .product-group-label-text {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    white-space: nowrap;
+  }
+  .product-group-label-text em { font-style: italic; color: var(--green-dark); }
+  .product-group-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--cream-dark);
+  }
+  .product-group-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 22px;
   }
+  .product-group-grid--2col { grid-template-columns: repeat(2, 1fr); }
+  .product-group-grid--4col { grid-template-columns: repeat(4, 1fr); }
 
   /* ── Product Card ──────────────────────────────── */
   .menu-card {
@@ -131,7 +158,7 @@
     display: block;
   }
   .menu-card-body {
-    padding: 28px 30px 30px;
+    padding: 24px 26px 26px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -157,7 +184,7 @@
   }
   .menu-card-title {
     font-family: var(--font-serif);
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--dark-brown);
     line-height: 1.2;
@@ -168,22 +195,27 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     flex: 1;
+  }
+  .menu-card-items--2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 12px;
   }
   .menu-card-items li {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    font-size: .9rem;
+    gap: 8px;
+    font-size: .84rem;
     color: var(--text-body);
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.45;
   }
   .menu-card-items li::before {
     content: '';
     display: block;
-    width: 6px; height: 6px;
+    width: 5px; height: 5px;
     border-radius: 50%;
     background: var(--green-bright);
     flex-shrink: 0;
@@ -197,11 +229,11 @@
     margin-left: 4px;
   }
   .menu-card-note {
-    margin-top: 18px;
-    padding-top: 16px;
+    margin-top: 16px;
+    padding-top: 14px;
     border-top: 1px solid var(--cream-dark);
     font-family: var(--font-hand);
-    font-size: .92rem;
+    font-size: .88rem;
     color: var(--text-muted);
     line-height: 1.55;
   }
@@ -330,16 +362,23 @@
 
   /* ── Responsive ────────────────────────────────── */
   @media (max-width: 1100px) {
-    .meat-products-inner { grid-template-columns: 1fr 1fr; }
+    .product-group-grid { grid-template-columns: 1fr 1fr; }
+    .product-group-grid--4col { grid-template-columns: repeat(2, 1fr); }
     .meat-feature-inner { grid-template-columns: 1fr; gap: 52px; }
     .meat-feature-img { height: 380px; }
   }
   @media (max-width: 768px) {
     .meat-products { padding: 64px 0; }
-    .meat-products-inner { grid-template-columns: 1fr; }
+    .product-group-grid,
+    .product-group-grid--2col,
+    .product-group-grid--4col { grid-template-columns: 1fr; }
+    .menu-card-items--2col { grid-template-columns: 1fr 1fr; }
     .meat-feature { padding: 64px 0; }
     .meat-bulk { padding: 64px 0; }
-    .menu-card-body { padding: 22px 22px 24px; }
+    .menu-card-body { padding: 20px 20px 22px; }
+  }
+  @media (max-width: 480px) {
+    .menu-card-items--2col { grid-template-columns: 1fr; }
   }
 
 </style>
@@ -451,98 +490,270 @@
       </h2>
     </div>
 
-    <div class="meat-products-inner">
+    <!-- ── BEEF ──────────────────────────────────── -->
+    <div class="product-group reveal">
+      <div class="product-group-label">
+        <span class="product-group-label-text"><em>Beef</em></span>
+        <div class="product-group-label-line"></div>
+      </div>
+      <div class="product-group-grid">
 
-      <!-- Steaks -->
-      <div class="menu-card reveal">
-        <img src="https://images.unsplash.com/photo-1616252980327-ec70572e5df9?auto=format&fit=crop&w=800&q=80" alt="Fresh-cut steaks on the grill" class="menu-card-img" loading="lazy">
-        <div class="menu-card-body">
-          <div class="menu-card-tag">Grill Ready</div>
-          <h3 class="menu-card-title"><em>Steaks</em></h3>
-          <ul class="menu-card-items">
-            <li>T-Bone</li>
-            <li>Ribeye</li>
-            <li>Sirloin</li>
-          </ul>
-          <p class="menu-card-note">Cut fresh in-store. Ask the butcher about current availability and thickness.</p>
+        <!-- Steaks -->
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Beef <em>Steaks</em></h3>
+            <ul class="menu-card-items menu-card-items--2col">
+              <li>T-Bone</li>
+              <li>Porterhouse</li>
+              <li>Sirloin</li>
+              <li>NY Strip</li>
+              <li>Tenderloin <span class="detail-tag">filet mignon</span></li>
+              <li>Rib Steak</li>
+              <li>Flank Steak</li>
+              <li>Skirt</li>
+              <li>Bottom Round</li>
+              <li>Ball Tip Sizzler</li>
+              <li>Petite Sizzler</li>
+              <li>Chuck Eye Sizzler</li>
+              <li>Marble Steak</li>
+              <li>Tri Tip Steak</li>
+              <li>Round Steak</li>
+              <li>Swissed Steak</li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Roasts -->
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <div class="menu-card-tag">Slow Cooker Favorites</div>
+            <h3 class="menu-card-title">Beef <em>Roasts</em></h3>
+            <ul class="menu-card-items">
+              <li>Chuck</li>
+              <li>English</li>
+              <li>Sirloin Tip</li>
+              <li>Rump</li>
+              <li>Round</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Ground & Specialty -->
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Ground <em>Beef</em></h3>
+            <ul class="menu-card-items">
+              <li>1 lb package</li>
+              <li>Bundles of 10, 25 or 50 lb <span class="detail-tag">1# packs or custom size</span></li>
+              <li>Beef Heart Burger</li>
+            </ul>
+            <p class="menu-card-note">Call ahead for large bundle orders — we'll have it ready for you.</p>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Roasts -->
-      <div class="menu-card reveal reveal-delay-1">
-        <img src="assets/images/Roast Beef Sammich.jpg" alt="Farm-raised beef roast" class="menu-card-img" loading="lazy">
-        <div class="menu-card-body">
-          <div class="menu-card-tag">Slow Cooker Favorites</div>
-          <h3 class="menu-card-title"><em>Roasts</em></h3>
-          <ul class="menu-card-items">
-            <li>Chuck Roast</li>
-            <li>Rump Roast</li>
-            <li>Arm Roast</li>
-          </ul>
-          <p class="menu-card-note">Perfect for Sunday dinners and slow-cooker meals the whole family will love.</p>
+      <!-- Specialty Cuts row -->
+      <div style="margin-top:22px;">
+        <div class="product-group-grid product-group-grid--2col">
+
+          <div class="menu-card">
+            <div class="menu-card-body">
+              <div class="menu-card-tag">From Nose to Tail</div>
+              <h3 class="menu-card-title">Specialty <em>Cuts</em></h3>
+              <ul class="menu-card-items menu-card-items--2col">
+                <li>Heart</li>
+                <li>Tongue</li>
+                <li>Liver</li>
+                <li>Oxtail</li>
+                <li>Cheek</li>
+                <li>Soup Bones</li>
+                <li>Smoked Bones</li>
+                <li>Tallow</li>
+                <li>Suet</li>
+                <li>Short Ribs</li>
+                <li>Stew Meat</li>
+                <li>Shank</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-card-body">
+              <div class="menu-card-tag">Stock the Freezer</div>
+              <h3 class="menu-card-title">Bulk <em>Beef</em></h3>
+              <ul class="menu-card-items">
+                <li>Quarters</li>
+                <li>Halves</li>
+                <li>Whole Beef</li>
+                <li>Custom Bundles made to order</li>
+              </ul>
+              <p class="menu-card-note">Call us to arrange your bulk beef order — we'll work with you on cuts and packaging.</p>
+            </div>
+          </div>
+
         </div>
       </div>
+    </div>
 
-      <!-- Ground Beef -->
-      <div class="menu-card reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1609183556292-f208be1a9644?auto=format&fit=crop&w=800&q=80" alt="Fresh ground beef" class="menu-card-img" loading="lazy">
-        <div class="menu-card-body">
-          <div class="menu-card-tag">Farm Fresh</div>
-          <h3 class="menu-card-title">Ground <em>Beef</em></h3>
-          <ul class="menu-card-items">
-            <li>By the pound <span class="detail-tag">single packs</span></li>
-            <li>25 lb bundle <span class="detail-tag">great for families</span></li>
-            <li>50 lb bundle <span class="detail-tag">best value</span></li>
-          </ul>
-          <p class="menu-card-note">Stock the freezer and save. Bundle pricing available in-store.</p>
-        </div>
+    <!-- ── SAUSAGE & BRATS ───────────────────────── -->
+    <div class="product-group reveal">
+      <div class="product-group-label">
+        <span class="product-group-label-text"><em>Sausage</em> &amp; Brats</span>
+        <div class="product-group-label-line"></div>
       </div>
+      <div class="product-group-grid product-group-grid--4col">
 
-      <!-- Brats -->
-      <div class="menu-card reveal">
-        <img src="https://images.unsplash.com/photo-1591989330748-777649e84466?auto=format&fit=crop&w=800&q=80" alt="Fresh brats on the grill" class="menu-card-img" loading="lazy">
-        <div class="menu-card-body">
-          <div class="menu-card-tag">Summer Staple</div>
-          <h3 class="menu-card-title"><em>Brats</em></h3>
-          <ul class="menu-card-items">
-            <li>Original</li>
-            <li>Cheddar</li>
-            <li>Jalapeño Cheddar</li>
-          </ul>
-          <p class="menu-card-note">A West Michigan backyard essential. Made fresh right here on the farm.</p>
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <div class="menu-card-tag">Summer Staple</div>
+            <h3 class="menu-card-title"><em>Bratwurst</em></h3>
+            <ul class="menu-card-items">
+              <li>Original</li>
+              <li>Jalapeño</li>
+              <li>Jalapeño Cheddar</li>
+              <li>Asparagus</li>
+              <li>Beer</li>
+              <li>Blue Cheese</li>
+              <li>Cheddar</li>
+              <li>Green Pepper Onion</li>
+              <li>Sweet Italian</li>
+              <li>Hot Italian</li>
+              <li>Mushroom Swiss</li>
+              <li>Potato Sausage</li>
+              <li>Bangers</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <!-- Bundles -->
-      <div class="menu-card reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1580821074864-8653bab910be?auto=format&fit=crop&w=800&q=80" alt="Bulk ground beef bundles" class="menu-card-img" loading="lazy">
-        <div class="menu-card-body">
-          <div class="menu-card-tag">Stock the Freezer</div>
-          <h3 class="menu-card-title">Bulk <em>Bundles</em></h3>
-          <ul class="menu-card-items">
-            <li>Ground beef 25 lb bundle</li>
-            <li>Ground beef 50 lb bundle</li>
-            <li>Custom mixed bundles available</li>
-          </ul>
-          <p class="menu-card-note">Call ahead to arrange large orders or custom cuts for your household.</p>
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <div class="menu-card-tag">By the Pound</div>
+            <h3 class="menu-card-title">Bulk <em>Sausage</em></h3>
+            <ul class="menu-card-items">
+              <li>Breakfast</li>
+              <li>Maple</li>
+              <li>Sage &amp; Pepper</li>
+              <li>Sweet Italian</li>
+              <li>Chorizo</li>
+              <li>Fresh Ground Pork</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <!-- Coming to the Counter -->
-      <div class="menu-card reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1690983323238-0b91789e1b5a?auto=format&fit=crop&w=800&q=80" alt="Raw meats at the butcher counter" class="menu-card-img" loading="lazy">
-        <div class="menu-card-body">
-          <div class="menu-card-tag">Visit the Counter</div>
-          <h3 class="menu-card-title">Ask the <em>Butcher</em></h3>
-          <ul class="menu-card-items">
-            <li>Special cuts by request</li>
-            <li>Seasonal and limited availability items</li>
-            <li>Catering quantities available</li>
-          </ul>
-          <p class="menu-card-note">Stop in and let us know what you need — we're happy to help find the right cut for any occasion.</p>
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <h3 class="menu-card-title"><em>Breakfast</em></h3>
+            <ul class="menu-card-items">
+              <li>Sausage Patties</li>
+              <li>Sausage Links</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <h3 class="menu-card-title"><em>Chicken</em></h3>
+            <ul class="menu-card-items">
+              <li>Chicken Breasts</li>
+              <li>Chicken Thighs</li>
+              <li>Ground Chicken</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── APPLEWOOD SMOKED & HOUSE MADE ─────────── -->
+    <div class="product-group reveal">
+      <div class="product-group-label">
+        <span class="product-group-label-text">Applewood <em>Smoked</em> &amp; House Made</span>
+        <div class="product-group-label-line"></div>
+      </div>
+      <div class="product-group-grid">
+
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <div class="menu-card-tag">Applewood Smoked</div>
+            <h3 class="menu-card-title"><em>Bacon</em></h3>
+            <ul class="menu-card-items">
+              <li>Bacon</li>
+              <li>Garlic Pepper Bacon</li>
+              <li>Beef Bacon</li>
+              <li>Canadian Bacon</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <div class="menu-card-tag">House Made</div>
+            <h3 class="menu-card-title">Smoked <em>Meats</em></h3>
+            <ul class="menu-card-items">
+              <li>Smoked Hot Dogs</li>
+              <li>Smoked Polish Sausage</li>
+              <li>Salami <span class="detail-tag">sliced</span></li>
+              <li>Summer Sausage</li>
+              <li>Cheddar Summer Sausage</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <div class="menu-card-tag">Applewood Smoked</div>
+            <h3 class="menu-card-title">Smoked <em>Cheeses</em></h3>
+            <ul class="menu-card-items">
+              <li>Smoked Cheddar Cheese</li>
+              <li>Smoked PepperJack Cheese</li>
+              <li>Smoked Gouda</li>
+              <li>Smoked Cheese Curds</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── JERKY & SNACKS ────────────────────────── -->
+    <div class="product-group reveal">
+      <div class="product-group-label">
+        <span class="product-group-label-text">Jerky <em>&amp;</em> Snacks</span>
+        <div class="product-group-label-line"></div>
+      </div>
+      <div class="product-group-grid product-group-grid--2col">
+
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <div class="menu-card-tag">Kippered Beef</div>
+            <h3 class="menu-card-title">Beef <em>Jerky</em></h3>
+            <ul class="menu-card-items">
+              <li>Original</li>
+              <li>Jalapeño</li>
+              <li>Teriyaki</li>
+              <li>Garlic Pepper</li>
+              <li>Spicy BBQ</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Beef <em>Sticks</em></h3>
+            <ul class="menu-card-items menu-card-items--2col">
+              <li>Original Beef</li>
+              <li>Jalapeño</li>
+              <li>Cheddar</li>
+              <li>Garlic Pepper</li>
+              <li>Honey BBQ</li>
+              <li>Teriyaki</li>
+              <li>Beef &amp; Cheddar Bites</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
@@ -583,7 +794,7 @@
           <li>Call ahead for large or custom orders</li>
         </ul>
         <div class="reveal reveal-delay-3" style="display:flex; gap:14px; flex-wrap:wrap;">
-          <a href="tel:2318614636" class="btn btn-primary">
+          <a href="tel:2312590515" class="btn btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
             Call the Farm
           </a>
@@ -600,21 +811,22 @@
   <div class="meat-bulk-texture"></div>
   <div class="container">
     <div class="meat-bulk-inner">
-      <div class="section-label section-label-cream reveal" style="justify-content:center; display:inline-flex; margin-bottom:20px;">Ground Beef Bundles</div>
+      <div class="section-label section-label-cream reveal" style="justify-content:center; display:inline-flex; margin-bottom:20px;">Bulk Beef</div>
       <h2 class="meat-bulk-headline reveal reveal-delay-1">
-        Stock the Freezer &amp;<br><em>Save on Every Pound</em>
+        Buy in Bulk &amp;<br><em>Fill the Freezer</em>
       </h2>
       <p class="meat-bulk-body reveal reveal-delay-2">
-        Whether you're feeding a big family, stocking up for the season, or filling orders for a group, our ground beef bundles are the smart choice. Buy by the pound or go big with a 25 or 50 lb bundle and save. Call us ahead of time for large quantities so we can have it ready for you.
+        Whether you want a quarter, a half, or a whole beef — or just a big bundle of ground beef — we'll work with you on cuts, packaging, and sizing. Call us ahead of time so we can have everything ready when you arrive.
       </p>
       <div class="meat-bulk-tags reveal reveal-delay-2">
-        <span class="meat-bulk-tag">By the Pound</span>
-        <span class="meat-bulk-tag">25 lb Bundle</span>
-        <span class="meat-bulk-tag">50 lb Bundle</span>
-        <span class="meat-bulk-tag">Custom Cuts</span>
+        <span class="meat-bulk-tag">Quarters</span>
+        <span class="meat-bulk-tag">Halves</span>
+        <span class="meat-bulk-tag">Whole Beef</span>
+        <span class="meat-bulk-tag">Ground Beef Bundles</span>
+        <span class="meat-bulk-tag">Custom Bundles</span>
       </div>
       <div class="meat-bulk-actions reveal reveal-delay-3">
-        <a href="tel:2318614636" class="btn btn-primary">
+        <a href="tel:2312590515" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
           Call to Order
         </a>
@@ -657,7 +869,7 @@
         <div class="footer-col-title">Shop</div>
         <ul class="footer-col-links">
           <li><a href="where-to-buy.html">Where to Buy</a></li>
-          <li><a href="#">Shop Online</a></li>
+          <li><a href="https://countrydairy.eatfromfarms.com/" target="_blank" rel="noopener">Shop Online</a></li>
           <li><a href="farm-tours.html">Farm Tours</a></li>
           <li><a href="meat-market.html">Meat Market</a></li>
         </ul>
@@ -665,7 +877,7 @@
       <div>
         <div class="footer-col-title">Visit</div>
         <ul class="footer-col-links">
-          <li><a href="tel:2318614636">(231) 861-4636</a></li>
+          <li><a href="tel:2312590515">(231) 259-0515</a></li>
           <li><a href="#">3476 S 80th Ave</a></li>
           <li><a href="#">New Era, MI 49446</a></li>
           <li><a href="mailto:info@countrydairy.com">info@countrydairy.com</a></li>
