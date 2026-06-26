@@ -87,9 +87,11 @@
   .milk-intro-main {
     width: 100%;
     height: 360px;
-    object-fit: cover;
+    object-fit: contain;
+    background: #fdf9f4;
     border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
     box-shadow: var(--shadow-card);
+    padding: 20px 10px;
   }
   .milk-intro-sub {
     display: flex;
@@ -99,9 +101,11 @@
   .milk-intro-sub img {
     width: 100%;
     height: 170px;
-    object-fit: cover;
+    object-fit: contain;
+    background: #fdf9f4;
     border-radius: var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-sm);
     box-shadow: var(--shadow-card);
+    padding: 10px 6px;
   }
   .milk-intro-copy { }
   .milk-intro-headline {
@@ -196,17 +200,27 @@
     overflow: hidden;
     border: 1px solid var(--cream-dark);
     transition: transform .25s, box-shadow .25s;
+    display: flex;
+    flex-direction: column;
   }
   .milk-card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.11); }
-  .milk-card-img-wrap { overflow: hidden; }
+  .milk-card-img-wrap {
+    background: #fdf9f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    min-height: 200px;
+  }
   .milk-card-img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: 180px;
-    object-fit: cover;
-    transition: transform .5s cubic-bezier(.22,1,.36,1);
+    object-fit: contain;
+    transition: transform .4s cubic-bezier(.22,1,.36,1);
   }
   .milk-card:hover .milk-card-img { transform: scale(1.04); }
-  .milk-card-body { padding: 16px 18px 20px; }
+  .milk-card-body { padding: 14px 16px 18px; flex: 1; display: flex; flex-direction: column; }
   .milk-card-name {
     font-family: var(--font-sans);
     font-size: .92rem;
@@ -218,6 +232,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    margin-bottom: 12px;
   }
   .milk-size {
     font-family: var(--font-sans);
@@ -247,6 +262,53 @@
     background: var(--terracotta);
     color: #fff;
     margin-top: 10px;
+  }
+
+  /* Nutrition Facts toggle */
+  .milk-card-nfp-toggle {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--cream-dark);
+    background: none;
+    border-left: none; border-right: none; border-bottom: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 0;
+  }
+  .milk-card-nfp-toggle svg { transition: transform .2s; }
+  .milk-card-nfp-toggle.open svg { transform: rotate(180deg); }
+  .milk-card-nfp-panel {
+    display: none;
+    padding-top: 12px;
+  }
+  .milk-card-nfp-panel.open { display: block; }
+  .nfp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .nfp-item { text-align: center; }
+  .nfp-item-label {
+    font-family: var(--font-sans);
+    font-size: .62rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .nfp-item img {
+    width: 100%;
+    border: 1px solid var(--cream-dark);
+    border-radius: 6px;
   }
 
   .milk-section-label {
@@ -443,10 +505,10 @@
     <div class="milk-intro-grid">
 
       <div class="milk-intro-visual reveal">
-        <img src="assets/images/vitamin-d-milk.webp" alt="Country Dairy Vitamin D whole milk jug" class="milk-intro-main">
+        <img src="assets/images/milk/vitd-gal.png" alt="Country Dairy Vitamin D whole milk gallon jug" class="milk-intro-main">
         <div class="milk-intro-sub">
-          <img src="assets/images/dutch-chocolate-milk.webp" alt="Country Dairy Dutch chocolate milk">
-          <img src="assets/images/strawberry-milk.webp" alt="Country Dairy strawberry milk">
+          <img src="assets/images/milk/choc-halfgal.png" alt="Country Dairy Dutch chocolate milk half gallon">
+          <img src="assets/images/milk/straw-pint.png" alt="Country Dairy strawberry milk pint">
         </div>
       </div>
 
@@ -520,7 +582,7 @@
 
       <div class="milk-card">
         <div class="milk-card-img-wrap">
-          <img src="assets/images/vitamin-d-milk.webp" alt="Country Dairy Vitamin D Whole Milk jug" class="milk-card-img">
+          <img src="assets/images/milk/vitd-gal.png" alt="Country Dairy Vitamin D Whole Milk gallon jug" class="milk-card-img">
         </div>
         <div class="milk-card-body">
           <div class="milk-card-name">Vitamin D Whole Milk</div>
@@ -530,12 +592,24 @@
             <span class="milk-size">Quart</span>
             <span class="milk-size">Pint</span>
           </div>
+          <button class="milk-card-nfp-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            Nutrition Facts
+          </button>
+          <div class="milk-card-nfp-panel">
+            <div class="nfp-grid">
+              <div class="nfp-item"><div class="nfp-item-label">Gallon</div><img src="assets/images/milk/nfp-vitd-gal.png" alt="Vitamin D Whole Milk gallon nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Half Gallon</div><img src="assets/images/milk/nfp-vitd-halfgal.png" alt="Vitamin D Whole Milk half gallon nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Quart</div><img src="assets/images/milk/nfp-vitd-quart.png" alt="Vitamin D Whole Milk quart nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Pint</div><img src="assets/images/milk/nfp-vitd-pint.png" alt="Vitamin D Whole Milk pint nutrition facts"></div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="milk-card">
         <div class="milk-card-img-wrap">
-          <img src="assets/images/SWDMilk.jpg" alt="Country Dairy 2% Reduced Fat Milk" class="milk-card-img" style="object-position: center 20%;">
+          <img src="assets/images/milk/2pct-gal.png" alt="Country Dairy 2% Reduced Fat Milk gallon jug" class="milk-card-img">
         </div>
         <div class="milk-card-body">
           <div class="milk-card-name">2% Reduced Fat Milk</div>
@@ -546,12 +620,24 @@
             <span class="milk-size">Quart</span>
             <span class="milk-size">Pint</span>
           </div>
+          <button class="milk-card-nfp-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            Nutrition Facts
+          </button>
+          <div class="milk-card-nfp-panel">
+            <div class="nfp-grid">
+              <div class="nfp-item"><div class="nfp-item-label">Gallon</div><img src="assets/images/milk/nfp-2pct-gal.png" alt="2% Reduced Fat Milk gallon nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Half Gallon</div><img src="assets/images/milk/nfp-2pct-halfgal.png" alt="2% Reduced Fat Milk half gallon nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Quart</div><img src="assets/images/milk/nfp-2pct-quart.png" alt="2% Reduced Fat Milk quart nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Pint</div><img src="assets/images/milk/nfp-2pct-pint.png" alt="2% Reduced Fat Milk pint nutrition facts"></div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="milk-card">
         <div class="milk-card-img-wrap">
-          <img src="assets/images/milk_bottling_labels.jpg" alt="Country Dairy 1% Lowfat Milk" class="milk-card-img">
+          <img src="assets/images/milk/1pct-gal.png" alt="Country Dairy 1% Lowfat Milk gallon jug" class="milk-card-img">
         </div>
         <div class="milk-card-body">
           <div class="milk-card-name">1% Lowfat Milk</div>
@@ -560,18 +646,37 @@
             <span class="milk-size">Half Gallon</span>
             <span class="milk-size">Half Pint</span>
           </div>
+          <button class="milk-card-nfp-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            Nutrition Facts
+          </button>
+          <div class="milk-card-nfp-panel">
+            <div class="nfp-grid">
+              <div class="nfp-item"><div class="nfp-item-label">Gallon</div><img src="assets/images/milk/nfp-1pct-gal.png" alt="1% Lowfat Milk gallon nutrition facts"></div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="milk-card">
         <div class="milk-card-img-wrap">
-          <img src="assets/images/SWDMilk.jpg" alt="Country Dairy Fat Free Skim Milk" class="milk-card-img" style="object-position: right 20%;">
+          <img src="assets/images/milk/skim-gal.png" alt="Country Dairy Fat Free Skim Milk gallon jug" class="milk-card-img">
         </div>
         <div class="milk-card-body">
           <div class="milk-card-name">Fat Free Skim Milk</div>
           <div class="milk-card-sizes">
             <span class="milk-size">Gallon</span>
             <span class="milk-size">Half Gallon</span>
+          </div>
+          <button class="milk-card-nfp-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            Nutrition Facts
+          </button>
+          <div class="milk-card-nfp-panel">
+            <div class="nfp-grid">
+              <div class="nfp-item"><div class="nfp-item-label">Gallon</div><img src="assets/images/milk/nfp-skim-gal.png" alt="Fat Free Skim Milk gallon nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Half Gallon</div><img src="assets/images/milk/nfp-skim-halfgal.png" alt="Fat Free Skim Milk half gallon nutrition facts"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -584,7 +689,7 @@
 
       <div class="milk-card">
         <div class="milk-card-img-wrap">
-          <img src="assets/images/dutch-chocolate-milk.webp" alt="Country Dairy Dutch Chocolate Milk" class="milk-card-img">
+          <img src="assets/images/milk/choc-gal.png" alt="Country Dairy Dutch Chocolate Milk gallon jug" class="milk-card-img">
         </div>
         <div class="milk-card-body">
           <div class="milk-card-name">Dutch Chocolate Milk</div>
@@ -596,24 +701,45 @@
             <span class="milk-size">Quart</span>
             <span class="milk-size">Pint</span>
           </div>
-        </div>
-      </div>
-
-      <div class="milk-card">
-        <div class="milk-card-img-wrap">
-          <img src="assets/images/strawberry-milk.webp" alt="Country Dairy Strawberry Milk" class="milk-card-img">
-        </div>
-        <div class="milk-card-body">
-          <div class="milk-card-name">Strawberry Milk</div>
-          <div class="milk-card-sizes">
-            <span class="milk-size">Pint</span>
+          <button class="milk-card-nfp-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            Nutrition Facts
+          </button>
+          <div class="milk-card-nfp-panel">
+            <div class="nfp-grid">
+              <div class="nfp-item"><div class="nfp-item-label">Gallon</div><img src="assets/images/milk/nfp-choc-gal.png" alt="Dutch Chocolate Milk gallon nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Half Gallon</div><img src="assets/images/milk/nfp-choc-halfgal.png" alt="Dutch Chocolate Milk half gallon nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Quart</div><img src="assets/images/milk/nfp-choc-quart.png" alt="Dutch Chocolate Milk quart nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Pint</div><img src="assets/images/milk/nfp-choc-pint.png" alt="Dutch Chocolate Milk pint nutrition facts"></div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="milk-card">
         <div class="milk-card-img-wrap">
-          <img src="assets/images/dutch-chocolate-milk.webp" alt="Country Dairy Fat Free Chocolate Milk" class="milk-card-img" style="object-position: center 70%;">
+          <img src="assets/images/milk/straw-pint.png" alt="Country Dairy Strawberry Milk pint" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Strawberry Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Pint</span>
+          </div>
+          <button class="milk-card-nfp-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            Nutrition Facts
+          </button>
+          <div class="milk-card-nfp-panel">
+            <div class="nfp-grid">
+              <div class="nfp-item"><div class="nfp-item-label">Pint</div><img src="assets/images/milk/nfp-straw-pint.png" alt="Strawberry Milk pint nutrition facts"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/milk/choc-pint.png" alt="Country Dairy Fat Free Chocolate Milk pint" class="milk-card-img">
         </div>
         <div class="milk-card-body">
           <div class="milk-card-name">Fat Free Chocolate Milk</div>
@@ -628,23 +754,32 @@
 
     <!-- Cream & Specialty -->
     <div class="milk-section-label reveal">Cream &amp; Specialty</div>
-    <div class="milk-grid-3 reveal reveal-delay-1">
+    <div class="milk-grid reveal reveal-delay-1">
 
       <div class="milk-card">
         <div class="milk-card-img-wrap">
-          <img src="assets/images/milk_bottling_labels.jpg" alt="Country Dairy Heavy Whipping Cream" class="milk-card-img" style="object-position: center 60%;">
+          <img src="assets/images/milk/whip-halfgal.png" alt="Country Dairy Heavy Whipping Cream half gallon" class="milk-card-img">
         </div>
         <div class="milk-card-body">
           <div class="milk-card-name">Heavy Whipping Cream</div>
           <div class="milk-card-sizes">
             <span class="milk-size">Half Gallon</span>
           </div>
+          <button class="milk-card-nfp-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            Nutrition Facts
+          </button>
+          <div class="milk-card-nfp-panel">
+            <div class="nfp-grid">
+              <div class="nfp-item"><div class="nfp-item-label">Half Gallon</div><img src="assets/images/milk/nfp-whip-halfgal.png" alt="Heavy Whipping Cream half gallon nutrition facts"></div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="milk-card">
         <div class="milk-card-img-wrap">
-          <img src="assets/images/CDIceCream.jpg" alt="Country Dairy Ice Cream Mix" class="milk-card-img">
+          <img src="assets/images/CDIceCream.jpg" alt="Country Dairy Ice Cream Mix" class="milk-card-img" style="object-fit:cover;">
         </div>
         <div class="milk-card-body">
           <div class="milk-card-name">Ice Cream Mix</div>
@@ -656,7 +791,7 @@
 
       <div class="milk-card">
         <div class="milk-card-img-wrap">
-          <img src="assets/images/CDIceCream.jpg" alt="Country Dairy Soft Serve Mix" class="milk-card-img" style="object-position: center 30%;">
+          <img src="assets/images/CDIceCream.jpg" alt="Country Dairy Soft Serve Mix" class="milk-card-img" style="object-fit:cover; object-position: center 30%;">
         </div>
         <div class="milk-card-body">
           <div class="milk-card-name">Soft Serve Mix</div>
@@ -667,7 +802,30 @@
         </div>
       </div>
 
-    </div><!-- /milk-grid-3 -->
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/milk/eggnog-quart.png" alt="Country Dairy Egg Nog quart" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Egg Nog <span class="milk-card-badge" style="background:var(--terracotta);">Seasonal</span></div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Quart</span>
+            <span class="milk-size">Pint</span>
+          </div>
+          <button class="milk-card-nfp-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            Nutrition Facts
+          </button>
+          <div class="milk-card-nfp-panel">
+            <div class="nfp-grid">
+              <div class="nfp-item"><div class="nfp-item-label">Quart</div><img src="assets/images/milk/nfp-eggnog-quart.png" alt="Egg Nog quart nutrition facts"></div>
+              <div class="nfp-item"><div class="nfp-item-label">Pint</div><img src="assets/images/milk/nfp-eggnog-pint.png" alt="Egg Nog pint nutrition facts"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /milk-grid cream -->
 
   </div>
 </section>
