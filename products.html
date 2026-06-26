@@ -60,7 +60,7 @@
   /* ── Products Grid ─────────────────────────────── */
   .products-section {
     background: var(--warm-white);
-    padding: 88px 0 96px;
+    padding: 72px 0 96px;
   }
   .products-header {
     text-align: center;
@@ -78,17 +78,25 @@
     max-width: 520px; margin: 0 auto; line-height: 1.75;
   }
 
-  /* 5-card grid: 3 across top, 2 centered bottom */
-  .prod-5-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 360px));
-    grid-auto-rows: 460px;
+  /* Product card grid */
+  .prod-grid {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 24px;
+    gap: 28px;
   }
 
-  .p-card-link-wrap { display: contents; }
+  .p-card-link-wrap,
+  .p-card-bare {
+    width: 320px;
+    flex: 0 0 320px;
+    text-decoration: none;
+    color: inherit;
+  }
+
   .p-card {
+    width: 100%;
+    height: 100%;
     background: #fff;
     border-radius: var(--radius-lg);
     overflow: hidden;
@@ -98,15 +106,20 @@
     display: flex;
     flex-direction: column;
   }
-  .p-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.13); }
+  .p-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,.12); }
   .p-card-img-wrap { overflow: hidden; flex-shrink: 0; }
   .p-card-img {
-    width: 100%; height: 220px;
+    width: 100%; height: 210px;
     object-fit: cover; display: block;
     transition: transform .5s ease;
   }
   .p-card:hover .p-card-img { transform: scale(1.04); }
-  .p-card-body { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .p-card-body {
+    padding: 20px 22px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
   .p-card-tag {
     display: inline-block;
     font-family: var(--font-sans); font-size: .6rem; font-weight: 700;
@@ -121,13 +134,20 @@
     font-size: .86rem; color: var(--text-muted);
     line-height: 1.65; font-weight: 300;
   }
-  .p-card-availability {
-    margin-top: 14px;
+  .p-card-footer {
+    margin-top: auto;
     padding-top: 14px;
+  }
+  .p-card-availability {
+    padding-top: 12px;
     border-top: 1px solid var(--cream-dark);
     display: flex; align-items: center; gap: 7px;
     font-family: var(--font-sans); font-size: .64rem; font-weight: 700;
     letter-spacing: .1em; text-transform: uppercase;
+  }
+  .p-card-availability + .p-card-availability {
+    border-top: none;
+    padding-top: 6px;
   }
   .avail-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
   .avail-retail { color: var(--green-dark); }
@@ -469,11 +489,11 @@
     .where-inner { grid-template-columns: 1fr; gap: 52px; }
     .where-img { height: 320px; }
   }
-  @media (max-width: 900px) {
-    .prod-5-grid { grid-template-columns: repeat(2, minmax(0, 420px)); }
+  @media (max-width: 740px) {
+    .p-card-link-wrap, .p-card-bare { width: 100%; flex: 0 0 100%; max-width: 480px; }
   }
   @media (max-width: 600px) {
-    .prod-5-grid { grid-template-columns: minmax(0, 500px); grid-auto-rows: auto; }
+    .p-card-link-wrap, .p-card-bare { max-width: 100%; }
     .where-tables { grid-template-columns: 1fr; }
   }
 </style>
@@ -550,6 +570,11 @@
 </section>
 
 <!-- wave hero → products -->
+<div class="wavy-divider" style="background:#0a1f0d;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#fdfaf5"/>
+  </svg>
+</div>
 
 <!-- ===================== PRODUCTS ===================== -->
 <section class="products-section section" aria-label="Our Products">
@@ -561,11 +586,11 @@
       <p class="products-sub reveal reveal-delay-2">Everything sold under the Country Dairy name starts with milk from our own Holstein herd in New Era, Michigan.</p>
     </div>
 
-    <div class="prod-5-grid">
+    <div class="prod-grid">
 
       <!-- Milk & Cream -->
-      <a href="milk.html" class="p-card-link-wrap">
-        <div class="p-card reveal">
+      <a href="milk.html" class="p-card-link-wrap reveal">
+        <div class="p-card">
           <div class="p-card-img-wrap">
             <img src="assets/images/vitamin-d-milk.webp" alt="Country Dairy Vitamin D whole milk" class="p-card-img" loading="lazy">
           </div>
@@ -573,81 +598,68 @@
             <div class="p-card-tag">Farm Fresh</div>
             <div class="p-card-name">Milk &amp; Cream</div>
             <p class="p-card-desc">Whole, 2%, 1%, skim, chocolate, strawberry, whipping cream — all from our own herd, bottled fresh on site.</p>
-<div class="p-card-availability avail-retail">
-              <div class="avail-dot"></div>
-              Available at retailers
+            <div class="p-card-footer">
+              <div class="p-card-availability avail-retail"><div class="avail-dot"></div>Available at retailers</div>
             </div>
           </div>
         </div>
       </a>
 
       <!-- Ice Cream -->
-      <a href="icecream.html" class="p-card-link-wrap">
-        <div class="p-card reveal reveal-delay-1">
+      <a href="icecream.html" class="p-card-link-wrap reveal reveal-delay-1">
+        <div class="p-card">
           <div class="p-card-img-wrap">
             <img src="assets/images/CDIceCream.jpg" alt="Country Dairy homemade ice cream" class="p-card-img" loading="lazy">
           </div>
           <div class="p-card-body">
             <div class="p-card-tag">Handcrafted Daily</div>
             <div class="p-card-name">Ice Cream</div>
-            <p class="p-card-desc">
-              30+ flavors made in small batches with our own milk. Served fresh at the Farm Store and in half-gallon tubs at retailers.
-            </p>
-            <div class="p-card-availability avail-retail">
-              <div class="avail-dot"></div>
-              Half gallons at retailers
-            </div>
-            <div class="p-card-availability avail-store">
-              <div class="avail-dot"></div>
-              Scoops &amp; half gallons at Farm Store
+            <p class="p-card-desc">30+ flavors made in small batches with our own milk. Served fresh at the Farm Store and in half-gallon tubs at retailers.</p>
+            <div class="p-card-footer">
+              <div class="p-card-availability avail-retail"><div class="avail-dot"></div>Half gallons at retailers</div>
+              <div class="p-card-availability avail-store"><div class="avail-dot"></div>Scoops &amp; half gallons at Farm Store</div>
             </div>
           </div>
         </div>
       </a>
 
       <!-- Sour Cream & Chip Dip -->
-      <div class="p-card reveal reveal-delay-2" id="cultured">
-        <div class="p-card-img-wrap">
-          <img src="assets/images/sour-cream-dip.jpeg" alt="Country Dairy sour cream and chip dip in 16 oz containers" class="p-card-img" loading="lazy">
-        </div>
-        <div class="p-card-body">
-          <div class="p-card-tag">Cultured</div>
-          <div class="p-card-name">Sour Cream &amp; Chip Dip</div>
-          <p class="p-card-desc">Made from fresh dairy, our sour cream and signature chip dip are consistently two of our best-sellers. Once you try them, you'll understand why.</p>
-          <div class="milk-card-sizes" style="margin-top:10px; display:flex; flex-wrap:wrap; gap:6px;">
-            <span class="milk-size">16 oz</span>
+      <div class="p-card-bare reveal reveal-delay-2" id="cultured">
+        <div class="p-card">
+          <div class="p-card-img-wrap">
+            <img src="assets/images/sour-cream-dip.jpeg" alt="Country Dairy sour cream and chip dip in 16 oz containers" class="p-card-img" loading="lazy">
           </div>
-          <div class="p-card-availability avail-retail">
-            <div class="avail-dot"></div>
-            Available at retailers
+          <div class="p-card-body">
+            <div class="p-card-tag">Cultured</div>
+            <div class="p-card-name">Sour Cream &amp; Chip Dip</div>
+            <p class="p-card-desc">Made from fresh dairy, our sour cream and signature chip dip are consistently two of our best-sellers.</p>
+            <div class="p-card-footer">
+              <div class="p-card-availability avail-retail"><div class="avail-dot"></div>Available at retailers</div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Butter -->
-      <div class="p-card reveal reveal-delay-1" id="butter">
-        <div class="p-card-img-wrap">
-          <img src="assets/images/Cammie's Cart.jpg" alt="Country Dairy farmhouse butter" class="p-card-img" loading="lazy">
-        </div>
-        <div class="p-card-body">
-          <div class="p-card-tag">Artisan</div>
-          <div class="p-card-name">Butter</div>
-          <p class="p-card-desc">Real butter churned from our own cream. Available salted and unsalted for food service and retail.</p>
-          <div class="milk-card-sizes" style="margin-top:10px; display:flex; flex-wrap:wrap; gap:6px;">
-            <span class="milk-size">Salted — 40 lb</span>
-            <span class="milk-size">Unsalted — 25 lb</span>
-            <span class="milk-size">Unsalted — 40 lb</span>
+      <div class="p-card-bare reveal" id="butter">
+        <div class="p-card">
+          <div class="p-card-img-wrap">
+            <img src="assets/images/Cammie's Cart.jpg" alt="Country Dairy farmhouse butter" class="p-card-img" loading="lazy">
           </div>
-          <div class="p-card-availability avail-store">
-            <div class="avail-dot"></div>
-            Farm Store only
+          <div class="p-card-body">
+            <div class="p-card-tag">Artisan</div>
+            <div class="p-card-name">Butter</div>
+            <p class="p-card-desc">Real butter churned from our own cream. Available salted and unsalted for food service and retail.</p>
+            <div class="p-card-footer">
+              <div class="p-card-availability avail-store"><div class="avail-dot"></div>Farm Store only</div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Meat -->
-      <a href="meat-market.html" class="p-card-link-wrap">
-        <div class="p-card reveal reveal-delay-2">
+      <a href="meat-market.html" class="p-card-link-wrap reveal reveal-delay-1">
+        <div class="p-card">
           <div class="p-card-img-wrap">
             <img src="assets/images/Sirloin Steak.jpg" alt="Country Dairy farm-raised beef" class="p-card-img" loading="lazy">
           </div>
@@ -655,9 +667,8 @@
             <div class="p-card-tag">Farm Raised</div>
             <div class="p-card-name">Meat</div>
             <p class="p-card-desc">Fresh and frozen beef cuts raised right here on the farm. Ground beef, steaks, roasts, and summer sausage available in the Farm Store.</p>
-            <div class="p-card-availability avail-store">
-              <div class="avail-dot"></div>
-              Farm Store only
+            <div class="p-card-footer">
+              <div class="p-card-availability avail-store"><div class="avail-dot"></div>Farm Store only</div>
             </div>
           </div>
         </div>
@@ -904,8 +915,8 @@
   </div>
 </section>
 
-<!-- wave products → order online -->
-<div class="wavy-divider" style="background:#fdfaf5;">
+<!-- wave cert-strip → order online -->
+<div class="wavy-divider" style="background:#1c1c1c;">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#f8f3eb"/>
   </svg>
