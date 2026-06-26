@@ -80,12 +80,15 @@
 
   /* 5-card grid: 3 across top, 2 centered bottom */
   .prod-5-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
   }
-  .prod-5-grid .p-card:nth-child(4) { grid-column: 1; }
-  .prod-5-grid .p-card:nth-child(5) { grid-column: 2; }
+  .prod-5-grid > * {
+    flex: 0 0 calc(33.333% - 16px);
+    max-width: 380px;
+  }
 
   .p-card {
     background: #fff;
@@ -467,12 +470,10 @@
     .where-img { height: 320px; }
   }
   @media (max-width: 900px) {
-    .prod-5-grid { grid-template-columns: repeat(2, 1fr); }
-    .prod-5-grid .p-card:nth-child(4),
-    .prod-5-grid .p-card:nth-child(5) { grid-column: auto; }
+    .prod-5-grid > * { flex: 0 0 calc(50% - 12px); }
   }
   @media (max-width: 600px) {
-    .prod-5-grid { grid-template-columns: 1fr; }
+    .prod-5-grid > * { flex: 0 0 100%; max-width: 100%; }
     .where-tables { grid-template-columns: 1fr; }
   }
 </style>
@@ -687,8 +688,8 @@
   </div>
 </div>
 
-<!-- ===================== MILK SPOTLIGHT ===================== -->
-<section class="milk-section section" aria-label="Our Milk">
+<!-- ===================== MILK SPOTLIGHT REMOVED — content lives on milk.html ===================== -->
+<section class="milk-section section" aria-label="Our Milk" style="display:none">
   <div class="container">
 
     <div class="milk-header">
