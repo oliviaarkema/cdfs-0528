@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm Fresh Milk — Country Dairy | New Era, Michigan</title>
+<meta name="description" content="Country Dairy's farm fresh milk: Vitamin D, 2%, 1%, Fat Free, Chocolate, Strawberry, and more. Non-GMO, hormone-free, and bottled on-site in New Era, Michigan.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://countrydairyfarmstore.com/milk">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Country Dairy">
+<meta property="og:title" content="Farm Fresh Milk — Country Dairy | New Era, Michigan">
+<meta property="og:description" content="Country Dairy's farm fresh milk: Vitamin D, 2%, 1%, Fat Free, Chocolate, Strawberry, and more. Non-GMO, hormone-free, and bottled on-site in New Era, Michigan.">
+<meta property="og:url" content="https://countrydairyfarmstore.com/milk">
+<meta property="og:image" content="https://countrydairyfarmstore.com/assets/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Farm Fresh Milk — Country Dairy | New Era, Michigan">
+<meta name="twitter:description" content="Country Dairy's farm fresh milk: Vitamin D, 2%, 1%, Fat Free, Chocolate, Strawberry, and more. Non-GMO, hormone-free, and bottled on-site in New Era, Michigan.">
+<meta name="twitter:image" content="https://countrydairyfarmstore.com/assets/images/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cause:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/country-dairy.css?v=20260622b">
+<style>
+
+  /* ── Page Hero ─────────────────────────────────── */
+  .page-hero {
+    position: relative;
+    height: 52vh;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0d1a0f;
+  }
+  .page-hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center 40%;
+    transform: scale(1.04);
+    animation: heroZoom 14s ease-out forwards;
+  }
+  .page-hero-overlay { position: absolute; inset: 0; background: rgba(5,18,7,.52); }
+  .page-hero-content {
+    position: relative; z-index: 2;
+    text-align: center; padding: 0 24px;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-sans); font-size: .7rem; font-weight: 700;
+    letter-spacing: .25em; text-transform: uppercase;
+    color: var(--green-bright); margin-bottom: 16px;
+    opacity: 0; animation: fadeUp .8s .2s forwards;
+  }
+  .page-hero-eyebrow-dot { width:5px; height:5px; border-radius:50%; background:var(--green-bright); }
+  .page-hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    font-weight: 700; color: #fff; line-height: 1.0;
+    opacity: 0; animation: fadeUp .9s .4s forwards;
+  }
+  .page-hero-title em { font-style: italic; color: var(--green-bright); }
+  .page-hero-sub {
+    font-size: 1rem; font-weight: 300; color: rgba(255,255,255,.72);
+    margin-top: 14px; max-width: 500px; margin-left: auto; margin-right: auto;
+    opacity: 0; animation: fadeUp .9s .6s forwards;
+  }
+
+  /* ── Intro section ─────────────────────────────── */
+  .milk-intro-section {
+    background: var(--cream);
+    padding: 88px 0 72px;
+  }
+  .milk-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .milk-intro-visual {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .milk-intro-main {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-card);
+  }
+  .milk-intro-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .milk-intro-sub img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: var(--radius-sm) var(--radius-xl) var(--radius-xl) var(--radius-sm);
+    box-shadow: var(--shadow-card);
+  }
+  .milk-intro-copy { }
+  .milk-intro-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .milk-intro-headline em { font-style: italic; color: var(--green-dark); }
+  .milk-intro-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+  .milk-claims {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .milk-claim {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .milk-claim-icon {
+    width: 28px; height: 28px; min-width: 28px;
+    border-radius: 50%;
+    background: var(--green-dark);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    margin-top: 2px;
+  }
+  .milk-claim-title {
+    font-family: var(--font-sans);
+    font-size: .82rem; font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 2px;
+  }
+  .milk-claim-body {
+    font-size: .85rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── Varieties section ─────────────────────────── */
+  .milk-varieties-section {
+    background: var(--warm-white);
+    padding: 80px 0 96px;
+  }
+  .milk-varieties-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .milk-varieties-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 10px;
+  }
+  .milk-varieties-headline em { font-style: italic; color: var(--green-dark); }
+  .milk-varieties-sub {
+    font-size: .95rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .milk-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+  .milk-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 860px;
+    margin: 0 auto 60px;
+  }
+
+  .milk-card {
+    background: var(--warm-white);
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    border: 1px solid var(--cream-dark);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .milk-card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.11); }
+  .milk-card-img-wrap { overflow: hidden; }
+  .milk-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .milk-card:hover .milk-card-img { transform: scale(1.04); }
+  .milk-card-body { padding: 16px 18px 20px; }
+  .milk-card-name {
+    font-family: var(--font-sans);
+    font-size: .92rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 10px;
+  }
+  .milk-card-sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .milk-size {
+    font-family: var(--font-sans);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: var(--cream);
+    color: var(--green-dark);
+    border: 1px solid var(--cream-dark);
+  }
+  .milk-size--fs {
+    background: #f0f4ff;
+    color: #1a3a7a;
+    border-color: #c8d5f0;
+  }
+  .milk-card-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: var(--terracotta);
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  .milk-section-label {
+    font-family: var(--font-sans);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    margin-top: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .milk-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--cream-dark);
+  }
+
+  .fs-note {
+    background: #f0f4ff;
+    border: 1px solid #c8d5f0;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-size: .84rem;
+    color: #1a3a7a;
+    font-weight: 400;
+    margin-bottom: 48px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .fs-note svg { min-width: 16px; margin-top: 2px; }
+
+  /* ── Other Products strip ──────────────────────── */
+  .milk-other-section {
+    background: var(--cream);
+    padding: 72px 0;
+  }
+  .milk-other-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .milk-other-card {
+    background: var(--warm-white);
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--cream-dark);
+    text-decoration: none;
+    color: inherit;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .milk-other-card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.11); }
+  .milk-other-card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  .milk-other-card-body { padding: 16px 18px 20px; flex: 1; }
+  .milk-other-card-tag {
+    font-family: var(--font-sans);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 6px;
+  }
+  .milk-other-card-name {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 8px;
+  }
+  .milk-other-card-desc {
+    font-size: .85rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .milk-other-card-arrow {
+    font-family: var(--font-sans);
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ── Responsive ────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .milk-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 860px) {
+    .milk-intro-grid { grid-template-columns: 1fr; gap: 40px; }
+    .milk-intro-visual { max-width: 480px; }
+    .milk-grid { grid-template-columns: repeat(2, 1fr); }
+    .milk-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .milk-other-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .milk-grid { grid-template-columns: 1fr; }
+    .milk-grid-3 { grid-template-columns: 1fr; }
+    .milk-other-grid { grid-template-columns: 1fr; }
+    .milk-intro-sub img { height: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-left">
+    <ul class="nav-links-left">
+      <li><a href="our-story.html">Our Story</a></li>      <li><a href="farm-store-kitchen.html">Farm Store Kitchen</a></li>
+    </ul>
+  </div>
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-logo-link">
+      <img src="assets/logo.png" alt="Country Dairy" class="nav-logo-img">
+    </a>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links-right">
+      <li><a href="products.html" style="color:var(--green-bright);">Products</a></li>
+      <li><a href="farm-tours.html">Farm Tours</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          + More <span class="nav-dropdown-arrow">&#9660;</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="meat-market.html" role="menuitem">Meat Market</a>
+          <a href="events.html" role="menuitem">Events</a>
+          <a href="bakery.html" role="menuitem">Bakery</a>
+          <a href="catering.html" role="menuitem">Catering</a>
+          <a href="event-space.html" role="menuitem">Event Space</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="https://countrydairy.com/products/" role="menuitem">Wholesale</a>
+          <a href="where-to-buy.html" role="menuitem">Where to Buy</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="farm-store-kitchen.html">Farm Store Kitchen</a>
+  <a href="products.html">Products</a>
+  <a href="farm-tours.html">Farm Tours</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="meat-market.html" class="mobile-menu-sub">Meat Market</a>
+  <a href="events.html" class="mobile-menu-sub">Events</a>
+  <a href="bakery.html" class="mobile-menu-sub">Bakery</a>
+  <a href="catering.html" class="mobile-menu-sub">Catering</a>
+  <a href="event-space.html" class="mobile-menu-sub">Event Space</a>
+  <a href="https://countrydairy.com/products/" class="mobile-menu-sub">Wholesale</a>
+  <a href="where-to-buy.html" class="mobile-menu-sub">Where to Buy</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" aria-label="Farm Fresh Milk">
+  <div class="page-hero-bg" style="background-image:url('assets/images/group with milk.jpg'); background-position: center 40%;"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">
+      <div class="page-hero-eyebrow-dot"></div>
+      Country Dairy &nbsp;&middot;&nbsp; New Era, Michigan
+    </div>
+    <h1 class="page-hero-title">Farm <em>Fresh</em> Milk</h1>
+    <p class="page-hero-sub">From our Holstein herd to your table — non-GMO, hormone-free, and bottled on the farm.</p>
+  </div>
+</section>
+
+<!-- ===================== INTRO ===================== -->
+<section class="milk-intro-section section" aria-label="About Our Milk">
+  <div class="container">
+    <div class="milk-intro-grid">
+
+      <div class="milk-intro-visual reveal">
+        <img src="assets/images/vitamin-d-milk.webp" alt="Country Dairy Vitamin D whole milk jug" class="milk-intro-main">
+        <div class="milk-intro-sub">
+          <img src="assets/images/dutch-chocolate-milk.webp" alt="Country Dairy Dutch chocolate milk">
+          <img src="assets/images/strawberry-milk.webp" alt="Country Dairy strawberry milk">
+        </div>
+      </div>
+
+      <div class="milk-intro-copy reveal reveal-delay-1">
+        <div class="section-label section-label-green" style="margin-bottom:16px;">Straight from the Herd</div>
+        <h2 class="milk-intro-headline">Fresh <em>Michigan</em> Milk</h2>
+        <p class="milk-intro-body">Every drop starts with our own Holstein herd in New Era — non-GMO fed, hormone-free, and processed right on the farm. That means less time in transit and a fresher product on your shelf, every time.</p>
+        <div class="milk-claims">
+          <div class="milk-claim">
+            <div class="milk-claim-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="milk-claim-title">Certified Non-GMO</div>
+              <div class="milk-claim-body">Our cows are fed a non-GMO verified diet — no genetically modified feed, ever.</div>
+            </div>
+          </div>
+          <div class="milk-claim">
+            <div class="milk-claim-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="milk-claim-title">No Artificial Growth Hormones</div>
+              <div class="milk-claim-body">Just cows being cows — no rBST or synthetic hormone treatments in our herd.</div>
+            </div>
+          </div>
+          <div class="milk-claim">
+            <div class="milk-claim-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="milk-claim-title">Farm-Processed &amp; Bottled On-Site</div>
+              <div class="milk-claim-body">Milked and bottled in New Era so you get the freshest product on the shelf.</div>
+            </div>
+          </div>
+          <div class="milk-claim">
+            <div class="milk-claim-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="milk-claim-title">SQF Certified &amp; Kosher</div>
+              <div class="milk-claim-body">Independently audited for food safety and quality. Certified Kosher Dairy.</div>
+            </div>
+          </div>
+        </div>
+        <a href="where-to-buy.html" class="btn btn-primary" style="font-size:.9rem;">Find a Retailer Near You</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VARIETIES ===================== -->
+<section class="milk-varieties-section section" aria-label="Milk Varieties">
+  <div class="container">
+
+    <div class="milk-varieties-header reveal">
+      <div class="section-label section-label-green" style="justify-content:center;">What We Make</div>
+      <h2 class="milk-varieties-headline">Milk <em>Varieties</em></h2>
+      <p class="milk-varieties-sub">Available at grocers and markets across Michigan. <a href="where-to-buy.html" style="color:var(--green-dark);">Find a retailer near you →</a></p>
+    </div>
+
+    <div class="fs-note reveal">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Sizes marked <strong style="color:#1a3a7a;">Food Service</strong> are available for restaurants, coffee shops, and institutional buyers. <a href="https://countrydairy.com/products/" target="_blank" rel="noopener" style="color:#1a3a7a;">Visit our wholesale portal →</a>
+    </div>
+
+    <!-- Standard milks -->
+    <div class="milk-section-label reveal">Standard Milks</div>
+    <div class="milk-grid reveal reveal-delay-1">
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/vitamin-d-milk.webp" alt="Country Dairy Vitamin D Whole Milk jug" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Vitamin D Whole Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Gallon</span>
+            <span class="milk-size">Half Gallon</span>
+            <span class="milk-size">Quart</span>
+            <span class="milk-size">Pint</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/SWDMilk.jpg" alt="Country Dairy 2% Reduced Fat Milk" class="milk-card-img" style="object-position: center 20%;">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">2% Reduced Fat Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size milk-size--fs">5 Gallon · Food Service</span>
+            <span class="milk-size">Gallon</span>
+            <span class="milk-size">Half Gallon</span>
+            <span class="milk-size">Quart</span>
+            <span class="milk-size">Pint</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/milk_bottling_labels.jpg" alt="Country Dairy 1% Lowfat Milk" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">1% Lowfat Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Gallon</span>
+            <span class="milk-size">Half Gallon</span>
+            <span class="milk-size">Half Pint</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/SWDMilk.jpg" alt="Country Dairy Fat Free Skim Milk" class="milk-card-img" style="object-position: right 20%;">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Fat Free Skim Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Gallon</span>
+            <span class="milk-size">Half Gallon</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /milk-grid -->
+
+    <!-- Flavored milks -->
+    <div class="milk-section-label reveal">Flavored Milks</div>
+    <div class="milk-grid reveal reveal-delay-1">
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/dutch-chocolate-milk.webp" alt="Country Dairy Dutch Chocolate Milk" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Dutch Chocolate Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size milk-size--fs">5 Gallon · Food Service</span>
+            <span class="milk-size milk-size--fs">2.5 Gallon · Food Service</span>
+            <span class="milk-size">Gallon</span>
+            <span class="milk-size">Half Gallon</span>
+            <span class="milk-size">Quart</span>
+            <span class="milk-size">Pint</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/strawberry-milk.webp" alt="Country Dairy Strawberry Milk" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Strawberry Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Pint</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/dutch-chocolate-milk.webp" alt="Country Dairy Fat Free Chocolate Milk" class="milk-card-img" style="object-position: center 70%;">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Fat Free Chocolate Milk</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size milk-size--fs">5 Gallon · Food Service</span>
+            <span class="milk-size">Half Pint</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /milk-grid flavored -->
+
+    <!-- Cream & Specialty -->
+    <div class="milk-section-label reveal">Cream &amp; Specialty</div>
+    <div class="milk-grid-3 reveal reveal-delay-1">
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/milk_bottling_labels.jpg" alt="Country Dairy Heavy Whipping Cream" class="milk-card-img" style="object-position: center 60%;">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Heavy Whipping Cream</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size">Half Gallon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/CDIceCream.jpg" alt="Country Dairy Ice Cream Mix" class="milk-card-img">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Ice Cream Mix</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size milk-size--fs">2.5 Gallon · Food Service</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milk-card">
+        <div class="milk-card-img-wrap">
+          <img src="assets/images/CDIceCream.jpg" alt="Country Dairy Soft Serve Mix" class="milk-card-img" style="object-position: center 30%;">
+        </div>
+        <div class="milk-card-body">
+          <div class="milk-card-name">Soft Serve Mix</div>
+          <div class="milk-card-sizes">
+            <span class="milk-size milk-size--fs">2.5 Gallon · Food Service</span>
+            <span class="milk-size milk-size--fs">Gallon · Food Service</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /milk-grid-3 -->
+
+  </div>
+</section>
+
+<!-- ===================== OTHER PRODUCTS ===================== -->
+<section class="milk-other-section section" aria-label="Other Country Dairy Products">
+  <div class="container">
+    <div class="section-label section-label-green reveal">More From Country Dairy</div>
+    <h2 class="milk-varieties-headline reveal reveal-delay-1" style="margin-bottom:8px;">Also <em>Made on the Farm</em></h2>
+    <p class="milk-varieties-sub reveal reveal-delay-2">Everything we make starts with our own herd.</p>
+
+    <div class="milk-other-grid">
+
+      <a href="icecream.html" class="milk-other-card reveal">
+        <img src="assets/images/CDIceCream.jpg" alt="Country Dairy homemade ice cream flavors" class="milk-other-card-img">
+        <div class="milk-other-card-body">
+          <div class="milk-other-card-tag">Handcrafted Daily</div>
+          <div class="milk-other-card-name">Ice Cream</div>
+          <div class="milk-other-card-desc">30+ flavors made in small batches with our own milk. Served at the Farm Store and in half-gallon tubs at retailers.</div>
+          <div class="milk-other-card-arrow">Explore flavors →</div>
+        </div>
+      </a>
+
+      <a href="products.html#butter" class="milk-other-card reveal reveal-delay-1">
+        <img src="assets/images/Cammie's Cart.jpg" alt="Country Dairy farmhouse butter" class="milk-other-card-img">
+        <div class="milk-other-card-body">
+          <div class="milk-other-card-tag">Artisan</div>
+          <div class="milk-other-card-name">Butter</div>
+          <div class="milk-other-card-desc">Real butter churned from our own cream. Available salted (40 lb) and unsalted (25 lb &amp; 40 lb).</div>
+          <div class="milk-other-card-arrow">View products →</div>
+        </div>
+      </a>
+
+      <a href="products.html#cultured" class="milk-other-card reveal reveal-delay-2">
+        <img src="assets/images/sour-cream-dip.jpeg" alt="Country Dairy sour cream and chip dip" class="milk-other-card-img">
+        <div class="milk-other-card-body">
+          <div class="milk-other-card-tag">Cultured</div>
+          <div class="milk-other-card-name">Sour Cream &amp; Chip Dip</div>
+          <div class="milk-other-card-desc">Made from fresh dairy, our sour cream and signature chip dip are consistently two of our best-sellers.</div>
+          <div class="milk-other-card-arrow">View products →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHERE TO BUY CTA ===================== -->
+<section style="background:var(--green-deep); padding:72px 0; text-align:center;" aria-label="Find Our Products">
+  <div class="container">
+    <div class="section-label section-label-cream reveal" style="justify-content:center;">Find Our Products</div>
+    <h2 class="reveal reveal-delay-1" style="font-family:var(--font-serif); font-size:clamp(2rem,3.5vw,2.8rem); font-weight:700; color:#fff; margin-bottom:14px;">Available at <em style="color:var(--green-bright);">1,300+ Locations</em></h2>
+    <p class="reveal reveal-delay-2" style="font-size:1rem; color:rgba(255,255,255,.72); font-weight:300; max-width:480px; margin:0 auto 32px;">Grocery stores, markets, and specialty shops across Michigan. Use the map to find a retailer near you.</p>
+    <div class="reveal reveal-delay-3" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="where-to-buy.html" class="btn btn-primary">Find a Retailer</a>
+      <a href="https://countrydairy.eatfromfarms.com/" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:rgba(255,255,255,.35); color:rgba(255,255,255,.85);">Order Online</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner container">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Country Dairy logo" class="footer-logo">
+      <p class="footer-tagline">Five generations of Michigan dairy farming.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/CountryDairyNewEra" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/countrydairymi" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="var(--green-deep)" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--green-deep)" stroke-width="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@CountryDairy" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="var(--green-deep)" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-head">Visit</div>
+        <ul>
+          <li><a href="https://maps.google.com/?q=3476+S+80th+Ave,+New+Era,+MI+49446" target="_blank" rel="noopener">3476 S 80th Ave</a></li>
+          <li><a href="https://maps.google.com/?q=3476+S+80th+Ave,+New+Era,+MI+49446" target="_blank" rel="noopener">New Era, MI 49446</a></li>
+          <li><a href="farm-tours.html">Farm Tours</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-head">Products</div>
+        <ul>
+          <li><a href="milk.html" style="color:var(--green-bright);">Milk &amp; Cream</a></li>
+          <li><a href="icecream.html">Ice Cream</a></li>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="https://countrydairy.com/products/">Wholesale</a></li>
+          <li><a href="where-to-buy.html">Where to Buy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-head">Company</div>
+        <ul>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>&copy; 2026 Country Dairy. All rights reserved. &nbsp;&middot;&nbsp; Made with <span>&#9829;</span> in West Michigan.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/country-dairy.js?v=20260622b"></script>
+</body>
+</html>
