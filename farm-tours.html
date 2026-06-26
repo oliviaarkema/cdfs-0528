@@ -588,8 +588,62 @@
     line-height: 1.5;
   }
 
+  /* ── Special Events Cards ──────────────────────────────── */
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .event-card {
+    background: var(--cream);
+    border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--cream-dark);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .event-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,.11); }
+  .event-card-img {
+    width: 100%; height: 240px;
+    object-fit: cover; display: block;
+    transition: transform .5s ease;
+  }
+  .event-card:hover .event-card-img { transform: scale(1.04); }
+  .event-card-body { padding: 24px 26px 28px; flex: 1; display: flex; flex-direction: column; }
+  .event-card-tag {
+    font-family: var(--font-sans); font-size: .62rem; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--green-dark); margin-bottom: 8px;
+  }
+  .event-card-title {
+    font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700;
+    color: var(--dark-brown); line-height: 1.2; margin-bottom: 14px;
+  }
+  .event-card-title em { font-style: italic; color: var(--green-dark); }
+  .event-card-list {
+    list-style: none; padding: 0; margin: 0 0 18px;
+    display: flex; flex-direction: column; gap: 7px;
+  }
+  .event-card-list li {
+    font-size: .86rem; color: var(--text-muted); font-weight: 300;
+    line-height: 1.5; padding-left: 16px; position: relative;
+  }
+  .event-card-list li::before {
+    content: '–'; position: absolute; left: 0; color: var(--green-bright);
+  }
+  .event-card-link {
+    margin-top: auto;
+    font-family: var(--font-sans); font-size: .76rem; font-weight: 700;
+    letter-spacing: .08em; color: var(--green-dark);
+  }
+
   @media (max-width: 1024px) {
     .seasonal-cards { grid-template-columns: 1fr; }
+    .events-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 768px) {
@@ -1017,8 +1071,8 @@
   </div>
 </section>
 
-<!-- wave: seasonal → special events -->
-<div class="wavy-divider" style="background:#e8e0d0;">
+<!-- wave: seasonal (cream) → special events (warm-white) -->
+<div class="wavy-divider" style="background:#f8f3eb;">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#fdfaf5"/>
   </svg>
@@ -1033,39 +1087,35 @@
         Special <em style="font-style:italic; color:var(--green-dark);">Events</em>
       </h2>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px;">
+    <div class="events-grid">
 
-      <a href="ice-cream-social.html" style="text-decoration:none; color:inherit;">
-        <div class="menu-card" style="background:var(--cream);">
-          <img src="assets/images/ICS Heel Click.jpg" alt="Ice Cream Social" class="menu-card-img" loading="lazy">
-          <div class="menu-card-body">
-            <div class="menu-card-tag">Annual Summer Tradition</div>
-            <h3 class="menu-card-title">Ice Cream <em>Social</em></h3>
-            <ul class="menu-card-items">
-              <li>Live music and entertainment</li>
-              <li>All-you-can-eat homemade ice cream</li>
-              <li>Farm activities and family fun</li>
-              <li>Held annually each summer</li>
-            </ul>
-            <p class="menu-card-note">Event Details →</p>
-          </div>
+      <a href="ice-cream-social.html" class="event-card reveal">
+        <img src="assets/images/ICS Heel Click.jpg" alt="Ice Cream Social" class="event-card-img" loading="lazy">
+        <div class="event-card-body">
+          <div class="event-card-tag">Annual Summer Tradition</div>
+          <h3 class="event-card-title">Ice Cream <em>Social</em></h3>
+          <ul class="event-card-list">
+            <li>Live music and entertainment</li>
+            <li>All-you-can-eat homemade ice cream</li>
+            <li>Farm activities and family fun</li>
+            <li>Held annually each summer</li>
+          </ul>
+          <div class="event-card-link">Event Details →</div>
         </div>
       </a>
 
-      <a href="events.html#unity-festival" style="text-decoration:none; color:inherit;">
-        <div class="menu-card" style="background:var(--cream);">
-          <img src="https://static.wixstatic.com/media/4aca22_298de5574dc64e1089e6759fa200c5f7~mv2.jpg/v1/fill/w_800,h_500,al_c,q_85,enc_avif,quality_auto/IMG-WEDNESDAY-Z62-080724-538.jpg" alt="Unity Christian Music Festival" class="menu-card-img" loading="lazy">
-          <div class="menu-card-body">
-            <div class="menu-card-tag">Main Stage Sponsor</div>
-            <h3 class="menu-card-title">Unity Christian <em>Music Festival</em></h3>
-            <ul class="menu-card-items">
-              <li>Country Dairy sponsors the Main Stage</li>
-              <li>Farm-fresh ice cream served on-site</li>
-              <li>50,000+ attendees, 4 days of music</li>
-              <li>Heritage Landing, downtown Muskegon</li>
-            </ul>
-            <p class="menu-card-note">Learn More →</p>
-          </div>
+      <a href="events.html#unity-festival" class="event-card reveal reveal-delay-1">
+        <img src="https://static.wixstatic.com/media/4aca22_298de5574dc64e1089e6759fa200c5f7~mv2.jpg/v1/fill/w_800,h_500,al_c,q_85,enc_avif,quality_auto/IMG-WEDNESDAY-Z62-080724-538.jpg" alt="Unity Christian Music Festival" class="event-card-img" loading="lazy">
+        <div class="event-card-body">
+          <div class="event-card-tag">Main Stage Sponsor</div>
+          <h3 class="event-card-title">Unity Christian <em>Music Festival</em></h3>
+          <ul class="event-card-list">
+            <li>Country Dairy sponsors the Main Stage</li>
+            <li>Farm-fresh ice cream served on-site</li>
+            <li>50,000+ attendees, 4 days of music</li>
+            <li>Heritage Landing, downtown Muskegon</li>
+          </ul>
+          <div class="event-card-link">Learn More →</div>
         </div>
       </a>
 
@@ -1121,10 +1171,10 @@
   </div>
 </section>
 
-<!-- wave: photo strip (warm-white) → booking CTA (cream) -->
-<div class="wavy-divider" style="background:#fdfaf5;">
+<!-- wave: photo strip (#e8e0d0) → booking CTA (warm-white) -->
+<div class="wavy-divider" style="background:#e8e0d0;">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#f8f3eb"/>
+    <path d="M0,30 C240,58 480,4 720,30 C960,56 1200,6 1440,30 L1440,60 L0,60 Z" fill="#fdfaf5"/>
   </svg>
 </div>
 
