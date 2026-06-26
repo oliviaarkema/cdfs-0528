@@ -90,6 +90,7 @@
     max-width: 380px;
   }
 
+  .p-card-link-wrap { display: flex; flex-direction: column; }
   .p-card {
     background: #fff;
     border-radius: var(--radius-lg);
@@ -97,16 +98,19 @@
     box-shadow: var(--shadow-card);
     border: 1px solid var(--cream-dark);
     transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
   .p-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.13); }
-  .p-card-img-wrap { overflow: hidden; }
+  .p-card-img-wrap { overflow: hidden; flex-shrink: 0; }
   .p-card-img {
     width: 100%; height: 220px;
     object-fit: cover; display: block;
     transition: transform .5s ease;
   }
   .p-card:hover .p-card-img { transform: scale(1.04); }
-  .p-card-body { padding: 22px 24px 26px; }
+  .p-card-body { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
   .p-card-tag {
     display: inline-block;
     font-family: var(--font-sans); font-size: .6rem; font-weight: 700;
@@ -573,11 +577,7 @@
             <div class="p-card-tag">Farm Fresh</div>
             <div class="p-card-name">Milk &amp; Cream</div>
             <p class="p-card-desc">Whole, 2%, 1%, skim, chocolate, strawberry, whipping cream — all from our own herd, bottled fresh on site.</p>
-            <div style="display:flex; gap:8px; margin-top:14px;">
-              <img src="assets/images/dutch-chocolate-milk.webp" alt="Dutch chocolate milk" style="width:calc(50% - 4px); height:80px; object-fit:cover; border-radius:10px;">
-              <img src="assets/images/strawberry-milk.webp" alt="Strawberry milk" style="width:calc(50% - 4px); height:80px; object-fit:cover; border-radius:10px;">
-            </div>
-            <div class="p-card-availability avail-retail">
+<div class="p-card-availability avail-retail">
               <div class="avail-dot"></div>
               Available at retailers
             </div>
