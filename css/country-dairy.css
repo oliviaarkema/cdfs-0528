@@ -2089,7 +2089,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hamburger { display: flex; }
   .hero-badge { display: none; }
   .nav-logo-img { height: 72px; }
-  .hero-content { padding: 0 24px 80px; }
+  .hero-content { padding: 110px 24px 80px; }
   .container { padding: 0 24px; }
   .ft-cards { grid-template-columns: 1fr; }
   .ft-polaroid-row { display: none; }
