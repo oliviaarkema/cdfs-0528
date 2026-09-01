@@ -1103,28 +1103,61 @@
 <script src="js/country-dairy.js"></script>
 <script>
   // ── Timeline photo offsets — hand-tuned for full L-R spread per entry ───────
-  // Each sub-array is [photo1_marginLeft, photo2_marginLeft] in px (max 92)
+  // Each sub-array is [photo1_fraction, photo2_fraction], 0–1 across the
+  // available room (panel width minus photo width). Using fractions instead
+  // of fixed px keeps photos fully inside the panel — and off the sibling
+  // photo — at every breakpoint, instead of one hand-tuned px value that
+  // only fit the panel size it was written for.
   const tlOffsets = [
-    [80],       // 1880s   — far right
-    [6],        // 1907    — far left
-    [54],       // 1936–56 — right-centre
-    [10, 78],   // 1964–68 — left + far right
-    [70, 14],   // 1983    — far right + left
-    [22, 86],   // 2004    — left + far right
-    [46],       // Today   — centre
+    [0.72],       // 1880s   — far right
+    [0.04],       // 1907    — far left
+    [0.5],        // 1936–56 — centre
+    [0.04, 0.96], // 1964–68 — left + far right, max spread so neither covers the other
+    [0.96, 0.04], // 1983    — far right + left, max spread
+    [0.04, 0.96], // 2004    — left + far right, max spread
+    [0.42],       // Today   — centre
   ];
 
-  document.querySelectorAll('.tl-img-panel').forEach((panel, pi) => {
-    const shifts = tlOffsets[pi] || [40];
-    panel.querySelectorAll('.tl-photo').forEach((photo, i) => {
-      photo.style.marginLeft = (shifts[i] ?? shifts[0]) + 'px';
-      if (i > 0) {
-        photo.style.marginTop = '-28px';
-        photo.style.position  = 'relative';
-        photo.style.zIndex    = i + 1;
-      }
+  function layoutTimelinePhotos() {
+    document.querySelectorAll('.tl-img-panel').forEach((panel, pi) => {
+      const fractions = tlOffsets[pi] || [0.4];
+      const panelWidth = panel.offsetWidth;
+      panel.querySelectorAll('.tl-photo').forEach((photo, i) => {
+        const room = Math.max(panelWidth - photo.offsetWidth, 0);
+        const frac = fractions[i] ?? fractions[0];
+        photo.style.marginLeft = Math.round(room * frac) + 'px';
+        if (i > 0) {
+          photo.style.marginTop = '-28px';
+          photo.style.position  = 'relative';
+          photo.style.zIndex    = i + 1;
+        }
+      });
     });
-  });
+  }
+
+  // ── Entry spacing — keep tall (2-photo) panels from bleeding into the
+  //    next entry and covering its photo. Panels are position:absolute so
+  //    they don't normally push the entry's own height; give the entry a
+  //    min-height that matches its panel so nothing downstream gets covered.
+  function layoutTimelineEntries() {
+    document.querySelectorAll('.tl-entry').forEach(entry => {
+      const panel = entry.querySelector('.tl-img-panel');
+      if (!panel) return;
+      if (getComputedStyle(panel).position !== 'absolute') {
+        entry.style.minHeight = ''; // mobile: panel is in-flow, nothing to reserve
+        return;
+      }
+      const panelTop = parseFloat(getComputedStyle(panel).top) || 0;
+      entry.style.minHeight = (panelTop + panel.offsetHeight + 16) + 'px';
+    });
+  }
+
+  function layoutTimeline() {
+    layoutTimelinePhotos();
+    layoutTimelineEntries();
+  }
+  layoutTimeline();
+  window.addEventListener('resize', layoutTimeline);
 
   // ── Scroll-in animation (fallback for browsers without animation-timeline) ──
   if (!CSS.supports('animation-timeline', 'view()')) {
