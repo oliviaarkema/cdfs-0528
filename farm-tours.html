@@ -487,6 +487,15 @@
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
+  .seasonal-group-header {
+    text-align: center;
+  }
+  .seasonal-group-tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--green-dark);
+    font-size: 1.1rem;
+  }
   .seasonal-card {
     background: var(--warm-white);
     border-radius: var(--radius-xl) var(--radius-sm) var(--radius-xl) var(--radius-xl);
@@ -1019,12 +1028,18 @@
     </div>
     <div class="seasonal-cards">
 
+      <div class="seasonal-group-header reveal" style="grid-column: 1 / -1;">
+        <div class="section-label section-label-green" style="justify-content:center; display:inline-flex; margin-bottom:10px;">Fall Tours</div>
+        <p class="seasonal-group-tagline">Explore the Farm. Experience the Colors. Enjoy the Cows.</p>
+      </div>
+
       <!-- Card 1: COW-lorful Tour -->
       <div class="seasonal-card reveal">
         <img src="assets/images/Daze & Dan Fall Lane.JPG" alt="Daze and Dan pulling the wagon down the fall lane" class="seasonal-card-img" loading="lazy">
         <div class="seasonal-card-body-wrap">
         <div class="seasonal-card-tag">Fall Wagon Ride</div>
         <h3 class="seasonal-card-title"><em>COW</em>–lorful Tour</h3>
+        <p class="seasonal-card-body">Enjoy the beautiful color-filled trees with Daze and Dan as they pull our wagon through the hills and pastures of our Charolais Farm. White cows and calves, green pastures, and autumn colors&hellip; No &ldquo;tricks&rdquo; on this tour, but we do include some sweet &ldquo;treats&rdquo;!</p>
         <ul class="seasonal-card-details">
           <li>Saturdays at 2:30PM by reservation only, other days and times available by phone</li>
           <li>$150 for a group of up to 10 people</li>
@@ -1035,8 +1050,30 @@
         </div>
       </div>
 
-      <!-- Card 2: Winter Sleigh Rides -->
+      <!-- Card 2: Colors, Cows, and Calves Tour -->
       <div class="seasonal-card reveal reveal-delay-1">
+        <img src="assets/images/heifer barn.jpg" alt="Cows and calves in the barn on the Colors, Cows, and Calves tour" class="seasonal-card-img" loading="lazy">
+        <div class="seasonal-card-body-wrap">
+        <div class="seasonal-card-tag">Fall Farm Tour</div>
+        <h3 class="seasonal-card-title">Colors, <em>Cows</em>, and Calves Tour</h3>
+        <p class="seasonal-card-body">Enjoy the crisp autumn air as our Belgian Draft Horses pull the covered wagon around the Country Dairy farmland to take in the colors of the season. Then it&rsquo;s on to the barns to see our cows, calves, and robotic milking system. This seasonal tour finishes with a taste of our famous chocolate milk.</p>
+        <ul class="seasonal-card-details">
+          <li>Saturdays at 11AM, 12PM, and 1PM &mdash; walk-up tours welcome, first come, first served</li>
+          <li>Reservations also available online or by phone</li>
+          <li>Tour takes approximately 60 minutes</li>
+          <li>$15 adult / $12 senior / $12 child (ages 3&ndash;12); 2 and under free</li>
+        </ul>
+        <div class="seasonal-card-note">Prefer a private tour? Evening tours start at 4PM by reservation &mdash; call <a href="tel:2312590515" style="color:inherit;">(231) 259-0515</a> ext. 119 at least 24 hours ahead. Group rates available for up to 10 people; larger groups (max 24) are an additional cost per person.</div>
+        <a href="https://book.peek.com/s/f9fbf65a-cc8a-498b-a3e1-d1bc2df86c0d/8a8BD" target="_blank" rel="noopener" class="btn btn-primary" style="align-self:flex-start;">Book Now</a>
+        </div>
+      </div>
+
+      <div class="seasonal-group-header reveal" style="grid-column: 1 / -1; margin-top:16px;">
+        <div class="section-label section-label-green" style="justify-content:center; display:inline-flex; margin-bottom:10px;">Winter Tours</div>
+      </div>
+
+      <!-- Card 3: Winter Sleigh Rides -->
+      <div class="seasonal-card reveal reveal-delay-2" style="grid-column: 1 / -1; max-width: 560px; margin: 0 auto; width: 100%;">
         <img src="assets/images/Tab & Sleigh (1).jpg" alt="Horse-drawn sleigh ride at Country Dairy in winter" class="seasonal-card-img" loading="lazy">
         <div class="seasonal-card-body-wrap">
         <div class="seasonal-card-tag">Winter Sleigh Ride</div>
